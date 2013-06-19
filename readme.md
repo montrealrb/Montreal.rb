@@ -1,6 +1,8 @@
+[English Follows]
+
 # Montreal.rb
 
-## The new Montreal.rb website
+## Le nouveau site de Montreal.rb
 
 Le but est d'avoir un site pour annoncer et gérer les 3 activités sous Montreal.rb.
 
@@ -16,3 +18,23 @@ Le but est d'avoir un site pour annoncer et gérer les 3 activités sous Montrea
 * Un chat/forum online sur le site web
  
 * N'importe quels autres features qui pourraient nous être utile ou le fun à avoir/faire.
+
+# Montreal.rb
+
+## The new Montreal.rb website
+
+The goal is to have a site to announce and manage the three activities/events organized by Montreal.rb
+
+We need:
+* A blog-type CMS for news posts
+* A widget indicating the dates of the next events.
+* A page explaining each type of event.
+* An About Us / Contact page
+* An easy way to search through old event summaries to find information (like links to videos of the presentations, etc)
+
+Other features on the wishlist:
+* A list of community members with their website+twitter, and maybe a map of their offices
+* A list of job openings (which companies would eventually pay for)
+* A chat room + forum
+ 
+* Anything else useful and fun!
