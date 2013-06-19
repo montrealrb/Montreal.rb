@@ -12,11 +12,10 @@ Le but est d'avoir un site pour annoncer et gérer les 3 activités sous Montrea
 * Une page de contact/about us
 * Une façon facile de chercher dans les anciennes activités pour trouver de l'information
 
-* Autre features,
+Autres features qui seraient intéressants:
 * Une liste de membres de la communauté avec les website/twitter (les mettres sur une carte pourrait être bien)
 * Une liste de job offer (qui serait payant pour les compagnies)
 * Un chat/forum online sur le site web
- 
 * N'importe quels autres features qui pourraient nous être utile ou le fun à avoir/faire.
 
 # Montreal.rb
@@ -36,5 +35,4 @@ Other features on the wishlist:
 * A list of community members with their website+twitter, and maybe a map of their offices
 * A list of job openings (which companies would eventually pay for)
 * A chat room + forum
- 
-* Anything else useful and fun!
+ * Anything else useful and fun!
