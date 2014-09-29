@@ -39,6 +39,8 @@ gem 'unicorn'
 # Heroku Assets
 gem 'rails_12factor', group: :production
 
+gem 'globalize'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -47,4 +49,5 @@ gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'sqlite3'
 end
