@@ -2,6 +2,51 @@
 
 # Montreal.rb
 
+
+## Hackathon Features
+
+* Users: User can register and be: 'general', 'member', 'organizer', 'administrator'
+
+* As a user, I want to have
+    * Name
+    * Picture (gravatar)
+    * Link to twitter
+    * Link to github
+    * Description
+
+* As a member, I want to be able to register my proposed talk with
+    * french + english
+    * title
+    * Description
+    * My bio (default to my profile)
+    * Link to my presenation slides (slideshare or html)
+
+* As an organizer, I want to have a list of available meet-up places
+    * Name
+    * Address
+    * Directions
+    * Google Map
+
+* As an organizer, I want to be able to be able to create a monthly event
+    * Choose a meet-up place
+    * Choose 2 talks
+    * Add an introduction + conclusion (french + english)
+
+* As a user, I would like to be able to register with my twitter account
+* As a user, I would like to be able to register with my github account
+
+* As a company, I'd like to have a page on the website
+    * Name
+    * Address
+    * Logo
+    * Description
+    * List of members working there
+
+* As an organizer, I'd like to be able to select companies as sponsors for an evenment
+    * Company name
+    * Logo
+    * Description of the sponsorship
+
 ## Le nouveau site de Montreal.rb
 
 Le but est d'avoir un site pour annoncer et gérer les 3 activités sous Montreal.rb.
