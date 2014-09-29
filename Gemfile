@@ -51,3 +51,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'sqlite3'
 end
+ruby "2.1.3"
+
+gem "devise"
