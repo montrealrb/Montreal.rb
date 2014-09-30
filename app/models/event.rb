@@ -5,4 +5,8 @@ class Event < ActiveRecord::Base
     order(starts_at: :desc)
   end
 
+  def location
+    super || TBALocation.new
+  end
+
 end
