@@ -15,6 +15,8 @@ Bundler.require(*Rails.groups)
 
 module MontrealRb
   class Application < Rails::Application
+    config.time_zone = 'America/Montreal'
+
     config.i18n.default_locale = :en
     config.i18n.available_locales = %i(en fr)
     config.i18n.enforce_available_locales = true
