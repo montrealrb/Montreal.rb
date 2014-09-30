@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140929233924) do
+ActiveRecord::Schema.define(version: 20140930011409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,8 +30,28 @@ ActiveRecord::Schema.define(version: 20140929233924) do
   add_index "event_translations", ["locale"], name: "index_event_translations_on_locale", using: :btree
 
   create_table "events", force: true do |t|
-    t.string   "type"
-    t.datetime "starts_at"
+    t.string   "type",       null: false
+    t.datetime "starts_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "location_translations", force: true do |t|
+    t.integer  "location_id", null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "description"
+    t.text     "directions"
+  end
+
+  add_index "location_translations", ["locale"], name: "index_location_translations_on_locale", using: :btree
+  add_index "location_translations", ["location_id"], name: "index_location_translations_on_location_id", using: :btree
+
+  create_table "locations", force: true do |t|
+    t.string   "name"
+    t.text     "address"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
