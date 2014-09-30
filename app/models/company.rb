@@ -1,6 +1,6 @@
 class Company < ActiveRecord::Base
   translates :description
-  has_attached_file :logo
+  mount_uploader :logo, LogoUploader
 
   validates :name, uniqueness: true, presence: true
 end

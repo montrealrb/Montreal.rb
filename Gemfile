@@ -7,7 +7,8 @@ gem 'rails', '4.1.6'
 # Database
 gem 'pg'
 
-gem 'paperclip'
+gem 'carrierwave'
+gem 'cloudinary'
 
 # Assets
 gem 'uglifier', '>= 1.3.0'
