@@ -1,8 +1,9 @@
 class Meetup < Event
-  translates :title, :introduction, :conclusion
-  globalize_accessors locales: %i(en fr), attributes: %i(title introduction conclusion)
+  extend Globalized
 
-  validates :title_en, :title_fr, :introduction_en, :introduction_fr, :conclusion_en, :conclusion_fr, presence: true
+  translates :title, :introduction, :conclusion
+  globalize_accessors locales: I18n.available_locales, attributes: %i(title introduction conclusion)
+  validates_translated :title, :introduction, :conclusion, presence: true
 
   rails_admin do
     list do
@@ -12,12 +13,9 @@ class Meetup < Event
 
     edit do
       field :starts_at
-      field :title_en
-      field :title_fr
-      field :introduction_en
-      field :introduction_fr
-      field :conclusion_en
-      field :conclusion_fr
+      Meetup.translated_fields(:title, :introduction, :conclusion).each do |accessor|
+        field accessor
+      end
     end
   end
 
