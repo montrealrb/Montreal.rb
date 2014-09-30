@@ -40,6 +40,8 @@ gem 'unicorn'
 gem 'rails_12factor', group: :production
 
 gem 'globalize'
+gem 'rails_admin'
+gem 'globalize-accessors'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
