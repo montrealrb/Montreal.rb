@@ -20,7 +20,7 @@ RSpec.describe Meetup, :type => :model do
 
         it "returns the 3rd tuesday of the current month" do
           Timecop.freeze('2014-09-01') do
-            expect(next_meetup.starts_at.iso8601).to be == '2014-09-16T20:00:00-04:00'
+            expect(next_meetup.starts_at.asctime).to be == 'Tue Sep 16 20:00:00 2014'
           end
         end
 
@@ -30,7 +30,7 @@ RSpec.describe Meetup, :type => :model do
 
         it "returns the 3rd tuesday of the current month" do
           Timecop.freeze('2014-09-16T20:00:00-04:00') do
-            expect(next_meetup.starts_at.iso8601).to be == '2014-09-16T20:00:00-04:00'
+            expect(next_meetup.starts_at.asctime).to be == 'Tue Oct 21 20:00:00 2014'
           end
         end
 
@@ -40,7 +40,7 @@ RSpec.describe Meetup, :type => :model do
 
         it "returns the 3rd tuesday of the next month" do
           Timecop.freeze('2014-09-17') do
-            expect(next_meetup.starts_at.iso8601).to be == '2014-10-21T20:00:00-04:00'
+            expect(next_meetup.starts_at.asctime).to be == 'Tue Oct 21 20:00:00 2014'
           end
         end
 
