@@ -1,6 +1,6 @@
 [English Follows]
 
-[![Build Status](https://travis-ci.org/railsbridge-montreal/Montreal.rb.svg)](https://travis-ci.org/railsbridge-montreal/Montreal.rb)
+[![Build Status](https://travis-ci.org/montrealrb/Montreal.rb.svg)](https://travis-ci.org/montrealrb/Montreal.rb)
 
 # Montreal.rb
 
