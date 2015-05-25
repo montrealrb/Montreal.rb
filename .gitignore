@@ -16,4 +16,7 @@
 /log/*.log
 /tmp
 
+# Ignore Image uploads
+/public/uploads/
+
 config/database.yml
