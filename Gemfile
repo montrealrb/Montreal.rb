@@ -32,7 +32,6 @@ gem 'spring',        group: :development
 # View
 gem 'slim'
 
-
 # Server
 gem 'unicorn'
 

@@ -46,10 +46,10 @@ html lang="en"
               div class="col-sm-12"
                 div.meetup
                   span Next Meet-up:
-                  span.meetup-date 2014/10/21
+                  span.meetup-date = @next_meetup.starts_at.strftime("%m/%d/%Y") 
                 div.meetup
-                  span Only X days left...
-                  span class="btn btn-primary" Join Us
+                  span Only #{{ (@next_meetup.starts_at - Time.now).to_i / (24 * 60 * 60) }} days left...
+                  span class="btn btn-primary pull-right" Join Us
 
     div class="container"
       div class="row"
