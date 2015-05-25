@@ -78,6 +78,8 @@ ActiveRecord::Schema.define(version: 20140930012651) do
     t.datetime "updated_at"
   end
 
+  add_index "events", ["starts_at"], name: "index_events_on_starts_at", using: :btree
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false

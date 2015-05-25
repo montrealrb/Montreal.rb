@@ -35,7 +35,6 @@ gem 'spring',        group: :development
 # View
 gem 'slim'
 
-
 # Server
 gem 'unicorn'
 
@@ -55,7 +54,7 @@ gem 'globalize-accessors'
 group :development, :test do
   gem 'rspec-rails'
   gem 'sqlite3'
+  gem 'timecop'
 end
-ruby "2.1.3"
 
 gem "devise"
