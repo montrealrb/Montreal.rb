@@ -29,8 +29,8 @@ RSpec.describe Meetup, :type => :model do
       context "when on the day itself" do
 
         it "returns the 3rd tuesday of the current month" do
-          Timecop.freeze('2014-09-16T20:00:00-04:00') do
-            expect(next_meetup.starts_at.asctime).to be == 'Tue Oct 21 20:00:00 2014'
+          Timecop.freeze(Time.zone.local(2014, 9, 16, 20, 0, 0)) do
+            expect(next_meetup.starts_at.asctime).to be == 'Tue Sep 16 20:00:00 2014'
           end
         end
 
