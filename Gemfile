@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'bootstrap-sass'
 gem 'sass-rails'
 gem 'autoprefixer-rails'
+gem "devise"
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
@@ -50,11 +51,19 @@ gem 'globalize-accessors'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+group :development do
+  gem 'annotate'
+end
 
 group :development, :test do
+  gem 'pry'
   gem 'rspec-rails'
   gem 'sqlite3'
   gem 'timecop'
+  gem 'factory_girl_rails'
+  gem 'guard'
+  gem 'guard-rspec', require: false
+  gem 'faker'
 end
 
-gem "devise"
+
