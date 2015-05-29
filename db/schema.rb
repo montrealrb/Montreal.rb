@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20140930012651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "companies", force: true do |t|
     t.string   "name",       null: false
@@ -57,6 +58,7 @@ ActiveRecord::Schema.define(version: 20140930012651) do
   end
 
   add_index "events", ["location_id"], name: "index_events_on_location_id", using: :btree
+  add_index "events", ["starts_at"], name: "index_events_on_starts_at", using: :btree
 
   create_table "location_translations", force: true do |t|
     t.integer  "location_id", null: false
@@ -78,7 +80,15 @@ ActiveRecord::Schema.define(version: 20140930012651) do
     t.datetime "updated_at"
   end
 
-  add_index "events", ["starts_at"], name: "index_events_on_starts_at", using: :btree
+  create_table "talks", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "bio"
+    t.string   "slides"
+    t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -93,9 +103,20 @@ ActiveRecord::Schema.define(version: 20140930012651) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "bio"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "votes", force: true do |t|
+    t.integer  "votable_id"
+    t.string   "votable_type"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["votable_id", "votable_type"], name: "index_votes_on_votable_id_and_votable_type", using: :btree
 
 end

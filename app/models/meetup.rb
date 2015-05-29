@@ -1,11 +1,22 @@
+# == Schema Information
+#
+# Table name: events
+#
+#  id         :integer          not null, primary key
+#  type       :string(255)      not null
+#  starts_at  :datetime         not null
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Meetup < Event
   extend Globalized
 
   class NotScheduledYet
 
     def starts_at
-      date = third_tuesday_of(Time.now)
-      return third_tuesday_of(date.next_month) if date.end_of_day <= Time.now
+      date = third_tuesday_of(Time.current)
+      return third_tuesday_of(date.next_month) if date.end_of_day <= Time.current
       date
     end
 
@@ -14,7 +25,7 @@ class Meetup < Event
     def third_tuesday_of(time)
       date = time.beginning_of_month.to_date
       date = date.succ until date.tuesday?
-      (date + 2.weeks).to_time + 20.hours
+      (date + 2.weeks).in_time_zone + 20.hours
     end
 
   end
