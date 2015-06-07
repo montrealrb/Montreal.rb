@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :get_next_meetup
 
   def get_next_meetup
-  	@nextmeetup = Meetup.next
+    @next_meetup = Meetup.next
   end
 
 
