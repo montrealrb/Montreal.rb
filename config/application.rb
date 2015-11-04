@@ -20,5 +20,6 @@ module MontrealRb
     config.i18n.default_locale = :en
     config.i18n.available_locales = %i(en fr)
     config.i18n.enforce_available_locales = true
+    config.active_record.raise_in_transactional_callbacks = true
   end
 end
