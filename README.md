@@ -6,19 +6,6 @@
 
 This is the Montreal.rb organization's website. It is still in development stage so you are welcome to contribute.
 
-## Contribute
-
-You will find in the Github issues what needs to be done. To contribute, fork the repository to your own account and clone your
-fork to your dev machine.
-
-```
-git clone git@github.com:your_username/Montreal.rb.git
-```
-
-You will find the development setup below. To work on a new feature or to fix a bug, create a new branch to commit your work.
-
-When you are ready, push your commits to your Github fork and open a pull request.
-
 ## Requirements
 
 ### Runtime
@@ -110,6 +97,10 @@ The application does not have any deploy environment since it it still in develo
 ## Bug Tracker
 
 If you find any bug, please open an issue in the project's Github repository (https://github.com/montrealrb/Montreal.rb/issues)
+
+## Contributing
+
+Please see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
