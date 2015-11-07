@@ -10,41 +10,33 @@ This is the Montreal.rb organization's website. It is still in development stage
 
 ### Runtime
 
-```
-$ ruby --version
-ruby 2.2.3
-
-# Install it with the tool you prefer
-
-gem install bundler # if not automatically installed with ruby
-```
-
-### Database
-
-```
-$ postgres --version
-Postgresql 9.3
-
-$ brew install postgresql # to install.
-```
-
-You should check out Ruby on Rails' guides if you are not familiar with the framework : http://guides.rubyonrails.org/
+- ruby 2.2.3
+- Postgresql 9.3+
 
 ## Development Setup
 
 Fork the repository and clone it to your machine. Then change directory to `Montreal.rb`
 
-```
-git clone <your_fork>
-cd Montreal.rb
+```bash
+$ git clone <your_fork> && cd Montreal.rb
 ```
 
-You should have Ruby version 2.2.3 installed using your prefered Ruby version tool (or udate your systems' Ruby)
+### Ruby
 
-Install all the project's dependencies:
+You should have Ruby version `2.2.3` installed using your prefered Ruby version management tool (or by globally updating your system Ruby)
 
-```
-bundle install
+__Most Popular Ruby Version Managers__
+
+- [rbenv](http://rbenv.org/)
+- [rvm](https://rvm.io/)
+
+### Database
+
+Do you have Postgres installed?
+
+```bash
+$ postgres --version
+Postgresql 9.3
 ```
 
 For the next parts, you need Postgresql installed, configured and running and a
@@ -55,39 +47,71 @@ For the next parts, you need Postgresql installed, configured and running and a
 localhost:5432:*:sdeziel:myverysecurepassword
 ```
 
-If everything is set up properly, running the next command should create your development database, load it's schema and load seed data:
+#### Install Postgres
 
+```bash
+$ brew install postgresql
 ```
-rake db:setup
+
+### Rails
+
+> You should check out Ruby on Rails' guides if you are not familiar with the framework : http://guides.rubyonrails.org/
+
+#### Setup your Project
+
+```bash
+$ bin/setup
 ```
+
+__IMPORTANT: `pg` gem installation error__
+
+If you experience an error during the execution of that script related to the installation of the `pg` gem,
+you might want to try the following procedure:
+
+```bash
+$ sudo find / -name "pg_config"
+# Use the most appropriate path found by the command above
+$ gem install pg -- --with-pg-config=<your_pg_config_path>
+$ bin/setup
+```
+
+Once successfully completed, this setup script will:
+
+- install `bundler` for managing your gem dependencies
+- install your project's required gems
+- create and setup your database
+- cleanup logs and temporary files
+
+#### Start your Web Server
 
 You should be ready to start your webserver using:
 
-```
-rails server # by default your application is accessible typing localhost:3000 in your browser.
+```bash
+$ bin/rails server
 ```
 
+By default, your application is accessible at [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Testing
 
 RSpec is used to test the application. You can run all the tests using
 
-```
-rspec .
+```bash
+$ rspec
 ```
 
 or you can run a specific test file (example 1), or a single test (example 2, 17 is the line number of your test)
 
-```
-rspec spec/path/to/your/file.rb    # example 1
+```bash
+$ rspec spec/path/to/your/file.rb    # example 1
 
-rspec spec/path/to/your/file.rb:17 # example 2
+$ rspec spec/path/to/your/file.rb:17 # example 2
 ```
 
 You can also use guard to test automatically when you save a file
 
-```
-bundle exec guard
+```bash
+$ bundle exec guard
 ```
 
 ## Deploy
