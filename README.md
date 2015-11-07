@@ -1,6 +1,7 @@
 # Montreal.rb website
 
 [![Build Status](https://travis-ci.org/montrealrb/Montreal.rb.svg)](https://travis-ci.org/montrealrb/Montreal.rb)
+[![Dependency Status](https://gemnasium.com/montrealrb/Montreal.rb.svg)](https://gemnasium.com/montrealrb/Montreal.rb)
 
 ## Description
 
