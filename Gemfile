@@ -7,31 +7,21 @@ gem 'rails', '~> 4.2.2'
 # Database
 gem 'pg'
 
+# Uploads
 gem 'carrierwave'
 gem 'cloudinary'
 
 # Assets
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'bootstrap-sass'
-gem 'sass-rails'
-gem 'autoprefixer-rails'
 gem "devise"
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
-
+gem 'autoprefixer-rails','~> 6.1.0'
+gem 'bootstrap-sass'
+gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-#gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-#gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'sass-rails'
+gem 'uglifier', '>= 1.3.0'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
 
 # View
 gem 'slim'
@@ -42,17 +32,16 @@ gem 'unicorn'
 # Heroku Assets
 gem 'rails_12factor', group: :production
 
+# Globalization/Localization
 gem 'globalize'
-gem 'rails_admin'
 gem 'globalize-accessors'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# Administration
+gem 'rails_admin'
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
 group :development do
   gem 'annotate'
+  gem 'spring'
   gem 'spring-commands-rspec'
 end
 
