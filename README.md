@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/montrealrb/Montreal.rb.svg)](https://travis-ci.org/montrealrb/Montreal.rb)
 [![Dependency Status](https://gemnasium.com/montrealrb/Montreal.rb.svg)](https://gemnasium.com/montrealrb/Montreal.rb)
 [![Code Climate](https://codeclimate.com/github/montrealrb/Montreal.rb/badges/gpa.svg)](https://codeclimate.com/github/montrealrb/Montreal.rb)
+[![Coverage Status](https://coveralls.io/repos/montrealrb/Montreal.rb/badge.svg?branch=master&service=github)](https://coveralls.io/github/montrealrb/Montreal.rb?branch=master)
 
 ## Description
 

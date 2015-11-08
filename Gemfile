@@ -66,4 +66,6 @@ group :development, :test do
   gem 'faker'
 end
 
+gem 'coveralls', require: false, group: :test
+
 
