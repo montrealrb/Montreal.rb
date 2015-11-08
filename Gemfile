@@ -57,14 +57,15 @@ group :development do
 end
 
 group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'guard'
+  gem 'guard-rspec', require: false
   gem 'pry'
+  gem 'rb-fsevent' if `uname` =~ /Darwin/
   gem 'rspec-rails'
   gem 'sqlite3'
   gem 'timecop'
-  gem 'factory_girl_rails'
-  gem 'guard'
-  gem 'guard-rspec', require: false
-  gem 'faker'
 end
 
 
