@@ -114,6 +114,12 @@ You can also use guard to test automatically when you save a file
 $ bundle exec guard
 ```
 
+__PROTIP:__ install [ctags](http://ctags.sf.net) and guard will automatically generate an index (or tag) file
+of language objects found in source files that allows these items to be quickly and easily located by a text editor.
+
+- ex: macos `brew install ctags && sudo mv /usr/bin/ctags /usr/bin/ctags.bak`
+- ex: ubuntu `sudo apt-get install exuberant-ctags`
+
 ## Deploy
 
 The application does not have any deploy environment since it it still in development.

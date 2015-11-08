@@ -49,6 +49,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'guard'
+  gem 'guard-ctags-bundler'
   gem 'guard-rspec', require: false
   gem 'pry'
   gem 'rspec-rails'
