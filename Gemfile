@@ -62,10 +62,7 @@ group :development, :test do
   gem 'guard'
   gem 'guard-rspec', require: false
   gem 'pry'
-  gem 'rb-fsevent' if `uname` =~ /Darwin/
   gem 'rspec-rails'
   gem 'sqlite3'
   gem 'timecop'
 end
-
-

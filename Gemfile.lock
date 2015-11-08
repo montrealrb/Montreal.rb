@@ -301,7 +301,6 @@ DEPENDENCIES
   rails (~> 4.2.2)
   rails_12factor
   rails_admin
-  rb-fsevent
   rspec-rails
   sass-rails
   slim

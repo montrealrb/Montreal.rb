@@ -1,5 +1,6 @@
 rvm:
   - "2.2.3"
+sudo: false
 
 addons:
   postgresql: "9.3"
