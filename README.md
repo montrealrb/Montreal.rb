@@ -97,15 +97,15 @@ By default, your application is accessible at [http://localhost:3000](http://loc
 RSpec is used to test the application. You can run all the tests using
 
 ```bash
-$ rspec
+$ bin/rspec
 ```
 
 or you can run a specific test file (example 1), or a single test (example 2, 17 is the line number of your test)
 
 ```bash
-$ rspec spec/path/to/your/file.rb    # example 1
+$ bin/rspec spec/path/to/your/file.rb    # example 1
 
-$ rspec spec/path/to/your/file.rb:17 # example 2
+$ bin/rspec spec/path/to/your/file.rb:17 # example 2
 ```
 
 You can also use guard to test automatically when you save a file

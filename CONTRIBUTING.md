@@ -17,13 +17,13 @@ $ bin/setup
 Make sure the tests pass:
 
 ```bash
-$ rspec
+$ bin/rspec
 ```
 
 Make your change. Add tests for your change. Make the tests pass:
 
 ```bash
-$ rspec
+$ bin/rspec
 ```
 
 Push to your fork and [submit a pull request][pr].

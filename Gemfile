@@ -53,6 +53,7 @@ gem 'globalize-accessors'
 # gem 'debugger', group: [:development, :test]
 group :development do
   gem 'annotate'
+  gem 'spring-commands-rspec'
 end
 
 group :development, :test do
