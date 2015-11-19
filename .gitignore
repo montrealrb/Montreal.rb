@@ -24,3 +24,6 @@ config/database.yml
 # ctags
 tags
 gems.tags
+
+coverage/
+vendor/bundle/
