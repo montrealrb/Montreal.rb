@@ -56,3 +56,6 @@ group :development, :test do
   gem 'sqlite3'
   gem 'timecop'
 end
+
+gem 'coveralls', require: false, group: :test
+
