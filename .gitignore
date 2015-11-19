@@ -20,3 +20,7 @@
 /public/uploads/
 
 config/database.yml
+
+# ctags
+tags
+gems.tags

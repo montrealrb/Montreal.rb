@@ -10,20 +10,9 @@
 
 This is the Montreal.rb organization's website. It is still in development stage so you are welcome to contribute.
 
-## Contribute
+## Requirements
 
-You will find in the Github issues what needs to be done. To contribute, fork the repository to your own account and clone your
-fork to your dev machine.
-
-```bash
-$ git clone git@github.com:your_username/Montreal.rb.git
-```
-
-You will find the development setup below. To work on a new feature or to fix a bug, create a new branch to commit your work.
-
-When you are ready, push your commits to your Github fork and open a pull request.
-
-## Dependencies
+### Runtime
 
 - ruby 2.2.3
 - Postgresql 9.3+
@@ -112,15 +101,15 @@ By default, your application is accessible at [http://localhost:3000](http://loc
 RSpec is used to test the application. You can run all the tests using
 
 ```bash
-$ rspec
+$ bin/rspec
 ```
 
 or you can run a specific test file (example 1), or a single test (example 2, 17 is the line number of your test)
 
 ```bash
-$ rspec spec/path/to/your/file.rb    # example 1
+$ bin/rspec spec/path/to/your/file.rb    # example 1
 
-$ rspec spec/path/to/your/file.rb:17 # example 2
+$ bin/rspec spec/path/to/your/file.rb:17 # example 2
 ```
 
 You can also use guard to test automatically when you save a file
@@ -129,6 +118,12 @@ You can also use guard to test automatically when you save a file
 $ bundle exec guard
 ```
 
+__PROTIP:__ install [ctags](http://ctags.sf.net) and guard will automatically generate an index (or tag) file
+of language objects found in source files that allows these items to be quickly and easily located by a text editor.
+
+- ex: macos `brew install ctags && sudo mv /usr/bin/ctags /usr/bin/ctags.bak`
+- ex: ubuntu `sudo apt-get install exuberant-ctags`
+
 ## Deploy
 
 The application does not have any deploy environment since it it still in development.
@@ -136,6 +131,10 @@ The application does not have any deploy environment since it it still in develo
 ## Bug Tracker
 
 If you find any bug, please open an issue in the project's Github repository (https://github.com/montrealrb/Montreal.rb/issues)
+
+## Contributing
+
+Please see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 

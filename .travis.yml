@@ -1,5 +1,7 @@
 rvm:
   - "2.2.3"
+cache: bundler
+sudo: false
 
 addons:
   postgresql: "9.3"
