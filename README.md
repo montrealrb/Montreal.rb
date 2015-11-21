@@ -138,4 +138,4 @@ Please see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-MIT
+*montrealrb.com* is released under the [MIT License](LICENSE).
