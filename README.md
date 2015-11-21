@@ -126,7 +126,12 @@ of language objects found in source files that allows these items to be quickly 
 
 ## Deploy
 
-The application does not have any deploy environment since it it still in development.
+This application is automatically deployed to __heroku__ after a successful [Travis CI](http://docs.travis-ci.com/user/deployment/heroku/) build of the *master* branch.
+
+### URLs
+
+- The heroku url is: [https://montreal-rb.herokuapp.com/](https://montreal-rb.herokuapp.com/)
+- The official url is: [https://montrealrb.com/](https://montrealrb.com/)
 
 ## Bug Tracker
 
