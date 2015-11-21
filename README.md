@@ -141,6 +141,8 @@ If you find any bug, please open an issue in the project's Github repository (ht
 
 Please see [CONTRIBUTING.md](CONTRIBUTING.md).
 
+Everyone interacting in Montrealrb.com and its sub-projects' codebases, issue trackers, chat rooms, and mailing lists is expected to follow our [code of conduct](CODE_OF_CONDUCT.md).
+
 ## License
 
 *montrealrb.com* is released under the [MIT License](LICENSE).
