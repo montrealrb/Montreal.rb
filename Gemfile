@@ -24,7 +24,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks'
 
 # View
-gem 'slim'
+gem 'simple_form'
 
 # Server
 gem 'unicorn'
