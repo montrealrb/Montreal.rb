@@ -15,6 +15,7 @@ gem 'cloudinary'
 gem "devise"
 gem 'autoprefixer-rails','~> 6.1.0'
 gem 'bootstrap-sass'
+gem 'font-awesome-sass'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'sass-rails'
@@ -24,7 +25,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks'
 
 # View
-gem 'slim'
+gem 'simple_form'
 
 # Server
 gem 'unicorn'

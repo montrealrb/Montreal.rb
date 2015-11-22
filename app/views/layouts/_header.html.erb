@@ -1,0 +1,35 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h1>Montreal.rb</h1>
+        <p class="lead">Montreal's Ruby Community</p>
+      </div>
+      <div class="col-md-8 col-md-offset-1">
+        <div class="row">
+          <ul class="nav nav-pills pull-right">
+            <li><%= link_to 'Home', '#' %></li>
+            <li><%= link_to 'Sign up', '#' %></li>
+            <li><%= link_to 'Login', '#' %></li>
+            <li><%= link_to 'About', '#' %></li>
+            <li><%= link_to 'FAQ', '#' %></li>
+            <li><%= link_to 'Français', '#' %></li>
+          </ul>
+        </div>
+        <div class="search-form row">
+          <%= simple_form_for :search do |f| %>
+            <%= f.input :q, as: :search, placeholder: 'search', label: false %>
+          <% end -%>
+        </div>
+        <ul class="nav nav-pills">
+          <li><%= link_to 'Events', '#' %></li>
+          <li><%= link_to 'Talks', '#' %></li>
+          <li><%= link_to 'News', '#' %></li>
+          <li><%= link_to 'Members', '#' %></li>
+          <li><%= link_to 'Organization', '#' %></li>
+          <li><%= link_to 'Jobs', '#' %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
