@@ -1,4 +1,4 @@
-class Company < ActiveRecord::Base
+class Organization < ActiveRecord::Base
   translates :description
   mount_uploader :logo, LogoUploader
 
