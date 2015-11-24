@@ -38,7 +38,7 @@ gem 'globalize'
 gem 'globalize-accessors'
 
 # Administration
-gem 'rails_admin'
+gem 'administrate', '~> 0.1.1'
 
 group :development do
   gem 'annotate'
