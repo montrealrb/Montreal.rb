@@ -15,7 +15,6 @@
 #  last_sign_in_ip        :inet
 #  created_at             :datetime
 #  updated_at             :datetime
-#  bio                    :string(255)
 #
 
 class User < ActiveRecord::Base

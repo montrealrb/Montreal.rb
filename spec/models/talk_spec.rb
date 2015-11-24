@@ -22,15 +22,10 @@ RSpec.describe Talk, :type => :model do
 # Description
 # Link to my presenation slides (slideshare or html)
 
-  let(:user) { build(:user, bio: "My awesome bio") }
+  let(:user) { build(:user) }
   let(:talk) { build(:talk, bio: "", author: user) }
 
   it "should be valid" do
     expect(talk.valid?).to eq(true)
   end
-
-  it "should use the default profile bio if none is provided" do
-    expect(talk.bio).to eq(user.bio)
-  end
-
 end

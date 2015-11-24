@@ -16,8 +16,4 @@ class Talk < ActiveRecord::Base
   belongs_to :author, class_name: "User"
 
   validates :author, presence: true
-
-  def bio
-    self[:bio].blank? ? author.bio : self[:bio]
-  end
 end
