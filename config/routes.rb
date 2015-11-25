@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :events
+  resources :events, only: [:show, :index]
 
   root 'home#index'
 end

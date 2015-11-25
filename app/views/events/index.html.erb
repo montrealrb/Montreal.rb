@@ -1,0 +1,8 @@
+
+<% @events.each do |event| %>
+  <div class="event">
+    <h2><%= link_to event.title, event_path(event) %></h2>
+    <small><%= event.starts_at.to_formatted_s(:long) %></small>
+    <p> <%=  event.introduction  %></p>
+  </div>
+<%end%>
