@@ -10,10 +10,12 @@ class EventDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     location: Field::BelongsTo,
     id: Field::Number,
-    type: Field::String,
     starts_at: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    title: Field::String,
+    introduction: Field::Text,
+    conclusion: Field::Text
   }
 
   # COLLECTION_ATTRIBUTES
@@ -25,6 +27,7 @@ class EventDashboard < Administrate::BaseDashboard
     :location,
     :id,
     :starts_at,
+    :title,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -37,6 +40,9 @@ class EventDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :location,
     :starts_at,
+    :title,
+    :introduction,
+    :conclusion
   ]
 
   # Overwrite this method to customize how events are displayed

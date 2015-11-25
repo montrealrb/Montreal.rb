@@ -10,6 +10,7 @@
 #
 
 class Event < ActiveRecord::Base
+  translates :title, :introduction, :conclusion
   belongs_to :location
 
   def self.published
