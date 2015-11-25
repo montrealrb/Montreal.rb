@@ -1,0 +1,12 @@
+<h1>Organizations</h1>
+
+
+<div>
+
+  <%  @organizations.each do |organization| %>
+    <h2> <%= organization.name %> </h2>
+    <p> <em> <%= organization.address  %> </em> </p>
+    <p> <%= organization.description  %> </p>
+  <% end %>
+
+</div>
