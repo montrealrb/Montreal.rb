@@ -12,12 +12,12 @@ class DashboardManifest
   DASHBOARDS = [
     :users,
     :companies,
-    :events,
-    :locations,
     :news_items,
     :talks,
     :votes,
     :meetups,
+    :locations,
+    :events,
   ]
 
   # `ROOT_DASHBOARD`
