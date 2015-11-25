@@ -12,6 +12,7 @@ class DashboardManifest
   DASHBOARDS = [
     :locations,
     :jobs
+    :events,
   ]
 
   # `ROOT_DASHBOARD`
