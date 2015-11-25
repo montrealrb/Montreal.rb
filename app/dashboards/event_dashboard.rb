@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class LocationDashboard < Administrate::BaseDashboard
+class EventDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,11 +8,10 @@ class LocationDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    translations: Field::HasMany.with_options(class_name: "Location::Translation"),
+    location: Field::BelongsTo,
     id: Field::Number,
-    name: Field::String,
-    address: Field::Text,
-    url: Field::String,
+    type: Field::String,
+    starts_at: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -23,10 +22,10 @@ class LocationDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :translations,
+    :location,
     :id,
-    :name,
-    :address,
+    :type,
+    :starts_at,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -37,16 +36,15 @@ class LocationDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :translations,
-    :name,
-    :address,
-    :url,
+    :location,
+    :type,
+    :starts_at,
   ]
 
-  # Overwrite this method to customize how locations are displayed
+  # Overwrite this method to customize how events are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(location)
-  #   "Location ##{location.id}"
+  # def display_resource(event)
+  #   "Event ##{event.id}"
   # end
 end

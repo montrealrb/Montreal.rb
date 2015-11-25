@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :events
+  resources :events, :news_items
 
   root 'home#index'
 end

@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class LocationDashboard < Administrate::BaseDashboard
+class CompanyDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,11 +8,11 @@ class LocationDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    translations: Field::HasMany.with_options(class_name: "Location::Translation"),
+    translations: Field::HasMany.with_options(class_name: "Company::Translation"),
     id: Field::Number,
     name: Field::String,
-    address: Field::Text,
-    url: Field::String,
+    address: Field::String,
+    logo: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -40,13 +40,13 @@ class LocationDashboard < Administrate::BaseDashboard
     :translations,
     :name,
     :address,
-    :url,
+    :logo,
   ]
 
-  # Overwrite this method to customize how locations are displayed
+  # Overwrite this method to customize how companies are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(location)
-  #   "Location ##{location.id}"
+  # def display_resource(company)
+  #   "Company ##{company.id}"
   # end
 end

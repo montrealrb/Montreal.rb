@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140930012651) do
+ActiveRecord::Schema.define(version: 20151125011825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "hstore"
 
   create_table "companies", force: :cascade do |t|
     t.string   "name",       null: false
@@ -28,8 +27,8 @@ ActiveRecord::Schema.define(version: 20140930012651) do
   create_table "company_translations", force: :cascade do |t|
     t.integer  "company_id",  null: false
     t.string   "locale",      null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.text     "description"
   end
 
@@ -39,8 +38,8 @@ ActiveRecord::Schema.define(version: 20140930012651) do
   create_table "event_translations", force: :cascade do |t|
     t.integer  "event_id",     null: false
     t.string   "locale",       null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "title"
     t.text     "introduction"
     t.text     "conclusion"
@@ -63,8 +62,8 @@ ActiveRecord::Schema.define(version: 20140930012651) do
   create_table "location_translations", force: :cascade do |t|
     t.integer  "location_id", null: false
     t.string   "locale",      null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.text     "description"
     t.text     "directions"
   end
@@ -78,6 +77,24 @@ ActiveRecord::Schema.define(version: 20140930012651) do
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "news_item_translations", force: :cascade do |t|
+    t.integer  "news_item_id", null: false
+    t.string   "locale",       null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "title"
+    t.string   "state"
+    t.text     "body"
+  end
+
+  add_index "news_item_translations", ["locale"], name: "index_news_item_translations_on_locale", using: :btree
+  add_index "news_item_translations", ["news_item_id"], name: "index_news_item_translations_on_news_item_id", using: :btree
+
+  create_table "news_items", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "talks", force: :cascade do |t|
@@ -117,6 +134,6 @@ ActiveRecord::Schema.define(version: 20140930012651) do
     t.datetime "updated_at"
   end
 
-  add_index "votes", ["votable_id", "votable_type"], name: "index_votes_on_votable_id_and_votable_type", using: :btree
+  add_index "votes", ["votable_type", "votable_id"], name: "index_votes_on_votable_type_and_votable_id", using: :btree
 
 end
