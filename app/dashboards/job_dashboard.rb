@@ -11,7 +11,7 @@ class JobDashboard < Administrate::BaseDashboard
     id: Field::Number,
     organization_id: Field::Number,
     title: Field::String,
-    state: Field::String,
+    state: EnumField,
     description: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
