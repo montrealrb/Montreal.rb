@@ -15,12 +15,13 @@ ActiveRecord::Schema.define(version: 20151125010131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "company_translations", force: :cascade do |t|
     t.integer  "company_id",  null: false
     t.string   "locale",      null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.text     "description"
   end
 
@@ -30,8 +31,8 @@ ActiveRecord::Schema.define(version: 20151125010131) do
   create_table "event_translations", force: :cascade do |t|
     t.integer  "event_id",     null: false
     t.string   "locale",       null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "title"
     t.text     "introduction"
     t.text     "conclusion"
@@ -50,11 +51,20 @@ ActiveRecord::Schema.define(version: 20151125010131) do
   add_index "events", ["location_id"], name: "index_events_on_location_id", using: :btree
   add_index "events", ["starts_at"], name: "index_events_on_starts_at", using: :btree
 
+  create_table "jobs", force: :cascade do |t|
+    t.string   "state"
+    t.string   "title"
+    t.text     "description"
+    t.integer  "organization_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "location_translations", force: :cascade do |t|
     t.integer  "location_id", null: false
     t.string   "locale",      null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.text     "description"
     t.text     "directions"
   end
