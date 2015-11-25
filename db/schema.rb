@@ -68,6 +68,17 @@ ActiveRecord::Schema.define(version: 20151204172708) do
     t.datetime "updated_at"
   end
 
+  create_table "members", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.binary   "picture"
+    t.string   "twitter_handle"
+    t.string   "github_handle"
+    t.text     "biography"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "news_items", force: :cascade do |t|
     t.string   "state"
     t.datetime "published_at"
