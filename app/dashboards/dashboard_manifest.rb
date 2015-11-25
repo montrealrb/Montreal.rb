@@ -11,7 +11,7 @@ class DashboardManifest
   # to work correctly.
   DASHBOARDS = [
     :locations,
-    :jobs
+    :jobs,
     :events,
   ]
 
