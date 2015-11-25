@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    @events = Event.published
+    @events = Event.published.limit(2)
   end
 
 end

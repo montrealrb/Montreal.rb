@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 20151125011253) do
   add_index "event_translations", ["locale"], name: "index_event_translations_on_locale", using: :btree
 
   create_table "events", force: :cascade do |t|
-    t.string   "type",        null: false
     t.datetime "starts_at",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
