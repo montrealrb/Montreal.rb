@@ -15,7 +15,8 @@ class DashboardManifest
     :jobs,
     :events,
     :organizations,
-    :pages
+    :pages,
+    :members
   ]
 
   # `ROOT_DASHBOARD`
