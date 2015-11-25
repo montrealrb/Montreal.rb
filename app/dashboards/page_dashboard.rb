@@ -11,7 +11,7 @@ class PageDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     body: Field::Text,
-    state: Field::String,
+    state: Field::EnumField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }
