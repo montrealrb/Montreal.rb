@@ -11,6 +11,7 @@
 
 class Event < ActiveRecord::Base
   belongs_to :location
+  has_many :members
 
   def self.published
     order(starts_at: :desc)
