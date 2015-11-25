@@ -23,6 +23,12 @@ class Event < ActiveRecord::Base
 
   scope :published, -> { where(state: "scheduled").order(starts_at: :desc) }
 
+  has_many :members
+
+  def self.published
+    order(starts_at: :desc)
+  end
+
   def title_with_date
     date = starts_at.strftime("%B %d")
     [title, date].join(" : ")
