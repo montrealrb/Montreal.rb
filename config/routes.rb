@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'organizations/show'
 
-  resources :pages
+  resources :pages, except: [:index]
 
   namespace :admin do
     DashboardManifest::DASHBOARDS.each do |dashboard_resource|
