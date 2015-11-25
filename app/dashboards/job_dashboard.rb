@@ -11,6 +11,7 @@ class JobDashboard < Administrate::BaseDashboard
     id: Field::Number,
     organization_id: Field::Number,
     title: Field::String,
+    state: Field::String,
     description: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -23,6 +24,7 @@ class JobDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
+    :state,
     :title,
     :description,
   ]
@@ -35,6 +37,7 @@ class JobDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
+    :state,
     :title,
     :description,
   ]
@@ -46,4 +49,3 @@ class JobDashboard < Administrate::BaseDashboard
   #   "Location ##{location.id}"
   # end
 end
-
