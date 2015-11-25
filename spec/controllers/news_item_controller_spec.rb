@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe NewsItemController, type: :controller do
+RSpec.describe NewsItemsController, type: :controller do
 
 end
