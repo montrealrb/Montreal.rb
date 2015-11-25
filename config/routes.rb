@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pages, except: [:index]
   namespace :admin do
     DashboardManifest::DASHBOARDS.each do |dashboard_resource|
       resources dashboard_resource

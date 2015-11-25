@@ -26,6 +26,7 @@ gem 'turbolinks'
 
 # View
 gem 'simple_form'
+gem 'enumerize'
 
 # Server
 gem 'unicorn'
