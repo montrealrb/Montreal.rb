@@ -1,7 +1,11 @@
-<h1>News Items</h1>
 <% @news_items.each do |news_item| %>
-<div class="news_item">
-  <h3><%= news_item.title %></h3>
-  <p><%= news_item.body %></p>
-</div>
+  <div class="post clearfix">
+    <h2 class="post-title"><%= news_item.title%></h2>
+    <p class="meta">
+      Posted <%= time_ago_in_words(news_item.published_at) %> ago
+    </p>
+    <div class="post-body">
+      <%= news_item.body %>
+    </div>
+  </div>
 <% end %>

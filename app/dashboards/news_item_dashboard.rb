@@ -13,6 +13,7 @@ class NewsItemDashboard < Administrate::BaseDashboard
     title: Field::String,
     body: Field::Text,
     state: Field::String,
+    published_at: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -27,6 +28,7 @@ class NewsItemDashboard < Administrate::BaseDashboard
     :title,
     :body,
     :state,
+    :published_at,
     :created_at,
     :updated_at,
   ]
@@ -42,6 +44,7 @@ class NewsItemDashboard < Administrate::BaseDashboard
     :title,
     :body,
     :state,
+    :published_at,
   ]
 
   # Overwrite this method to customize how news items are displayed
