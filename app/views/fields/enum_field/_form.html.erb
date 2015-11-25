@@ -1,2 +1,2 @@
 <%= f.label field.attribute %>
-<%= f.select field.attribute, f.object.class.send(field.attribute).options %>
+<%= f.select field.attribute, f.object.class.public_send(field.attribute).options %>
