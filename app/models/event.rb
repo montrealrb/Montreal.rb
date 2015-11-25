@@ -10,8 +10,14 @@
 #
 
 class Event < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   translates :title, :introduction, :conclusion
   belongs_to :location
+
+  validates_presence_of :title, :starts_at
+  validates_uniqueness_of :title
 
   def self.published
     order(starts_at: :desc)
@@ -20,5 +26,7 @@ class Event < ActiveRecord::Base
   def location
     super || TBALocation.new
   end
+
+
 
 end

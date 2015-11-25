@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params.require(:id))
+    @event = Event.friendly.find(params.require(:id))
   end
 
 end

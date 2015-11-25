@@ -113,6 +113,8 @@ GEM
     font-awesome-sass (4.4.0)
       sass (>= 3.2)
     formatador (0.2.5)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     globalize (5.0.1)
@@ -316,6 +318,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   font-awesome-sass
+  friendly_id
   globalize
   globalize-accessors
   guard

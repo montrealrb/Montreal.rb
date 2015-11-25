@@ -37,6 +37,8 @@ gem 'rails_12factor', group: :production
 gem 'globalize'
 gem 'globalize-accessors'
 
+gem 'friendly_id'
+
 # Administration
 gem 'administrate', '~> 0.1.1'
 
