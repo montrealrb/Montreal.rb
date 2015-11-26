@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class LocationDashboard < Administrate::BaseDashboard
+class TalkDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,11 +8,14 @@ class LocationDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    translations: Field::HasMany.with_options(class_name: "Location::Translation"),
+    votes: Field::HasMany,
+    author: Field::BelongsTo.with_options(class_name: "User"),
     id: Field::Number,
-    name: Field::String,
-    address: Field::Text,
-    url: Field::String,
+    title: Field::String,
+    description: Field::Text,
+    bio: Field::Text,
+    slides: Field::String,
+    author_id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -23,10 +26,10 @@ class LocationDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :translations,
+    :votes,
+    :author,
     :id,
-    :name,
-    :address,
+    :title,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -37,16 +40,19 @@ class LocationDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :translations,
-    :name,
-    :address,
-    :url,
+    :votes,
+    :author,
+    :title,
+    :description,
+    :bio,
+    :slides,
+    :author_id,
   ]
 
-  # Overwrite this method to customize how locations are displayed
+  # Overwrite this method to customize how talks are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(location)
-    location.name
-  end
+  # def display_resource(talk)
+  #   "Talk ##{talk.id}"
+  # end
 end

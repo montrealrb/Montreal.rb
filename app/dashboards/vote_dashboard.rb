@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class LocationDashboard < Administrate::BaseDashboard
+class VoteDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,11 +8,9 @@ class LocationDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    translations: Field::HasMany.with_options(class_name: "Location::Translation"),
+    votable: Field::Polymorphic,
+    user: Field::BelongsTo,
     id: Field::Number,
-    name: Field::String,
-    address: Field::Text,
-    url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }
@@ -23,10 +21,10 @@ class LocationDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :translations,
+    :votable,
+    :user,
     :id,
-    :name,
-    :address,
+    :created_at,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -37,16 +35,14 @@ class LocationDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :translations,
-    :name,
-    :address,
-    :url,
+    :votable,
+    :user,
   ]
 
-  # Overwrite this method to customize how locations are displayed
+  # Overwrite this method to customize how votes are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(location)
-    location.name
-  end
+  # def display_resource(vote)
+  #   "Vote ##{vote.id}"
+  # end
 end
