@@ -1,19 +1,5 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @page.title %></h1>
 
-<p>
-  <strong>Title:</strong>
-  <%= @page.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
+<div>
   <%= @page.body %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @page.state %>
-</p>
-
-<%= link_to 'Edit', edit_page_path(@page) %> |
-<%= link_to 'Back', pages_path %>
+</div>
