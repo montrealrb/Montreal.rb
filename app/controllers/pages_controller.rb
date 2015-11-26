@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def show
-    @page = Page.find(params[:id])
+    @page = Page.published.find(params[:id])
   end
 
 end
