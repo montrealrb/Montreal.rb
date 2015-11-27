@@ -1,5 +1,6 @@
 class Page < ActiveRecord::Base
   extend Enumerize
+  translates :title, :body
 
   validates :title, presence: true
   validates :state, presence: true
