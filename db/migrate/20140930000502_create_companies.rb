@@ -16,6 +16,6 @@ class CreateCompanies < ActiveRecord::Migration
 
   def down
     drop_table :companies
-    Company.drop_tranlation_table!
+    Company.drop_translation_table!
   end
 end
