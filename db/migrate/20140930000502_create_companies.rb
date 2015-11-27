@@ -1,4 +1,8 @@
 class CreateCompanies < ActiveRecord::Migration
+  class Company < ActiveRecord::Base
+    translates :description
+  end
+
   def up
     create_table :companies do |t|
       t.string :name, null: false
