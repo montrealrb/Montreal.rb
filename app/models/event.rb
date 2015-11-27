@@ -10,6 +10,7 @@
 #
 
 class Event < ActiveRecord::Base
+  translates :title, :introduction, :conclusion
   belongs_to :location
 
   def self.published
@@ -20,4 +21,8 @@ class Event < ActiveRecord::Base
     super || TBALocation.new
   end
 
+  def title_with_date
+    date = starts_at.strftime("%B %d")
+    [title, date].join(' : ')
+  end
 end

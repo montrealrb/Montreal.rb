@@ -1,3 +1,14 @@
+<% @news_items.each do |news_item| %>
+  <div class="post clearfix">
+    <h2 class="post-title"><%= news_item.title%></h2>
+    <p class="meta">
+      Posted <%= time_ago_in_words(news_item.published_at) %> ago
+    </p>
+    <div class="post-body">
+      <%= news_item.body %>
+    </div>
+  </div>
+<% end %>
 <div class="post clearfix">
   <h2 class="post-title"><%= link_to 'So Long, and Thanks for All the Fish', '#' %></h2>
   <p class="meta">

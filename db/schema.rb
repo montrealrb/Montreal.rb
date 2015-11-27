@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151124183742) do
+ActiveRecord::Schema.define(version: 20151125011825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "company_translations", force: :cascade do |t|
     t.integer  "company_id",  null: false
     t.string   "locale",      null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.text     "description"
   end
 
@@ -30,8 +31,8 @@ ActiveRecord::Schema.define(version: 20151124183742) do
   create_table "event_translations", force: :cascade do |t|
     t.integer  "event_id",     null: false
     t.string   "locale",       null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "title"
     t.text     "introduction"
     t.text     "conclusion"
@@ -41,7 +42,6 @@ ActiveRecord::Schema.define(version: 20151124183742) do
   add_index "event_translations", ["locale"], name: "index_event_translations_on_locale", using: :btree
 
   create_table "events", force: :cascade do |t|
-    t.string   "type",        null: false
     t.datetime "starts_at",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -51,11 +51,20 @@ ActiveRecord::Schema.define(version: 20151124183742) do
   add_index "events", ["location_id"], name: "index_events_on_location_id", using: :btree
   add_index "events", ["starts_at"], name: "index_events_on_starts_at", using: :btree
 
+  create_table "jobs", force: :cascade do |t|
+    t.string   "state"
+    t.string   "title"
+    t.text     "description"
+    t.integer  "organization_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "location_translations", force: :cascade do |t|
     t.integer  "location_id", null: false
     t.string   "locale",      null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.text     "description"
     t.text     "directions"
   end
@@ -69,6 +78,15 @@ ActiveRecord::Schema.define(version: 20151124183742) do
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "news_items", force: :cascade do |t|
+    t.string   "state"
+    t.datetime "published_at"
+    t.text     "body"
+    t.string   "title"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "organizations", force: :cascade do |t|
