@@ -1,7 +1,10 @@
 class RemoveVotes < ActiveRecord::Migration
   def change
-    drop_table :votes do
-      # empty block needed to make the migration reversible
+    drop_table :votes do |t|
+      t.references :votable, polymorphic: true, index: true
+      t.belongs_to :user
+
+      t.timestamps
     end
   end
 end
