@@ -13,6 +13,8 @@ class Event < ActiveRecord::Base
   translates :title, :introduction, :conclusion
   belongs_to :location
 
+  to_param :title
+
   def self.published
     order(starts_at: :desc)
   end
