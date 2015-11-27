@@ -5,6 +5,6 @@ class CreateEvents < ActiveRecord::Migration
       t.datetime :starts_at, null: false
       t.timestamps
     end
-    Events.create_translation_table! :title => :string, :introduction => :text, :conclusion => :text
+    Event.create_translation_table! :title => :string, :introduction => :text, :conclusion => :text
   end
 end
