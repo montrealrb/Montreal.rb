@@ -9,8 +9,7 @@ class CreateEvents < ActiveRecord::Migration
   end
 
   def down
-    drop_table :events do
-    end
+    drop_table :events
     Event.drop_translation_table!
   end
 end
