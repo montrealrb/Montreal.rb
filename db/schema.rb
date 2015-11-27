@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(version: 20151125011825) do
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
   create_table "news_items", force: :cascade do |t|
     t.string   "state"
     t.datetime "published_at"
@@ -79,7 +78,6 @@ ActiveRecord::Schema.define(version: 20151125011825) do
     t.datetime "updated_at",   null: false
   end
 
-=======
   create_table "organization_translations", force: :cascade do |t|
     t.integer  "organization_id", null: false
     t.string   "locale",          null: false
@@ -91,7 +89,6 @@ ActiveRecord::Schema.define(version: 20151125011825) do
   add_index "organization_translations", ["locale"], name: "index_organization_translations_on_locale", using: :btree
   add_index "organization_translations", ["organization_id"], name: "index_organization_translations_on_organization_id", using: :btree
 
->>>>>>> Adding schmea changes and other files that were left out
   create_table "organizations", force: :cascade do |t|
     t.string   "name",       null: false
     t.string   "address"
