@@ -17,17 +17,6 @@ ActiveRecord::Schema.define(version: 20151125011825) do
   enable_extension "plpgsql"
   enable_extension "hstore"
 
-  create_table "company_translations", force: :cascade do |t|
-    t.integer  "company_id",  null: false
-    t.string   "locale",      null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "description"
-  end
-
-  add_index "company_translations", ["company_id"], name: "index_company_translations_on_company_id", using: :btree
-  add_index "company_translations", ["locale"], name: "index_company_translations_on_locale", using: :btree
-
   create_table "event_translations", force: :cascade do |t|
     t.integer  "event_id",     null: false
     t.string   "locale",       null: false
@@ -88,6 +77,17 @@ ActiveRecord::Schema.define(version: 20151125011825) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  create_table "organization_translations", force: :cascade do |t|
+    t.integer  "organization_id", null: false
+    t.string   "locale",          null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.text     "description"
+  end
+
+  add_index "organization_translations", ["locale"], name: "index_organization_translations_on_locale", using: :btree
+  add_index "organization_translations", ["organization_id"], name: "index_organization_translations_on_organization_id", using: :btree
 
   create_table "organizations", force: :cascade do |t|
     t.string   "name",       null: false
