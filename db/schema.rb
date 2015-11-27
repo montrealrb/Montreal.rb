@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20151125023733) do
   create_table "event_translations", force: :cascade do |t|
     t.integer  "event_id",     null: false
     t.string   "locale",       null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "title"
     t.text     "introduction"
     t.text     "conclusion"
@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 20151125023733) do
   create_table "location_translations", force: :cascade do |t|
     t.integer  "location_id", null: false
     t.string   "locale",      null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.text     "description"
     t.text     "directions"
   end
@@ -115,16 +115,6 @@ ActiveRecord::Schema.define(version: 20151125023733) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "talks", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.text     "bio"
-    t.string   "slides"
-    t.integer  "author_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -142,15 +132,5 @@ ActiveRecord::Schema.define(version: 20151125023733) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
-  create_table "votes", force: :cascade do |t|
-    t.integer  "votable_id"
-    t.string   "votable_type"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "votes", ["votable_id", "votable_type"], name: "index_votes_on_votable_id_and_votable_type", using: :btree
 
 end
