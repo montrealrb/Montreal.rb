@@ -55,6 +55,7 @@ group :development, :test do
   gem 'guard-rspec', require: false
   gem 'pry'
   gem 'rspec-rails'
+  gem 'capybara'
   gem 'sqlite3'
   gem 'timecop'
 end
