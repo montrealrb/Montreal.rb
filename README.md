@@ -51,6 +51,8 @@ For the next parts, you need Postgresql installed, configured and running and a
 localhost:5432:*:sdeziel:myverysecurepassword
 ```
 
+On Unix systems, the permissions on .pgpass must disallow any access to world or group; achieve this by the command chmod 0600 ~/.pgpass. If the permissions are less strict than this, the file will be ignored. 
+
 #### Install Postgres
 
 ```bash
