@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
 
   namespace :admin do
     DashboardManifest::DASHBOARDS.each do |dashboard_resource|
@@ -8,7 +9,8 @@ Rails.application.routes.draw do
     root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
   end
 
-  devise_for :users
+  devise_for :users,
+    controllers: {omniauth_callbacks: 'users/omniauth_callbacks'}
 
   resources :events, only: [:index, :show]
   resources :news_items, only: [:index, :show]
