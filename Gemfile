@@ -12,7 +12,8 @@ gem 'carrierwave'
 gem 'cloudinary'
 
 # Assets
-gem "devise"
+gem 'devise'
+gem 'omniauth-github'
 gem 'autoprefixer-rails', '~> 6.1.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-sass'
