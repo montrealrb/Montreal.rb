@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20151125023733) do
   create_table "event_translations", force: :cascade do |t|
     t.integer  "event_id",     null: false
     t.string   "locale",       null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "title"
     t.text     "introduction"
     t.text     "conclusion"
@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 20151125023733) do
   create_table "location_translations", force: :cascade do |t|
     t.integer  "location_id", null: false
     t.string   "locale",      null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.text     "description"
     t.text     "directions"
   end
@@ -95,6 +95,24 @@ ActiveRecord::Schema.define(version: 20151125023733) do
     t.string   "logo"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "page_translations", force: :cascade do |t|
+    t.integer  "page_id",    null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "body"
+    t.string   "title",      null: false
+  end
+
+  add_index "page_translations", ["locale"], name: "index_page_translations_on_locale", using: :btree
+  add_index "page_translations", ["page_id"], name: "index_page_translations_on_page_id", using: :btree
+
+  create_table "pages", force: :cascade do |t|
+    t.string   "state",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
