@@ -12,5 +12,6 @@ class CreateLocations < ActiveRecord::Migration
 
   def down
     drop_table :locations
+    Location.drop_translation_table!
   end
 end
