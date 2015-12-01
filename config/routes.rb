@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'organizations/index'
-
-  get 'organizations/show'
-
 
   namespace :admin do
     DashboardManifest::DASHBOARDS.each do |dashboard_resource|
@@ -16,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :events, only: [:index, :show]
   resources :news_items, only: [:index, :show]
+  resources :organizations, only: [:index, :show]
   resources :pages, only: [:show]
 
   root 'home#index'
