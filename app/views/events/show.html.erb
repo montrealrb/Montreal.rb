@@ -1,1 +1,4 @@
 <h1><%= @event.title %></h1>
+
+<%= render_markdown_as_html(@event.introduction) %>
+<%= render_markdown_as_html(@event.conclusion) %>

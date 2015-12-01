@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :events, only:[:index, :show]
+  resources :events, only: [:index, :show]
   resources :news_items, :organizations
 
   root 'home#index'
