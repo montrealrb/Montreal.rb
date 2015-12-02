@@ -4,6 +4,6 @@ class NewsItemsController < ApplicationController
   end
 
   def show
-    @news_item = NewsItem.find(params[:id])
+    @news_item = NewsItem.published.find(params[:id])
   end
 end
