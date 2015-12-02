@@ -25,7 +25,7 @@ Fork the repository and clone it to your machine. Then change directory to `Mont
 $ git clone <your_fork> && cd Montreal.rb
 ```
 
-### Ruby
+### Ruby & Bundler
 
 You should have Ruby version `2.2.3` installed using your prefered Ruby version management tool (or by globally updating your system Ruby)
 
@@ -33,6 +33,8 @@ __Most Popular Ruby Version Managers__
 
 - [rbenv](http://rbenv.org/)
 - [rvm](https://rvm.io/)
+
+You should also have [bundler](http://bundler.io/) (minimum `v1.10`) to help with tracking and installing the exact gems and versions that are needed.
 
 ### Database
 
