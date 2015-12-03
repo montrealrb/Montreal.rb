@@ -190,6 +190,7 @@ GEM
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    mysql2 (0.4.2)
     neat (1.7.2)
       bourbon (>= 4.0)
       sass (>= 3.3)
@@ -226,6 +227,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -271,6 +274,8 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
+    reverse_markdown (1.0.0)
+      nokogiri
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -380,13 +385,17 @@ DEPENDENCIES
   guard-rspec
   guard-rubocop
   jquery-rails
+  mysql2
   newrelic_rpm
+  nokogiri
   omniauth-github
   pg
   pry
+  quiet_assets
   rails (~> 4.2.2)
   rails_12factor
   redcarpet
+  reverse_markdown
   rspec-rails
   rubocop
   sass-rails
