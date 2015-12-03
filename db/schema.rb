@@ -11,17 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151204172708) do
+ActiveRecord::Schema.define(version: 20151206044852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "hstore"
 
   create_table "event_translations", force: :cascade do |t|
     t.integer  "event_id",     null: false
     t.string   "locale",       null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "title",        null: false
     t.text     "introduction"
     t.text     "conclusion"
@@ -52,8 +51,8 @@ ActiveRecord::Schema.define(version: 20151204172708) do
   create_table "location_translations", force: :cascade do |t|
     t.integer  "location_id", null: false
     t.string   "locale",      null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.text     "description"
     t.text     "directions"
   end
@@ -71,13 +70,14 @@ ActiveRecord::Schema.define(version: 20151204172708) do
 
   create_table "members", force: :cascade do |t|
     t.string   "name"
-    t.string   "email"
+    t.string   "email",          null: false
     t.binary   "picture"
     t.string   "twitter_handle"
     t.string   "github_handle"
     t.text     "biography"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "user_id"
   end
 
   create_table "news_items", force: :cascade do |t|
@@ -92,8 +92,8 @@ ActiveRecord::Schema.define(version: 20151204172708) do
   create_table "organization_translations", force: :cascade do |t|
     t.integer  "organization_id", null: false
     t.string   "locale",          null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.text     "description"
   end
 
@@ -145,4 +145,5 @@ ActiveRecord::Schema.define(version: 20151204172708) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "members", "users"
 end
