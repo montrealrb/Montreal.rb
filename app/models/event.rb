@@ -12,6 +12,8 @@
 class Event < ActiveRecord::Base
   translates :title, :introduction, :conclusion
   belongs_to :location
+  # suggestion from Nicholas
+  to_param :title
 
   validates :starts_at, presence: true
 
@@ -27,4 +29,11 @@ class Event < ActiveRecord::Base
     date = starts_at.strftime("%B %d")
     [title, date].join(' : ')
   end
+
+  #To change the behaviour in /admin/events/1/edit...
+  # driven by views/fields/enum_field/_show.html.erb
+  def to_s
+    title_with_date
+  end
+
 end

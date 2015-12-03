@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20151125023733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "hstore"
 
   create_table "event_translations", force: :cascade do |t|
     t.integer  "event_id",     null: false
