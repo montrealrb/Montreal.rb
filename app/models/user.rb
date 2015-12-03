@@ -54,5 +54,5 @@ class User < ActiveRecord::Base
     super && email != DEFAULT_USER_EMAIL
   end
 
-  has_one :member
+  belongs_to :member
 end
