@@ -40,6 +40,12 @@ Some things that will increase the chance that your pull request is accepted:
 
 ## Style Guides
 
+This codebase is using [houndci.com](https://houndci.com) a hosted service that
+reviews GitHub pull requests for Ruby, CoffeeScript, and SCSS style guide violations.
+
+For more information about the different style guides we try to enforce, please
+check the list below.
+
 1.  [Ruby](https://github.com/bbatsov/ruby-style-guide)
 1.  [Rails](https://github.com/bbatsov/rails-style-guide)
 1.  [Testing](https://github.com/thoughtbot/guides/tree/master/style/testing)
