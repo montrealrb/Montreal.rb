@@ -2,29 +2,27 @@ require 'rails_helper'
 
 RSpec.describe Member, type: :model do
   context "without a name" do
-    it "should not create a member" do
+    it "should be invalid" do
       member = Member.new
 
       member.email = 'gala@example.com'
-      member.save
 
-      expect(member.valid?).to be false
+      expect(member).to be_invalid
     end
   end
 
   context "without an email" do
-    it "should not create a member" do
+    it "should be invalid" do
       member = Member.new
 
       member.name = 'Zaba'
-      member.save
 
-      expect(member.valid?).to be false
+      expect(member).to be_invalid
     end
   end
 
   context "with a duplicate email" do
-    it "should not create a member" do
+    it "should be invalid" do
       member1 = Member.new
       member1.name = 'Zaba'
       member1.email = 'gala@example.com'
@@ -34,9 +32,8 @@ RSpec.describe Member, type: :model do
       member2.email = 'gala@example.com'
 
       member1.save
-      member2.save
 
-      expect(member2.valid?).to be false
+      expect(member2).to be_invalid
     end
   end
 end
