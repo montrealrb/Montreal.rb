@@ -1,0 +1,6 @@
+ruby:
+  config_file: .ruby-style.yml
+coffeescript:
+  config_file: .coffeescript-style.json
+scss:
+  config_file: .scss-style.yml
