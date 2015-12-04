@@ -15,6 +15,7 @@ class Event < ActiveRecord::Base
   # suggestion from Nicholas
   to_param :title
 
+  validates :title, presence: true
   validates :starts_at, presence: true
 
   def self.published

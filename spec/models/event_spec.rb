@@ -9,16 +9,21 @@
 #  updated_at :datetime
 #
 
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Event, :type => :model do
 
-  describe 'attribute validations' do
-    it 'does not validate when starts_at is not defined' do
+  describe "attribute validations" do
+    it "does not validate when 'starts_at' is not defined" do
       event = Event.new(starts_at: nil)
-      expect(event).to_not be_valid
+      expect(event).to be_invalid
       expect(event.errors.messages.keys).to include :starts_at
     end
-  end
 
+    it "does not validate when 'title' is not defined" do
+      event = Event.new(title: nil)
+      expect(event).to be_invalid
+      expect(event.errors.messages.keys).to include :title
+    end
+  end
 end
