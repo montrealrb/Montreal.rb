@@ -16,6 +16,7 @@ class Event < ActiveRecord::Base
   to_param :title
 
   validates :starts_at, presence: true
+  validates :location_id, presence: true
 
   def self.published
     order(starts_at: :desc)
