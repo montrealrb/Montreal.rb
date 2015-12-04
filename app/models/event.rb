@@ -17,13 +17,10 @@ class Event < ActiveRecord::Base
 
   validates :title, presence: true
   validates :starts_at, presence: true
+  validates :location, presence: true
 
   def self.published
     order(starts_at: :desc)
-  end
-
-  def location
-    super || TBALocation.new
   end
 
   def title_with_date
