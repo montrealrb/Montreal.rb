@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20151204172708) do
   add_index "location_translations", ["location_id"], name: "index_location_translations_on_location_id", using: :btree
 
   create_table "locations", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.text     "address"
     t.string   "url"
     t.datetime "created_at"
