@@ -11,7 +11,15 @@ header {
   h1 {
     font-size: 55px;
     line-height: 1;
-    color: #fefeff;
+    color: $header-title-color;
+
+    a,
+    a:hover,
+    a:focus,
+    a:visited {
+      color: $header-title-color;
+      text-decoration: none;
+    }
   }
 
 }
