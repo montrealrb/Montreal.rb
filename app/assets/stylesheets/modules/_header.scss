@@ -12,6 +12,11 @@ header {
     font-size: 55px;
     line-height: 1;
     color: #fefeff;
+
+    a, a:hover, a:focus, a:visited {
+      color: #fefeff;
+      text-decoration: none;
+    }
   }
 
 }
