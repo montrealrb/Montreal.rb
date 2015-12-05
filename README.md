@@ -88,6 +88,31 @@ Once successfully completed, this setup script will:
 - create and setup your database
 - cleanup logs and temporary files
 
+__Set environment variables__
+
+Omniauth is used to allow users to log in to the site using GitHub accounts. To 
+use the GitHub API, you must set environment variables for the GitHub 'key' and 
+'secret.'
+
+You can first obtain this key/secret [through your GitHub account](https://github.com/settings/applications/new).
+
+Now you need to set the environment variables on your server. The procedure will
+depend on your system.
+
+On Unix-based systems using the bash shell, add the following to your `~/.bashrc` 
+file, replacing the inside of the quotes with your key/secret:
+
+```
+export GITHUB_KEY="your_key"
+export GITHUB_SECRET="your_secret"
+```
+
+If using Heroku, you can set the environment variables like this:
+
+```
+heroku config:add GITHUB_KEY=your_key GITHUB_SECRET=your_secret --app Montreal.rb
+```
+
 #### Start your Web Server
 
 You should be ready to start your webserver using:
