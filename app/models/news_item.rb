@@ -19,7 +19,7 @@ class NewsItem < ActiveRecord::Base
   # Validations
   validates :published_at, presence: true, if: -> { state.try(:published?) }
   validates :title, presence: true, length: {maximum: 255}
-  validates :state, presence: true, inclusion: {in: AVAILABLE_STATES, message: "must be one of the following: #{AVAILABLE_STATES.join(', ')}"}
+  validates :state, presence: true, inclusion: { in: AVAILABLE_STATES }
   validates :body, presence: true, length: {maximum: 4000}
 
   # Class methods
