@@ -31,6 +31,7 @@ gem 'redcarpet'
 
 # Server
 gem 'unicorn'
+gem 'newrelic_rpm', group: :production
 
 # Heroku Assets
 gem 'rails_12factor', group: :production
