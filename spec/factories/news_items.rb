@@ -1,6 +1,8 @@
 FactoryGirl.define do
   factory :news_item do
-    title "my-title"
-    published_at Time.now.utc
+    sequence(:title) { |n| "my-news-item-title-#{n}" }
+    sequence(:body) { |n| "my-news-item-body-#{n}" }
+    state "draft"
+    published_at { Time.now.utc }
   end
 end

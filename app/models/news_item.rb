@@ -4,7 +4,7 @@ class NewsItem < ActiveRecord::Base
   enumerize :state, in: AVAILABLE_STATES
   scope :published, -> { where(state: :published).order(:published_at) }
   validates :published_at, presence: true, if: -> { state.try(:published?) }
-  validates :title, presence: true, length: {maximum: 255}
-  validates :state, presence: true, inclusion: {in: AVAILABLE_STATES, message: "must be one of the following: #{AVAILABLE_STATES.join(', ')}"}
-  validates :body, presence: true, length: {maximum: 4000}
+  validates :title, presence: true, length: { maximum: 255 }
+  validates :state, presence: true, inclusion: { in: AVAILABLE_STATES }
+  validates :body, presence: true, length: { maximum: 4000 }
 end
