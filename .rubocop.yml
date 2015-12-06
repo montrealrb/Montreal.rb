@@ -1,0 +1,8 @@
+inherit_from: .ruby-style.yml
+
+# Pending decision @ https://github.com/montrealrb/Montreal.rb/issues/131
+Style/StringLiterals:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 99
