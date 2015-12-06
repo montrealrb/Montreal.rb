@@ -1,4 +1,8 @@
 class CreateEvents < ActiveRecord::Migration
+  class Event < ActiveRecord::Base
+    translates :title, :introduction, :conclusion
+  end
+
   def up
     create_table :events do |t|
       t.string :type, null: false

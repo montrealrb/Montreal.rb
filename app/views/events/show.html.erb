@@ -1,4 +1,9 @@
-<h1><%= @event.title %></h1>
-
-<%= render_markdown_as_html(@event.introduction) %>
-<%= render_markdown_as_html(@event.conclusion) %>
+ <div class="post clearfix">
+    <h2 class="post-title"><%= @event.title%></h2>
+    <p class="meta">
+      Starts: <%= @event.date %>
+    </p>
+    <div class="post-body">
+      <%= @event.body %>
+    </div>
+  </div>
