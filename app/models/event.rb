@@ -10,7 +10,7 @@
 #
 
 class Event < ActiveRecord::Base
-  translates :title, :introduction, :conclusion
+  translates :title, :body
   belongs_to :location
   # suggestion from Nicholas
   to_param :title
@@ -18,14 +18,19 @@ class Event < ActiveRecord::Base
   validates :title, presence: true
   validates :starts_at, presence: true
   validates :location, presence: true
+  validates :body, presence: true
 
   def self.published
     order(starts_at: :desc)
   end
 
   def title_with_date
-    date = starts_at.strftime("%B %d")
+    return if starts_at.blank?
     [title, date].join(' : ')
+  end
+
+  def date
+    starts_at.strftime("%B %d")
   end
 
   #To change the behaviour in /admin/events/1/edit...

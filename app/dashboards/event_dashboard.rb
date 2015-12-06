@@ -14,8 +14,7 @@ class EventDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     title: Field::String,
-    introduction: Field::Text,
-    conclusion: Field::Text
+    body: Field::Text
   }
 
   # COLLECTION_ATTRIBUTES
@@ -39,8 +38,7 @@ class EventDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :title,
-    :introduction,
-    :conclusion,
+    :body,
     :starts_at,
     :location,
   ]

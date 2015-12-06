@@ -31,5 +31,11 @@ RSpec.describe Event, type: :model do
       expect(event).to be_invalid
       expect(event.errors.messages.keys).to include :title
     end
+
+    it "does not validate when 'body' is blank" do
+      event = Event.new(title: nil)
+      expect(event).to be_invalid
+      expect(event.errors.messages.keys).to include :body
+    end
   end
 end
