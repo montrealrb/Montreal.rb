@@ -50,14 +50,16 @@ group :development do
 end
 
 group :development, :test do
+  gem 'capybara'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'guard'
   gem 'guard-ctags-bundler'
   gem 'guard-rspec', require: false
+  gem 'guard-rubocop'
   gem 'pry'
   gem 'rspec-rails'
-  gem 'capybara'
+  gem 'rubocop', require: false
   gem 'sqlite3'
   gem 'timecop'
 end
