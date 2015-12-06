@@ -7,5 +7,4 @@ FactoryGirl.define do
     github_handle "MyString"
     biography "MyText"
   end
-
 end
