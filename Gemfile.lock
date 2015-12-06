@@ -180,6 +180,7 @@ GEM
       sass (>= 3.3)
     nenv (0.2.0)
     netrc (0.11.0)
+    newrelic_rpm (3.14.0.305)
     nokogiri (1.6.7)
       mini_portile2 (~> 2.0.0.rc2)
     normalize-rails (3.0.3)
@@ -335,6 +336,7 @@ DEPENDENCIES
   guard-ctags-bundler
   guard-rspec
   jquery-rails
+  newrelic_rpm
   pg
   pry
   rails (~> 4.2.2)
