@@ -10,7 +10,7 @@ class MemberDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     events: Field::HasMany,
     organizations: Field::HasMany,
-    user: Field::HasOne,
+    user: Field::BelongsTo,
     id: Field::Number,
     name: Field::String,
     email: Field::String,
