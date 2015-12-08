@@ -43,6 +43,9 @@ gem 'globalize-accessors'
 # Administration
 gem 'administrate', '~> 0.1.1'
 
+# Ops
+gem 'bugsnag'
+
 group :development do
   gem 'annotate'
   gem 'spring'
