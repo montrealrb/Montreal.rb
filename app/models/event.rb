@@ -12,12 +12,14 @@
 class Event < ActiveRecord::Base
   translates :title, :introduction, :conclusion
   belongs_to :location
-  # suggestion from Nicholas
+  belongs_to :published_by, foreign_key: :user_id, class_name: "User"
+
   to_param :title
 
   validates :title, presence: true
   validates :starts_at, presence: true
   validates :location, presence: true
+  validates :published_by, presence: true
 
   def self.published
     order(starts_at: :desc)
@@ -28,10 +30,9 @@ class Event < ActiveRecord::Base
     [title, date].join(' : ')
   end
 
-  #To change the behaviour in /admin/events/1/edit...
+  # To change the behaviour in /admin/events/1/edit...
   # driven by views/fields/enum_field/_show.html.erb
   def to_s
     title_with_date
   end
-
 end

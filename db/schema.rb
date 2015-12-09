@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151204174632) do
+ActiveRecord::Schema.define(version: 20151209201426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,10 +34,12 @@ ActiveRecord::Schema.define(version: 20151204174632) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "location_id", null: false
+    t.integer  "user_id",     null: false
   end
 
   add_index "events", ["location_id"], name: "index_events_on_location_id", using: :btree
   add_index "events", ["starts_at"], name: "index_events_on_starts_at", using: :btree
+  add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
 
   create_table "jobs", force: :cascade do |t|
     t.string   "state"
@@ -46,7 +48,10 @@ ActiveRecord::Schema.define(version: 20151204174632) do
     t.integer  "organization_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "user_id",         null: false
   end
+
+  add_index "jobs", ["user_id"], name: "index_jobs_on_user_id", using: :btree
 
   create_table "location_translations", force: :cascade do |t|
     t.integer  "location_id", null: false
@@ -76,9 +81,11 @@ ActiveRecord::Schema.define(version: 20151204174632) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "slug"
+    t.integer  "user_id",      null: false
   end
 
   add_index "news_items", ["slug"], name: "index_news_items_on_slug", using: :btree
+  add_index "news_items", ["user_id"], name: "index_news_items_on_user_id", using: :btree
 
   create_table "organization_translations", force: :cascade do |t|
     t.integer  "organization_id", null: false

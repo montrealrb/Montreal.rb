@@ -31,5 +31,19 @@ RSpec.describe Event, type: :model do
       expect(event).to be_invalid
       expect(event.errors.messages.keys).to include :title
     end
+
+    it "does not validate when 'published_by' is not defined" do
+      event = Event.new(published_by: nil)
+      expect(event).to be_invalid
+      expect(event.errors.messages.keys).to include :published_by
+    end
+  end
+
+  context "when an event is published" do
+    it "knows about its publisher" do
+      publisher = create(:user)
+      event = create(:event, published_by: publisher)
+      expect(event.published_by).to eq publisher
+    end
   end
 end

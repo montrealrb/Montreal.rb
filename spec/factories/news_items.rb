@@ -5,6 +5,7 @@ FactoryGirl.define do
     title { Faker::Lorem.sentence }
     body { Faker::Lorem.paragraph }
     published_at Time.now.utc
+    association :published_by, factory: :user
 
     factory :draft_news_item do
       state :draft

@@ -1,9 +1,8 @@
 FactoryGirl.define do
-  factory :job do
-    state "draft"
+  factory :event do
     title { Faker::Lorem.sentence }
-    description { Faker::Lorem.paragraph }
+    starts_at Time.now.utc + 2.days
     association :published_by, factory: :user
-    organization
+    location
   end
 end
