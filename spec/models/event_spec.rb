@@ -30,5 +30,19 @@ RSpec.describe Event, type: :model do
       expect(event).to be_invalid
       expect(event.errors.messages.keys).to include :title
     end
+
+    it "does not validate when 'author' is not defined" do
+      event = Event.new(author: nil)
+      expect(event).to be_invalid
+      expect(event.errors.messages.keys).to include :author
+    end
+  end
+
+  context "when an event is authored" do
+    it "knows about its author" do
+      author = create(:user)
+      event = create(:event, author: author)
+      expect(event.author).to eq author
+    end
   end
 end
