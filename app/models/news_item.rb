@@ -10,6 +10,8 @@
 #   can still resolve: http://www.montrealrb.com/[post_date:YYYY]/[post_date:MM]/[post_name]
 #
 class NewsItem < ActiveRecord::Base
+  belongs_to :published_by, foreign_key: :user_id, class_name: "User"
+
   # Extends
   extend Enumerize
 
@@ -17,8 +19,11 @@ class NewsItem < ActiveRecord::Base
   scope :published, -> { where(state: :published).order(published_at: :desc) }
 
   # Validations
-  validates :published_at, presence: true, if: -> { state.published? }
-  validates_presence_of :title, :state
+  validates :published_at, presence: true,
+                           if: -> { state.present? && state.published? }
+  validates :title, presence: true
+  validates :state, presence: true
+  validates :published_by, presence: true
 
   # Class methods
   enumerize :state, in: [:draft, :archived, :published]
