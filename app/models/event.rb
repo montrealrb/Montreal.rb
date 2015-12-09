@@ -12,6 +12,7 @@
 class Event < ActiveRecord::Base
   translates :title, :introduction, :conclusion
   belongs_to :location
+  has_many :talks
   # suggestion from Nicholas
   to_param :title
 
@@ -33,5 +34,4 @@ class Event < ActiveRecord::Base
   def to_s
     title_with_date
   end
-
 end
