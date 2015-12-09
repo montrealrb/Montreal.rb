@@ -379,7 +379,7 @@ DEPENDENCIES
   guard-ctags-bundler
   guard-rspec
   guard-rubocop
-  jquery-railse
+  jquery-rails
   newrelic_rpm
   omniauth-github
   pg
