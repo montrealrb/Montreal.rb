@@ -3,26 +3,3 @@ class Location < ActiveRecord::Base
 
   validates :name, presence: true
 end
-
-class TBALocation
-  def name
-    'TBA'
-  end
-
-  def address
-    'TBA'
-  end
-
-  def directions
-    ''
-  end
-
-  def description
-    ''
-  end
-
-  def url
-    ''
-  end
-
-end
