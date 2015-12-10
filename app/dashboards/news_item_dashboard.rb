@@ -12,7 +12,7 @@ class NewsItemDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     body: Field::Text,
-    state: Field::String,
+    state: EnumField,
     published_at: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -26,11 +26,9 @@ class NewsItemDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
-    :body,
     :state,
-    :published_at,
-    :created_at,
     :updated_at,
+    :published_at,
   ]
 
   # SHOW_PAGE_ATTRIBUTES

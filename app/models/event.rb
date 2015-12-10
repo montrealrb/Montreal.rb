@@ -25,7 +25,7 @@ class Event < ActiveRecord::Base
   end
 
   def title_with_date
-    return nil if starts_at.blank?
+    return if starts_at.blank?
     [title, date].join(' : ')
   end
 

@@ -49,8 +49,15 @@ gem 'bugsnag'
 
 group :development do
   gem 'annotate'
+  gem 'quiet_assets'
   gem 'spring'
   gem 'spring-commands-rspec'
+end
+
+group :legacy do
+  gem 'mysql2'
+  gem 'reverse_markdown'
+  gem 'nokogiri'
 end
 
 group :development, :test do
