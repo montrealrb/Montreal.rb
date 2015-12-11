@@ -1,1 +1,15 @@
-<h1>Events#index</h1>
+<h1>Events</h1>
+<ul>
+  <% @events.each do |event| %>
+    <li>
+      <%= event.title %>
+      <% if event.talks %>
+        <ul>
+          <% event.talks.each do |talk| %>
+            <%= talk.title %>
+          <% end %>
+        </ul>
+      <% end %>
+    </li>
+  <% end  %>
+</ul>
