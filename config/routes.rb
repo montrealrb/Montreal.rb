@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   devise_for :users,
     controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
 
+  # NOTE: temporary page, remove when pages admin module is finished
+  get '/about', to: 'pages#about', as: :about
+
   # NewsItem compatibility with old wordpress Posts url
   get "/:year/:month/:slug",
     to: "news_items#show",
