@@ -91,6 +91,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
+    concurrent-ruby (1.0.0)
     coveralls (0.8.9)
       json (~> 1.8)
       rest-client (>= 1.6.8, < 2)
@@ -326,7 +327,8 @@ GEM
     spring (1.4.4)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
-    sprockets (3.4.0)
+    sprockets (3.5.2)
+      concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (2.3.3)
       actionpack (>= 3.0)
@@ -402,6 +404,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-commands-rspec
+  sprockets (~> 3.0)
   sqlite3
   timecop
   turbolinks
