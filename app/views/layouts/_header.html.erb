@@ -9,9 +9,7 @@
           <span class="icon-bar"></span>
         </button>
 
-        <%= link_to root_url do %>
-          <!-- TODO : Bring back once we get the definitive logo on transparent background -->
-          <%#   <%= image_tag 'montreal-rb', class: 'navbar-brand' %1> %>
+        <%= link_to root_path do %>
           <h1>Montreal.rb</h1>
           <p class="hidden-sm hidden-xs">Montreal's Ruby Community</p>
         <% end %>
@@ -19,10 +17,8 @@
 
       <div class="collapse navbar-collapse" id="main-navbar">
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'Home', '#' %></li>
-          <li><%= link_to 'About', '#' %></li>
-          <li><%= link_to 'FAQ', '#' %></li>
-          <li><%= link_to 'Français', '#' %></li>
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'About', about_path %></li>
           <% if current_user %>
             <% if current_user.admin? %>
               <li><%= link_to 'Admin Area', admin_root_path %></li>
@@ -31,19 +27,6 @@
           <% else %>
             <li><%= link_to 'Sign up', new_user_registration_path %></li>
             <li><%= link_to 'Log in', new_user_session_path %></li>
-          <% end %>
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'Events', events_path %></li>
-          <li><%= link_to 'Talks', '#' %></li>
-          <li><%= link_to 'News', news_items_path %></li>
-          <li><%= link_to 'Members', '#' %></li>
-          <li><%= link_to 'Organization', '#' %></li>
-          <li><%= link_to 'Jobs', '#' %></li>
-
-          <%= simple_form_for :search, html: { class: 'navbar-form navbar-right' } do |f| %>
-            <%= f.input :q, as: :search, placeholder: 'Search', label: false %>
           <% end %>
         </ul>
       </div>
