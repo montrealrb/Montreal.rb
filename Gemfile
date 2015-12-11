@@ -65,7 +65,6 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'faker'
-  gem 'guard'
   gem 'guard-ctags-bundler'
   gem 'guard-rspec', require: false
   gem 'guard-rubocop'
