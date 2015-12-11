@@ -11,7 +11,7 @@ namespace :database do
     # $ heroku run rake database:legacy:import_news
     #
     desc "Import news records to database"
-    task :import_news => :environment do
+    task import_news: :environment do
       STDOUT.puts "This will destroy your news_items table. Enter 'Y' to confirm: [y/N]"
       input = STDIN.gets.chomp
       raise "Aborting import. You entered #{input}" unless input.downcase == "y"
@@ -40,7 +40,7 @@ namespace :database do
     # NOTE: This has normally been run by someone with access to the wordpress mysql database dump
     # The result is `db/legacy.yml`
     desc "Generate a yml files with legacy news records from wordpress mysql DB"
-    task :dump => :environment do
+    task dump: :environment do
       # database: montrealrb_wordpress
       # table: wp_posts
       # url: http://www.montrealrb.com/[post_date:YYYY]/[post_date:MM]/[post_name]
@@ -49,21 +49,20 @@ namespace :database do
 
       sanitized_records = records.to_a.map do |row|
         row.each do |k, v|
-          if k.to_s == "post_content"
-            doc = Nokogiri.HTML(v)
-            # Remove weird avatars
-            doc.css("img.alignleft").each do |el|
-              el.replace("")
-            end
-            # Remove non breaking spaces
-            nbsp = Nokogiri::HTML("&nbsp;").text
-            clean_html_content = doc.to_html
-            clean_html_content.gsub!(nbsp, " ")
-            # Remove line breaks
-            clean_html_content.gsub!("<br>", "")
-            # Update HTML
-            row[k] = ReverseMarkdown.convert clean_html_content
+          next unless k.to_s == "post_content"
+          doc = Nokogiri.HTML(v)
+          # Remove weird avatars
+          doc.css("img.alignleft").each do |el|
+            el.replace("")
           end
+          # Remove non breaking spaces
+          nbsp = Nokogiri::HTML("&nbsp;").text
+          clean_html_content = doc.to_html
+          clean_html_content.gsub!(nbsp, " ")
+          # Remove line breaks
+          clean_html_content.gsub!("<br>", "")
+          # Update HTML
+          row[k] = ReverseMarkdown.convert clean_html_content
         end
       end
       File.open("#{Rails.root}/db/legacy.yml", "w") do |f|

@@ -28,10 +28,9 @@ class Event < ActiveRecord::Base
     [title, date].join(' : ')
   end
 
-  #To change the behaviour in /admin/events/1/edit...
+  # To change the behaviour in /admin/events/1/edit...
   # driven by views/fields/enum_field/_show.html.erb
   def to_s
     title_with_date
   end
-
 end

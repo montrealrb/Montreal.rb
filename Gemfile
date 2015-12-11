@@ -77,4 +77,3 @@ group :development, :test do
 end
 
 gem 'coveralls', require: false, group: :test
-

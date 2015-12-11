@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   namespace :admin do
     DashboardManifest::DASHBOARDS.each do |dashboard_resource|
       resources dashboard_resource
@@ -9,15 +8,15 @@ Rails.application.routes.draw do
   end
 
   devise_for :users,
-    controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+             controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
 
   # NOTE: temporary page, remove when pages admin module is finished
   get '/about', to: 'pages#about', as: :about
 
   # NewsItem compatibility with old wordpress Posts url
   get "/:year/:month/:slug",
-    to: "news_items#show",
-    constraints: { year: /\d{4}/, month: /\d{2}/ }
+      to: "news_items#show",
+      constraints: { year: /\d{4}/, month: /\d{2}/ }
   resources :news_items, only: [:index, :show]
 
   resources :events, only: [:index, :show]

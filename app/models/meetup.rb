@@ -13,7 +13,6 @@ class Meetup < Event
   extend Globalized
 
   class NotScheduledYet
-
     def starts_at
       date = third_tuesday_of(Time.current)
       return third_tuesday_of(date.next_month) if date.end_of_day <= Time.current
@@ -27,7 +26,6 @@ class Meetup < Event
       date = date.succ until date.tuesday?
       (date + 2.weeks).in_time_zone + 20.hours
     end
-
   end
 
   translates :title, :introduction, :conclusion
