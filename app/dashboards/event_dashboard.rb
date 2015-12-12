@@ -49,6 +49,6 @@ class EventDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(event)
-     event.title
+    event.title
   end
 end

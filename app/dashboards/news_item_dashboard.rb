@@ -8,7 +8,7 @@ class NewsItemDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    #translations: Field::HasMany.with_options(class_name: "NewsItem::Translation"),
+    # translations: Field::HasMany.with_options(class_name: "NewsItem::Translation"),
     id: Field::Number,
     title: Field::String,
     body: Field::Text,

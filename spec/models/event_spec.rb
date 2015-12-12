@@ -12,7 +12,6 @@
 require "rails_helper"
 
 RSpec.describe Event, type: :model do
-
   describe "attribute validations" do
     it "does not validate when 'starts_at' is not defined" do
       event = Event.new(starts_at: nil)

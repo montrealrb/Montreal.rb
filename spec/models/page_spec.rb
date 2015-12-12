@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Page, :type => :model do
-
+RSpec.describe Page, type: :model do
   describe 'attribute validations' do
     it 'validates when the body is not defined' do
       page = build :page, body: nil
@@ -22,5 +21,4 @@ RSpec.describe Page, :type => :model do
   it 'defaults to a draft state' do
     expect(Page.new.state).to eq 'draft'
   end
-
 end

@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe PagesController, type: :controller do
-
   context 'when accessing a published page' do
     let(:published_page) { create :page, state: 'published' }
 
@@ -17,11 +16,10 @@ RSpec.describe PagesController, type: :controller do
 
     it 'raises a RecordNotFound error' do
       [draft_page, archived_page].each do |page|
-        expect{
+        expect do
           get :show, id: page
-        }.to raise_error ActiveRecord::RecordNotFound
+        end.to raise_error ActiveRecord::RecordNotFound
       end
     end
   end
-
 end

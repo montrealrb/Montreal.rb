@@ -1,7 +1,6 @@
 require "rails_helper"
 
 RSpec.describe NewsItemsController, type: :controller do
-
   describe 'GET #index' do
     # Published
     let!(:recent_item) { create(:news_item) }
