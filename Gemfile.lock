@@ -382,7 +382,6 @@ DEPENDENCIES
   font-awesome-sass
   globalize
   globalize-accessors
-  guard
   guard-ctags-bundler
   guard-rspec
   guard-rubocop
