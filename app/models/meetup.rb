@@ -33,6 +33,6 @@ class Meetup < Event
   validates_translated :title, :introduction, :conclusion, presence: true
 
   def self.next
-    order(starts_at: :asc).where('starts_at > ?', Time.now).first || NotScheduledYet.new
+    order(starts_at: :asc).where("starts_at > ?", Time.now).first || NotScheduledYet.new
   end
 end

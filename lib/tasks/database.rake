@@ -31,7 +31,7 @@ namespace :database do
         puts news_item.slug
         begin
           news_item.save!
-        rescue => e
+        rescue
           puts news_item.inspect
         end
       end
@@ -44,8 +44,11 @@ namespace :database do
       # database: montrealrb_wordpress
       # table: wp_posts
       # url: http://www.montrealrb.com/[post_date:YYYY]/[post_date:MM]/[post_name]
-      client = Mysql2::Client.new(host: "localhost", username: "root", database: "montrealrb_wordpress")
-      records = client.query("SELECT post_title, post_content, post_date, post_name FROM wp_posts WHERE post_status='publish'")
+      client = Mysql2::Client.new(host: "localhost",
+                                  username: "root",
+                                  database: "montrealrb_wordpress")
+      records = client.query("SELECT post_title, post_content, post_date, post_name
+                             FROM wp_posts WHERE post_status='publish'")
 
       sanitized_records = records.to_a.map do |row|
         row.each do |k, v|

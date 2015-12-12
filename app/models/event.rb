@@ -25,7 +25,7 @@ class Event < ActiveRecord::Base
 
   def title_with_date
     date = starts_at.strftime("%B %d")
-    [title, date].join(' : ')
+    [title, date].join(" : ")
   end
 
   # To change the behaviour in /admin/events/1/edit...
