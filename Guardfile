@@ -25,7 +25,7 @@ guard 'ctags-bundler', src_path: %w(app lib) do
   watch('Gemfile.lock')
 end
 
-guard :rubocop, cli: ['--rails'] do
+guard :rubocop do
   watch(/.+\.rb$/)
   watch(%r{(?:.+/)?\.rubocop\.yml$}) { |m| File.dirname(m[0]) }
 end

@@ -1,5 +1,11 @@
 inherit_from: .ruby-style.yml
 
+AllCops:
+  RunRailsCops: true
+  Exclude:
+    - 'db/schema.rb'
+    - 'bin/**/*'
+
 # Pending decision @ https://github.com/montrealrb/Montreal.rb/issues/131
 Style/StringLiterals:
   Enabled: false
