@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151204174632) do
+ActiveRecord::Schema.define(version: 20151213185304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,19 @@ ActiveRecord::Schema.define(version: 20151204174632) do
   add_index "events", ["location_id"], name: "index_events_on_location_id", using: :btree
   add_index "events", ["starts_at"], name: "index_events_on_starts_at", using: :btree
 
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
   create_table "jobs", force: :cascade do |t|
     t.string   "state"
     t.string   "title"
@@ -47,6 +60,7 @@ ActiveRecord::Schema.define(version: 20151204174632) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
+
 
   create_table "location_translations", force: :cascade do |t|
     t.integer  "location_id", null: false
@@ -112,9 +126,10 @@ ActiveRecord::Schema.define(version: 20151204174632) do
   add_index "page_translations", ["page_id"], name: "index_page_translations_on_page_id", using: :btree
 
   create_table "pages", force: :cascade do |t|
-    t.string   "state",      null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "state",                                 null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.string   "slug",       default: "temporary-slug", null: false
   end
 
   create_table "users", force: :cascade do |t|
