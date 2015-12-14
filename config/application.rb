@@ -1,4 +1,4 @@
-require File.expand_path('../boot', __FILE__)
+require File.expand_path("../boot", __FILE__)
 
 # Pick the frameworks you want:
 require "active_model/railtie"
@@ -15,7 +15,7 @@ Bundler.require(*Rails.groups)
 
 module MontrealRb
   class Application < Rails::Application
-    config.time_zone = 'America/Montreal'
+    config.time_zone = "America/Montreal"
 
     config.i18n.default_locale = :en
     config.i18n.available_locales = %i(en fr)

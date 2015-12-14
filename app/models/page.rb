@@ -7,5 +7,5 @@ class Page < ActiveRecord::Base
 
   enumerize :state, in: [:draft, :published, :archived], default: :draft
 
-  scope :published, -> { where(state: 'published') }
+  scope :published, -> { where(state: "published") }
 end
