@@ -1,8 +1,8 @@
 class CreateTalks < ActiveRecord::Migration
   def up
     create_table :talks do |t|
-      t.integer :state, default: 0
-      t.integer :level, default: 0
+      t.string :state
+      t.string :level
       t.string :slides_url
       t.references :event, index: true, foreign_key: true
 

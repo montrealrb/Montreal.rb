@@ -1,7 +1,12 @@
 class Talk < ActiveRecord::Base
+  extend Enumerize
+
   translates :title, :description
   belongs_to :event
 
-  enum state: [:proposed, :scheduled, :presented]
-  enum level: [:beginner, :intermediate, :advanced]
+  validates :title, presence: true
+  validates :event, presence: true
+
+  enumerize :state, in: [:proposed, :scheduled, :presented]
+  enumerize :level, in: [:beginner, :intermediate, :advanced]
 end
