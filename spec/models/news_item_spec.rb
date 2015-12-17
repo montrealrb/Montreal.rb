@@ -23,14 +23,14 @@ RSpec.describe NewsItem, type: :model do
   end
 
   describe "validation" do
-    it { should validate_presence_of(:title) }
+    it { is_expected.to validate_presence_of(:title) }
     it do
-      should validate_length_of(:title).
+      is_expected.to validate_length_of(:title).
         is_at_most(ActiveRecordExtensions::MAX_STRING_COLUMN_LENGTH)
     end
-    it { should validate_presence_of(:body) }
+    it { is_expected.to validate_presence_of(:body) }
     it do
-      should validate_length_of(:body).
+      is_expected.to validate_length_of(:body).
         is_at_most(ActiveRecordExtensions::MAX_TEXT_COLUMN_LENGTH)
     end
     context "for state" do

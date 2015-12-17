@@ -13,6 +13,9 @@ class NewsItem < ActiveRecord::Base
   # Extends
   extend Enumerize
 
+  # Constants
+  STATES = %w(draft published archived)
+
   # Scopes
   scope :published, -> { where(state: :published).order(published_at: :desc) }
 
@@ -31,7 +34,6 @@ class NewsItem < ActiveRecord::Base
             inclusion: { in: STATES }
 
   # Class methods
-  STATES = %w(draft published archived)
   enumerize :state, in: STATES
   to_param :title
 

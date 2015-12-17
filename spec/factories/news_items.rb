@@ -8,7 +8,7 @@ FactoryGirl.define do
 
     factory :draft_news_item do
       state :draft
-      body nil
+      body { Faker::Lorem.paragraph }
       published_at nil
     end
 
