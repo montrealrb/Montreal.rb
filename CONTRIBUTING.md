@@ -37,7 +37,6 @@ Some things that will increase the chance that your pull request is accepted:
 * Write tests.
 * Follow our [project's standards](#style-guides).
 * Write a [good commit message][commit].
-* Give Sophie a beer at the Benelux
 
 ## Style Guides
 

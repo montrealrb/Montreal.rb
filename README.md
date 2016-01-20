@@ -1,7 +1,4 @@
-FIRST LINE!
-# Toronto.rb website
-SECOND LINE TOO
-OMG IT'S NOT SECOND LINE ANYMORE!!
+# Montreal.rb website
 
 [![Build Status](https://travis-ci.org/montrealrb/Montreal.rb.svg)](https://travis-ci.org/montrealrb/Montreal.rb)
 [![Dependency Status](https://gemnasium.com/montrealrb/Montreal.rb.svg)](https://gemnasium.com/montrealrb/Montreal.rb)
@@ -93,8 +90,8 @@ Once successfully completed, this setup script will:
 
 __Set environment variables__
 
-Omniauth is used to allow users to log in to the site using GitHub accounts. To
-use the GitHub API, you must set environment variables for the GitHub 'key' and
+Omniauth is used to allow users to log in to the site using GitHub accounts. To 
+use the GitHub API, you must set environment variables for the GitHub 'key' and 
 'secret.'
 
 You can first obtain this key/secret [through your GitHub account](https://github.com/settings/applications/new).
@@ -102,7 +99,7 @@ You can first obtain this key/secret [through your GitHub account](https://githu
 Now you need to set the environment variables on your server. The procedure will
 depend on your system.
 
-On Unix-based systems using the bash shell, add the following to your `~/.bashrc`
+On Unix-based systems using the bash shell, add the following to your `~/.bashrc` 
 file, replacing the inside of the quotes with your key/secret:
 
 ```
