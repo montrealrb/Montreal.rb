@@ -1,7 +1,8 @@
-FIRST LINE!
-# Toronto.rb website
-SECOND LINE TOO
-OMG IT'S NOT SECOND LINE ANYMORE!!
+# Insults
+
+{ insert insults here }
+
+# Montreal.rb website
 
 [![Build Status](https://travis-ci.org/montrealrb/Montreal.rb.svg)](https://travis-ci.org/montrealrb/Montreal.rb)
 [![Dependency Status](https://gemnasium.com/montrealrb/Montreal.rb.svg)](https://gemnasium.com/montrealrb/Montreal.rb)
