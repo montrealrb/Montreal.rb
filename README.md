@@ -14,7 +14,7 @@ This is the Montreal.rb organization's website. It is still in development stage
 
 ### Runtime
 
-- ruby 2.2.3
+- ruby 2.2.4
 - Postgresql 9.3+
 
 ## Development Setup
@@ -27,7 +27,7 @@ $ git clone <your_fork> && cd Montreal.rb
 
 ### Ruby & Bundler
 
-You should have Ruby version `2.2.3` installed using your prefered Ruby version management tool (or by globally updating your system Ruby)
+You should have Ruby version `2.2.4` installed using your prefered Ruby version management tool (or by globally updating your system Ruby)
 
 __Most Popular Ruby Version Managers__
 
