@@ -3,11 +3,11 @@ require "rails_helper"
 RSpec.describe NewsItemsController, type: :controller do
   describe 'GET #index' do
     # Published
-    let!(:recent_item) { create(:news_item) }
-    let!(:older_item) { create(:news_item, published_at: 1.year.ago) }
+    let!(:recent_item) { create(:news_item, :published) }
+    let!(:older_item) { create(:news_item, :published, published_at: 1.year.ago) }
     # Unpublished
-    let!(:archived_item) { create(:archived_news_item) }
-    let!(:draft_item) { create(:draft_news_item) }
+    let!(:archived_item) { create(:news_item, :archived) }
+    let!(:draft_item) { create(:news_item, :draft) }
 
     before :each do
       get :index
@@ -32,7 +32,7 @@ RSpec.describe NewsItemsController, type: :controller do
 
   describe 'GET #show' do
     context "when accessing a published news_item" do
-      let(:published_news_item) { create :news_item }
+      let(:published_news_item) { create(:news_item, :published) }
 
       before :each do
         get :show, id: published_news_item
@@ -52,7 +52,7 @@ RSpec.describe NewsItemsController, type: :controller do
     end
 
     context "when clicking on a legacy link" do
-      let(:slugged_news_item) { create :slugged_news_item }
+      let(:slugged_news_item) { create(:news_item, :slugged, :published) }
 
       it "finds that legacy post" do
         get :show, year: 2014, month: 10, slug: slugged_news_item.slug
@@ -61,8 +61,8 @@ RSpec.describe NewsItemsController, type: :controller do
     end
 
     context "when accessing a non-published news_item" do
-      let(:draft_news_item) { create :draft_news_item }
-      let(:archived_news_item) { create :archived_news_item }
+      let(:archived_news_item) { create(:news_item, :archived) }
+      let(:draft_news_item) { create(:news_item, :draft) }
 
       it "raises a RecordNotFound error" do
         [draft_news_item, archived_news_item].each do |news_item|

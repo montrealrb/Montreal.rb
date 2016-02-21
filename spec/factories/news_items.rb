@@ -1,29 +1,29 @@
 FactoryGirl.define do
   # Default factory is a NewsItem that has just been published
   factory :news_item do
-    state :published
+    state { [:draft, :published, :archived].sample }
     title { Faker::Lorem.sentence }
     body { Faker::Lorem.paragraph }
-    published_at Time.now.utc
+    published_at { Faker::Date.backward(60) }
 
-    factory :draft_news_item do
+    trait :draft do
       state :draft
       body nil
       published_at nil
     end
 
-    factory :archived_news_item do
+    trait :published do
+      state :published
+      published_at { Faker::Date.backward(30) }
+    end
+
+    trait :archived do
       state :archived
-      published_at { 1.year.ago }
+      published_at { Faker::Date.backward(30) - 1.year }
     end
 
-    factory :slugged_news_item do
+    trait :slugged do
       slug { Faker::Internet.slug }
-    end
-
-    factory :invalid_news_item do
-      title nil
-      state nil
     end
   end
 end
