@@ -1,8 +1,10 @@
 FactoryGirl.define do
   factory :page do
+    state { [:draft, :published, :archived].sample }
+
+    # Translatable:
     title { Faker::Lorem.sentence }
     body { Faker::Lorem.paragraph }
-    state { [:draft, :published, :archived].sample }
 
     trait :draft do
       state :draft
