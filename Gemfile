@@ -70,6 +70,7 @@ group :development, :test do
   gem "guard-rubocop"
   gem "pry"
   gem "rspec-rails"
+  gem 'shoulda-matchers'
   gem "rubocop", require: false
   gem "sqlite3"
   gem "timecop"

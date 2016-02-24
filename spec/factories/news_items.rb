@@ -8,7 +8,7 @@ FactoryGirl.define do
 
     trait :draft do
       state :draft
-      body nil
+      body { Faker::Lorem.paragraph }
       published_at nil
     end
 

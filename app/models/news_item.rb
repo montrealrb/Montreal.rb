@@ -13,15 +13,28 @@ class NewsItem < ActiveRecord::Base
   # Extends
   extend Enumerize
 
+  # Constants
+  STATES = %w(draft published archived)
+
   # Scopes
   scope :published, -> { where(state: :published).order(published_at: :desc) }
 
   # Validations
-  validates :published_at, presence: true, if: -> { state.published? }
-  validates_presence_of :title, :state
+  validates :published_at,
+            presence: true,
+            if: -> { state.try(:published?) }
+  validates :title,
+            presence: true,
+            length: { maximum: MAX_STRING_COLUMN_LENGTH }
+  validates :body,
+            presence: true,
+            length: { maximum: MAX_TEXT_COLUMN_LENGTH }
+  validates :state,
+            presence: true,
+            inclusion: { in: STATES }
 
   # Class methods
-  enumerize :state, in: [:draft, :archived, :published]
+  enumerize :state, in: STATES
   to_param :title
 
   # Instance methods
