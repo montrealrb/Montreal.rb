@@ -21,6 +21,12 @@
 # Ignore Image uploads
 /public/uploads/
 
+# Ignore pow.cx configuration
+.powrc
+
+# Ignore RVM ruby gemset
+.ruby-gemset
+
 config/database.yml
 
 # ctags
