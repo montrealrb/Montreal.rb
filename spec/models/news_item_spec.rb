@@ -23,16 +23,33 @@ RSpec.describe NewsItem, type: :model do
   end
 
   describe "validation" do
-    it { is_expected.to validate_presence_of(:title) }
-    it do
-      is_expected.to validate_length_of(:title).
-        is_at_most(ActiveRecordExtensions::MAX_STRING_COLUMN_LENGTH)
+    subject { FactoryGirl.create(:news_item) }
+    it { is_expected.to validate_presence_of(:state) }
+
+    context "when published" do
+      subject { FactoryGirl.create(:news_item, :published) }
+
+      it { is_expected.to validate_presence_of(:published_at) }
+      it { is_expected.to validate_presence_of(:title) }
+      it do
+        is_expected.to validate_length_of(:title).
+          is_at_most(ActiveRecordExtensions::MAX_STRING_COLUMN_LENGTH)
+      end
+      it { is_expected.to validate_presence_of(:body) }
+      it do
+        is_expected.to validate_length_of(:body).
+          is_at_most(ActiveRecordExtensions::MAX_TEXT_COLUMN_LENGTH)
+      end
     end
-    it { is_expected.to validate_presence_of(:body) }
-    it do
-      is_expected.to validate_length_of(:body).
-        is_at_most(ActiveRecordExtensions::MAX_TEXT_COLUMN_LENGTH)
+
+    context "when draft" do
+      subject { FactoryGirl.create(:news_item, :draft) }
+
+      it { is_expected.to_not validate_presence_of(:published_at) }
+      it { is_expected.to_not validate_presence_of(:title) }
+      it { is_expected.to_not validate_presence_of(:body) }
     end
+
     context "for state" do
       NewsItem::STATES.each do |state|
         it "passes for value #{state}" do
