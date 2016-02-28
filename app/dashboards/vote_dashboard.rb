@@ -12,8 +12,8 @@ class VoteDashboard < Administrate::BaseDashboard
     user: Field::BelongsTo,
     id: Field::Number,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
-  }
+    updated_at: Field::DateTime
+  }.freeze
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -24,8 +24,8 @@ class VoteDashboard < Administrate::BaseDashboard
     :votable,
     :user,
     :id,
-    :created_at,
-  ]
+    :created_at
+  ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -36,8 +36,8 @@ class VoteDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :votable,
-    :user,
-  ]
+    :user
+  ].freeze
 
   # Overwrite this method to customize how votes are displayed
   # across all pages of the admin dashboard.
