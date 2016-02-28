@@ -8,8 +8,6 @@ FactoryGirl.define do
 
     trait :draft do
       state :draft
-      title nil
-      description nil
     end
 
     trait :published do
