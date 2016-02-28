@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @job.title %></h1>
+<div class="post-body">
+  <%= render_markdown_as_html @job.description %>
+</div>
+
+<%# TODO: render some company info here %>

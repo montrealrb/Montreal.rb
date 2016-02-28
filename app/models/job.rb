@@ -4,6 +4,8 @@ class Job < ActiveRecord::Base
 
   belongs_to :organization
 
+  scope :published, -> { where(state: :published).order(created_at: :desc) }
+
   enumerize :state, in: STATES, default: :draft
 
   validates :title,
