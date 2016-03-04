@@ -16,11 +16,13 @@
 }
 
 header {
-  background-color: #cb4349;
-  color: #19273a;
+  background-color: $header-bg-color;
+  color: $header-title-color;
 
   h1 {
     color: $header-title-color;
+    font-family: 'Roboto Mono';
+    letter-spacing: 2px;
   }
 
   p {

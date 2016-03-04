@@ -3,7 +3,8 @@ footer {
   margin-top: 20px;
   padding-top: 20px;
   padding-bottom: 10px;
-  background-color: #41679a;
+  background-color: $footer-bg-color;
+  font-family: 'Montserrat', serif;
   a, a:hover {
     color: #fff;
   }
