@@ -29,7 +29,7 @@ class TalkDashboard < Administrate::BaseDashboard
     :title,
     :state,
     :level,
-    :event
+    :event,
     :title
   ].freeze
 
@@ -46,10 +46,7 @@ class TalkDashboard < Administrate::BaseDashboard
     :event,
     :state,
     :level,
-    :slides_url
-    :bio,
-    :slides,
-    :author_id
+    :slides_url,
   ].freeze
 
   # Overwrite this method to customize how talks are displayed

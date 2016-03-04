@@ -16,7 +16,7 @@ class DashboardManifest
     :talks,
     :locations,
     :organizations,
-    :jobs
+    :jobs,
     :pages
   ].freeze
 
