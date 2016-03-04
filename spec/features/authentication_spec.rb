@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Authentication" do
   let(:user) { create(:user) }
-  let(:admin) { create(:admin) }
+  let(:admin) { create(:user, :admin) }
 
   context "Guest user" do
     scenario "Can sign up" do

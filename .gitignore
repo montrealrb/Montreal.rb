@@ -17,9 +17,16 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+/doc
 
 # Ignore Image uploads
 /public/uploads/
+
+# Ignore pow.cx configuration
+.powrc
+
+# Ignore RVM ruby gemset
+.ruby-gemset
 
 config/database.yml
 

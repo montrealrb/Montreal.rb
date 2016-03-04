@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "2.2.3"
+ruby "2.2.4"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "rails", "~> 4.2.2"
@@ -48,6 +48,8 @@ gem "administrate", "~> 0.1.1"
 # Ops
 gem "bugsnag"
 
+gem "reverse_markdown"
+
 group :development do
   gem "annotate"
   gem "quiet_assets"
@@ -57,7 +59,6 @@ end
 
 group :legacy do
   gem "mysql2"
-  gem "reverse_markdown"
   gem "nokogiri"
 end
 
@@ -70,6 +71,7 @@ group :development, :test do
   gem "guard-rubocop"
   gem "pry"
   gem "rspec-rails"
+  gem "shoulda-matchers"
   gem "rubocop", require: false
   gem "sqlite3"
   gem "timecop"
