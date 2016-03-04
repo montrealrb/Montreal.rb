@@ -6,10 +6,8 @@ FactoryGirl.define do
     title { Faker::Lorem.sentence }
     description { Faker::Lorem.paragraph }
 
-    trait :draft_job do
+    trait :draft do
       state :draft
-      title nil
-      description nil
     end
 
     trait :published do

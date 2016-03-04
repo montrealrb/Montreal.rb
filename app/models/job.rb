@@ -1,8 +1,11 @@
 class Job < ActiveRecord::Base
   extend Enumerize
+
   STATES = %w(draft published archived).freeze
 
   belongs_to :organization
+
+  scope :published, -> { where(state: :published).order(created_at: :desc) }
 
   enumerize :state, in: STATES, default: :draft
 

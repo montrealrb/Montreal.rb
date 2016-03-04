@@ -18,6 +18,7 @@
       <div class="collapse navbar-collapse" id="main-navbar">
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'Jobs', jobs_path %></li>
           <li><%= link_to 'About', about_path %></li>
           <% if current_user %>
             <% if current_user.admin? %>
