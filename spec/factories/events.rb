@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :event do
     association :location
 
-    starts_at { Faker::Date.between(30.days.ago, 30.days) }
+    starts_at { Faker::Date.between(30.days.ago, 30.days.from_now) }
 
     # Translatable:
     title { Faker::Lorem.sentence }
