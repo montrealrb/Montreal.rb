@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :job do
     association :organization
 
-    state { [:draft, :published, :archived].sample }
+    state { Job::STATES.sample }
     title { Faker::Lorem.sentence }
     description { Faker::Lorem.paragraph }
 

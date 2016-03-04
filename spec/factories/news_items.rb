@@ -1,7 +1,7 @@
 FactoryGirl.define do
   # Default factory is a NewsItem that has just been published
   factory :news_item do
-    state { [:draft, :published, :archived].sample }
+    state { Job::STATES.sample }
     title { Faker::Lorem.sentence }
     body { Faker::Lorem.paragraph }
     published_at { Faker::Date.backward(60) }
