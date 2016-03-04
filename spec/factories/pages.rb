@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :page do
-    state { [:draft, :published, :archived].sample }
+    state { Job::STATES.sample }
 
     # Translatable:
     title { Faker::Lorem.sentence }

@@ -5,7 +5,7 @@ class Job < ActiveRecord::Base
 
   belongs_to :organization
 
-  enumerize :state, in: STATES
+  enumerize :state, in: STATES, default: :draft
 
   validates :title,
             presence: true,
