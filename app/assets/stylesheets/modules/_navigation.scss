@@ -10,10 +10,11 @@
 .nav a { color: #fefeff; }
 
 .navbar-right {
-  background-color:#7f0f14;
+  background-color: $navbar-bg-color;
   color:#fff;
   margin-bottom: 0;
   border-width: 0;
+  font-family: 'Montserrat', serif;
 }
 
 .navbar-right a, .navbar-right .navbar-brand, #masthead h4 {
@@ -24,7 +25,7 @@
 }
 
 .navbar-right li > a:hover {
-  background-color: #cb4349;
+  background-color: $navbar-bg-highlight-color;
 }
 
 .navbar-toggle {

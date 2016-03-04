@@ -48,6 +48,8 @@ gem "administrate", "~> 0.1.1"
 # Ops
 gem "bugsnag"
 
+gem "reverse_markdown"
+
 group :development do
   gem "annotate"
   gem "quiet_assets"
@@ -57,7 +59,6 @@ end
 
 group :legacy do
   gem "mysql2"
-  gem "reverse_markdown"
   gem "nokogiri"
 end
 
