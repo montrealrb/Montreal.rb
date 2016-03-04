@@ -14,8 +14,8 @@ class OrganizationDashboard < Administrate::BaseDashboard
     logo: Field::String,
     description: Field::Text,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
-  }
+    updated_at: Field::DateTime
+  }.freeze
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -25,8 +25,8 @@ class OrganizationDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :name,
-    :address,
-  ]
+    :address
+  ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -39,8 +39,8 @@ class OrganizationDashboard < Administrate::BaseDashboard
     :name,
     :address,
     :logo,
-    :description,
-  ]
+    :description
+  ].freeze
 
   # Overwrite this method to customize how organizations are displayed
   # across all pages of the admin dashboard.

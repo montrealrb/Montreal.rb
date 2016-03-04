@@ -14,7 +14,7 @@ class PageDashboard < Administrate::BaseDashboard
     state: EnumField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
-  }
+  }.freeze
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -26,7 +26,7 @@ class PageDashboard < Administrate::BaseDashboard
     :title,
     :body,
     :state
-  ]
+  ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -38,8 +38,8 @@ class PageDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :title,
     :body,
-    :state,
-  ]
+    :state
+  ].freeze
 
   # Overwrite this method to customize how Pages are displayed
   # across all pages of the admin dashboard.

@@ -17,7 +17,8 @@ class DashboardManifest
     :locations,
     :organizations,
     :jobs
-  ]
+    :pages
+  ].freeze
 
   # `ROOT_DASHBOARD`
   # the name of the dashboard that will be displayed

@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class TalkDashboard < Administrate::BaseDashboard
+class VoteDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,13 +8,9 @@ class TalkDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    votable: Field::Polymorphic,
+    user: Field::BelongsTo,
     id: Field::Number,
-    title: Field::String,
-    description: Field::Text,
-    event: Field::BelongsTo,
-    state: EnumField,
-    level: EnumField,
-    slides_url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -25,12 +21,10 @@ class TalkDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
+    :votable,
+    :user,
     :id,
-    :title,
-    :state,
-    :level,
-    :event
-    :title
+    :created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -41,21 +35,14 @@ class TalkDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :title,
-    :description,
-    :event,
-    :state,
-    :level,
-    :slides_url
-    :bio,
-    :slides,
-    :author_id
+    :votable,
+    :user
   ].freeze
 
-  # Overwrite this method to customize how talks are displayed
+  # Overwrite this method to customize how votes are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(talk)
-    talk.title
-  end
+  # def display_resource(vote)
+  #   "Vote ##{vote.id}"
+  # end
 end

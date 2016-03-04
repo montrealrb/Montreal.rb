@@ -15,8 +15,8 @@ class NewsItemDashboard < Administrate::BaseDashboard
     state: EnumField,
     published_at: Field::DateTime,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
-  }
+    updated_at: Field::DateTime
+  }.freeze
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -28,8 +28,8 @@ class NewsItemDashboard < Administrate::BaseDashboard
     :title,
     :state,
     :updated_at,
-    :published_at,
-  ]
+    :published_at
+  ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -42,8 +42,8 @@ class NewsItemDashboard < Administrate::BaseDashboard
     :title,
     :body,
     :state,
-    :published_at,
-  ]
+    :published_at
+  ].freeze
 
   # Overwrite this method to customize how news items are displayed
   # across all pages of the admin dashboard.

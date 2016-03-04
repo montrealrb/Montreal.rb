@@ -1,6 +1,5 @@
 class Job < ActiveRecord::Base
   extend Enumerize
-
   STATES = %w(draft published archived).freeze
 
   belongs_to :organization

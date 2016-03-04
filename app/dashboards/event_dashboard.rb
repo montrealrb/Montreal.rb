@@ -16,7 +16,7 @@ class EventDashboard < Administrate::BaseDashboard
     title: Field::String,
     introduction: Field::Text,
     conclusion: Field::Text
-  }
+  }.freeze
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -27,8 +27,8 @@ class EventDashboard < Administrate::BaseDashboard
     :id,
     :title,
     :starts_at,
-    :location,
-  ]
+    :location
+  ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -42,8 +42,8 @@ class EventDashboard < Administrate::BaseDashboard
     :introduction,
     :conclusion,
     :starts_at,
-    :location,
-  ]
+    :location
+  ].freeze
 
   # Overwrite this method to customize how events are displayed
   # across all pages of the admin dashboard.
