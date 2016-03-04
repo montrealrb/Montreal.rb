@@ -14,8 +14,8 @@ class JobDashboard < Administrate::BaseDashboard
     state: EnumField,
     description: Field::Text,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
-  }
+    updated_at: Field::DateTime
+  }.freeze
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -26,8 +26,8 @@ class JobDashboard < Administrate::BaseDashboard
     :id,
     :state,
     :title,
-    :description,
-  ]
+    :description
+  ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -39,8 +39,8 @@ class JobDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :state,
     :title,
-    :description,
-  ]
+    :description
+  ].freeze
 
   # Overwrite this method to customize how locations are displayed
   # across all pages of the admin dashboard.

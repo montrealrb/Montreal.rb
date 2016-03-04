@@ -14,8 +14,8 @@ class CompanyDashboard < Administrate::BaseDashboard
     address: Field::String,
     logo: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
-  }
+    updated_at: Field::DateTime
+  }.freeze
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -26,8 +26,8 @@ class CompanyDashboard < Administrate::BaseDashboard
     :translations,
     :id,
     :name,
-    :address,
-  ]
+    :address
+  ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -40,8 +40,8 @@ class CompanyDashboard < Administrate::BaseDashboard
     :translations,
     :name,
     :address,
-    :logo,
-  ]
+    :logo
+  ].freeze
 
   # Overwrite this method to customize how companies are displayed
   # across all pages of the admin dashboard.

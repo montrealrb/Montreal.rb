@@ -17,8 +17,8 @@ class TalkDashboard < Administrate::BaseDashboard
     slides: Field::String,
     author_id: Field::Number,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
-  }
+    updated_at: Field::DateTime
+  }.freeze
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -29,8 +29,8 @@ class TalkDashboard < Administrate::BaseDashboard
     :votes,
     :author,
     :id,
-    :title,
-  ]
+    :title
+  ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -46,8 +46,8 @@ class TalkDashboard < Administrate::BaseDashboard
     :description,
     :bio,
     :slides,
-    :author_id,
-  ]
+    :author_id
+  ].freeze
 
   # Overwrite this method to customize how talks are displayed
   # across all pages of the admin dashboard.

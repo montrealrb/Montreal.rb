@@ -14,8 +14,8 @@ class MeetupDashboard < Administrate::BaseDashboard
     type: Field::String,
     starts_at: Field::DateTime,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
-  }
+    updated_at: Field::DateTime
+  }.freeze
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -26,8 +26,8 @@ class MeetupDashboard < Administrate::BaseDashboard
     :location,
     :translations,
     :id,
-    :type,
-  ]
+    :type
+  ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -40,8 +40,8 @@ class MeetupDashboard < Administrate::BaseDashboard
     :location,
     :translations,
     :type,
-    :starts_at,
-  ]
+    :starts_at
+  ].freeze
 
   # Overwrite this method to customize how meetups are displayed
   # across all pages of the admin dashboard.
