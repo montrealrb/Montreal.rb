@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   resources :events, only: [:index, :show]
   resources :organizations, only: [:index, :show]
+  resources :jobs, only: [:index, :show]
   resources :pages, only: [:show]
 
   root 'home#index'
