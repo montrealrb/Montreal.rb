@@ -10,6 +10,8 @@
 This is the Montreal.rb organization's website. It is still in development stage so you are welcome to contribute.
 You can join our [Slack Channel](https://montrealrb-slack.herokuapp.com/) if you have any question, need some help to get started or just hang around with friendly people.
 
+[![Throughput Graph](https://graphs.waffle.io/montrealrb/Montreal.rb/throughput.svg)](https://waffle.io/montrealrb/Montreal.rb/metrics)
+
 ## Requirements
 
 ### Runtime
