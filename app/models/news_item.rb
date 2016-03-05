@@ -10,6 +10,8 @@
 #   can still resolve: http://www.montrealrb.com/[post_date:YYYY]/[post_date:MM]/[post_name]
 #
 class NewsItem < ActiveRecord::Base
+  belongs_to :author, foreign_key: :user_id, class_name: "User"
+
   # Extends
   extend Enumerize
 
@@ -32,6 +34,7 @@ class NewsItem < ActiveRecord::Base
   validates :state,
             presence: true,
             inclusion: { in: STATES }
+  validates :author, presence: true
 
   # Class methods
   enumerize :state, in: STATES, default: :draft

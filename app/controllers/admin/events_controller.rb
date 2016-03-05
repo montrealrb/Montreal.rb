@@ -15,5 +15,11 @@ module Admin
 
     # See https://administrate-docs.herokuapp.com/customizing_controller_actions
     # for more information
+
+    private
+
+    def resource_params
+      super.merge(user_id: current_user.id)
+    end
   end
 end

@@ -12,12 +12,14 @@
 class Event < ActiveRecord::Base
   translates :title, :introduction, :conclusion
   belongs_to :location
-  # suggestion from Nicholas
+  belongs_to :author, foreign_key: :user_id, class_name: "User"
+
   to_param :title
 
   validates :title, presence: true
   validates :starts_at, presence: true
   validates :location, presence: true
+  validates :author, presence: true
 
   def self.published
     order(starts_at: :desc)
