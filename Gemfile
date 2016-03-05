@@ -14,7 +14,7 @@ gem "cloudinary"
 # Assets
 gem "devise", "~> 3.5.2"
 gem "omniauth-github"
-gem "autoprefixer-rails", "~> 6.1.0"
+gem "autoprefixer-rails", "~> 6.3"
 gem "bootstrap-sass", "~> 3.3.6"
 gem "font-awesome-sass"
 gem "coffee-rails", "~> 4.1.0"
