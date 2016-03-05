@@ -17,6 +17,8 @@
 #  updated_at             :datetime
 #
 class User < ActiveRecord::Base
+  DEFAULT_USER_EMAIL = "default.user@montrealrb.com".freeze
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -37,5 +39,18 @@ class User < ActiveRecord::Base
         user.email = data["email"] if user.email.blank?
       end
     end
+  end
+
+  def self.create_default_user!
+    User.create! email: User::DEFAULT_USER_EMAIL, password: "12345678"
+  end
+
+  def self.default_user
+    User.find_by(email: DEFAULT_USER_EMAIL)
+  end
+
+  # make it impossible for the default user to authenticate
+  def active_for_authentication?
+    super && email != DEFAULT_USER_EMAIL
   end
 end

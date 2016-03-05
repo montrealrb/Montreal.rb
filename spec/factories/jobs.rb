@@ -1,15 +1,14 @@
 FactoryGirl.define do
   factory :job do
     association :organization
+    association :author, factory: :user
 
     state { Job::STATES.sample }
     title { Faker::Lorem.sentence }
     description { Faker::Lorem.paragraph }
 
-    trait :draft_job do
+    trait :draft do
       state :draft
-      title nil
-      description nil
     end
 
     trait :published do

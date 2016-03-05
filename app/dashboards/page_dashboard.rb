@@ -12,6 +12,7 @@ class PageDashboard < Administrate::BaseDashboard
     title: Field::String,
     body: Field::Text,
     state: EnumField,
+    slug: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -25,7 +26,8 @@ class PageDashboard < Administrate::BaseDashboard
     :id,
     :title,
     :body,
-    :state
+    :state,
+    :slug
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

@@ -4,11 +4,13 @@
 [![Dependency Status](https://gemnasium.com/montrealrb/Montreal.rb.svg)](https://gemnasium.com/montrealrb/Montreal.rb)
 [![Code Climate](https://codeclimate.com/github/montrealrb/Montreal.rb/badges/gpa.svg)](https://codeclimate.com/github/montrealrb/Montreal.rb)
 [![Coverage Status](https://coveralls.io/repos/montrealrb/Montreal.rb/badge.svg?branch=master&service=github)](https://coveralls.io/github/montrealrb/Montreal.rb?branch=master)
-[![ZenHub] (https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)] (https://zenhub.io)
 
 ## Description
 
 This is the Montreal.rb organization's website. It is still in development stage so you are welcome to contribute.
+You can join our [Slack Channel](https://montrealrb-slack.herokuapp.com/) if you have any question, need some help to get started or just hang around with friendly people.
+
+[![Throughput Graph](https://graphs.waffle.io/montrealrb/Montreal.rb/throughput.svg)](https://waffle.io/montrealrb/Montreal.rb/metrics)
 
 ## Requirements
 
