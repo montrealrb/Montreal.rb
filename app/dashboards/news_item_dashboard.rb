@@ -12,7 +12,7 @@ class NewsItemDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     body: Field::Text,
-    state: EnumField,
+    state: Field::EnumField,
     published_at: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
