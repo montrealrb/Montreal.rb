@@ -27,10 +27,12 @@ class NewsItem < ActiveRecord::Base
             if: -> { state.try(:published?) }
   validates :title,
             presence: true,
-            length: { maximum: MAX_STRING_COLUMN_LENGTH }
+            length: { maximum: MAX_STRING_COLUMN_LENGTH },
+            if: -> { state.try(:published?) }
   validates :body,
             presence: true,
-            length: { maximum: MAX_TEXT_COLUMN_LENGTH }
+            length: { maximum: MAX_TEXT_COLUMN_LENGTH },
+            if: -> { state.try(:published?) }
   validates :state,
             presence: true,
             inclusion: { in: STATES }
