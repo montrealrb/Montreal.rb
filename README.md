@@ -11,7 +11,7 @@
 This is the Montreal.rb organization's website. It is still in development stage so you are welcome to contribute.
 You can join our [Slack Team](https://montrealrb-slack.herokuapp.com/) if you have any question, need some help to get started or just hang around with friendly people.
 
-Want to contribute? First thing to look at are the Issues with the `priority` label. You can optionnally use [Waffle.io](http://waffle.io/montrealrb/Montreal.rb) to see the development pipeline used to manage the project.
+Want to contribute? First thing to look at are the Issues with the [priority](https://github.com/montrealrb/Montreal.rb/labels/Priority) label. You can optionnally use [Waffle.io](http://waffle.io/montrealrb/Montreal.rb) to see the development pipeline used to manage the project.
 
 [![Throughput Graph](https://graphs.waffle.io/montrealrb/Montreal.rb/throughput.svg)](https://waffle.io/montrealrb/Montreal.rb/metrics)
 
