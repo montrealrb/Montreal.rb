@@ -10,7 +10,7 @@ class PageDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     title: Field::String,
-    body: Field::Text,
+    body: MarkdownField,
     state: EnumField,
     slug: Field::String,
     created_at: Field::DateTime,
