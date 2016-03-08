@@ -11,6 +11,7 @@ class EventDashboard < Administrate::BaseDashboard
     location: Field::BelongsTo,
     id: Field::Number,
     starts_at: Field::DateTime,
+    state: EnumField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     title: Field::String,
@@ -26,6 +27,7 @@ class EventDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
+    :state,
     :starts_at,
     :location
   ].freeze
@@ -41,6 +43,7 @@ class EventDashboard < Administrate::BaseDashboard
     :title,
     :introduction,
     :conclusion,
+    :state,
     :starts_at,
     :location
   ].freeze
