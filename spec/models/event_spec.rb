@@ -2,8 +2,10 @@ require "rails_helper"
 
 RSpec.describe Event, type: :model do
 
-  it { is_expected.to respond_to :starts_at, :location, :title, :author,
-                                 :introduction, :conclusion, :state }
+  it do
+    is_expected.
+      to respond_to :starts_at, :location, :title, :author, :introduction, :conclusion, :state
+  end
 
   describe "attribute validations" do
     it { is_expected.to validate_presence_of :starts_at }
