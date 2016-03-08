@@ -10,12 +10,12 @@ FactoryGirl.define do
     introduction { Faker::Lorem.sentence }
     conclusion { Faker::Lorem.paragraph }
 
-    trait :upcoming do
-      starts_at { Faker::Date.forward(14) }
+    trait :proposed do
+      state "proposed"
     end
 
-    trait :past do
-      starts_at { Faker::Date.backward(14) }
+    trait :scheduled do
+      state "scheduled"
     end
   end
 end
