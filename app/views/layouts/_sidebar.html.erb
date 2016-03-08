@@ -5,7 +5,7 @@
       <h4 class='meetup-title'><%= link_to event.title_with_date, event %></h4>
       <div class="meetup-body">
         <p>
-          <%= truncate(event.introduction, length: 400) %>
+          <%= truncate(event.body, length: 400) %>
         </p>
         <p>
           <%= link_to 'Please RSVP', '#' %>

@@ -16,7 +16,8 @@ class EventDashboard < Administrate::BaseDashboard
     updated_at: Field::DateTime,
     title: Field::String,
     introduction: Field::Text,
-    conclusion: Field::Text
+    conclusion: Field::Text,
+    body: Field::Text
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -44,6 +45,7 @@ class EventDashboard < Administrate::BaseDashboard
     :introduction,
     :conclusion,
     :state,
+    :body,
     :starts_at,
     :location
   ].freeze

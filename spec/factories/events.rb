@@ -9,6 +9,7 @@ FactoryGirl.define do
     title { Faker::Lorem.sentence }
     introduction { Faker::Lorem.sentence }
     conclusion { Faker::Lorem.paragraph }
+    body { Faker::Lorem.paragraph }
 
     trait :proposed do
       state "proposed"
