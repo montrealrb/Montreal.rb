@@ -17,5 +17,13 @@ FactoryGirl.define do
     trait :past do
       starts_at { Faker::Date.backward(14) }
     end
+
+    trait :proposed do
+      state "proposed"
+    end
+
+    trait :scheduled do
+      state "scheduled"
+    end
   end
 end
