@@ -14,7 +14,7 @@ RSpec.describe Event, type: :model do
     it { is_expected.to validate_presence_of :author    }
     it { is_expected.to validate_presence_of :state     }
 
-    it { is_expected.to validate_inclusion_of(:state).in_array Event::STATES}
+    it { is_expected.to validate_inclusion_of(:state).in_array Event::STATES }
   end
 
   context "when an event is authored" do
