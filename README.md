@@ -4,11 +4,16 @@
 [![Dependency Status](https://gemnasium.com/montrealrb/Montreal.rb.svg)](https://gemnasium.com/montrealrb/Montreal.rb)
 [![Code Climate](https://codeclimate.com/github/montrealrb/Montreal.rb/badges/gpa.svg)](https://codeclimate.com/github/montrealrb/Montreal.rb)
 [![Coverage Status](https://coveralls.io/repos/montrealrb/Montreal.rb/badge.svg?branch=master&service=github)](https://coveralls.io/github/montrealrb/Montreal.rb?branch=master)
+[![Stories in Priority](https://badge.waffle.io/montrealrb/Montreal.rb.svg?label=priority&title=Priority)](http://waffle.io/montrealrb/Montreal.rb)
 
 ## Description
 
 This is the Montreal.rb organization's website. It is still in development stage so you are welcome to contribute.
-You can join our [Slack Channel](https://montrealrb-slack.herokuapp.com/) if you have any question, need some help to get started or just hang around with friendly people.
+You can join our [Slack Team](https://montrealrb-slack.herokuapp.com/) if you have any question, need some help to get started or just hang around with friendly people.
+
+Want to contribute? First thing to look at are the Issues with the [priority](https://github.com/montrealrb/Montreal.rb/labels/Priority) label. You can optionnally use [Waffle.io](http://waffle.io/montrealrb/Montreal.rb) to see the development pipeline used to manage the project.
+
+[![Throughput Graph](https://graphs.waffle.io/montrealrb/Montreal.rb/throughput.svg)](https://waffle.io/montrealrb/Montreal.rb/metrics)
 
 ## Requirements
 

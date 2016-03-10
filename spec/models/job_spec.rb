@@ -12,6 +12,7 @@ RSpec.describe Job, type: :model do
       is_expected.to validate_length_of(:description).
         is_at_most(ActiveRecordExtensions::MAX_TEXT_COLUMN_LENGTH)
     end
+
     context "for state" do
       Job::STATES.each do |state|
         it "passes for value #{state}" do
@@ -34,6 +35,22 @@ RSpec.describe Job, type: :model do
         expect(job).to_not be_valid
         expect(job.errors.messages[:state]).to be_present
       end
+    end
+
+    context "for author" do
+      it "does not validate when 'author' is not defined" do
+        job = Job.new(author: nil)
+        expect(job).to be_invalid
+        expect(job.errors.messages.keys).to include :author
+      end
+    end
+  end
+
+  describe "when a job is authored" do
+    it "knows about its author" do
+      author = create(:user)
+      job = create(:job, author: author)
+      expect(job.author).to eq author
     end
   end
 end

@@ -1,28 +1,25 @@
-# == Schema Information
-#
-# Table name: events
-#
-#  id         :integer          not null, primary key
-#  type       :string(255)      not null
-#  starts_at  :datetime         not null
-#  created_at :datetime
-#  updated_at :datetime
-#
-
 class Event < ActiveRecord::Base
+  extend Enumerize
+  STATES = %w(proposed scheduled).freeze
+
   translates :title, :introduction, :conclusion
   belongs_to :location
-  has_many :talks
-  # suggestion from Nicholas
+  belongs_to :author, foreign_key: :user_id, class_name: "User"
+  has_many   :talks
+
   to_param :title
 
   validates :title, presence: true
   validates :starts_at, presence: true
   validates :location, presence: true
+  validates :author, presence: true
+  validates :state,
+            presence: true,
+            inclusion: { in: STATES }
 
-  def self.published
-    order(starts_at: :desc)
-  end
+  enumerize :state, in: STATES, default: :proposed
+
+  scope :published, -> { where(state: "scheduled").order(starts_at: :desc) }
 
   def title_with_date
     date = starts_at.strftime("%B %d")
