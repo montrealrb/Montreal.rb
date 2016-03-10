@@ -25,10 +25,6 @@ class Event < ActiveRecord::Base
 
   has_many :members
 
-  def self.published
-    order(starts_at: :desc)
-  end
-
   def title_with_date
     date = starts_at.strftime("%B %d")
     [title, date].join(" : ")
