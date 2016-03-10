@@ -2,7 +2,8 @@ class Event < ActiveRecord::Base
   extend Enumerize
   STATES = %w(proposed scheduled).freeze
 
-  translates :title, :introduction, :conclusion
+  translates :title, :body
+
   belongs_to :location
   belongs_to :author, foreign_key: :user_id, class_name: "User"
   has_many   :talks, -> { where(state: "scheduled") }, class_name: "Talk"
@@ -16,6 +17,7 @@ class Event < ActiveRecord::Base
   validates :state,
             presence: true,
             inclusion: { in: STATES }
+  validates :body, presence: true
 
   enumerize :state, in: STATES, default: :proposed
 
@@ -26,7 +28,10 @@ class Event < ActiveRecord::Base
     [title, date].join(" : ")
   end
 
-  # To change the behaviour in /admin/events/1/edit...
+  def date
+    starts_at.strftime("%B %d")
+  end
+
   # driven by views/fields/enum_field/_show.html.erb
   def to_s
     title_with_date

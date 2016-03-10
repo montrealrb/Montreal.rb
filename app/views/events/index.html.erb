@@ -1,8 +1,11 @@
-<h1>Events</h1>
-<ul>
-  <% @events.each do |event| %>
-    <li>
-      <%= event.title %>
+<% @events.each do |event| %>
+  <div class="post clearfix">
+    <h2 class="post-title"><%= link_to event.title, event_path(event)%></h2>
+    <p class="meta">
+      Starts: <%= event.date %>
+    </p>
+    <div class="post-body">
+      <%= render_markdown_as_html(event.body)%>
       <% if event.talks %>
         <ul>
           <% event.talks.each do |talk| %>
@@ -10,6 +13,6 @@
           <% end %>
         </ul>
       <% end %>
-    </li>
-  <% end  %>
-</ul>
+    </div>
+  </div>
+<% end %>

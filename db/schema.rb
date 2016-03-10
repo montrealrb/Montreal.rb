@@ -17,13 +17,12 @@ ActiveRecord::Schema.define(version: 20160308004823) do
   enable_extension "plpgsql"
 
   create_table "event_translations", force: :cascade do |t|
-    t.integer  "event_id",     null: false
-    t.string   "locale",       null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.string   "title",        null: false
-    t.text     "introduction"
-    t.text     "conclusion"
+    t.integer  "event_id",   null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "title",      null: false
+    t.text     "body"
   end
 
   add_index "event_translations", ["event_id"], name: "index_event_translations_on_event_id", using: :btree
