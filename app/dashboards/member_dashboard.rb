@@ -30,7 +30,7 @@ class MemberDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :events,
     :organizations,
-    :user,
+    #:user,
     :id,
   ].freeze
 
@@ -44,7 +44,7 @@ class MemberDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :events,
     :organizations,
-    :user,
+    #:user,
     :name,
     :email,
     :picture,

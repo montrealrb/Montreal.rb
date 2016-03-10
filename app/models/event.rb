@@ -7,6 +7,7 @@ class Event < ActiveRecord::Base
   belongs_to :location
   belongs_to :author, foreign_key: :user_id, class_name: "User"
   has_many   :talks, -> { where(state: "scheduled") }, class_name: "Talk"
+  has_and_belongs_to_many :members
 
   to_param :title
 
@@ -22,8 +23,6 @@ class Event < ActiveRecord::Base
   enumerize :state, in: STATES, default: :proposed
 
   scope :published, -> { where(state: "scheduled").order(starts_at: :desc) }
-
-  has_many :members
 
   def title_with_date
     date = starts_at.strftime("%B %d")
