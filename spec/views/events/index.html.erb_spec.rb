@@ -16,6 +16,6 @@ describe "events/index.html.erb" do
     assign(:events, [event])
     render
 
-    expect(rendered).to have_link "#{event.title}", href: event_path(event)
+    expect(rendered).to have_link event.title.to_s, href: event_path(event)
   end
 end
