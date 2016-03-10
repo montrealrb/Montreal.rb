@@ -20,7 +20,7 @@ class MemberDashboard < Administrate::BaseDashboard
     biography: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-  }
+  }.freeze
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -32,7 +32,7 @@ class MemberDashboard < Administrate::BaseDashboard
     :organizations,
     :user,
     :id,
-  ]
+  ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -51,7 +51,7 @@ class MemberDashboard < Administrate::BaseDashboard
     :twitter_handle,
     :github_handle,
     :biography,
-  ]
+  ].freeze
 
   # Overwrite this method to customize how members are displayed
   # across all pages of the admin dashboard.
