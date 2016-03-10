@@ -6,6 +6,13 @@
     </p>
     <div class="post-body">
       <%= render_markdown_as_html(event.body)%>
+      <% if event.talks %>
+        <ul>
+          <% event.talks.each do |talk| %>
+            <%= talk.title %>
+          <% end %>
+        </ul>
+      <% end %>
     </div>
   </div>
 <% end %>

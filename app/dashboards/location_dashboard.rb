@@ -8,7 +8,6 @@ class LocationDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    translations: Field::HasMany.with_options(class_name: "Location::Translation"),
     id: Field::Number,
     name: Field::String,
     address: Field::Text,
@@ -23,7 +22,6 @@ class LocationDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :translations,
     :id,
     :name,
     :address

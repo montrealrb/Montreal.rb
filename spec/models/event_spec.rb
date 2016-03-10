@@ -1,10 +1,23 @@
 require "rails_helper"
 
 RSpec.describe Event, type: :model do
+  let(:event) { FactoryGirl.create(:event) }
+  let(:talks) { FactoryGirl.create_list(:talk, 5, event: event) }
 
-  it do
-    is_expected.
-      to respond_to :starts_at, :location, :title, :author, :body, :state
+  describe "attributes" do
+    it do
+      is_expected.
+        to respond_to :starts_at, :location, :title, :author, :body, :state
+    end
+
+    it { is_expected.to have_many :talks    }
+    it { is_expected.to belong_to :location }
+    it { is_expected.to belong_to :author   }
+
+    it "includes only scheduled talks" do
+      expect(event.talks).to     match talks.select { |t| t.state == "scheduled" }
+      expect(event.talks).to_not match talks.select { |t| t.state == "proposed"  }
+    end
   end
 
   describe "attribute validations" do
