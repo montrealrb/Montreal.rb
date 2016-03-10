@@ -5,7 +5,7 @@ class Event < ActiveRecord::Base
   translates :title, :introduction, :conclusion
   belongs_to :location
   belongs_to :author, foreign_key: :user_id, class_name: "User"
-  has_many   :talks
+  has_many   :talks, -> { where(state: "scheduled") }, class_name: "Talk"
 
   to_param :title
 
