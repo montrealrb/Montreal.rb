@@ -6,15 +6,15 @@
 
 @import "mixins/colors";
 
-@import 'layouts/default';
+@import "layouts/default";
 
-@import 'components/post';
-@import 'components/meetup';
-@import 'components/event';
+@import "components/post";
+@import "components/meetup";
+@import "components/event";
 
-@import 'modules/header';
-@import 'modules/navigation';
-@import 'modules/main';
-@import 'modules/sidebar';
-@import 'modules/footer';
-@import 'modules/alert';
+@import "modules/header";
+@import "modules/navigation";
+@import "modules/main";
+@import "modules/sidebar";
+@import "modules/footer";
+@import "modules/alert";
