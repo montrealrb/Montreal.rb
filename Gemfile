@@ -1,62 +1,82 @@
-source 'https://rubygems.org'
-ruby '2.2.3'
+source "https://rubygems.org"
+ruby "2.2.4"
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2.2'
 
 # Database
-gem 'pg'
+gem "pg"
 
 # Uploads
-gem 'carrierwave'
-gem 'cloudinary'
+gem "carrierwave"
+gem "cloudinary"
 
 # Assets
-gem "devise"
-gem 'autoprefixer-rails','~> 6.1.0'
-gem 'bootstrap-sass'
+gem "autoprefixer-rails", "~> 6.3"
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-sass'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
+gem 'sprockets', '~> 3.0'
+
+# Application
+gem 'rails', '~> 4.2.2'
+gem 'omniauth-github'
+gem 'friendly_id', '~> 5.1.0'
+gem 'devise', '~> 3.5.2'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+gem "turbolinks"
 
 # View
-gem 'simple_form'
+gem "simple_form"
+gem "enumerize"
+gem "redcarpet"
 
 # Server
-gem 'unicorn'
+gem "unicorn"
+gem "newrelic_rpm", group: :production
 
 # Heroku Assets
-gem 'rails_12factor', group: :production
+gem "rails_12factor", group: :production
 
 # Globalization/Localization
-gem 'globalize'
-gem 'globalize-accessors'
+gem "globalize"
+gem "globalize-accessors"
 
 # Administration
-gem 'administrate', '~> 0.1.1'
+gem "administrate", "~> 0.1.1"
+
+# Ops
+gem "bugsnag"
+
+gem "reverse_markdown"
 
 group :development do
-  gem 'annotate'
-  gem 'spring'
-  gem 'spring-commands-rspec'
+  gem "annotate"
+  gem "quiet_assets"
+  gem "spring"
+  gem "spring-commands-rspec"
+end
+
+group :legacy do
+  gem "mysql2"
+  gem "nokogiri"
 end
 
 group :development, :test do
-  gem 'factory_girl_rails'
-  gem 'faker'
-  gem 'guard'
-  gem 'guard-ctags-bundler'
-  gem 'guard-rspec', require: false
-  gem 'pry'
-  gem 'rspec-rails'
-  gem 'sqlite3'
-  gem 'timecop'
+  gem "capybara"
+  gem "factory_girl_rails"
+  gem "faker"
+  gem "guard-ctags-bundler"
+  gem "guard-rspec", require: false
+  gem "guard-rubocop"
+  gem "pry"
+  gem "rspec-rails"
+  gem "shoulda-matchers"
+  gem "rubocop", require: false
+  gem "sqlite3"
+  gem "timecop"
 end
 
-gem 'coveralls', require: false, group: :test
-
+gem "coveralls", require: false, group: :test

@@ -1,35 +1,40 @@
 <header>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <h1>Montreal.rb</h1>
-        <p class="lead">Montreal's Ruby Community</p>
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <%= link_to root_path do %>
+          <h1>Montreal.rb</h1>
+          <p class="hidden-sm hidden-xs">Montreal's Ruby Community</p>
+        <% end %>
       </div>
-      <div class="col-md-8 col-md-offset-1">
-        <div class="row">
-          <ul class="nav nav-pills pull-right">
-            <li><%= link_to 'Home', '#' %></li>
-            <li><%= link_to 'Sign up', '#' %></li>
-            <li><%= link_to 'Login', '#' %></li>
-            <li><%= link_to 'About', '#' %></li>
-            <li><%= link_to 'FAQ', '#' %></li>
-            <li><%= link_to 'Français', '#' %></li>
-          </ul>
-        </div>
-        <div class="search-form row">
-          <%= simple_form_for :search do |f| %>
-            <%= f.input :q, as: :search, placeholder: 'search', label: false %>
-          <% end -%>
-        </div>
-        <ul class="nav nav-pills">
-          <li><%= link_to 'Events', '#' %></li>
-          <li><%= link_to 'Talks', '#' %></li>
-          <li><%= link_to 'News', '#' %></li>
-          <li><%= link_to 'Members', '#' %></li>
-          <li><%= link_to 'Organization', '#' %></li>
-          <li><%= link_to 'Jobs', '#' %></li>
+
+      <div class="collapse navbar-collapse" id="main-navbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to 'Home', root_path %></li>
+          <% if Job.published.any? %>
+            <li><%= link_to 'Jobs', jobs_path %></li>
+          <% end %>
+          <li><%= link_to 'About', about_path %></li>
+          <% if Event.published.any? %>
+            <li><%= link_to 'Events', events_path %></li>
+          <% end %>
+          <% if current_user %>
+            <% if current_user.admin? %>
+              <li><%= link_to 'Admin Area', admin_root_path %></li>
+            <% end %>
+            <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'Log in', new_user_session_path %></li>
+          <% end %>
         </ul>
       </div>
     </div>
-  </div>
+  </nav>
 </header>

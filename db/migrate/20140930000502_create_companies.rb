@@ -1,4 +1,8 @@
 class CreateCompanies < ActiveRecord::Migration
+  class Company < ActiveRecord::Base
+    translates :description
+  end
+
   def up
     create_table :companies do |t|
       t.string :name, null: false
@@ -12,6 +16,6 @@ class CreateCompanies < ActiveRecord::Migration
 
   def down
     drop_table :companies
-    Company.drop_tranlation_table!
+    Company.drop_translation_table!
   end
 end

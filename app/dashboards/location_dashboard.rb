@@ -11,12 +11,10 @@ class LocationDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     address: Field::Text,
-    description: Field::Text,
-    directions: Field::Text,
     url: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
-  }
+    updated_at: Field::DateTime
+  }.freeze
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -26,8 +24,8 @@ class LocationDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :name,
-    :address,
-  ]
+    :address
+  ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -39,10 +37,8 @@ class LocationDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :name,
     :address,
-    :url,
-    :description,
-    :directions
-  ]
+    :url
+  ].freeze
 
   # Overwrite this method to customize how locations are displayed
   # across all pages of the admin dashboard.

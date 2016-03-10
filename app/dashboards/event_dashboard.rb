@@ -11,12 +11,12 @@ class EventDashboard < Administrate::BaseDashboard
     location: Field::BelongsTo,
     id: Field::Number,
     starts_at: Field::DateTime,
+    state: EnumField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     title: Field::String,
-    introduction: Field::Text,
-    conclusion: Field::Text
-  }
+    body: Field::Text
+  }.freeze
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -26,9 +26,10 @@ class EventDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
+    :state,
     :starts_at,
-    :location,
-  ]
+    :location
+  ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -39,16 +40,16 @@ class EventDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :title,
-    :introduction,
-    :conclusion,
+    :state,
+    :body,
     :starts_at,
-    :location,
-  ]
+    :location
+  ].freeze
 
   # Overwrite this method to customize how events are displayed
   # across all pages of the admin dashboard.
   #
   def display_resource(event)
-     event.title
+    event.title
   end
 end

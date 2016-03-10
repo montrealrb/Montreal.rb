@@ -1,17 +1,52 @@
 @media screen and (min-width: 768px) {
-  #masthead h1 {
-    font-size: 80px;
+  .navbar-brand {
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    margin-top: 5px;
+    padding-left: 10px;
+  }
+
+  .navbar-collapse {
+    border-color: $header-title-color;
   }
 }
 
 header {
-  background-color: #cb4349;
-  color: #19273a;
+  background-color: $header-bg-color;
+  color: $header-title-color;
 
   h1 {
-    font-size: 55px;
-    line-height: 1;
-    color: #fefeff;
+    color: $header-title-color;
+    font-family: 'Roboto Mono';
+    letter-spacing: 2px;
   }
 
+  p {
+    color: #EEEEEE;
+  }
+
+  .navbar-brand {
+    padding: 5px;
+  }
+
+  .navbar-toggle,
+  .icon-bar {
+    border: 1px solid $header-title-color;
+  }
+
+  .navbar-toggle:hover {
+    background-color: transparent;
+  }
+
+  a,
+  a:hover,
+  a:focus,
+  a:visited {
+    color: $header-title-color;
+    text-decoration: none;
+  }
 }

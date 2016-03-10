@@ -1,50 +1,11 @@
-<div class="post clearfix">
-  <h2 class="post-title"><%= link_to 'So Long, and Thanks for All the Fish', '#' %></h2>
-  <p class="meta">
-    Posted on November 18 in <%= link_to 'News', '#' %> by <%= link_to 'Martin', '#' %>
-  </p>
-  <div class="post-body">
-    <p>Hey fellow Rubyist,</p>
-    <p>Yesterday was my last meet-up as a Montreal.rb organizer. After 4.5 years of taking care of our group, it’s time for me to pass the torch.</p>
-    <p>I remember so much from all the time I spent volunteering for Montreal.rb. The group grew during my tenure and we frequently had new faces, an achievement that I’m really proud of. We also had great projects like Railsbridge and Office Hours. Those are proof of our dynamic community here in Montreal. I would like to thank everyone who attended one of our events, those who spent time helping me organize Montreal.rb, and especially those who had the courage to give a talk.</p>
-    <p>Does that mean that Montreal.rb will die? I don’t think so. I’m leaving because I believe our community is ready to grow without me supporting it on my shoulders. I’ll be honest here: organizing Montreal.rb takes a lot more time than what you would think. If you like our group and you want to see it survive, please get involved. Do not let only one person be responsible for our group, it’s really hard to do. You don’t need to spend as much time as I did – organizing 1 meet-up here and there is enough to help the organizers.</p>
-    <p>What is next for me? Where will I get involved next? Honestly, I don’t know. I’m working and having fun at Sharethebus – we are hiring btw <img src="http://www.montrealrb.com/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley">  – that’s a start. I’ll maybe have time to do some open source, who knows?</p>
-    <p>Anyhow, I’ll see you at the next Montreal.rb meet-up where I’ll be only an attendee – a first since 2011.</p>
-    <p>Take care of our group for me,</p>
-    <p>Martin</p>
-    <p>
-      <%= link_to icon('caret-right', 'Read More'), '#', class: 'btn btn-primary pull-right' %>
+<% @news_items.each do |news_item| %>
+  <div class="post clearfix">
+    <h2 class="post-title"><%= link_to news_item.title, news_item_path(news_item) %></h2>
+    <p class="meta">
+      Posted <%= time_ago_in_words(news_item.published_at) %> ago
     </p>
+    <div class="post-body">
+      <%= render_markdown_as_html news_item.body %>
+    </div>
   </div>
-</div>
-<div class="post clearfix">
-  <h2 class="post-title"><%= link_to 'Rails Workshop', '#' %></h2>
-  <p class="meta">
-    Posted on November 10 in <%= link_to 'Events', '#' %> by <%= link_to 'Sophie', '#' %>
-  </p>
-  <ul class='list-unstyled'>
-    <li>When: Tuesday November 24, 2015 from 6:30pm to 10:30pm</li>
-    <li>Where: Centre Cloud.ca, 420 rue Guy, Montreal</li>
-    <li>Who: Everybody interested in building a Rails website</li>
-    <li>How much: Free! Pizza and beer offered by AdGear</li>
-  </ul>
-  <div class="post-body">
-    <p>
-      This workshop is a couple hours sprint to help us have a brand new Rails website!!
-    </p>
-    <p>
-      Experienced and new Ruby on Rails developpers are welcome to pair together to work on the features we need to publish the website.
-    </p>
-    <p>
-      You must bring your own laptop with Ruby on Rails, PostgreSQL and Git installed.<br>
-      You should clone the existing repository (https://github.com/montrealrb/Montreal.rb) and create your github account if you don’t already have one.<br>
-      Experienced Rails developpers should be able to run the webserver before the event.
-    </p>
-    <p>
-      If you have some problems with any of the requirered installations, we might be able to help you or you can pair with somebody else on their computer.
-    </p>
-    <p>
-      <%= link_to icon('caret-right', 'Read More'), '#', class: 'btn btn-primary pull-right' %>
-    </p>
-  </div>
-</div>
+<% end %>

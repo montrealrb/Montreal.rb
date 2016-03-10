@@ -10,10 +10,14 @@ class DashboardManifest
   # Dashboards returned from this method must be Rails models for Administrate
   # to work correctly.
   DASHBOARDS = [
+    :news_items,
+    :events,
+    :talks,
     :locations,
-    :members,
-    :events
-  ]
+    :jobs,
+    :organizations,
+    :pages
+  ].freeze
 
   # `ROOT_DASHBOARD`
   # the name of the dashboard that will be displayed

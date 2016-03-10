@@ -9,22 +9,23 @@
 
 .nav a { color: #fefeff; }
 
-.navbar-bright {
-  background-color:#7f0f14;
+.navbar-right {
+  background-color: $navbar-bg-color;
   color:#fff;
   margin-bottom: 0;
   border-width: 0;
+  font-family: 'Montserrat', serif;
 }
 
-.navbar-bright a, .navbar-bright .navbar-brand, #masthead h4 {
+.navbar-right a, .navbar-right .navbar-brand, #masthead h4 {
   color:#fff;
   font-size:14px;
   text-transform: uppercase;
   letter-spacing:.08em;
 }
 
-.navbar-bright li > a:hover {
-  background-color: #cb4349;
+.navbar-right li > a:hover {
+  background-color: $navbar-bg-highlight-color;
 }
 
 .navbar-toggle {

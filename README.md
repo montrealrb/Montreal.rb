@@ -4,17 +4,22 @@
 [![Dependency Status](https://gemnasium.com/montrealrb/Montreal.rb.svg)](https://gemnasium.com/montrealrb/Montreal.rb)
 [![Code Climate](https://codeclimate.com/github/montrealrb/Montreal.rb/badges/gpa.svg)](https://codeclimate.com/github/montrealrb/Montreal.rb)
 [![Coverage Status](https://coveralls.io/repos/montrealrb/Montreal.rb/badge.svg?branch=master&service=github)](https://coveralls.io/github/montrealrb/Montreal.rb?branch=master)
-[![ZenHub] (https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)] (https://zenhub.io)
+[![Stories in Priority](https://badge.waffle.io/montrealrb/Montreal.rb.svg?label=priority&title=Priority)](http://waffle.io/montrealrb/Montreal.rb)
 
 ## Description
 
 This is the Montreal.rb organization's website. It is still in development stage so you are welcome to contribute.
+You can join our [Slack Team](https://montrealrb-slack.herokuapp.com/) if you have any question, need some help to get started or just hang around with friendly people.
+
+Want to contribute? First thing to look at are the Issues with the [priority](https://github.com/montrealrb/Montreal.rb/labels/Priority) label. You can optionnally use [Waffle.io](http://waffle.io/montrealrb/Montreal.rb) to see the development pipeline used to manage the project.
+
+[![Throughput Graph](https://graphs.waffle.io/montrealrb/Montreal.rb/throughput.svg)](https://waffle.io/montrealrb/Montreal.rb/metrics)
 
 ## Requirements
 
 ### Runtime
 
-- ruby 2.2.3
+- ruby 2.2.4
 - Postgresql 9.3+
 
 ## Development Setup
@@ -25,14 +30,16 @@ Fork the repository and clone it to your machine. Then change directory to `Mont
 $ git clone <your_fork> && cd Montreal.rb
 ```
 
-### Ruby
+### Ruby & Bundler
 
-You should have Ruby version `2.2.3` installed using your prefered Ruby version management tool (or by globally updating your system Ruby)
+You should have Ruby version `2.2.4` installed using your prefered Ruby version management tool (or by globally updating your system Ruby)
 
 __Most Popular Ruby Version Managers__
 
 - [rbenv](http://rbenv.org/)
 - [rvm](https://rvm.io/)
+
+You should also have [bundler](http://bundler.io/) (minimum `v1.10`) to help with tracking and installing the exact gems and versions that are needed.
 
 ### Database
 
@@ -85,6 +92,31 @@ Once successfully completed, this setup script will:
 - install your project's required gems
 - create and setup your database
 - cleanup logs and temporary files
+
+__Set environment variables__
+
+Omniauth is used to allow users to log in to the site using GitHub accounts. To 
+use the GitHub API, you must set environment variables for the GitHub 'key' and 
+'secret.'
+
+You can first obtain this key/secret [through your GitHub account](https://github.com/settings/applications/new).
+
+Now you need to set the environment variables on your server. The procedure will
+depend on your system.
+
+On Unix-based systems using the bash shell, add the following to your `~/.bashrc` 
+file, replacing the inside of the quotes with your key/secret:
+
+```
+export GITHUB_KEY="your_key"
+export GITHUB_SECRET="your_secret"
+```
+
+If using Heroku, you can set the environment variables like this:
+
+```
+heroku config:add GITHUB_KEY=your_key GITHUB_SECRET=your_secret --app Montreal.rb
+```
 
 #### Start your Web Server
 

@@ -1,26 +1,7 @@
 class Location < ActiveRecord::Base
   translates :description, :directions
-end
 
-class TBALocation
-  def name
-    'TBA'
-  end
+  has_many :events
 
-  def address
-    'TBA'
-  end
-
-  def directions
-    ''
-  end
-
-  def description
-    ''
-  end
-
-  def url
-    ''
-  end
-
+  validates :name, presence: true
 end
