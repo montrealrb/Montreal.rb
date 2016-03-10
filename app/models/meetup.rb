@@ -28,7 +28,7 @@ class Meetup < Event
     end
   end
 
-  translates :title, :introduction, :conclusion
+  translates :title, :body
   globalize_accessors locales: I18n.available_locales, attributes: %i(title introduction conclusion)
   validates_translated :title, :introduction, :conclusion, presence: true
 

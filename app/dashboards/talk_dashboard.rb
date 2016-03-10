@@ -8,14 +8,13 @@ class TalkDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    votes: Field::HasMany,
-    author: Field::BelongsTo.with_options(class_name: "User"),
     id: Field::Number,
     title: Field::String,
     description: Field::Text,
-    bio: Field::Text,
-    slides: Field::String,
-    author_id: Field::Number,
+    event: Field::BelongsTo,
+    state: EnumField,
+    level: EnumField,
+    slides_url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -26,9 +25,11 @@ class TalkDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :votes,
-    :author,
     :id,
+    :title,
+    :state,
+    :level,
+    :event,
     :title
   ].freeze
 
@@ -40,19 +41,18 @@ class TalkDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :votes,
-    :author,
     :title,
     :description,
-    :bio,
-    :slides,
-    :author_id
+    :event,
+    :state,
+    :level,
+    :slides_url,
   ].freeze
 
   # Overwrite this method to customize how talks are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(talk)
-  #   "Talk ##{talk.id}"
-  # end
+  def display_resource(talk)
+    talk.title
+  end
 end
