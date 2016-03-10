@@ -11,9 +11,10 @@ class DashboardManifest
   # to work correctly.
   DASHBOARDS = [
     :news_items,
+    :events,
+    :talks,
     :locations,
     :jobs,
-    :events,
     :organizations,
     :pages
   ].freeze
