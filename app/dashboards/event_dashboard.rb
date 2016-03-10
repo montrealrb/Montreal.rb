@@ -15,8 +15,6 @@ class EventDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     title: Field::String,
-    introduction: Field::Text,
-    conclusion: Field::Text,
     body: Field::Text
   }.freeze
 
@@ -42,8 +40,6 @@ class EventDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :title,
-    :introduction,
-    :conclusion,
     :state,
     :body,
     :starts_at,

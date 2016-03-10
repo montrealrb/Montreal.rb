@@ -25,7 +25,7 @@ RSpec.describe Admin::EventsController, type: :controller do
   end
 
   describe "PUT #update" do
-    let(:event) { create :event }
+    let!(:event) { FactoryGirl.create(:event) }
     before do
       login_user(admin)
     end

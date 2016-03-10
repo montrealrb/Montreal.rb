@@ -4,7 +4,7 @@ RSpec.describe Event, type: :model do
 
   it do
     is_expected.
-      to respond_to :starts_at, :location, :title, :author, :introduction, :conclusion, :state
+      to respond_to :starts_at, :location, :title, :author, :body, :state
   end
 
   describe "attribute validations" do

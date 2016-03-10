@@ -2,7 +2,8 @@ class Event < ActiveRecord::Base
   extend Enumerize
   STATES = %w(proposed scheduled).freeze
 
-  translates :title, :introduction, :conclusion
+  translates :title, :body
+
   belongs_to :location
   belongs_to :author, foreign_key: :user_id, class_name: "User"
 

@@ -6,10 +6,8 @@ FactoryGirl.define do
     starts_at { Faker::Date.between(30.days.ago, 30.days.from_now) }
 
     # Translatable:
-    title { Faker::Lorem.sentence }
-    introduction { Faker::Lorem.sentence }
-    conclusion { Faker::Lorem.paragraph }
-    body { Faker::Lorem.paragraph }
+    title { Faker::Lorem.sentence  }
+    body  { Faker::Lorem.paragraph }
 
     trait :proposed do
       state "proposed"
