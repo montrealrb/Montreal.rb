@@ -4,12 +4,12 @@ RSpec.describe Event, type: :model do
   let(:event) { FactoryGirl.create(:event) }
   let(:talks) { FactoryGirl.create_list(:talk, 5, event: event) }
 
-
   describe "attributes" do
     it do
       is_expected.
         to respond_to :starts_at, :location, :title, :author, :introduction, :conclusion, :state
     end
+
     it { is_expected.to have_many :talks    }
     it { is_expected.to belong_to :location }
     it { is_expected.to belong_to :author   }

@@ -1,6 +1,6 @@
 class Talk < ActiveRecord::Base
   extend Enumerize
-  STATES = [:proposed, :scheduled, :presented]
+  STATES = [:proposed, :scheduled, :presented].freeze
 
   translates :title, :description
   belongs_to :event
