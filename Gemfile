@@ -20,7 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'sprockets', '~> 3.0'
 
 # Application
-gem 'rails', '~> 4.2.2'
+gem 'rails', '~> 4.2'
 gem 'omniauth-github'
 gem 'friendly_id', '~> 5.1.0'
 gem 'devise', '~> 3.5.2'
