@@ -25,6 +25,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:github]
 
+  has_one :member
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
@@ -54,5 +56,4 @@ class User < ActiveRecord::Base
     super && email != DEFAULT_USER_EMAIL
   end
 
-  belongs_to :member
 end

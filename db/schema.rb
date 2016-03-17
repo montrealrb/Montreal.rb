@@ -166,6 +166,8 @@ ActiveRecord::Schema.define(version: 20160310032845) do
     t.string   "slug",       default: "temporary-slug", null: false
   end
 
+  add_index "pages", ["slug"], name: "index_pages_on_slug", unique: true, using: :btree
+
   create_table "talk_translations", force: :cascade do |t|
     t.integer  "talk_id",     null: false
     t.string   "locale",      null: false
