@@ -4,6 +4,7 @@ class Talk < ActiveRecord::Base
 
   translates :title, :description
   belongs_to :event
+  belongs_to :member
 
   validates :title, presence: true
   validates :event, presence: true

@@ -8,18 +8,18 @@ class MemberDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    events: Field::HasMany,
-    organizations: Field::HasMany,
-    user: Field::BelongsTo,
-    id: Field::Number,
-    name: Field::String,
-    email: Field::String,
-    picture: Field::String.with_options(searchable: false),
+    events:         Field::HasMany,
+    organizations:  Field::HasMany,
+    user:           Field::BelongsTo,
+    id:             Field::Number,
+    name:           Field::String,
+    email:          Field::String,
+    picture:        Field::String.with_options(searchable: false),
     twitter_handle: Field::String,
-    github_handle: Field::String,
-    biography: Field::Text,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    github_handle:  Field::String,
+    biography:      Field::Text,
+    created_at:     Field::DateTime,
+    updated_at:     Field::DateTime,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -54,7 +54,7 @@ class MemberDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how members are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(member)
-  #   "Member ##{member.id}"
-  # end
+  def display_resource(member)
+    member.name
+  end
 end
