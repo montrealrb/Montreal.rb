@@ -16,6 +16,16 @@ ActiveRecord::Schema.define(version: 20160318004322) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "event_sponsors", id: false, force: :cascade do |t|
+    t.integer  "event_id",        null: false
+    t.integer  "organization_id", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "event_sponsors", ["event_id"], name: "index_event_sponsors_on_event_id", using: :btree
+  add_index "event_sponsors", ["organization_id"], name: "index_event_sponsors_on_organization_id", using: :btree
+
   create_table "event_translations", force: :cascade do |t|
     t.integer  "event_id",   null: false
     t.string   "locale",     null: false
@@ -216,6 +226,8 @@ ActiveRecord::Schema.define(version: 20160318004322) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
 
+  add_foreign_key "event_sponsors", "events"
+  add_foreign_key "event_sponsors", "organizations"
   add_foreign_key "members", "users"
   add_foreign_key "talks", "events"
 end
