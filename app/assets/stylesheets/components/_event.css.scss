@@ -1,0 +1,23 @@
+.event {
+  border-bottom: 1px solid $highlight;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.event-title {
+  margin-top: 0;
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.event-meta {
+  font-size: 16pt;
+  margin: 20px 0 50px;
+
+  a {
+    text-decoration: underline;
+  }
+}
+

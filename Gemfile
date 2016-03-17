@@ -1,7 +1,6 @@
 source "https://rubygems.org"
 ruby "2.2.4"
 
-
 # Database
 gem "pg"
 
@@ -11,19 +10,19 @@ gem "cloudinary"
 
 # Assets
 gem "autoprefixer-rails", "~> 6.3"
-gem 'bootstrap-sass', '~> 3.3.6'
-gem 'font-awesome-sass'
-gem 'coffee-rails', '~> 4.1.0'
-gem 'jquery-rails'
-gem 'sass-rails'
-gem 'uglifier', '>= 1.3.0'
-gem 'sprockets', '~> 3.0'
+gem "bootstrap-sass", "~> 3.3.6"
+gem "font-awesome-sass"
+gem "coffee-rails", "~> 4.1.0"
+gem "jquery-rails"
+gem "sass-rails"
+gem "uglifier", ">= 1.3.0"
+gem "sprockets", "~> 3.0"
 
 # Application
-gem 'rails', '~> 4.2.2'
-gem 'omniauth-github'
-gem 'friendly_id', '~> 5.1.0'
-gem 'devise', '~> 3.5.2'
+gem "rails", "~> 4.2"
+gem "omniauth-github"
+gem "friendly_id", "~> 5.1.0"
+gem "devise", "~> 3.5.2"
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem "turbolinks"

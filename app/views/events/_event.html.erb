@@ -1,0 +1,23 @@
+<div class="event">
+  <h2 class="event-title"><%= link_to event.title, event_path(event)%></h2>
+  <div class="event-meta">
+    <div>
+      <span style="width: 28px;display: inline-block; text-align: center;"><i class="fa fa-calendar-o"></i></span>
+      <%= event.starts_at.to_formatted_s(:long) %>
+    </div>
+    <div>
+      <span style="width: 28px;display: inline-block; text-align: center;"><i class="fa fa-map-marker"></i></span>
+      <%= event.location.name %>, <a href="https://www.google.ca/maps/search/<%= event.location.address %>"><%= event.location.address %></a>
+    </div>
+  </div>
+  <div class="event-body">
+    <%= render_markdown_as_html(event.body)%>
+    <% if event.talks %>
+      <h3>Talks: </h3>
+      <% event.talks.each do |talk| %>
+        <h4><%= talk.title %></h4>
+        <%= render_markdown_as_html talk.description %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
