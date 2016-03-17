@@ -55,5 +55,4 @@ class User < ActiveRecord::Base
   def active_for_authentication?
     super && email != DEFAULT_USER_EMAIL
   end
-
 end
