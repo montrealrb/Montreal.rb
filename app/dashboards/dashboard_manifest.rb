@@ -16,7 +16,9 @@ class DashboardManifest
     :locations,
     :jobs,
     :organizations,
-    :pages
+    :pages,
+    :members,
+    :users,
   ].freeze
 
   # `ROOT_DASHBOARD`

@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.describe EventsController, type: :controller do
-  let(:proposed_event)  { create(:event, :proposed)  }
-  let(:scheduled_event) { create(:event, :scheduled) }
+  let!(:proposed_event)  { create(:event, :proposed)  }
+  let!(:scheduled_event) { create(:event, :scheduled) }
 
   describe "GET #index" do
     before :each do

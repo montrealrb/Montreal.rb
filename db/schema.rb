@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160308004823) do
+ActiveRecord::Schema.define(version: 20160310032845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,14 @@ ActiveRecord::Schema.define(version: 20160308004823) do
   add_index "events", ["location_id"], name: "index_events_on_location_id", using: :btree
   add_index "events", ["starts_at"], name: "index_events_on_starts_at", using: :btree
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
+
+  create_table "events_members", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "member_id"
+  end
+
+  add_index "events_members", ["event_id"], name: "index_events_members_on_event_id", using: :btree
+  add_index "events_members", ["member_id"], name: "index_events_members_on_member_id", using: :btree
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -85,6 +93,26 @@ ActiveRecord::Schema.define(version: 20160308004823) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "members", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email",          null: false
+    t.binary   "picture"
+    t.string   "twitter_handle"
+    t.string   "github_handle"
+    t.text     "biography"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "user_id"
+  end
+
+  create_table "members_organizations", force: :cascade do |t|
+    t.integer "organization_id"
+    t.integer "member_id"
+  end
+
+  add_index "members_organizations", ["member_id"], name: "index_members_organizations_on_member_id", using: :btree
+  add_index "members_organizations", ["organization_id"], name: "index_members_organizations_on_organization_id", using: :btree
 
   create_table "news_items", force: :cascade do |t|
     t.string   "state"
@@ -186,5 +214,6 @@ ActiveRecord::Schema.define(version: 20160308004823) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
 
+  add_foreign_key "members", "users"
   add_foreign_key "talks", "events"
 end

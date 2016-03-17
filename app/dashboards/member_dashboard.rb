@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class UserDashboard < Administrate::BaseDashboard
+class MemberDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,9 +8,18 @@ class UserDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    events: Field::HasMany,
+    organizations: Field::HasMany,
+    user: Field::BelongsTo,
     id: Field::Number,
+    name: Field::String,
     email: Field::String,
-    member: Field::HasOne,
+    picture: Field::String.with_options(searchable: false),
+    twitter_handle: Field::String,
+    github_handle: Field::String,
+    biography: Field::Text,
+    created_at: Field::DateTime,
+    updated_at: Field::DateTime,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -19,9 +28,8 @@ class UserDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
+    :user,
     :id,
-    :email,
-    :member,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -32,13 +40,21 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
+    :user,
+    :name,
     :email,
+    :picture,
+    :twitter_handle,
+    :github_handle,
+    :biography,
+    :organizations,
+    :events,
   ].freeze
 
-  # Overwrite this method to customize how users are displayed
+  # Overwrite this method to customize how members are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(user)
-  #   "User ##{user.id}"
+  # def display_resource(member)
+  #   "Member ##{member.id}"
   # end
 end
