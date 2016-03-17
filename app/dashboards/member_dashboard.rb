@@ -47,6 +47,8 @@ class MemberDashboard < Administrate::BaseDashboard
     :twitter_handle,
     :github_handle,
     :biography,
+    :organizations,
+    :events,
   ].freeze
 
   # Overwrite this method to customize how members are displayed
