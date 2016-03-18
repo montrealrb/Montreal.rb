@@ -28,5 +28,14 @@
         <% end %>
       </div>
     <% end %>
+    <% if event.sponsors.present? %>
+      <h3>Brought to you by our sponsors: </h3>
+      <% event.sponsors.each do |sponsor| %>
+        <h4><%= link_to sponsor.name, organization_path(sponsor) %></h4>
+        <% if sponsor.logo %>
+          <%= image_tag sponsor.logo.url %>
+        <% end %>
+      <% end %>
+    <% end %>
   </div>
 </div>

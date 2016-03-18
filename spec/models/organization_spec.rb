@@ -1,6 +1,10 @@
 require "rails_helper"
 
 RSpec.describe Organization, type: :model do
+  describe "attributes" do
+    it { is_expected.to have_many :event_sponsors }
+  end
+
   describe "validation" do
     subject { FactoryGirl.create(:organization) }
 

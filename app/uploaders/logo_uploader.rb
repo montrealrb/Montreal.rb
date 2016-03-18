@@ -12,4 +12,8 @@ class LogoUploader < CarrierWave::Uploader::Base
   version :thumbnail do
     resize_to_fit(50, 50)
   end
+
+  def extension_white_list
+    %w(jpg jpeg gif png).freeze
+  end
 end

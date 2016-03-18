@@ -6,7 +6,7 @@ class Organization < ActiveRecord::Base
   mount_uploader :logo, LogoUploader
 
   has_many   :event_sponsors
-  has_many   :events, through: :event_sponsors
+  has_many   :sponsors, through: :event_sponsors, source: :event
 
   validates :name, uniqueness: true, presence: true
 end
