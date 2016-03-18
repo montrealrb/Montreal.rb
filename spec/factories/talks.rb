@@ -6,5 +6,6 @@ FactoryGirl.define do
     level "beginner"
     slides_url { Faker::Internet.url }
     event
+    member
   end
 end
