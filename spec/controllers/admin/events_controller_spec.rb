@@ -7,6 +7,18 @@ RSpec.describe Admin::EventsController, type: :controller do
                                  location_id: create(:location).id)
   end
 
+  describe "GET #index" do
+    let(:events) { create_list(:event, 10) }
+    before do
+      login_user(admin)
+    end
+
+    it "status is ok" do
+      get :index
+      expect(response.status).to eq 200
+    end
+  end
+
   describe "POST #create" do
     before do
       login_user(admin)
