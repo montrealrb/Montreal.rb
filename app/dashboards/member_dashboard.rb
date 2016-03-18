@@ -14,7 +14,7 @@ class MemberDashboard < Administrate::BaseDashboard
     id:             Field::Number,
     name:           Field::String,
     email:          Field::String,
-    picture:        Field::String.with_options(searchable: false),
+    picture:        Field::String,
     twitter_handle: Field::String,
     github_handle:  Field::String,
     biography:      Field::Text,
