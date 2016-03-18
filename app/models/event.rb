@@ -24,17 +24,18 @@ class Event < ActiveRecord::Base
 
   scope :published, -> { where(state: "scheduled").order(starts_at: :desc) }
 
-  def title_with_date
-    date = starts_at.strftime("%B %d")
-    [title, date].join(" : ")
-  end
-
-  def date
-    starts_at.strftime("%B %d")
-  end
-
   # driven by views/fields/enum_field/_show.html.erb
   def to_s
     title_with_date
+  end
+
+  private
+
+  def title_with_date
+    [title, start_date_string].join(" : ")
+  end
+
+  def start_date_string
+    starts_at.strftime("%B %d")
   end
 end

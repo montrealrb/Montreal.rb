@@ -43,4 +43,11 @@ RSpec.describe Event, type: :model do
       expect(event.errors.messages.keys).to include :body
     end
   end
+
+  describe "#to_s" do
+    let(:event) { create(:event, starts_at: "2016/03/01") }
+    subject { event.to_s }
+
+    it { is_expected.to eq "#{event.title} : March 01" }
+  end
 end
