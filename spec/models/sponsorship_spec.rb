@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe EventSponsor, type: :model do
+RSpec.describe Sponsorship, type: :model do
   describe "attributes" do
     it { is_expected.to belong_to :event }
     it { is_expected.to belong_to :organization }

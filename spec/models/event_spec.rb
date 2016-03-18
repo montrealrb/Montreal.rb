@@ -13,10 +13,10 @@ RSpec.describe Event, type: :model do
     it { is_expected.to have_many :talks          }
     it { is_expected.to belong_to :location       }
     it { is_expected.to belong_to :author         }
-    it { is_expected.to have_many :event_sponsors }
+    it { is_expected.to have_many :sponsorships }
     it do
       is_expected.to have_many(:sponsors).
-        through(:event_sponsors).
+        through(:sponsorships).
         source(:organization)
     end
 

@@ -1,4 +1,4 @@
-class EventSponsor < ActiveRecord::Base
+class Sponsorship < ActiveRecord::Base
   belongs_to :event
   belongs_to :organization
 

@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :event_sponsor do
+  factory :sponsorship do
     association :event
     association :organization
   end
