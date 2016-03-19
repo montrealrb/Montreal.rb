@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @events = Event.published.limit(2)
+    @past_events, @future_events = Event.published.partition { |e| e.starts_at < Time.now }
     @news_items = NewsItem.published.limit(10).to_a
   end
 end
