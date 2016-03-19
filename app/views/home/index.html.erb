@@ -1,11 +1,11 @@
-<% @news_items.each do |news_item| %>
-  <div class="post clearfix">
-    <h2 class="post-title"><%= link_to news_item.title, news_item_path(news_item) %></h2>
-    <p class="meta">
-      Posted <%= time_ago_in_words(news_item.published_at) %> ago
-    </p>
-    <div class="post-body">
-      <%= render_markdown_as_html news_item.body %>
-    </div>
-  </div>
-<% end %>
+<section>
+  <h1>Upcoming Events</h1>
+  <%= render @future_events %>
+
+  <h1>Past Events</h1>
+  <%= render @past_events %>
+</section>
+
+<aside>
+  <%= render @news_items %>
+</aside>

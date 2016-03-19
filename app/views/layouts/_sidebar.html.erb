@@ -1,6 +1,5 @@
 <h3 class="sidebar-title">Upcoming Events</h3>
-<% if @events.any? %>
-  <% @events.each do |event| %>
+  <% @future_events.each do |event| %>
     <div class="meetup">
       <h4 class='meetup-title'><%= link_to event.title_with_date, event %></h4>
       <div class="meetup-body">
