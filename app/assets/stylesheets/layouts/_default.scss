@@ -28,7 +28,7 @@ h1 {
 }
 
 .main {
-  padding-top: 30px;
+  padding-top: 40px;
   font-family: $main-font;
   font-size: $base-font-size;
   flex: 1;
@@ -44,4 +44,7 @@ section {
 aside {
   @extend .col-sm-12, .col-md-3, .col-lg-3, .pull-right;
   background-color: $bg-secondary;
+  &> :last-child {
+    border: none;
+  }
 }

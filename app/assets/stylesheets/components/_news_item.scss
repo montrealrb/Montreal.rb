@@ -1,6 +1,6 @@
 .news-item {
   border-bottom: 1px solid $bg-highlight;
-  padding: 10px;
+  padding: 10px 10px 10px 25px;
 }
 
 .news-item-title {
@@ -10,4 +10,14 @@
 .news-item-meta {
   font-style: italic;
   padding: 5px 0;
+}
+
+.news-item-body {
+  a:hover {
+    color: $bg-highlight;
+  }
+}
+
+aside h2 {
+  padding-bottom: 0;
 }
