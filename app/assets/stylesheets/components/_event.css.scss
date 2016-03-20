@@ -1,23 +1,41 @@
-.event {
-  border-bottom: 1px solid $highlight;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+.future-events {
+  background-color: $bg-highlight;
+  margin-left: 25px;
+  margin-bottom: 25px;
 }
 
-.event-title {
-  margin-top: 0;
+.past-events {
+  margin-left: 25px;
+}
 
-  a {
-    text-decoration: underline;
+.past-header {
+  padding: 20px 0 0 0;
+}
+
+.event {
+  border-bottom: 1px solid $bg-highlight;
+  padding: 10px 25px;
+
+  i {
+    padding-right: 8px;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
   }
 }
 
 .event-meta {
-  font-size: 16pt;
-  margin: 20px 0 50px;
+  font-size: 1.2em;
+  padding: 10px 5px;
+}
 
-  a {
-    text-decoration: underline;
+.event-body {
+  padding: 10px 0;
+
+  h3 {
+    padding-top: 25px;
   }
 }
 

@@ -1,17 +1,13 @@
 .news-item {
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid $bg-highlight;
+  padding: 10px;
 }
+
 .news-item-title {
   margin-top: 0;
-  a {
-    text-decoration: underline;
-  }
 }
+
 .news-item-meta {
   font-style: italic;
-  a {
-    text-decoration: underline;
-  }
+  padding: 5px 0;
 }

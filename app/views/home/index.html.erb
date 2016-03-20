@@ -1,9 +1,17 @@
 <section>
-  <h1>Upcoming Events</h1>
-  <%= render @future_events %>
 
-  <h1>Past Events</h1>
-  <%= render @past_events %>
+  <h1>Upcoming <%= 'Event'.pluralize(@future_events.count) %></h1>
+
+  <div class='future-events'>
+    <%= render @future_events %>
+  </div>
+
+  <h1 class='past-header'>Past Events</h1>
+
+  <div class='past-events'>
+    <%= render @past_events %>
+  </div>
+
 </section>
 
 <aside>
