@@ -4,6 +4,6 @@
     Posted <%= time_ago_in_words(news_item.published_at) %> ago
   </p>
   <div class="news-item-body">
-    <%= render_markdown_as_html truncate(news_item.body, length: 200, omission: ' ') { link_to icon('long-arrow-right'), news_item } %>
+    <%= render_markdown_as_html truncate(news_item.body, length: 200, omission: ' ', separator: ' ') { link_to icon('long-arrow-right'), news_item } %>
   </div>
 </div>
