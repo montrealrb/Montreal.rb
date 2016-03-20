@@ -6,6 +6,9 @@
 
 .past-events {
   margin-left: 25px;
+  &> :last-child {
+    border: none;
+  }
 }
 
 .past-header {

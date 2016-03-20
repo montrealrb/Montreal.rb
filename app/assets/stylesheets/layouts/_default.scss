@@ -2,6 +2,9 @@ body {
   font-family: $main-font;
   color: $main;
   background-color: $bg;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 a, a:visited {
@@ -24,10 +27,11 @@ h1 {
   text-transform: uppercase;
 }
 
-main {
+.main {
   padding-top: 30px;
   font-family: $main-font;
   font-size: $base-font-size;
+  flex: 1;
 }
 
 section {
