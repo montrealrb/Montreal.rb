@@ -11,7 +11,7 @@
       <div class="talk">
         <% event.talks.each do |talk| %>
           <h4><%= talk.title %>, by <%= talk.member.name %></h4>
-          <img src="<%= talk.member.picture || image_path("default_member") %>" />
+          <%= gravatar_for talk.member %>
           <%= render_markdown_as_html talk.description %>
         <% end %>
       </div>
