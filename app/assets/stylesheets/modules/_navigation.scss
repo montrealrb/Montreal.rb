@@ -14,12 +14,12 @@
   color:#fff;
   margin-bottom: 0;
   border-width: 0;
-  font-family: 'Montserrat', serif;
+  font-family: $secondary-font;
 }
 
 .navbar-right a, .navbar-right .navbar-brand, #masthead h4 {
   color:#fff;
-  font-size: 1.3em;
+  font-size: 1.2em;
   text-transform: uppercase;
   letter-spacing:.08em;
 }
@@ -35,4 +35,8 @@
 
 .navbar-toggle:hover {
   background-color:#fff;
+}
+
+.navbar-header h1 {
+  text-transform: none;
 }

@@ -2,21 +2,32 @@ body {
   font-family: $main-font;
   color: $main;
   background-color: $bg;
-  font-size: 1.1em;
 }
 
 a, a:visited {
   color: $links;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', serif;
+  font-family: $secondary-font;
   padding: 0.5em 0;
   margin: 0;
+  font-weight: normal;
 }
 
 h1 {
   text-transform: uppercase;
+}
+
+main {
+  padding-top: 30px;
+  font-family: $main-font;
+  font-size: $base-font-size;
 }
 
 section {

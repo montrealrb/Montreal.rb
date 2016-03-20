@@ -1,8 +1,7 @@
-
 $bg: #D9DADE;
 $bg-highlight: lighten($bg, 7%);
 $bg-secondary: darken($bg, 7%);
-$main: #0C0304;
+$main: #333;
 $highlight: lighten($bg, 30%);
 
 $header-title-color: #ffffff;
@@ -14,4 +13,6 @@ $footer-bg-color: #2c3230;
 $links: #004E94;
 
 // FONTS
-$main-font: 'Lora', serif;
+$main-font: 'Lora', Helvetica, serif;
+$secondary-font: 'Montserrat', Arial, sans-serif;
+$base-font-size: 1.1em;

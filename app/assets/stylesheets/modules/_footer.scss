@@ -4,8 +4,8 @@ footer {
   padding-top: 20px;
   padding-bottom: 10px;
   background-color: $footer-bg-color;
-  font-family: 'Montserrat', serif;
+  font-family: $secondary-font;
   a, a:hover {
-    color: #fff;
+    color: $highlight;
   }
 }

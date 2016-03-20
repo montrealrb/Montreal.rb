@@ -11,14 +11,8 @@
       <div class="talk">
         <% event.talks.each do |talk| %>
           <h4><%= talk.title %>, by <%= talk.member.name %></h4>
-          <div class="row">
-            <div class="col-sm-2">
-              <img src="<%= talk.member.picture || image_path("default_member") %>" width=100% />
-            </div>
-            <div class="col-xs-12 col-sm-10">
-              <%= render_markdown_as_html talk.description %>
-            </div>
-          </div>
+          <img src="<%= talk.member.picture || image_path("default_member") %>" />
+          <%= render_markdown_as_html talk.description %>
         <% end %>
       </div>
     <% end %>
