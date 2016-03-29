@@ -28,12 +28,12 @@ RSpec.describe EventsController, type: :controller do
       expect(response).to render_template :index
     end
 
-    it 'gets past events' do
+    it "gets past events" do
       expect(assigns(:past_events)).to     include past_event
       expect(assigns(:past_events)).not_to include future_event
     end
 
-    it 'gets future events' do
+    it "gets future events" do
       expect(assigns(:future_events)).to     include future_event
       expect(assigns(:future_events)).not_to include past_event
     end
