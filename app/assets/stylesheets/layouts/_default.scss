@@ -1,13 +1,14 @@
 body {
-  font-family: $main-font;
-  color: $main;
   background-color: $bg;
+  color: $main;
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  font-family: $main-font;
+  min-height: 100vh;
 }
 
-a, a:visited {
+a,
+a:visited {
   color: $links;
   text-decoration: none;
 
@@ -16,11 +17,16 @@ a, a:visited {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $secondary-font;
-  padding: 0.5em 0;
-  margin: 0;
   font-weight: normal;
+  margin: 0;
+  padding: 0.5em 0;
 }
 
 h1 {
@@ -28,14 +34,15 @@ h1 {
 }
 
 .main {
-  padding-top: 40px;
+  flex: 1;
   font-family: $main-font;
   font-size: $base-font-size;
-  flex: 1;
+  padding-top: 40px;
 }
 
 section {
   @extend .col-sm-12, .col-md-8, .col-lg-8;
+
   h1 {
     padding-top: 0;
   }
@@ -44,7 +51,8 @@ section {
 aside {
   @extend .col-sm-12, .col-md-3, .col-lg-3, .pull-right;
   background-color: $bg-secondary;
-  &> :last-child {
-    border: none;
+
+  > :last-child {
+    border: 0;
   }
 }
