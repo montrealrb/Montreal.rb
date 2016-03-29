@@ -1,18 +1,19 @@
 .future-events {
   background-color: $bg-highlight;
-  margin-left: 25px;
   margin-bottom: 25px;
+  margin-left: 25px;
 }
 
 .past-events {
   margin-left: 25px;
-  &> :last-child {
-    border: none;
+
+  > :last-child {
+    border: 0;
   }
 }
 
 .past-header {
-  padding: 20px 0 0 0;
+  padding: 20px 0 0;
 }
 
 .event {
@@ -43,6 +44,6 @@
 }
 
 .gravatar {
-  padding: 5px 20px 15px 0;
   float: left;
+  padding: 5px 20px 15px 0;
 }

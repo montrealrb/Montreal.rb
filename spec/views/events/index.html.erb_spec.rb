@@ -21,10 +21,8 @@ describe "events/index.html.erb" do
   end
 
   context "event has a talk" do
-    let!(:member) { create :member }
-    let!(:talk)   { create :talk, state: "scheduled",
-                                  event_id: past_event.id,
-                                  member_id: member.id }
+    let(:member) { create :member }
+    let!(:talk)  { create :talk, state: "scheduled", event_id: past_event.id, member_id: member.id }
 
     it "displays the talks header" do
       render

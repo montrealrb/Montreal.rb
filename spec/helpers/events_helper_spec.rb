@@ -14,7 +14,7 @@ RSpec.describe EventsHelper do
       end
 
       it "links to the event" do
-        expect(truncate_if_past(event, event.body)).to match /<a href=\"\/events\/\d+.+\">.+<\/a>/
+        expect(truncate_if_past(event, event.body)).to match %r(<a href=\"\/events\/\d+.+\">.+<\/a>)
       end
     end
 
