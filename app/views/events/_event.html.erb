@@ -1,5 +1,5 @@
-<div class="event">
-  <h2 class="event-title"><%= link_to event.title.titleize, event %></h1>
+<div class="card">
+  <h1 class="event-title"><%= link_to event.title.titleize, event %></h1>
   <div class="event-meta">
     <p><%= icon 'calendar-o', class: 'fa-fw' %><%= event.starts_at.strftime('%B %e, %Y  -  %k:%M') %></p>
     <p><%= icon 'map-marker', class: 'fa-fw' %><%= event.location.name %>, <a href="https://www.google.ca/maps/search/<%= event.location.address %>", target='_blank'><%= event.location.address %></a></p>

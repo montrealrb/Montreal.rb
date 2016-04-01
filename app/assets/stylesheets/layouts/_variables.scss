@@ -1,18 +1,28 @@
-$bg: #fdfdfd;
+$bg: #fefefe;
 $bg-highlight: darken($bg, 3%);
 $bg-secondary: darken($bg, 8%);
-$main: #333;
-$highlight: lighten($bg, 30%);
+$main: #333333;
+$main-secondary: lighten($main, 10%);
+$main-highlight: lighten($main, 40%);
 
 $header-title-color: #ffffff;
-$header-bg-color: #bc0100;
+$header-bg-color: #cc0100;
+$navbar-text-color: #ffffff;
 $navbar-bg-color: #95040b;
 $navbar-bg-highlight-color: #2c3230;
+$footer-text-color: #ffffff;
 $footer-bg-color: #2c3230;
 
-$links: #004e94;
+$links: $header-bg-color;
+$links-hover: $navbar-bg-color;
 
 // FONTS
 $main-font: 'Lora', Helvetica, serif;
 $secondary-font: 'Montserrat', Arial, sans-serif;
-$base-font-size: 1.1em;
+$base-font-size: 16px;
+$base-line-height: 1.5em;
+
+// LAYOUT
+$padding: 1em;
+$gutter: 2em;
+$min-height-for-field-with-gravatar: 11em;

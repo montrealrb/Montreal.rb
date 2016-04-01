@@ -1,23 +1,14 @@
 .news-item {
-  border-bottom: 1px solid $bg-highlight;
-  padding: 10px 10px 10px 25px;
-}
-
-.news-item-title {
-  margin-top: 0;
-}
-
-.news-item-meta {
-  font-style: italic;
-  padding: 5px 0;
+  background-color: $bg-highlight;
+  box-shadow: 1px 1px 3px 0px darken($bg-highlight, 10%);
+  padding: $padding/2 $gutter $padding $gutter;
+  margin: $gutter 0;
 }
 
 .news-item-body {
   a:hover {
-    color: $bg-highlight;
+    color: $main;
   }
 }
 
-aside h2 {
-  padding-bottom: 0;
-}
+

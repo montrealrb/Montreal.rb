@@ -20,6 +20,16 @@ describe "events/index.html.erb" do
     expect(rendered).to have_link future_event.title.titleize, href: event_path(future_event)
   end
 
+  context "there are no future events" do
+    before { assign :future_events, [] }
+
+    it "does not display anything about upcoming events" do
+      render
+      expect(rendered).not_to have_css "h2", text: "Upcoming Event"
+    end
+
+  end
+
   context "event has a talk" do
     let(:member) { create :member }
     let!(:talk)  { create :talk, state: "scheduled", event_id: past_event.id, member_id: member.id }

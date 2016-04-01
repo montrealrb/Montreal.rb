@@ -1,41 +1,31 @@
-.search-form,
-form {
-  float: right;
-  width: 200px;
-  margin-bottom: 0;
-
-  .search {
-    margin-bottom: 0;
-  }
-}
-
 .nav a { color: $navbar-bg-highlight-color; }
 
 .navbar-right {
   background-color: $navbar-bg-color;
-  color:#fff;
+  color: $navbar-text-color;
   margin-bottom: 0;
   border-width: 0;
   font-family: $secondary-font;
 }
 
 .navbar-right a, .navbar-right .navbar-brand, #masthead h4 {
-  color:#fff;
+  color: $navbar-text-color;
   text-transform: uppercase;
   letter-spacing:.08em;
 }
 
 .navbar-right li > a:hover {
+  color: $navbar-text-color;
   background-color: $navbar-bg-highlight-color;
 }
 
 .navbar-toggle {
-  color:#fff;
+  color: $navbar-text-color;
   border-width:0;
 }
 
 .navbar-toggle:hover {
-  background-color:#fff;
+  background-color: $navbar-text-color;
 }
 
 .navbar-header h1 {

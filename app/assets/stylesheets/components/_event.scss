@@ -1,53 +1,11 @@
-.future-events {
-  background-color: $bg-highlight;
-  margin-bottom: 25px;
-  margin-left: 25px;
-}
-
-.past-events {
-  margin-left: 25px;
-
-  > :last-child {
-    border: 0;
-  }
-}
-
-.past-header {
-  padding: 20px 0 0;
-}
-
-.event {
-  border-bottom: 1px solid $highlight;
-  padding: 10px 25px;
-
-  i {
-    padding-right: 8px;
-  }
-
-  p {
-    margin: 0;
-    padding: 0;
-  }
-}
-
 .event-meta {
   font-size: 1.2em;
-  padding: 10px 5px;
-}
-
-.event-body {
-  padding: 10px 0;
-
-  h3 {
-    padding-top: 25px;
-  }
-}
-
-.gravatar {
-  float: left;
-  padding: 5px 20px 15px 0;
+  font-family: $secondary-font;
+  line-height: 1.6em;
+  padding-bottom: $gutter;
+  padding-left: $padding/2;
 }
 
 .talk {
-  min-height: 165px;
+  min-height: $min-height-for-field-with-gravatar;
 }

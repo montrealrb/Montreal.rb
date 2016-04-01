@@ -1,10 +1,25 @@
+p,
+div {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   background-color: $bg;
   color: $main;
   display: flex;
   flex-direction: column;
   font-family: $main-font;
+  line-height: $base-line-height;
   min-height: 100vh;
+}
+
+section {
+  @extend .col-sm-12, .col-md-8, .col-lg-8;
+}
+
+aside {
+  @extend .col-sm-12, .col-md-3, .col-lg-3, .pull-right;
 }
 
 a,
@@ -13,7 +28,8 @@ a:visited {
   text-decoration: none;
 
   &:hover {
-    text-decoration: underline;
+    color: $links-hover;
+    text-decoration: none;
   }
 }
 
@@ -24,35 +40,66 @@ h4,
 h5,
 h6 {
   font-family: $secondary-font;
-  font-weight: normal;
+  padding: $padding/2 0;
   margin: 0;
-  padding: 0.5em 0;
+
+  a, a:visited {
+    color: $main;
+  }
 }
 
 h1 {
+  font-size: 3em;
+}
+
+h2 {
+  color: $main-highlight;
+  padding-bottom: 0;
+}
+
+h3,
+h3 a {
+  font-weight: bold;
+  color: $main-secondary;
+}
+
+h4 {
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .main {
   flex: 1;
   font-family: $main-font;
   font-size: $base-font-size;
-  padding-top: 40px;
+  padding-top: $gutter;
 }
 
-section {
-  @extend .col-sm-12, .col-md-8, .col-lg-8;
-
-  h1 {
-    padding-top: 0;
-  }
-}
-
-aside {
-  @extend .col-sm-12, .col-md-3, .col-lg-3, .pull-right;
+.card {
   background-color: $bg-secondary;
+  box-shadow: 1px 1px 3px 0px darken($bg-secondary, 10%);
+  padding: 0 $gutter $padding $gutter;
+  margin: $gutter 0;
 
-  > :last-child {
-    border: 0;
+  h3 {
+    padding-top: $gutter;
   }
+
+  i {
+    padding-right: 10px;
+  }
+
+  a:hover {
+    color: $main;
+  }
+}
+
+p.meta {
+  font-style: italic;
+  padding-bottom: $padding;
+}
+
+.gravatar {
+  float: left;
+  padding: 5px 20px 15px 0;
 }
