@@ -18,8 +18,17 @@
   <div class="main container">
     <div class="row">
       <main class="col-md-12">
-        <%= yield %>
+
+        <section>
+          <%= yield %>
+        </section>
+
+        <aside>
+          <%= render template: 'news_items/index' %>
+        </aside>
+
       </main>
+
     </div>
   </div>
   <%= render 'layouts/footer' %>

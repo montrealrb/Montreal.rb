@@ -1,2 +1,17 @@
 <% provide :title, "Events" %>
-<%= render "shared/sorted_events" %>
+
+<% if @future_events.any? %>
+  <h1>Upcoming <%= 'Event'.pluralize(@future_events.count) %></h1>
+
+  <div class='future-events'>
+    <%= render @future_events %>
+  </div>
+<% end %>
+
+<h1 class='past-header'>Past Events</h1>
+
+<div class='past-events'>
+  <%= render @past_events %>
+</div>
+
+
