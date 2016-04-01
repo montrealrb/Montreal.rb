@@ -8,13 +8,13 @@
     <%= render_markdown_as_html truncate_if_past(event, event.body)%>
     <% if event.talks.any? %>
       <h3>Talks</h3>
-      <div class="talk">
         <% event.talks.each do |talk| %>
-          <h4><%= talk.title %>, by <%= talk.member.name %></h4>
-          <%= gravatar_for talk.member %>
-          <%= render_markdown_as_html truncate_if_past(event, talk.description) %>
+          <div class="talk">
+            <h4><%= talk.title %>, by <%= talk.member.name %></h4>
+            <%= gravatar_for talk.member %>
+            <%= render_markdown_as_html truncate_if_past(event, talk.description) %>
+          </div>
         <% end %>
-      </div>
     <% end %>
   </div>
 </div>
