@@ -1,33 +1,21 @@
-.nav a { color: $navbar-bg-highlight-color; }
-
-.navbar-right {
+.navbar-right li > a {
   background-color: $navbar-bg-color;
   color: $navbar-text-color;
-  margin-bottom: 0;
-  border-width: 0;
   font-family: $secondary-font;
-}
-
-.navbar-right a, .navbar-right .navbar-brand, #masthead h4 {
-  color: $navbar-text-color;
   text-transform: uppercase;
-  letter-spacing:.08em;
-}
+  letter-spacing: 0.1em;
 
-.navbar-right li > a:hover {
-  color: $navbar-text-color;
-  background-color: $navbar-bg-highlight-color;
+  &:hover {
+    color: $navbar-text-color;
+    background-color: $navbar-bg-highlight-color;
+  }
 }
 
 .navbar-toggle {
   color: $navbar-text-color;
-  border-width:0;
+  margin-top: $padding;
 }
 
-.navbar-toggle:hover {
-  background-color: $navbar-text-color;
-}
-
-.navbar-header h1 {
-  text-transform: none;
+.navbar {
+  margin: 0 $padding;
 }
