@@ -1,7 +1,7 @@
 p,
 div {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 body {
@@ -40,10 +40,11 @@ h4,
 h5,
 h6 {
   font-family: $secondary-font;
-  padding: $padding/2 0;
   margin: 0;
+  padding: $padding / 2 0;
 
-  a, a:visited {
+  a,
+  a:visited {
     color: $main;
   }
 }
@@ -59,13 +60,13 @@ h2 {
 
 h3,
 h3 a {
-  font-weight: bold;
   color: $main-secondary;
+  font-weight: bold;
 }
 
 h4 {
-  text-transform: uppercase;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .main {
@@ -77,9 +78,13 @@ h4 {
 
 .card {
   background-color: $bg-secondary;
-  box-shadow: 1px 1px 3px 0px darken($bg-secondary, 10%);
-  padding: 0 $gutter $padding $gutter;
+  box-shadow: 1px 1px 3px 0 darken($bg-secondary, 10%);
   margin: $gutter 0;
+  padding: 0 $gutter $padding;
+
+  h2 {
+    padding-bottom: $padding / 2 0;
+  }
 
   h3 {
     padding-top: $gutter;
@@ -94,7 +99,7 @@ h4 {
   }
 }
 
-p.meta {
+.meta {
   font-style: italic;
   padding-bottom: $padding;
 }

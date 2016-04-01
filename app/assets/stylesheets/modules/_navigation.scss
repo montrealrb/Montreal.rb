@@ -1,4 +1,4 @@
-.navbar-right li > a {
+.navbar-right li a {
   background-color: $navbar-bg-color;
   color: $navbar-text-color;
   font-family: $secondary-font;
@@ -6,8 +6,8 @@
   letter-spacing: 0.1em;
 
   &:hover {
-    color: $navbar-text-color;
     background-color: $navbar-bg-highlight-color;
+    color: $navbar-text-color;
   }
 }
 

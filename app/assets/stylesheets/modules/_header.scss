@@ -10,15 +10,15 @@ header {
   h1 {
     color: $header-title-color;
     font-family: 'Roboto Mono';
-    font-weight: 500;
     font-size: 2.5em;
+    font-weight: 500;
     letter-spacing: 2px;
   }
 
   p {
     color: $bg-highlight;
-    padding-top: 0;
     padding-bottom: $padding;
+    padding-top: 0;
   }
 
   .navbar-toggle:hover {

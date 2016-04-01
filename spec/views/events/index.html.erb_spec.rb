@@ -27,7 +27,6 @@ describe "events/index.html.erb" do
       render
       expect(rendered).not_to have_css "h2", text: "Upcoming Event"
     end
-
   end
 
   context "event has a talk" do
