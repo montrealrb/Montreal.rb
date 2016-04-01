@@ -6,8 +6,8 @@
   letter-spacing: 0.1em;
 
   &:hover {
-    background-color: $navbar-bg-highlight-color;
     color: $navbar-text-color;
+    background-color: $navbar-bg-highlight-color;
   }
 }
 
