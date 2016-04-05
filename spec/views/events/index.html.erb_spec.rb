@@ -1,21 +1,50 @@
 require "rails_helper"
 
 describe "events/index.html.erb" do
-  it "displays all the events" do
-    first_event = create(:event)
-    second_event = create(:event, title: "event two")
-    assign(:events, [first_event, second_event])
-    render
+  let!(:future_event) { create :event, :scheduled, starts_at: 1.month.from_now }
+  let!(:past_event)   { create :event, :scheduled, starts_at: 1.month.ago }
 
-    expect(rendered).to match(/#{first_event.title}/)
-    expect(rendered).to match(/#{second_event.title}/)
+  before do
+    assign :future_events, [future_event]
+    assign :past_events, [past_event]
+  end
+
+  it "displays all the events" do
+    render
+    expect(rendered).to include future_event.title.titleize
+    expect(rendered).to include past_event.title.titleize
   end
 
   it "links events title to corresponding show page" do
-    event = create(:event)
-    assign(:events, [event])
     render
+    expect(rendered).to have_link future_event.title.titleize, href: event_path(future_event)
+  end
 
-    expect(rendered).to have_link event.title.to_s, href: event_path(event)
+  context "there are no future events" do
+    before { assign :future_events, [] }
+
+    it "does not display anything about upcoming events" do
+      render
+      expect(rendered).not_to have_css "h2", text: "Upcoming Event"
+    end
+  end
+
+  context "event has a talk" do
+    let(:member) { create :member }
+    let!(:talk)  { create :talk, state: "scheduled", event_id: past_event.id, member_id: member.id }
+
+    it "displays the talks header" do
+      render
+      expect(rendered).to have_css "h3", text: "Talks"
+      expect(rendered).to have_css "h4", text: "#{talk.title}, by #{member.name}"
+    end
+  end
+
+  context "event has no talks" do
+    it "does not show anything about talks" do
+      render
+      expect(rendered).not_to have_css "h3", text: "Talks"
+      expect(rendered).not_to have_css "h4"
+    end
   end
 end

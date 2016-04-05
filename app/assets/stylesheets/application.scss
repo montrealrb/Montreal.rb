@@ -1,20 +1,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "layouts/variables";
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-@import "mixins/colors";
-
 @import "layouts/default";
 
-@import "components/post";
+@import "components/news_item";
 @import "components/meetup";
 @import "components/event";
 
 @import "modules/header";
 @import "modules/navigation";
-@import "modules/main";
-@import "modules/sidebar";
 @import "modules/footer";
 @import "modules/alert";

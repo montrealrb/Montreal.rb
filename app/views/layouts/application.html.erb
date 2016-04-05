@@ -2,7 +2,7 @@
 <head>
   <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
   <meta charset="utf-8" />
-  <title>Montreal.rb</title>
+  <title><%= full_title yield(:title) %></title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport" />
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,6 +10,7 @@
   <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500' rel='stylesheet' type='text/css'>
   <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <%= favicon_link_tag 'favicon.ico' %>
 </head>
 <body>
   <%= render 'layouts/flash' %>
@@ -17,8 +18,17 @@
   <div class="main container">
     <div class="row">
       <main class="col-md-12">
-        <%= yield %>
+
+        <section>
+          <%= yield %>
+        </section>
+
+        <aside>
+          <%= render template: 'news_items/index' %>
+        </aside>
+
       </main>
+
     </div>
   </div>
   <%= render 'layouts/footer' %>

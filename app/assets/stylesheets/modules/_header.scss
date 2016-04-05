@@ -1,15 +1,4 @@
-@media screen and (min-width: 768px) {
-  .navbar-brand {
-    height: 100px;
-  }
-}
-
 @media screen and (max-width: 768px) {
-  h1 {
-    margin-top: 5px;
-    padding-left: 10px;
-  }
-
   .navbar-collapse {
     border-color: $header-title-color;
   }
@@ -17,36 +6,22 @@
 
 header {
   background-color: $header-bg-color;
-  color: $header-title-color;
 
   h1 {
     color: $header-title-color;
     font-family: 'Roboto Mono';
+    font-size: 2.5em;
+    font-weight: 500;
     letter-spacing: 2px;
   }
 
   p {
-    color: #EEEEEE;
-  }
-
-  .navbar-brand {
-    padding: 5px;
-  }
-
-  .navbar-toggle,
-  .icon-bar {
-    border: 1px solid $header-title-color;
+    color: $bg-highlight;
+    padding-bottom: $padding;
+    padding-top: 0;
   }
 
   .navbar-toggle:hover {
     background-color: transparent;
-  }
-
-  a,
-  a:hover,
-  a:focus,
-  a:visited {
-    color: $header-title-color;
-    text-decoration: none;
   }
 }

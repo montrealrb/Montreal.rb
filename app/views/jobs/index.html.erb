@@ -1,10 +1,11 @@
+<% provide :title, 'Jobs' %>
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Jobs</h1>
 
 <% @jobs.each do |job| %>
-  <div class="post clearfix">
-    <h2 class="post-title"><%= link_to job.title, job_path(job) %></h2>
+  <div class="card">
+    <h2><%= link_to job.title, job_path(job) %></h2>
     <p class="meta">
       Posted <%= time_ago_in_words(job.created_at) %> ago
     </p>

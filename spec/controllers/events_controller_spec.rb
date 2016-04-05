@@ -2,7 +2,9 @@ require "rails_helper"
 
 RSpec.describe EventsController, type: :controller do
   let!(:proposed_event)  { create(:event, :proposed)  }
-  let!(:scheduled_event) { create(:event, :scheduled) }
+  let!(:scheduled_event) { create(:event, :scheduled, starts_at: Date.tomorrow) }
+  let!(:past_event)      { create(:event, :scheduled, starts_at: 1.month.ago) }
+  let!(:future_event)    { create(:event, :scheduled, starts_at: 1.month.from_now) }
 
   describe "GET #index" do
     before :each do
@@ -14,19 +16,30 @@ RSpec.describe EventsController, type: :controller do
     end
 
     it "includes scheduled_event in response" do
-      expect(assigns(:events)).to include scheduled_event
+      expect(assigns(:future_events)).to include scheduled_event
     end
 
-    it "does not include proposed in events" do
-      expect(assigns(:events)).not_to include proposed_event
+    it "does not include proposed events" do
+      expect(assigns(:past_events)).not_to   include proposed_event
+      expect(assigns(:future_events)).not_to include proposed_event
     end
 
     it "renders the :index template" do
       expect(response).to render_template :index
     end
+
+    it "gets past events" do
+      expect(assigns(:past_events)).to     include past_event
+      expect(assigns(:past_events)).not_to include future_event
+    end
+
+    it "gets future events" do
+      expect(assigns(:future_events)).to     include future_event
+      expect(assigns(:future_events)).not_to include past_event
+    end
   end
 
-  describe "GET #index" do
+  describe "GET #show" do
     before :each do
       get :show, id: scheduled_event.id
     end

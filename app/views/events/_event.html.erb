@@ -1,32 +1,20 @@
-<div class="event">
-  <h1 class="event-title"><%= link_to event.title, event_path(event)%></h1>
+<div class="card">
+  <h1 class="event-title"><%= link_to event.title.titleize, event %></h1>
   <div class="event-meta">
-    <div>
-      <span style="width: 28px;display: inline-block; text-align: center;"><i class="fa fa-calendar-o"></i></span>
-      <%= event.starts_at.to_formatted_s(:long) %>
-    </div>
-    <div>
-      <span style="width: 28px;display: inline-block; text-align: center;"><i class="fa fa-map-marker"></i></span>
-      <%= event.location.name %>, <a href="https://www.google.ca/maps/search/<%= event.location.address %>"><%= event.location.address %></a>
-    </div>
+    <p><%= icon 'calendar-o', class: 'fa-fw' %><%= event.starts_at.strftime('%B %e, %Y  -  %k:%M') %></p>
+    <p><%= icon 'map-marker', class: 'fa-fw' %><%= event.location.name %>, <a href="https://www.google.ca/maps/search/<%= event.location.address %>", target='_blank'><%= event.location.address %></a></p>
   </div>
   <div class="event-body">
-    <%= render_markdown_as_html(event.body)%>
-    <% if event.talks %>
-      <h2>Talks</h2>
-      <div class="talk">
+    <%= render_markdown_as_html truncate_if_past(event, event.body)%>
+    <% if event.talks.any? %>
+      <h3>Talks</h3>
         <% event.talks.each do |talk| %>
-          <h3><%= talk.title %><%= ", by #{talk.member.name}" %></h3>
-          <div class="row">
-            <div class="col-xs-12 col-sm-2">
-              <img src="<%= talk.member.picture || image_path("default_member") %>" width=100% />
-            </div>
-            <div class="col-xs-12 col-sm-10">
-              <%= render_markdown_as_html talk.description %>
-            </div>
+          <div class="talk">
+            <h4><%= talk.title %>, by <%= talk.member.name %></h4>
+            <%= gravatar_for talk.member %>
+            <%= render_markdown_as_html truncate_if_past(event, talk.description) %>
           </div>
         <% end %>
-      </div>
     <% end %>
   </div>
 </div>

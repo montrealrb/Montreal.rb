@@ -1,11 +1,16 @@
 footer {
   color: #fff;
-  margin-top: 20px;
+  margin-top: 70px;
   padding-top: 20px;
   padding-bottom: 10px;
   background-color: $footer-bg-color;
-  font-family: 'Montserrat', serif;
-  a, a:hover {
-    color: #fff;
+  font-family: $secondary-font;
+
+  a {
+    color: $footer-text-color;
+
+    &:hover {
+      color: $links;
+    }
   }
 }

@@ -1,11 +1,106 @@
+p,
+div {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: 'Lora', serif;
-  color:#0C0304;
-  background-color:#D9DADE;
-  a {
-    color: #0B486B;
+  background-color: $bg;
+  color: $main;
+  display: flex;
+  flex-direction: column;
+  font-family: $main-font;
+  line-height: $base-line-height;
+  min-height: 100vh;
+}
+
+section {
+  @extend .col-sm-12, .col-md-8, .col-lg-8;
+}
+
+aside {
+  @extend .col-sm-12, .col-md-3, .col-lg-3, .pull-right;
+}
+
+a,
+a:visited {
+  color: $links;
+  text-decoration: none;
+
+  &:hover {
+    color: $links-hover;
+    text-decoration: none;
   }
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $secondary-font;
+  margin: 0;
+  padding: $padding / 2 0;
+
+  a,
+  a:visited {
+    color: $main;
   }
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  color: $main-highlight;
+  padding-bottom: 0;
+}
+
+h3,
+h3 a {
+  color: $main-secondary;
+  font-weight: bold;
+}
+
+h4 {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.main {
+  flex: 1;
+  font-family: $main-font;
+  font-size: $base-font-size;
+  padding-top: $gutter;
+}
+
+.card {
+  background-color: $bg-secondary;
+  box-shadow: 1px 1px 3px 0 darken($bg-secondary, 10%);
+  margin: $gutter 0;
+  padding: 0 $gutter $padding;
+
+  h2 {
+    padding-bottom: $padding / 2 0;
+  }
+
+  h3 {
+    padding-top: $gutter;
+  }
+
+  i {
+    padding-right: 10px;
+  }
+}
+
+.meta {
+  font-style: italic;
+  padding-bottom: $padding;
+}
+
+.gravatar {
+  float: left;
+  padding: 5px 20px 15px 0;
 }
