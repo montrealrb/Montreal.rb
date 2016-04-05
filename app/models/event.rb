@@ -7,6 +7,8 @@ class Event < ActiveRecord::Base
   belongs_to :location
   belongs_to :author, foreign_key: :user_id, class_name: "User"
   has_many   :talks, -> { where(state: "scheduled") }, class_name: "Talk"
+  has_many   :sponsorships
+  has_many   :sponsors, through: :sponsorships, source: :organization
   has_and_belongs_to_many :members
 
   to_param :title

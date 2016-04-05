@@ -85,3 +85,11 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+# Testing file uploads
+if Rails.env.test? || Rails.env.cucumber?
+  CarrierWave.configure do |config|
+    config.storage = :file
+    config.enable_processing = false
+  end
+end
