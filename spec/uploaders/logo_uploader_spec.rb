@@ -1,20 +1,24 @@
+require "rails_helper"
 require "carrierwave/test/matchers"
 
 describe LogoUploader do
   include CarrierWave::Test::Matchers
 
+  let(:organization) { create :organization }
+  let(:uploader)     { LogoUploader.new(organization, :logo) }
+
   before do
     LogoUploader.enable_processing = true
-    @uploader = LogoUploader.new
-
     test_image_file = "spec/fixtures/rainbow_unicorn.jpg"
 
-    @uploader.store!(File.open(test_image_file))
+    uploader.store!(File.open(test_image_file))
   end
 
   after do
     LogoUploader.enable_processing = false
-    @uploader.remove!
+    organization.remove_logo!
+    organization.save
+    uploader.remove!
   end
 
   describe "only allows certin file formats" do
@@ -22,33 +26,38 @@ describe LogoUploader do
       is_expected.to respond_to :extension_white_list
     end
 
-    it "white list is set" do
-      pending
-      fail
-    end
-
-    it "fails to upload raw file" do
-      pending
-      fail
+    it "white list is set to image formats" do
+      expect(uploader.extension_white_list).to eq %w(jpg jpeg gif png)
     end
   end
 
   context "the thumb version" do
-    it "should scale down a landscape image to be exactly 64 by 64 pixels" do
-      pending
-      @uploader.thumb.should have_dimensions(64, 64)
+    subject { uploader.thumbnail }
+
+    it "should scale an image to be fill 50 by 50 pixels" do
+      expect(subject.transformation[:width]).to  eq 50
+      expect(subject.transformation[:height]).to eq 50
+    end
+
+    it "should be the correct format" do
+      expect(subject.format).to eq("png")
     end
   end
 
   context "the standard version" do
+    subject { uploader.standard }
+
     it "should scale an image to be fill 100 by 150 pixels" do
-      pending
-      @uploader.thumb.should have_dimensions(100, 150)
+      expect(subject.transformation[:width]).to  eq 100
+      expect(subject.transformation[:height]).to eq 150
+    end
+
+    it "should be the correct format" do
+      expect(subject.format).to eq("png")
     end
   end
 
   it "should be the correct format" do
-    pending "can't find the method .format"
-    expect(@uploader).to be_format("png")
+    expect(uploader.format).to eq("png")
   end
 end
