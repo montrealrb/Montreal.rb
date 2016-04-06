@@ -8,6 +8,7 @@ class OrganizationDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    sponsors: Field::HasMany.with_options(class_name: "Event"),
     id: Field::Number,
     name: Field::String,
     address: Field::Text,
@@ -25,7 +26,8 @@ class OrganizationDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :name,
-    :address
+    :address,
+    :sponsors,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -36,6 +38,7 @@ class OrganizationDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
+    :sponsors,
     :name,
     :address,
     :logo,
