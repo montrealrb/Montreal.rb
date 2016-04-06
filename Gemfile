@@ -44,7 +44,7 @@ gem "globalize"
 gem "globalize-accessors"
 
 # Administration
-gem "administrate", "~> 0.1.1"
+gem "administrate", "~> 0.1.5"
 
 # Ops
 gem "bugsnag"
