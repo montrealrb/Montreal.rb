@@ -163,7 +163,7 @@ This application is automatically deployed to __heroku__ after a successful [Tra
 ### URLs
 
 - The heroku url is: [https://montreal-rb.herokuapp.com/](https://montreal-rb.herokuapp.com/)
-- The official url is: [https://montrealrb.com/](https://montrealrb.com/)
+- The official url is: [http://montrealrb.com/](http://montrealrb.com/)
 
 ## Bug Tracker
 
