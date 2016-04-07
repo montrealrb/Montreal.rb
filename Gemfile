@@ -9,13 +9,13 @@ gem "carrierwave"
 gem "cloudinary"
 
 # Assets
-gem "autoprefixer-rails", "~> 6.3"
+gem "autoprefixer-rails", "~> 6.3.6"
 gem "bootstrap-sass", "~> 3.3.6"
 gem "font-awesome-sass"
 gem "coffee-rails", "~> 4.1.0"
 gem "jquery-rails"
 gem "sass-rails"
-gem "uglifier", ">= 1.3.0"
+gem "uglifier", "~> 3.0.0"
 gem "sprockets", "~> 3.0"
 
 # Application
@@ -44,7 +44,7 @@ gem "globalize"
 gem "globalize-accessors"
 
 # Administration
-gem "administrate", "~> 0.1.1"
+gem "administrate", "~> 0.1.5"
 
 # Ops
 gem "bugsnag"
