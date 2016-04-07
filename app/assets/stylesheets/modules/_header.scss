@@ -17,8 +17,8 @@ header {
 
   p {
     color: $bg-highlight;
-    padding-bottom: $padding;
-    padding-top: 0;
+    padding: 0;
+    margin-top: 0;
   }
 
   .navbar-toggle:hover {
