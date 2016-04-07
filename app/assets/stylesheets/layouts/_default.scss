@@ -76,10 +76,15 @@ h4 {
 blockquote {
   border-left: 5px double $header-bg-color;
   margin: $padding;
+
+  p {
+    margin: 0;
+  }
 }
 
 ul {
   padding-left: $gutter;
+  margin: 0;
 }
 
 .main {
