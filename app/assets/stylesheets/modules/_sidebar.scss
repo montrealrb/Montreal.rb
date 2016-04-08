@@ -6,9 +6,9 @@ aside {
     box-shadow: 1px 1px 3px 0 darken($bg-highlight, 10%);
     margin: $gutter 0;
     padding: $padding / 2 $gutter;
+  }
 
-    h3 {
-      padding-bottom: 0;
-    }
+  h3 {
+    padding-bottom: 0;
   }
 }

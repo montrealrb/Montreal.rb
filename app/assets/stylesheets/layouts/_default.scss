@@ -83,8 +83,8 @@ blockquote {
 }
 
 ul {
-  padding-left: $gutter;
   margin: 0;
+  padding-left: $gutter;
 }
 
 .main {
@@ -119,12 +119,13 @@ ul {
   }
 
   h2 {
-    font-size: 1.1em;
     color: $main-secondary;
+    font-size: 1.1em;
     padding: $padding 0;
   }
 
-  h3, h4 {
+  h3,
+  h4 {
     font-size: 1em;
   }
 }
