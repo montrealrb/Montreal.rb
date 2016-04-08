@@ -1,19 +1,13 @@
 <footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <ul class="list-inline">
-          <li>Follow us:</li>
-          <li><%= link_to icon("twitter", "@montrealrb"), "https://twitter.com/montrealrb", target: "_blank" %></li>
-          <li><%= link_to icon("google", "Google group"), "https://groups.google.com/forum/?fromgroups#!forum/montrealrb", target: "_blank" %></li>
-          <li><%= link_to icon("history", "changelog"), "https://github.com/montrealrb/Montreal.rb/wiki/Changelog#release-2015-12-15", target: "_blank" %></li>
-        </ul>
-      </div>
-      <div class="col-sm-6">
-        <p class="pull-right">
-          Montreal.rb &copy; <%= Time.current.year %>
-        </p>
-      </div>
-    </div>
+  <div class="left">
+    <ul>
+      <li>Follow us:</li>
+      <li><%= link_to icon("twitter", "@montrealrb"), "https://twitter.com/montrealrb", target: "_blank" %></li>
+      <li><%= link_to icon("google", "Google group"), "https://groups.google.com/forum/?fromgroups#!forum/montrealrb", target: "_blank" %></li>
+      <li><%= link_to icon("history", "changelog"), "https://github.com/montrealrb/Montreal.rb/wiki/Changelog#release-2015-12-15", target: "_blank" %></li>
+    </ul>
+  </div>
+  <div class="right">
+    <p>Montreal.rb &copy; <%= Time.current.year %></p>
   </div>
 </footer>

@@ -1,4 +1,3 @@
-p,
 div {
   margin: 0;
   padding: 0;
@@ -18,10 +17,6 @@ section {
   @extend .col-sm-12, .col-md-8, .col-lg-8;
 }
 
-aside {
-  @extend .col-sm-12, .col-md-3, .col-lg-3, .pull-right;
-}
-
 a,
 a:visited {
   color: $links;
@@ -31,6 +26,10 @@ a:visited {
     color: $links-hover;
     text-decoration: none;
   }
+}
+
+p {
+  margin: $padding 0;
 }
 
 h1,
@@ -46,6 +45,11 @@ h6 {
   a,
   a:visited {
     color: $main;
+
+    &:hover {
+      color: $links;
+      text-decoration: none;
+    }
   }
 }
 
@@ -69,6 +73,20 @@ h4 {
   text-transform: uppercase;
 }
 
+blockquote {
+  border-left: 5px double $header-bg-color;
+  margin: $padding;
+
+  p {
+    margin: 0;
+  }
+}
+
+ul {
+  margin: 0;
+  padding-left: $gutter;
+}
+
 .main {
   flex: 1;
   font-family: $main-font;
@@ -86,10 +104,6 @@ h4 {
     padding-bottom: $padding / 2 0;
   }
 
-  h3 {
-    padding-top: $gutter;
-  }
-
   i {
     padding-right: 10px;
   }
@@ -97,7 +111,23 @@ h4 {
 
 .meta {
   font-style: italic;
-  padding-bottom: $padding;
+}
+
+.markdown-body {
+  h1 {
+    font-size: 1.3em;
+  }
+
+  h2 {
+    color: $main-secondary;
+    font-size: 1.1em;
+    padding: $padding 0;
+  }
+
+  h3,
+  h4 {
+    font-size: 1em;
+  }
 }
 
 .gravatar {

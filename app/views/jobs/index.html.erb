@@ -9,7 +9,7 @@
     <p class="meta">
       Posted <%= time_ago_in_words(job.created_at) %> ago
     </p>
-    <div class="post-body">
+    <div class="markdown-body">
       <%= render_markdown_as_html job.description %>
     </div>
   </div>
