@@ -20,7 +20,8 @@ footer {
     padding: 0;
   }
 
-  li, p {
+  li,
+  p {
     display: inline;
     list-style: none;
     padding: 0 $padding;
@@ -39,7 +40,8 @@ footer {
       flex: 1;
     }
 
-    li, p {
+    li,
+    p {
       display: block;
     }
   }
