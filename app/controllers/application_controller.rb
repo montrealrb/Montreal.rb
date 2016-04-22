@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
   end
 
   def load_sidebar
-    @news_items = NewsItem.published.to_a
+    @news_items = NewsItem.published
   end
 end

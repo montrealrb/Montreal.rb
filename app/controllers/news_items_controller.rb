@@ -10,12 +10,20 @@ class NewsItemsController < ApplicationController
   # and this is why we first try to load an event_item using that param.
   #
   def show
-    @news_item = news_item_scope.where(slug: params[:slug]).first ||
-                 news_item_scope.where(id: params[:id]).first ||
+    @news_item = find_news_item_by_leagcy ||
+                 find_news_item_by_id ||
                  raise(ActiveRecord::RecordNotFound)
   end
 
   private
+
+  def find_news_item_by_leagcy
+    news_item_scope.where(slug: params[:slug]).first if params[:slug]
+  end
+
+  def find_news_item_by_id
+    news_item_scope.where(id: params[:id]).first
+  end
 
   def news_item_scope
     NewsItem.published
