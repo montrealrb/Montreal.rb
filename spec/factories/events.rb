@@ -4,6 +4,7 @@ FactoryGirl.define do
     association :author, factory: :user
 
     starts_at { Faker::Date.between(30.days.ago, 30.days.from_now) }
+    state { Event::STATES.sample }
 
     # Translatable:
     title { Faker::Lorem.sentence  }

@@ -3,7 +3,7 @@ FactoryGirl.define do
   factory :news_item do
     association :author, factory: :user
 
-    state { Job::STATES.sample }
+    state { NewsItem::STATES.sample }
     title { Faker::Lorem.sentence }
     body { Faker::Lorem.paragraph }
     published_at { Faker::Date.backward(60) }
