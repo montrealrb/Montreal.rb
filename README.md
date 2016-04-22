@@ -102,21 +102,13 @@ use the GitHub API, you must set environment variables for the GitHub 'key' and
 You can first obtain this key/secret [through your GitHub account](https://github.com/settings/applications/new).
 
 For image hosting Cloudinary is used. This service gives us the ability to host
-images with a heroku app.
+images with a heroku app. Sign up for a [free coludinary account](https://cloudinary.com/).
 
-Sign up for a [free account](https://cloudinary.com/).
+Now you need to set the environment variables on your server. The procedure
+will depend on your system.
 
-Now you need to set the environment variables on your server. The procedure will
-depend on your system.
-
-On Unix-based systems using the bash shell, add the following to your `~/.bashrc` 
-file, replacing the inside of the quotes with your key/secret:
-
-```
-export GITHUB_KEY="your_key"
-export GITHUB_GITHUB_SECRET="your_secret"
-export CLOUDINARY_URL="cloudinary://your_key:your_secret"
-```
+For development, copy `.env.sample` file to `.env` and fill appropriately the
+variables settings.
 
 If using Heroku, you can set the environment variables like this:
 
