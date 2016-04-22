@@ -12,7 +12,7 @@ class OrganizationDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     address: Field::Text,
-    logo: Field::String,
+    logo: CarrierwaveField,
     description: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime

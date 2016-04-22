@@ -21,7 +21,7 @@
       <% event.sponsors.each do |sponsor| %>
         <h4><%= link_to sponsor.name, organization_path(sponsor) %></h4>
         <% if sponsor.logo %>
-          <%= image_tag sponsor.logo.url %>
+          <%= image_tag sponsor.logo.thumbnail.url %>
         <% end %>
       <% end %>
     <% end %>
