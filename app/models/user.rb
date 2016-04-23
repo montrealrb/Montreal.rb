@@ -31,6 +31,8 @@ class User < ActiveRecord::Base
     find_by(provider: auth.provider, uid: auth.uid) ||
     find_or_create_by(email: auth.info.email) do |user|
       user.password = Devise.friendly_token[0, 20]
+    end.tap do |user|
+      user.update_attributes(provider: auth.provider, uid: auth.uid)
     end
   end
 
