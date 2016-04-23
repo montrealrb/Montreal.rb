@@ -5,7 +5,7 @@
     <p><%= icon 'map-marker', class: 'fa-fw' %><%= event.location.name %>, <a href="https://www.google.ca/maps/search/<%= event.location.address %>", target='_blank'><%= event.location.address %></a></p>
   </div>
   <div class="markdown-body">
-    <%= render_markdown_as_html truncate_if_past(event, event.body)%>
+    <%= render_markdown_as_html event.body %>
     <% if event.talks.any? %>
       <h3>Talks</h3>
       <%= render event.talks %>
