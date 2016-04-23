@@ -28,8 +28,8 @@ class User < ActiveRecord::Base
   has_one :member
 
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
+    find_by(provider: auth.provider, uid: auth.uid) ||
+    find_or_create_by(email: auth.info.email) do |user|
       user.password = Devise.friendly_token[0, 20]
     end
   end
