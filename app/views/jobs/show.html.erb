@@ -1,7 +1,5 @@
-<p id="notice"><%= notice %></p>
-
 <h1><%= @job.title %></h1>
-<div class="post-body">
+<div class="markdown-body">
   <%= render_markdown_as_html @job.description %>
 </div>
 

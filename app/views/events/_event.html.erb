@@ -1,23 +1,18 @@
 <div class="card">
-  <h1 class="event-title"><%= link_to event.title.titleize, event %></h1>
+  <h1><%= link_to event.title.titleize, event %></h1>
   <div class="event-meta">
     <p><%= icon 'calendar-o', class: 'fa-fw' %><%= event.starts_at.strftime('%B %e, %Y  -  %k:%M') %></p>
     <p><%= icon 'map-marker', class: 'fa-fw' %><%= event.location.name %>, <a href="https://www.google.ca/maps/search/<%= event.location.address %>", target='_blank'><%= event.location.address %></a></p>
   </div>
-  <div class="event-body">
-    <%= render_markdown_as_html truncate_if_past(event, event.body) %>
+  <div class="markdown-body">
+    <%= render_markdown_as_html event.body %>
     <% if event.talks.any? %>
       <h3>Talks</h3>
-      <% event.talks.each do |talk| %>
-        <div class="talk">
-          <h4><%= talk.title %>, by <%= talk.member.name %></h4>
-          <%= gravatar_for talk.member %>
-          <%= render_markdown_as_html truncate_if_past(event, talk.description) %>
-        </div>
-      <% end %>
+      <%= render event.talks %>
     <% end %>
     <% if event.sponsors.present? %>
       <h3>Brought to you by our sponsors: </h3>
+      <%# ------ Need to put this into _sponsors partial %>
       <% event.sponsors.each do |sponsor| %>
         <div class="sponsor">
           <h4>
@@ -28,6 +23,7 @@
           </h4>
         </div>
       <% end %>
+      <%# ------ end %>
     <% end %>
   </div>
 </div>

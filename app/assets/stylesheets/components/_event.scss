@@ -2,12 +2,16 @@
   font-family: $secondary-font;
   font-size: 1.2em;
   line-height: 1.6em;
-  padding-bottom: $gutter;
   padding-left: $padding / 2;
+
+  p {
+    margin: 0;
+  }
 }
 
 .talk {
   min-height: $min-height-for-field-with-gravatar;
+  margin-bottom: 50px;
 }
 
 .sponsor {
