@@ -5,11 +5,9 @@ RSpec.describe User, type: :model do
 
   describe ".from_omniauth" do
     let(:auth) do
-      double(:auth, {
-        provider: 'Github',
-        uid: 'aksjdf',
-        info: double(:info, { email: 'an_email@provider.com' })
-      })
+      double(:auth, provider: "Github",
+                    uid: "aksjdf",
+                    info: double(:info, email: "an_email@provider.com"))
     end
 
     subject { described_class.from_omniauth(auth) }
@@ -33,7 +31,6 @@ RSpec.describe User, type: :model do
     end
 
     context "when the user does not exist" do
-
       it { expect { subject }.to change(User, :count) }
 
       it { is_expected.to be_a User }

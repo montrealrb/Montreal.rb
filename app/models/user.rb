@@ -27,52 +27,54 @@ class User < ActiveRecord::Base
 
   has_one :member
 
-  def self.from_omniauth(auth)
-    find_with_auth_provider(auth) ||
-      find_existing_with_auth_email(auth) ||
-      create_with_auth(auth)
-  end
+  class << self
+    def from_omniauth(auth)
+      find_with_auth_provider(auth) ||
+        find_existing_with_auth_email(auth) ||
+        create_with_auth(auth)
+    end
 
-  def self.new_with_session(params, session)
-    super.tap do |user|
-      if data = session["devise.github_data"] &&
-                session["devise.github_data"]["extra"]["raw_info"]
-        user.email = data["email"] if user.email.blank?
+    def new_with_session(params, session)
+      super.tap do |user|
+        if data = session["devise.github_data"] &&
+                  session["devise.github_data"]["extra"]["raw_info"]
+          user.email = data["email"] if user.email.blank?
+        end
       end
     end
-  end
 
-  def self.create_default_user!
-    User.create! email: User::DEFAULT_USER_EMAIL, password: "12345678"
-  end
+    def create_default_user!
+      User.create! email: User::DEFAULT_USER_EMAIL, password: "12345678"
+    end
 
-  def self.default_user
-    User.find_by(email: DEFAULT_USER_EMAIL)
-  end
+    def default_user
+      User.find_by(email: DEFAULT_USER_EMAIL)
+    end
+
+    private
+
+    def find_with_auth_provider(auth)
+      find_by(provider: auth.provider, uid: auth.uid)
+    end
+
+    def find_existing_with_auth_email(auth)
+      find_by(email: auth.info.email).tap do |user|
+        user.update_attributes(provider: auth.provider, uid: auth.uid) if user
+      end
+    end
+
+    def create_with_auth(auth)
+      create(
+        email: auth.info.email,
+        password: Devise.friendly_token[0, 20],
+        provider: auth.provider,
+        uid: auth.uid
+      )
+    end
+  end # class << self
 
   # make it impossible for the default user to authenticate
   def active_for_authentication?
     super && email != DEFAULT_USER_EMAIL
-  end
-
-  private
-
-  def self.find_with_auth_provider(auth)
-    find_by(provider: auth.provider, uid: auth.uid)
-  end
-
-  def self.find_existing_with_auth_email(auth)
-    find_by(email: auth.info.email).tap do |user|
-      user.update_attributes(provider: auth.provider, uid: auth.uid) if user
-    end
-  end
-
-  def self.create_with_auth(auth)
-    create(
-      email: auth.info.email,
-      password: Devise.friendly_token[0, 20],
-      provider: auth.provider,
-      uid: auth.uid
-    )
   end
 end
