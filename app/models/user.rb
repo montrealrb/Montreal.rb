@@ -28,12 +28,9 @@ class User < ActiveRecord::Base
   has_one :member
 
   def self.from_omniauth(auth)
-    find_by(provider: auth.provider, uid: auth.uid) ||
-    find_or_create_by(email: auth.info.email) do |user|
-      user.password = Devise.friendly_token[0, 20]
-    end.tap do |user|
-      user.update_attributes(provider: auth.provider, uid: auth.uid)
-    end
+    find_with_auth_provider(auth) ||
+      find_existing_with_auth_email(auth) ||
+      create_with_auth(auth)
   end
 
   def self.new_with_session(params, session)
@@ -56,5 +53,26 @@ class User < ActiveRecord::Base
   # make it impossible for the default user to authenticate
   def active_for_authentication?
     super && email != DEFAULT_USER_EMAIL
+  end
+
+  private
+
+  def find_with_auth_provider(auth)
+    find_by(provider: auth.provider, uid: auth.uid)
+  end
+
+  def find_existing_with_auth_email(auth)
+    find_by(email: auth.info.email).tap do |user|
+      user.update_attributes(provider: auth.provider, uid: auth.uid)
+    end
+  end
+
+  def create_with_auth(auth)
+    create(
+      email: auth.info.email,
+      password: Devise.friendly_token[0, 20],
+      provider: auth.provider,
+      uid: auth.uid
+    )
   end
 end
