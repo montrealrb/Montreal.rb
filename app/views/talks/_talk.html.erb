@@ -1,0 +1,17 @@
+<div class="talk markdown-body">
+  <div class="row">
+    <div class="col-sm-3 col-sm-3 hidden-xs hidden-xs">
+      <%= gravatar_for(talk.member, html: { class: "gravatar img-circle", width: '100%' })%>
+    </div>
+    <div class="col-sm-9 col-sm-9">
+      <h4><%= talk.title %>, by <%= talk.member.name %></h4>
+      <div class='meta'>
+        Talk level: <%= talk.level %><br/>
+        <% if talk.event.starts_at.past? && talk.slides_url? %>
+          Slides: <%= link_to talk.slides_url, talk.slides_url %>
+      <% end %>
+      </div>
+      <%= render_markdown_as_html talk.description %>
+    </div>
+  </div>
+</div>

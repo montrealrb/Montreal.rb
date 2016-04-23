@@ -70,7 +70,6 @@ h3 a {
 
 h4 {
   letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 blockquote {
@@ -111,6 +110,8 @@ ul {
 
 .meta {
   font-style: italic;
+  padding-bottom: $padding;
+  color: $main-secondary;
 }
 
 .markdown-body {
@@ -132,5 +133,5 @@ ul {
 
 .gravatar {
   float: left;
-  padding: 5px 20px 15px 0;
+  margin: 5px 20px 15px 0px;
 }

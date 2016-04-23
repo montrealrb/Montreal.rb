@@ -6,15 +6,9 @@
   </div>
   <div class="markdown-body">
     <%= render_markdown_as_html truncate_if_past(event, event.body)%>
+    <% if event.talks.any? %>
+      <h3>Talks</h3>
+      <%= render event.talks %>
+    <% end %>
   </div>
-  <% if event.talks.any? %>
-    <h3>Talks</h3>
-      <% event.talks.each do |talk| %>
-        <div class="talk markdown-body">
-          <h4><%= talk.title %>, by <%= talk.member.name %></h4>
-          <%= gravatar_for talk.member %>
-          <%= render_markdown_as_html truncate_if_past(event, talk.description) %>
-        </div>
-      <% end %>
-  <% end %>
 </div>
