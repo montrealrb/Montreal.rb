@@ -8,7 +8,7 @@ RSpec.describe UsersHelper, type: :helper do
 
     it "generates the right image tag" do
       expect(gravatar_for(member)).to include "alt=\"#{member.name}\""
-      expect(gravatar_for(member, html: { class: 'gravatar' })).to include 'class="gravatar"'
+      expect(gravatar_for(member, html: { class: "gravatar" })).to include 'class="gravatar"'
       expect(gravatar_for(member, size: 100)).to include test
     end
   end
