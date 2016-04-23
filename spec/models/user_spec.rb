@@ -25,19 +25,20 @@ RSpec.describe User, type: :model do
 
       it { expect { subject }.to_not change(User, :count) }
 
-      its(:id) { is_expected.to eq user.id }
-      its(:uid) { is_expected.to eq auth.uid }
+      its(:id)       { is_expected.to eq user.id       }
+      its(:uid)      { is_expected.to eq auth.uid      }
       its(:provider) { is_expected.to eq auth.provider }
     end
 
     context "when the user does not exist" do
       it { expect { subject }.to change(User, :count) }
 
-      it { is_expected.to be_a User }
+      it { is_expected.to be_a User    }
       it { is_expected.to be_persisted }
 
-      its(:uid) { is_expected.to eq auth.uid }
-      its(:provider) { is_expected.to eq auth.provider }
+      its(:uid)      { is_expected.to eq auth.uid        }
+      its(:provider) { is_expected.to eq auth.provider   }
+      its(:email)    { is_expected.to eq auth.info.email }
     end
   end
 end
