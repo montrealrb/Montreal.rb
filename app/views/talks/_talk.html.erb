@@ -8,7 +8,7 @@
       <div class='meta'>
         Talk level: <%= talk.level %><br/>
         <% if talk.event.starts_at.past? && talk.slides_url? %>
-          Slides: <%= link_to talk.slides_url, talk.slides_url %>
+          Slides: <%= link_to truncate(talk.slides_url, length: 50), talk.slides_url, target: "_blank" %>
       <% end %>
       </div>
       <%= render_markdown_as_html talk.description %>
