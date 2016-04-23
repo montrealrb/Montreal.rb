@@ -10,7 +10,7 @@ class LogoUploader < CarrierWave::Uploader::Base
   end
 
   version :thumbnail do
-    resize_to_fit(50, 50)
+    resize_to_fit(100, 100)
   end
 
   def extension_white_list

@@ -5,24 +5,28 @@
     <p><%= icon 'map-marker', class: 'fa-fw' %><%= event.location.name %>, <a href="https://www.google.ca/maps/search/<%= event.location.address %>", target='_blank'><%= event.location.address %></a></p>
   </div>
   <div class="event-body">
-    <%= render_markdown_as_html truncate_if_past(event, event.body)%>
+    <%= render_markdown_as_html truncate_if_past(event, event.body) %>
     <% if event.talks.any? %>
       <h3>Talks</h3>
-        <% event.talks.each do |talk| %>
-          <div class="talk">
-            <h4><%= talk.title %>, by <%= talk.member.name %></h4>
-            <%= gravatar_for talk.member %>
-            <%= render_markdown_as_html truncate_if_past(event, talk.description) %>
-          </div>
-        <% end %>
+      <% event.talks.each do |talk| %>
+        <div class="talk">
+          <h4><%= talk.title %>, by <%= talk.member.name %></h4>
+          <%= gravatar_for talk.member %>
+          <%= render_markdown_as_html truncate_if_past(event, talk.description) %>
+        </div>
+      <% end %>
     <% end %>
     <% if event.sponsors.present? %>
       <h3>Brought to you by our sponsors: </h3>
       <% event.sponsors.each do |sponsor| %>
-        <h4><%= link_to sponsor.name, organization_path(sponsor) %></h4>
-        <% if sponsor.logo %>
-          <%= image_tag sponsor.logo.thumbnail.url %>
-        <% end %>
+        <div class="sponsor">
+          <h4>
+            <%= link_to sponsor.name, organization_path(sponsor) %>
+            <% if sponsor.logo.present? %>
+              <%= link_to image_tag(sponsor.logo.thumbnail.url, alt: sponsor.name), organization_path(sponsor), class: "pull-right" %>
+            <% end %>
+          </h4>
+        </div>
       <% end %>
     <% end %>
   </div>
