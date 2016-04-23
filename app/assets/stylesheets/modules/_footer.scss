@@ -1,16 +1,48 @@
 footer {
   color: #fff;
-  margin-top: 70px;
-  padding-top: 20px;
-  padding-bottom: 10px;
   background-color: $footer-bg-color;
   font-family: $secondary-font;
+  padding: $gutter $padding;
+  margin-top: $gutter;
+  display: flex;
+  align-items: center;
+
+  .right {
+    flex: 1;
+    text-align: right;
+  }
+
+  .left {
+    flex: 2;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  li,
+  p {
+    display: inline;
+    list-style: none;
+    padding: 0 $padding;
+  }
 
   a {
     color: $footer-text-color;
 
     &:hover {
       color: $links;
+    }
+  }
+
+  @media screen and (max-width: $small-screen) {
+    .left {
+      flex: 1;
+    }
+
+    li,
+    p {
+      display: block;
     }
   }
 }

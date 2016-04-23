@@ -1,5 +1,6 @@
 class NewsItemsController < ApplicationController
   def index
+    @on_news_index = true
     @news_items = news_item_scope.to_a
   end
 
