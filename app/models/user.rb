@@ -57,17 +57,17 @@ class User < ActiveRecord::Base
 
   private
 
-  def find_with_auth_provider(auth)
+  def self.find_with_auth_provider(auth)
     find_by(provider: auth.provider, uid: auth.uid)
   end
 
-  def find_existing_with_auth_email(auth)
+  def self.find_existing_with_auth_email(auth)
     find_by(email: auth.info.email).tap do |user|
-      user.update_attributes(provider: auth.provider, uid: auth.uid)
+      user.update_attributes(provider: auth.provider, uid: auth.uid) if user
     end
   end
 
-  def create_with_auth(auth)
+  def self.create_with_auth(auth)
     create(
       email: auth.info.email,
       password: Devise.friendly_token[0, 20],
