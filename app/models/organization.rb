@@ -5,8 +5,8 @@ class Organization < ActiveRecord::Base
   translates :description
   mount_uploader :logo, LogoUploader
 
-  has_many   :sponsorships
-  has_many   :sponsors, through: :sponsorships, source: :event
+  has_many :sponsorships
+  has_many :sponsored_events, through: :sponsorships, source: :event
 
   validates :name, uniqueness: true, presence: true
 end
