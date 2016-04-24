@@ -34,9 +34,9 @@ describe LogoUploader do
   context "the thumb version" do
     subject { uploader.thumbnail }
 
-    it "should scale an image to be fill 50 by 50 pixels" do
-      expect(subject.transformation[:width]).to  eq 50
-      expect(subject.transformation[:height]).to eq 50
+    it "should scale an image to be fill 100 by 100 pixels" do
+      expect(subject.transformation[:width]).to  eq 100
+      expect(subject.transformation[:height]).to eq 100
     end
 
     it "should be the correct format" do
@@ -47,9 +47,9 @@ describe LogoUploader do
   context "the standard version" do
     subject { uploader.standard }
 
-    it "should scale an image to be fill 100 by 150 pixels" do
-      expect(subject.transformation[:width]).to  eq 100
-      expect(subject.transformation[:height]).to eq 150
+    it "should scale an image to be fill 300 by 700 pixels" do
+      expect(subject.transformation[:width]).to  eq 300
+      expect(subject.transformation[:height]).to eq 700
     end
 
     it "should be the correct format" do
