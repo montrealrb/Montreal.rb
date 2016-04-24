@@ -1,0 +1,18 @@
+<div class="sponsorship">
+  <div class="row">
+    <div class="col-med-10 hidden-sm">
+      <h4>
+        <%= link_to sponsorship.organization.name, organization_path(sponsorship.organization) %>
+      </h4>
+      <% if sponsorship.message.present? %>
+        <p><%= sponsorship.message %></p>
+      <% end %>
+      </div>
+    </div>
+    <div class="col-med-2 pull-right">
+      <% if sponsorship.organization.logo.present? %>
+        <%= link_to image_tag(sponsorship.organization.logo.thumbnail.url, alt: sponsorship.organization.name), organization_path(sponsorship.organization) %>
+      <% end %>
+    </div>
+  </div>
+</div>

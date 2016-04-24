@@ -12,7 +12,7 @@
     <% end %>
     <% if event.sponsors.present? %>
       <h3>Brought to you by our sponsors: </h3>
-      <%= render partial: "sponsors/sponsor", collection: event.sponsors %>
+      <%= render event.sponsorships %>
     <% end %>
   </div>
 </div>
