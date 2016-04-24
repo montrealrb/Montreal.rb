@@ -1,0 +1,8 @@
+<div class="sponsor">
+  <h4>
+    <%= link_to sponsor.name, organization_path(sponsor) %>
+    <% if sponsor.logo.present? %>
+      <%= link_to image_tag(sponsor.logo.thumbnail.url, alt: sponsor.name), organization_path(sponsor), class: "pull-right" %>
+  <% end %>
+  </h4>
+</div>

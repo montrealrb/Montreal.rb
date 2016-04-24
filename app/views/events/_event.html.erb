@@ -12,18 +12,7 @@
     <% end %>
     <% if event.sponsors.present? %>
       <h3>Brought to you by our sponsors: </h3>
-      <%# ------ Need to put this into _sponsors partial %>
-      <% event.sponsors.each do |sponsor| %>
-        <div class="sponsor">
-          <h4>
-            <%= link_to sponsor.name, organization_path(sponsor) %>
-            <% if sponsor.logo.present? %>
-              <%= link_to image_tag(sponsor.logo.thumbnail.url, alt: sponsor.name), organization_path(sponsor), class: "pull-right" %>
-            <% end %>
-          </h4>
-        </div>
-      <% end %>
-      <%# ------ end %>
+      <%= render partial: "sponsors/sponsor", collection: event.sponsors %>
     <% end %>
   </div>
 </div>
