@@ -74,6 +74,7 @@ group :development, :test do
   gem "dotenv-rails"
   gem "rspec-rails"
   gem "shoulda-matchers"
+  gem "rspec-its"
   gem "rubocop", require: false
   gem "sqlite3"
   gem "timecop"
