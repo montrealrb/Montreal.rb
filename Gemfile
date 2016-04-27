@@ -71,6 +71,7 @@ group :development, :test do
   gem "guard-rspec", require: false
   gem "guard-rubocop"
   gem "pry"
+  gem "dotenv-rails"
   gem "rspec-rails"
   gem "shoulda-matchers"
   gem "rubocop", require: false

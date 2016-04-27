@@ -10,5 +10,9 @@
       <h3>Talks</h3>
       <%= render event.talks %>
     <% end %>
+    <% if event.sponsors.present? %>
+      <h3>Brought to you by our sponsors: </h3>
+      <%= render event.sponsorships %>
+    <% end %>
   </div>
 </div>

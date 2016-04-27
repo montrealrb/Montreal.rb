@@ -16,6 +16,7 @@ class DashboardManifest
     :locations,
     :jobs,
     :organizations,
+    :sponsorships,
     :pages,
     :members,
     :users,

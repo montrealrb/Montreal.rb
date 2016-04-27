@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318004322) do
+ActiveRecord::Schema.define(version: 20160424005454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -168,6 +168,17 @@ ActiveRecord::Schema.define(version: 20160318004322) do
 
   add_index "pages", ["slug"], name: "index_pages_on_slug", unique: true, using: :btree
 
+  create_table "sponsorships", force: :cascade do |t|
+    t.integer  "event_id",        null: false
+    t.integer  "organization_id", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "message"
+  end
+
+  add_index "sponsorships", ["event_id"], name: "index_sponsorships_on_event_id", using: :btree
+  add_index "sponsorships", ["organization_id"], name: "index_sponsorships_on_organization_id", using: :btree
+
   create_table "talk_translations", force: :cascade do |t|
     t.integer  "talk_id",     null: false
     t.string   "locale",      null: false
@@ -217,5 +228,7 @@ ActiveRecord::Schema.define(version: 20160318004322) do
   add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
 
   add_foreign_key "members", "users"
+  add_foreign_key "sponsorships", "events"
+  add_foreign_key "sponsorships", "organizations"
   add_foreign_key "talks", "events"
 end

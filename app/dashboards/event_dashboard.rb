@@ -9,6 +9,7 @@ class EventDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     location: Field::BelongsTo,
+    sponsors: Field::HasMany.with_options(class_name: "Organization"),
     id: Field::Number,
     starts_at: Field::DateTime,
     state: EnumField,
@@ -42,6 +43,7 @@ class EventDashboard < Administrate::BaseDashboard
     :title,
     :state,
     :body,
+    :sponsors,
     :starts_at,
     :location
   ].freeze

@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class OrganizationDashboard < Administrate::BaseDashboard
+class SponsorshipDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,14 +8,11 @@ class OrganizationDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    sponsored_events: Field::HasMany.with_options(class_name: "Event"),
-    id: Field::Number,
-    name: Field::String,
-    address: Field::Text,
-    logo: CarrierwaveField,
-    description: Field::Text,
+    event: Field::BelongsTo,
+    organization: Field::BelongsTo,
+    message: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    updated_at: Field::DateTime,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -24,32 +21,32 @@ class OrganizationDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :id,
-    :logo,
-    :name,
-    :address,
-    :sponsored_events,
+    :event,
+    :organization,
+    :message,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = ATTRIBUTE_TYPES.keys
+  SHOW_PAGE_ATTRIBUTES = [
+    :event,
+    :organization,
+    :message,
+  ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :sponsored_events,
-    :name,
-    :address,
-    :logo,
-    :description
+    :event,
+    :organization,
+    :message,
   ].freeze
 
-  # Overwrite this method to customize how organizations are displayed
+  # Overwrite this method to customize how sponsorships are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(organization)
-  #   "Organization ##{organization.id}"
+  # def display_resource(sponsorship)
+  #   "Sponsorship ##{sponsorship.id}"
   # end
 end

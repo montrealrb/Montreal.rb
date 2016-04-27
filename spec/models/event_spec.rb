@@ -10,9 +10,15 @@ RSpec.describe Event, type: :model do
         to respond_to :starts_at, :location, :title, :author, :body, :state
     end
 
-    it { is_expected.to have_many :talks    }
-    it { is_expected.to belong_to :location }
-    it { is_expected.to belong_to :author   }
+    it { is_expected.to have_many :talks          }
+    it { is_expected.to belong_to :location       }
+    it { is_expected.to belong_to :author         }
+    it { is_expected.to have_many :sponsorships }
+    it do
+      is_expected.to have_many(:sponsors).
+        through(:sponsorships).
+        source(:organization)
+    end
 
     it "includes only scheduled talks" do
       expect(event.talks).to     match talks.select { |t| t.state == "scheduled" }

@@ -101,21 +101,21 @@ use the GitHub API, you must set environment variables for the GitHub 'key' and
 
 You can first obtain this key/secret [through your GitHub account](https://github.com/settings/applications/new).
 
-Now you need to set the environment variables on your server. The procedure will
-depend on your system.
+For image hosting Cloudinary is used. This service gives us the ability to host
+images with a heroku app. Sign up for a [free coludinary account](https://cloudinary.com/).
 
-On Unix-based systems using the bash shell, add the following to your `~/.bashrc` 
-file, replacing the inside of the quotes with your key/secret:
+Now you need to set the environment variables on your server. The procedure
+will depend on your system.
 
-```
-export GITHUB_KEY="your_key"
-export GITHUB_SECRET="your_secret"
-```
+For development, copy `.env.sample` file to `.env` and fill appropriately the
+variables settings.
 
 If using Heroku, you can set the environment variables like this:
 
 ```
-heroku config:add GITHUB_KEY=your_key GITHUB_SECRET=your_secret --app Montreal.rb
+heroku config:add GITHUB_KEY=your_key GITHUB_SECRET=your_secret \
+  CLOUDINARY_URL=cloudinary://your_key:your_secret \
+  --app Montreal.rb
 ```
 
 #### Start your Web Server
