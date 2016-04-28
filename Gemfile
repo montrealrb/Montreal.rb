@@ -51,6 +51,9 @@ gem "bugsnag"
 
 gem "reverse_markdown"
 
+# Communication
+gem 'twitter'
+
 group :development do
   gem "annotate"
   gem "quiet_assets"
