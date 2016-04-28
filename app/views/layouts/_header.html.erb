@@ -23,6 +23,9 @@
           <% if Event.published.any? %>
             <li><%= link_to 'Events', events_path %></li>
           <% end %>
+          <% if NewsItem.published.any? %>
+            <li><%= link_to 'News', news_items_path %></li>
+          <% end %>
           <% if current_user %>
             <% if current_user.admin? %>
               <li><%= link_to 'Admin Area', admin_root_path %></li>

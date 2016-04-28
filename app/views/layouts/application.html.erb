@@ -23,11 +23,9 @@
           <%= yield %>
         </section>
 
-        <% unless @on_news_index %>
-          <aside>
-            <%= render template: 'news_items/index' %>
-          </aside>
-        <% end %>
+        <aside>
+          <%= render template: 'news_items/index' %>
+        </aside>
 
       </main>
 
