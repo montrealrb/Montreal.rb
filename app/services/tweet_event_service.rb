@@ -11,8 +11,10 @@ class TweetEventService
 
   def call
     twitter_client.update(message)
+    Rails.logger.info "Sent tweet: \"#{message}\""
     @success = true
   rescue Twitter::Error
+    Rails.logger.info "Tweet not sent"
     @success = false
   end
 
