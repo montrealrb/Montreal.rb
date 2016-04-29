@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe Event, type: :model do
   let(:event) { FactoryGirl.create(:event) }
   let(:talks) { FactoryGirl.create_list(:talk, 5, event: event) }
-  let(:tweet_service) { double(:service, call: true ) }
+  let(:tweet_service) { double(:service, call: true) }
 
   before do
     allow(TweetEventService).to receive(:new) { tweet_service }

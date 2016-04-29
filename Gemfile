@@ -52,7 +52,7 @@ gem "bugsnag"
 gem "reverse_markdown"
 
 # Communication
-gem 'twitter'
+gem "twitter"
 
 group :development do
   gem "annotate"

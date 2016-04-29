@@ -7,17 +7,17 @@ require "rspec/rails"
 require "devise"
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
-require 'vcr'
-require 'webmock/rspec'
+require "vcr"
+require "webmock/rspec"
 WebMock.disable_net_connect!(allow_localhost: true)
 
 VCR.config do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.hook_into :webmock
-  config.filter_sensitive_data('<TWITTER_CONSUMER_KEY>') { ENV["TWITTER_CONSUMER_KEY"] }
-  config.filter_sensitive_data('<TWITTER_CONSUMER_SECRET>') { ENV["TWITTER_CONSUMER_SECRET"] }
-  config.filter_sensitive_data('<TWITTER_ACCESS_TOKEN>') { ENV["TWITTER_ACCESS_TOKEN"] }
-  config.filter_sensitive_data('<TWITTER_ACCESS_SECRET>') { ENV["TWITTER_ACCESS_SECRET"] }
+  config.filter_sensitive_data("<TWITTER_CONSUMER_KEY>") { ENV["TWITTER_CONSUMER_KEY"] }
+  config.filter_sensitive_data("<TWITTER_CONSUMER_SECRET>") { ENV["TWITTER_CONSUMER_SECRET"] }
+  config.filter_sensitive_data("<TWITTER_ACCESS_TOKEN>") { ENV["TWITTER_ACCESS_TOKEN"] }
+  config.filter_sensitive_data("<TWITTER_ACCESS_SECRET>") { ENV["TWITTER_ACCESS_SECRET"] }
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -69,7 +69,7 @@ RSpec.configure do |config|
     if options[:record] == :skip
       VCR.turned_off(&example)
     else
-      name = example.metadata[:full_description].split(/\s+/, 2).join('/').underscore.gsub(/\./,'/').gsub(/[^\w\/]+/, '_').gsub(/\/$/, '')
+      name = example.metadata[:full_description].split(/\s+/, 2).join("/").underscore.tr(".", "/").gsub(/[^\w\/]+/, "_").gsub(/\/$/, "")
       VCR.use_cassette(name, options, &example)
     end
   end
