@@ -21,7 +21,7 @@ class TweetEventService
   private
 
   def message
-    "Our next event: #{event_url(@event)}"
+    "Our next event: #{@event.title}, #{event_url(@event)}"
   end
 
   def twitter_client
