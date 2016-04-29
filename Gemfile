@@ -83,4 +83,9 @@ group :development, :test do
   gem "timecop"
 end
 
+group :test do
+  gem "vcr"
+  gem "webmock", ">= 1.8.0"
+end
+
 gem "coveralls", require: false, group: :test
