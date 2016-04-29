@@ -4,6 +4,8 @@ RSpec.describe Event, type: :model do
   let(:event) { FactoryGirl.create(:event) }
   let(:talks) { FactoryGirl.create_list(:talk, 5, event: event) }
 
+  before { allow_any_instance_of(Event).to receive(:tweet_event) }
+
   describe "attributes" do
     it do
       is_expected.
@@ -55,5 +57,19 @@ RSpec.describe Event, type: :model do
     subject { event.to_s }
 
     it { is_expected.to eq "#{event.title} : March 01" }
+  end
+
+  describe "#tweet_event" do
+    let(:event) { build(:event, state: "proposed") }
+
+    it "calls the callback" do
+      expect(event).to receive(:tweet_event)
+      event.update_attributes(state: "scheduled")
+    end
+
+    it "does not calls the callback" do
+      expect(event).to_not receive(:tweet_event)
+      event.update_attributes(title: "something")
+    end
   end
 end
