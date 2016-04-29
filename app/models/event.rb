@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
   extend Enumerize
   STATES = %w(proposed scheduled).freeze
 
-  after_save :tweet_event, if: -> { state_changed? && state == "scheduled"  }
+  after_save :tweet_event, if: -> { persisted? && state_changed? && state == "scheduled"  }
 
   translates :title, :body
 
@@ -36,7 +36,7 @@ class Event < ActiveRecord::Base
   private
 
   def tweet_event
-
+    TweetEventService.new(self).call
   end
 
   def title_with_date
