@@ -62,17 +62,32 @@ RSpec.describe Event, type: :model do
     it { is_expected.to eq "#{event.title} : March 01" }
   end
 
-  describe "#tweet_event" do
-    let(:event) { create(:event, state: "proposed") }
+  describe "#tweet" do
+    context "the event is scheduled" do
+      let(:event) { create(:event, state: "scheduled") }
 
-    it "calls the callback" do
-      expect(tweet_service).to receive(:call)
-      event.update_attributes(state: "scheduled")
+      it "calls the callback" do
+        expect(tweet_service).to receive(:call)
+        event.tweet
+      end
     end
 
-    it "does not calls the callback" do
-      expect(tweet_service).to_not receive(:call)
-      event.update_attributes(title: "something")
+    context "the event is scheduled" do
+      let(:event) { create(:event, state: "proposed") }
+
+      it "does not calls the callback" do
+        expect(tweet_service).to_not receive(:call)
+        event.tweet
+      end
+    end
+
+    context "the event is not persisted" do
+      let(:event) { build(:event, state: "scheduled") }
+
+      it "does not calls the callback" do
+        expect(tweet_service).to_not receive(:call)
+        event.tweet
+      end
     end
   end
 end

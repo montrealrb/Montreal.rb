@@ -5,47 +5,77 @@ http_interactions:
     uri: https://api.twitter.com/1.1/statuses/update.json
     body:
       encoding: UTF-8
-      string: status=Our+next+event%3A+Suscipit+beatae+doloribus+odit.%2C+http%3A%2F%2Flocalhost%3A3000%2Fevents%2F200-suscipit-beatae
+      string: status=Our+next+event%3A+Porro+perferendis+repudiandae+sunt+sint+voluptas.%2C+http%3A%2F%2Flocalhost%3A3000%2Fevents%2F780-porro-perferendis
     headers:
       Accept:
       - application/json
       User-Agent:
       - TwitterRubyGem/5.16.0
       Authorization:
-      - OAuth oauth_consumer_key="<TWITTER_CONSUMER_KEY>", oauth_nonce="8aa14526f0917682f901a881507d78ae",
-        oauth_signature="st%2FN29E8Zu6pNDe2njj4pTwVT8M%3D", oauth_signature_method="HMAC-SHA1",
-        oauth_timestamp="1462119240", oauth_token="<TWITTER_ACCESS_TOKEN>", oauth_version="1.0"
+      - OAuth oauth_consumer_key="<TWITTER_CONSUMER_KEY>", oauth_nonce="4aae37deb645e54af4f88283630e5989",
+        oauth_signature="jhgQ%2B9K31RPu37Dpj4Xl%2FsGmWq4%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1462122148", oauth_token="<TWITTER_ACCESS_TOKEN>", oauth_version="1.0"
       Content-Type:
       - application/x-www-form-urlencoded
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Disposition:
+      - attachment; filename=json.json
       Content-Length:
-      - '87'
+      - '896'
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json;charset=utf-8
       Date:
-      - Sun, 01 May 2016 16:14:01 GMT
+      - Sun, 01 May 2016 17:02:28 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Sun, 01 May 2016 17:02:28 GMT
+      Pragma:
+      - no-cache
       Server:
-      - tsa_a
+      - tsa_b
       Set-Cookie:
-      - guest_id=v1%3A146211924136047781; Domain=.twitter.com; Path=/; Expires=Tue,
-        01-May-2018 16:14:01 UTC
+      - guest_id=v1%3A146212214877323368; Domain=.twitter.com; Path=/; Expires=Tue,
+        01-May-2018 17:02:28 UTC
+      - lang=fr; Path=/
+      Status:
+      - 200 OK
       Strict-Transport-Security:
       - max-age=631138519
+      X-Access-Level:
+      - read-write
       X-Connection-Hash:
-      - 46d46935c474ce147ab84a796cac1129
+      - e8df40f5424d70fa3864b52e0f0360e2
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
       X-Response-Time:
-      - '5'
+      - '85'
+      X-Transaction:
+      - a07e27988cfc2cfd
       X-Tsa-Request-Body-Time:
-      - '2'
+      - '1'
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Xss-Protection:
+      - 1; mode=block
     body:
       encoding: ASCII-8BIT
-      string: '{"errors":[{"code":215,"message":"Bad Authentication data."}]}'
+      string: '{"created_at":"Sun May 01 17:02:28 +0000 2016","id":726819087599439872,"id_str":"726819087599439872","text":"Our
+        next event: Porro perferendis repudiandae sunt sint voluptas., http:\/\/localhost:3000\/events\/780-porro-perferendis","entities":{"hashtags":[],"symbols":[],"user_mentions":[],"urls":[]},"truncated":false,"source":"\u003ca
+        href=\"http:\/\/montrealrb.com\" rel=\"nofollow\"\u003emontreal.rb test\u003c\/a\u003e","in_reply_to_status_id":null,"in_reply_to_status_id_str":null,"in_reply_to_user_id":null,"in_reply_to_user_id_str":null,"in_reply_to_screen_name":null,"user":{"id":1306342303,"id_str":"1306342303","name":"Wired
+        Monkeys","screen_name":"wiredmonkeys","location":"Montreal","description":"","url":null,"entities":{"description":{"urls":[]}},"protected":false,"followers_count":4,"friends_count":7,"listed_count":0,"created_at":"Wed
+        Mar 27 02:59:48 +0000 2013","favourites_count":0,"utc_offset":-10800,"time_zone":"Atlantic
+        Time (Canada)","geo_enabled":false,"verified":false,"statuses_count":5,"lang":"fr","contributors_enabled":false,"is_translator":false,"is_translation_enabled":false,"profile_background_color":"C0DEED","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_tile":false,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/486738106293313537\/91k3rTEx_normal.jpeg","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/486738106293313537\/91k3rTEx_normal.jpeg","profile_banner_url":"https:\/\/pbs.twimg.com\/profile_banners\/1306342303\/1404882388","profile_link_color":"0084B4","profile_sidebar_border_color":"C0DEED","profile_sidebar_fill_color":"DDEEF6","profile_text_color":"333333","profile_use_background_image":true,"has_extended_profile":false,"default_profile":true,"default_profile_image":false,"following":false,"follow_request_sent":false,"notifications":false},"geo":null,"coordinates":null,"place":null,"contributors":null,"is_quote_status":false,"retweet_count":0,"favorite_count":0,"favorited":false,"retweeted":false,"lang":"en"}'
     http_version: 
-  recorded_at: Sun, 01 May 2016 16:14:01 GMT
+  recorded_at: Sun, 01 May 2016 17:02:28 GMT
 recorded_with: VCR 3.0.1
