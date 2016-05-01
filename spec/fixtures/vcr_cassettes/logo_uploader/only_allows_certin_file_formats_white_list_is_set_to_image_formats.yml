@@ -6,12 +6,12 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        LS02ODk4MTQNCkNvbnRlbnQtRGlzcG9zaXRpb246IGZvcm0tZGF0YTsgbmFt
-        ZT0iZm9ybWF0Ig0KDQpwbmcNCi0tNjg5ODE0DQpDb250ZW50LURpc3Bvc2l0
-        aW9uOiBmb3JtLWRhdGE7IG5hbWU9InB1YmxpY19pZCINCg0KbG91NW80cHJm
-        andzcGxzenJ2aGoNCi0tNjg5ODE0DQpDb250ZW50LURpc3Bvc2l0aW9uOiBm
-        b3JtLWRhdGE7IG5hbWU9InRpbWVzdGFtcCINCg0KMTQ2MjEyMDk3MA0KLS02
-        ODk4MTQNCkNvbnRlbnQtRGlzcG9zaXRpb246IGZvcm0tZGF0YTsgbmFtZT0i
+        LS0xMjQyMzYNCkNvbnRlbnQtRGlzcG9zaXRpb246IGZvcm0tZGF0YTsgbmFt
+        ZT0iZm9ybWF0Ig0KDQpwbmcNCi0tMTI0MjM2DQpDb250ZW50LURpc3Bvc2l0
+        aW9uOiBmb3JtLWRhdGE7IG5hbWU9InB1YmxpY19pZCINCg0KdXFpNWF5azFn
+        eXRkMWtqam1vN2kNCi0tMTI0MjM2DQpDb250ZW50LURpc3Bvc2l0aW9uOiBm
+        b3JtLWRhdGE7IG5hbWU9InRpbWVzdGFtcCINCg0KMTQ2MjEyMjg5NQ0KLS0x
+        MjQyMzYNCkNvbnRlbnQtRGlzcG9zaXRpb246IGZvcm0tZGF0YTsgbmFtZT0i
         ZmlsZSI7IGZpbGVuYW1lPSJyYWluYm93X3VuaWNvcm4uanBnIg0KQ29udGVu
         dC1UeXBlOiBpbWFnZS9qcGVnDQoNCv/Y/+AAEEpGSUYAAQEAAAEAAQAA/9sA
         QwAGBAUGBQQGBgUGBwcGCAoQCgoJCQoUDg8MEBcUGBgXFBYWGh0lHxobIxwW
@@ -620,11 +620,11 @@ http_interactions:
         qD1E9ckg/SOJl9A++Q9VD28XTQoHucgrZQ+eQRvfZz5V1j4OMymbeEx1HuPv
         ANBMZnV/8CRGawVQeKHUnE7Wk9yPlxd4zKYt40dZ+HnwTtfRyCtlL55/V+3J
         +tu4qI9D5OcP32vABtpPiv8AwTRwMgSI3EwAQJqUlhzoGL/H99rzgpn0fl4/
-        rbOT1fpyf//ZDQotLTY4OTgxNA0KQ29udGVudC1EaXNwb3NpdGlvbjogZm9y
-        bS1kYXRhOyBuYW1lPSJzaWduYXR1cmUiDQoNCmNjNDk3NDYyZGQyYWFhYjNk
-        MDdmYWQ1NzlmNjg4NTFjYjg4MDI3MTYNCi0tNjg5ODE0DQpDb250ZW50LURp
+        rbOT1fpyf//ZDQotLTEyNDIzNg0KQ29udGVudC1EaXNwb3NpdGlvbjogZm9y
+        bS1kYXRhOyBuYW1lPSJzaWduYXR1cmUiDQoNCmMzYTMwMmIxZjEwMjc0NDU4
+        Yzc2ZTA4OGRiZmYyOTFkYjhjYzA2NmUNCi0tMTI0MjM2DQpDb250ZW50LURp
         c3Bvc2l0aW9uOiBmb3JtLWRhdGE7IG5hbWU9ImFwaV9rZXkiDQoNCjkxODkx
-        OTI0ODk5MjkxOA0KLS02ODk4MTQtLQ0K
+        OTI0ODk5MjkxOA0KLS0xMjQyMzYtLQ0K
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -635,7 +635,7 @@ http_interactions:
       Content-Length:
       - '27834'
       Content-Type:
-      - multipart/form-data; boundary=689814
+      - multipart/form-data; boundary=124236
   response:
     status:
       code: 200
@@ -648,40 +648,40 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 01 May 2016 16:42:51 GMT
+      - Sun, 01 May 2016 17:14:56 GMT
       Etag:
-      - W/"75d188a8996f468fb4060dd178c38c21"
+      - W/"d92080b8c41dfc18d917d134d8dad33f"
       Server:
       - cloudinary
       Status:
       - 200 OK
       X-Request-Id:
-      - b10461c3f379989e
+      - 7c64f0db707836a4
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '358'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAwzMSw6DIBAA0LvM2sVAcRy5TCOCgqFC+GjSXr4e4L0f5G5i
-        WN/BgoaY+phULttx1xzrt1z+gAEuV2pIJ2ihSAqJ84QD1LCfS+vFPU7J2ZhJ
-        qIVW8ZqIiXndLCGxFYzOjAoZ2brnuoNtHjThU3gXdt9AKyEH2FL5/AEAAP//
-        tJDNcoMwDITfhXOCjQku8Bw9tdPxCFtQd8Bm/NOGQ949IhxyybXHHX3SrhZI
-        FKubiAsYfQ4aVdrW3cIuMO37OiAkNOqBCl7JM2/OvHqvZH8RfcM/iEkwxaL/
-        /DoVw5Yw7rnfmq6lwXErr7MHQyASSXqQoHEcRD0azrEVKM2Fy67tRG1ICiJz
-        mAn8TmntGaNspaaujHUQtlL7hZn8U1+111f2CMoOC/b7bIy9Krc8no2oqUj1
-        NIn/4eKDnejWrEY7o4NlryKAdYP/U9lZ7YMrbncAAAD//wMAt0Zr4hECAAA=
+        H4sIAAAAAAAAAwzMyxGDIBAA0F72zIEFBaWZDMhvNUqCkIyT5mMB7/3g1d2T
+        lgd5MNDfNNprw3Q1j9u67kUTMPiEelI5wOCgBAoxzSODk9JhW6/hdgG5k07i
+        pJBbrUMMWjqrMXJlEeW8cLRy0PK+vuRbBqM4Z5ADpdzADCgYxFL3PwAAAP//
+        tJC9ksIwDITfJfUR2zBOIM9BBcN4ZEfJ+caxM/7hSHHvfgopaGgpJX2zu1qg
+        oZr9SFzEFEo0qPIyrxZ2ghFpbyJCxl490T0XzY7LHRdn0VK6TsoLMRnGVHXX
+        21ell4xpzd3K05EOm1aZXYCeQCSS5nZoUOhGoNQ4SNT79sQNHhFAHqCRnMgS
+        HYHfOc8dY5StNi6U3nqIS23CxPryc3iYYB7sGZRtFuz+aoy9K7fenk1oqEj1
+        MkmfcAnRjqTl1GAdepjWKiJYr8OvKt6aEH319w8AAP//AwC5A6JxEQIAAA==
     http_version: 
-  recorded_at: Sun, 01 May 2016 16:42:51 GMT
+  recorded_at: Sun, 01 May 2016 17:14:56 GMT
 - request:
     method: post
     uri: https://api.cloudinary.com/v1_1/duj3xcocx/image/destroy
     body:
       encoding: UTF-8
-      string: timestamp=1462120971&type=upload&public_id=lou5o4prfjwsplszrvhj&signature=f46ed900988f25b97538bc2cde8dccf118695679&api_key=918919248992918
+      string: timestamp=1462122896&type=upload&public_id=uqi5ayk1gytd1kjjmo7i&signature=d9b9bc69e63be07c494029a09157a2aa12dc8db7&api_key=918919248992918
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -705,7 +705,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 01 May 2016 16:42:52 GMT
+      - Sun, 01 May 2016 17:14:56 GMT
       Etag:
       - W/"b0eb02791543d20d789c22724329c8bc"
       Server:
@@ -713,7 +713,7 @@ http_interactions:
       Status:
       - 200 OK
       X-Request-Id:
-      - 1ce8d537f2b24d3a
+      - f8a85404054fccb6
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -725,5 +725,5 @@ http_interactions:
       string: !binary |-
         H4sIAAAAAAAAA6pWKkotLs0pUbJSys9WqgUAAAD//wMAzH7GRA8AAAA=
     http_version: 
-  recorded_at: Sun, 01 May 2016 16:42:52 GMT
+  recorded_at: Sun, 01 May 2016 17:14:57 GMT
 recorded_with: VCR 3.0.1
