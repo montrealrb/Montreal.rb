@@ -12,9 +12,9 @@ http_interactions:
       User-Agent:
       - TwitterRubyGem/5.16.0
       Authorization:
-      - OAuth oauth_consumer_key="<TWITTER_CONSUMER_KEY>", oauth_nonce="0d363a6ffda1ddfb84973d850c9d02e8",
-        oauth_signature="iDiZ9cwOlrXOJNkznvM63bTQ9%2Fk%3D", oauth_signature_method="HMAC-SHA1",
-        oauth_timestamp="1461901783", oauth_token="<TWITTER_ACCESS_TOKEN>", oauth_version="1.0"
+      - OAuth oauth_consumer_key="<TWITTER_CONSUMER_KEY>", oauth_nonce="acf0009674ee6ec55fb8e6b63c64003e",
+        oauth_signature="y6Jf2qnjVDqbMEO6%2BDqegORGC9Y%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1462120574", oauth_token="<TWITTER_ACCESS_TOKEN>", oauth_version="1.0"
       Content-Type:
       - application/x-www-form-urlencoded
       Accept-Encoding:
@@ -29,23 +29,23 @@ http_interactions:
       Content-Disposition:
       - attachment; filename=json.json
       Content-Length:
-      - '975'
+      - '917'
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Fri, 29 Apr 2016 03:49:43 GMT
+      - Sun, 01 May 2016 16:36:15 GMT
       Expires:
       - Tue, 31 Mar 1981 05:00:00 GMT
       Last-Modified:
-      - Fri, 29 Apr 2016 03:49:43 GMT
+      - Sun, 01 May 2016 16:36:15 GMT
       Pragma:
       - no-cache
       Server:
       - tsa_b
       Set-Cookie:
-      - guest_id=v1%3A146190178349487939; Domain=.twitter.com; Path=/; Expires=Sun,
-        29-Apr-2018 03:49:43 UTC
-      - lang=en; Path=/
+      - guest_id=v1%3A146212057521429703; Domain=.twitter.com; Path=/; Expires=Tue,
+        01-May-2018 16:36:15 UTC
+      - lang=fr; Path=/
       Status:
       - 200 OK
       Strict-Transport-Security:
@@ -53,15 +53,15 @@ http_interactions:
       X-Access-Level:
       - read-write
       X-Connection-Hash:
-      - 58582a80e2a1c52f8b44c8f4dc18630f
+      - 117455e53a8577ff9ebc6589c493eda5
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
       X-Response-Time:
-      - '157'
+      - '286'
       X-Transaction:
-      - 561153ed5042daa0
+      - 424bd2819beda8f3
       X-Tsa-Request-Body-Time:
       - '0'
       X-Twitter-Response-Tags:
@@ -70,13 +70,12 @@ http_interactions:
       - 1; mode=block
     body:
       encoding: ASCII-8BIT
-      string: '{"created_at":"Fri Apr 29 03:49:43 +0000 2016","id":725894808619913216,"id_str":"725894808619913216","text":"Testing
-        the twitter feature for https:\/\/t.co\/oSOwmbv0ZT","entities":{"hashtags":[],"symbols":[],"user_mentions":[],"urls":[{"url":"https:\/\/t.co\/oSOwmbv0ZT","expanded_url":"http:\/\/montrealrb.com","display_url":"montrealrb.com","indices":[32,55]}]},"truncated":false,"source":"\u003ca
-        href=\"http:\/\/montrealrb.com\" rel=\"nofollow\"\u003eMontreal.rb Autotweeter\u003c\/a\u003e","in_reply_to_status_id":null,"in_reply_to_status_id_str":null,"in_reply_to_user_id":null,"in_reply_to_user_id_str":null,"in_reply_to_screen_name":null,"user":{"id":91219639,"id_str":"91219639","name":"montrealrb","screen_name":"montrealrb","location":"Montreal,
-        QC, Canada","description":"Montreal.rb - The Ruby and Ruby on Rails users
-        group in Montreal","url":"http:\/\/t.co\/3h1UclEgLM","entities":{"url":{"urls":[{"url":"http:\/\/t.co\/3h1UclEgLM","expanded_url":"http:\/\/www.montrealonrails.com\/","display_url":"montrealonrails.com","indices":[0,22]}]},"description":{"urls":[]}},"protected":false,"followers_count":425,"friends_count":52,"listed_count":29,"created_at":"Thu
-        Nov 19 23:28:04 +0000 2009","favourites_count":1,"utc_offset":-14400,"time_zone":"Eastern
-        Time (US & Canada)","geo_enabled":false,"verified":false,"statuses_count":330,"lang":"en","contributors_enabled":false,"is_translator":false,"is_translation_enabled":false,"profile_background_color":"C0DEED","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_tile":false,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/1124292565\/mtlrb-logo-200x200_normal.png","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/1124292565\/mtlrb-logo-200x200_normal.png","profile_link_color":"0084B4","profile_sidebar_border_color":"C0DEED","profile_sidebar_fill_color":"DDEEF6","profile_text_color":"333333","profile_use_background_image":true,"has_extended_profile":false,"default_profile":true,"default_profile_image":false,"following":false,"follow_request_sent":false,"notifications":false},"geo":null,"coordinates":null,"place":null,"contributors":null,"is_quote_status":false,"retweet_count":0,"favorite_count":0,"favorited":false,"retweeted":false,"possibly_sensitive":false,"lang":"en"}'
+      string: '{"created_at":"Sun May 01 16:36:15 +0000 2016","id":726812487589449730,"id_str":"726812487589449730","text":"Testing
+        the twitter feature for https:\/\/t.co\/J8XGagIU3G","entities":{"hashtags":[],"symbols":[],"user_mentions":[],"urls":[{"url":"https:\/\/t.co\/J8XGagIU3G","expanded_url":"http:\/\/montrealrb.com","display_url":"montrealrb.com","indices":[32,55]}]},"truncated":false,"source":"\u003ca
+        href=\"http:\/\/montrealrb.com\" rel=\"nofollow\"\u003emontreal.rb test\u003c\/a\u003e","in_reply_to_status_id":null,"in_reply_to_status_id_str":null,"in_reply_to_user_id":null,"in_reply_to_user_id_str":null,"in_reply_to_screen_name":null,"user":{"id":1306342303,"id_str":"1306342303","name":"Wired
+        Monkeys","screen_name":"wiredmonkeys","location":"Montreal","description":"","url":null,"entities":{"description":{"urls":[]}},"protected":false,"followers_count":4,"friends_count":7,"listed_count":0,"created_at":"Wed
+        Mar 27 02:59:48 +0000 2013","favourites_count":0,"utc_offset":-10800,"time_zone":"Atlantic
+        Time (Canada)","geo_enabled":false,"verified":false,"statuses_count":4,"lang":"fr","contributors_enabled":false,"is_translator":false,"is_translation_enabled":false,"profile_background_color":"C0DEED","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_tile":false,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/486738106293313537\/91k3rTEx_normal.jpeg","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/486738106293313537\/91k3rTEx_normal.jpeg","profile_banner_url":"https:\/\/pbs.twimg.com\/profile_banners\/1306342303\/1404882388","profile_link_color":"0084B4","profile_sidebar_border_color":"C0DEED","profile_sidebar_fill_color":"DDEEF6","profile_text_color":"333333","profile_use_background_image":true,"has_extended_profile":false,"default_profile":true,"default_profile_image":false,"following":false,"follow_request_sent":false,"notifications":false},"geo":null,"coordinates":null,"place":null,"contributors":null,"is_quote_status":false,"retweet_count":0,"favorite_count":0,"favorited":false,"retweeted":false,"possibly_sensitive":false,"lang":"en"}'
     http_version: 
-  recorded_at: Fri, 29 Apr 2016 03:49:43 GMT
+  recorded_at: Sun, 01 May 2016 16:36:15 GMT
 recorded_with: VCR 3.0.1
