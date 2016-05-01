@@ -11,6 +11,7 @@ class UserDashboard < Administrate::BaseDashboard
     id: Field::Number,
     email: Field::String,
     member: Field::HasOne,
+    admin: Field::Boolean,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -22,6 +23,7 @@ class UserDashboard < Administrate::BaseDashboard
     :id,
     :email,
     :member,
+    :admin,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -33,6 +35,7 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :email,
+    :admin,
   ].freeze
 
   # Overwrite this method to customize how users are displayed
