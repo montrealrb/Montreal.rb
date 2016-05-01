@@ -1,0 +1,240 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.twitter.com/1.1/statuses/update.json
+    body:
+      encoding: UTF-8
+      string: status=Our+next+event%3A+Voluptate+nostrum+aut+ab.%2C+http%3A%2F%2Flocalhost%3A3000%2Fevents%2F181-voluptate-nostrum
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - TwitterRubyGem/5.16.0
+      Authorization:
+      - OAuth oauth_consumer_key="<TWITTER_CONSUMER_KEY>", oauth_nonce="56172fe80728b9941f438335cbb22215",
+        oauth_signature="vAkVfIJOcA60OZl%2BqBOJ%2BYxqPIE%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1461970829", oauth_token="<TWITTER_ACCESS_TOKEN>", oauth_version="1.0"
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '958'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Fri, 29 Apr 2016 23:00:29 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Fri, 29 Apr 2016 23:00:29 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_b
+      Set-Cookie:
+      - guest_id=v1%3A146197082984084366; Domain=.twitter.com; Path=/; Expires=Sun,
+        29-Apr-2018 23:00:29 UTC
+      - lang=en; Path=/
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Access-Level:
+      - read-write
+      X-Connection-Hash:
+      - 12b8137f17a5d2720fffc122f9404d48
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Response-Time:
+      - '79'
+      X-Transaction:
+      - 76a73d142fe7f9fc
+      X-Tsa-Request-Body-Time:
+      - '1'
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"created_at":"Fri Apr 29 23:00:29 +0000 2016","id":726184409976676353,"id_str":"726184409976676353","text":"Our
+        next event: Voluptate nostrum aut ab., http:\/\/localhost:3000\/events\/181-voluptate-nostrum","entities":{"hashtags":[],"symbols":[],"user_mentions":[],"urls":[]},"truncated":false,"source":"\u003ca
+        href=\"http:\/\/montrealrb.com\" rel=\"nofollow\"\u003eMontreal.rb Autotweeter\u003c\/a\u003e","in_reply_to_status_id":null,"in_reply_to_status_id_str":null,"in_reply_to_user_id":null,"in_reply_to_user_id_str":null,"in_reply_to_screen_name":null,"user":{"id":91219639,"id_str":"91219639","name":"montrealrb","screen_name":"montrealrb","location":"Montreal,
+        QC, Canada","description":"Montreal.rb - The Ruby and Ruby on Rails users
+        group in Montreal","url":"http:\/\/t.co\/3h1UclEgLM","entities":{"url":{"urls":[{"url":"http:\/\/t.co\/3h1UclEgLM","expanded_url":"http:\/\/www.montrealonrails.com\/","display_url":"montrealonrails.com","indices":[0,22]}]},"description":{"urls":[]}},"protected":false,"followers_count":424,"friends_count":52,"listed_count":29,"created_at":"Thu
+        Nov 19 23:28:04 +0000 2009","favourites_count":1,"utc_offset":-14400,"time_zone":"Eastern
+        Time (US & Canada)","geo_enabled":false,"verified":false,"statuses_count":349,"lang":"en","contributors_enabled":false,"is_translator":false,"is_translation_enabled":false,"profile_background_color":"C0DEED","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_tile":false,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/1124292565\/mtlrb-logo-200x200_normal.png","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/1124292565\/mtlrb-logo-200x200_normal.png","profile_link_color":"0084B4","profile_sidebar_border_color":"C0DEED","profile_sidebar_fill_color":"DDEEF6","profile_text_color":"333333","profile_use_background_image":true,"has_extended_profile":false,"default_profile":true,"default_profile_image":false,"following":false,"follow_request_sent":false,"notifications":false},"geo":null,"coordinates":null,"place":null,"contributors":null,"is_quote_status":false,"retweet_count":0,"favorite_count":0,"favorited":false,"retweeted":false,"lang":"en"}'
+    http_version: 
+  recorded_at: Fri, 29 Apr 2016 23:00:29 GMT
+- request:
+    method: post
+    uri: https://api.twitter.com/1.1/statuses/update.json
+    body:
+      encoding: UTF-8
+      string: status=Our+next+event%3A+Quasi+ea+et+provident+voluptatem.%2C+http%3A%2F%2Flocalhost%3A3000%2Fevents%2F182-quasi-ea-et
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - TwitterRubyGem/5.16.0
+      Authorization:
+      - OAuth oauth_consumer_key="<TWITTER_CONSUMER_KEY>", oauth_nonce="f46f2466ea45eef4d934616f66e43182",
+        oauth_signature="kLMFDVFF4qUD5uVx7oEANCPwhZQ%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1461970830", oauth_token="<TWITTER_ACCESS_TOKEN>", oauth_version="1.0"
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '966'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Fri, 29 Apr 2016 23:00:30 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Fri, 29 Apr 2016 23:00:30 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_b
+      Set-Cookie:
+      - guest_id=v1%3A146197083027289790; Domain=.twitter.com; Path=/; Expires=Sun,
+        29-Apr-2018 23:00:30 UTC
+      - lang=en; Path=/
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Access-Level:
+      - read-write
+      X-Connection-Hash:
+      - 988ae3066cb63df15c67543e697f6583
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Response-Time:
+      - '163'
+      X-Transaction:
+      - 7e997a1b6eae9c85
+      X-Tsa-Request-Body-Time:
+      - '0'
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"created_at":"Fri Apr 29 23:00:30 +0000 2016","id":726184411792826368,"id_str":"726184411792826368","text":"Our
+        next event: Quasi ea et provident voluptatem., http:\/\/localhost:3000\/events\/182-quasi-ea-et","entities":{"hashtags":[],"symbols":[],"user_mentions":[],"urls":[]},"truncated":false,"source":"\u003ca
+        href=\"http:\/\/montrealrb.com\" rel=\"nofollow\"\u003eMontreal.rb Autotweeter\u003c\/a\u003e","in_reply_to_status_id":null,"in_reply_to_status_id_str":null,"in_reply_to_user_id":null,"in_reply_to_user_id_str":null,"in_reply_to_screen_name":null,"user":{"id":91219639,"id_str":"91219639","name":"montrealrb","screen_name":"montrealrb","location":"Montreal,
+        QC, Canada","description":"Montreal.rb - The Ruby and Ruby on Rails users
+        group in Montreal","url":"http:\/\/t.co\/3h1UclEgLM","entities":{"url":{"urls":[{"url":"http:\/\/t.co\/3h1UclEgLM","expanded_url":"http:\/\/www.montrealonrails.com\/","display_url":"montrealonrails.com","indices":[0,22]}]},"description":{"urls":[]}},"protected":false,"followers_count":424,"friends_count":52,"listed_count":29,"created_at":"Thu
+        Nov 19 23:28:04 +0000 2009","favourites_count":1,"utc_offset":-14400,"time_zone":"Eastern
+        Time (US & Canada)","geo_enabled":false,"verified":false,"statuses_count":350,"lang":"en","contributors_enabled":false,"is_translator":false,"is_translation_enabled":false,"profile_background_color":"C0DEED","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_tile":false,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/1124292565\/mtlrb-logo-200x200_normal.png","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/1124292565\/mtlrb-logo-200x200_normal.png","profile_link_color":"0084B4","profile_sidebar_border_color":"C0DEED","profile_sidebar_fill_color":"DDEEF6","profile_text_color":"333333","profile_use_background_image":true,"has_extended_profile":false,"default_profile":true,"default_profile_image":false,"following":false,"follow_request_sent":false,"notifications":false},"geo":null,"coordinates":null,"place":null,"contributors":null,"is_quote_status":false,"retweet_count":0,"favorite_count":0,"favorited":false,"retweeted":false,"lang":"en"}'
+    http_version: 
+  recorded_at: Fri, 29 Apr 2016 23:00:30 GMT
+- request:
+    method: post
+    uri: https://api.twitter.com/1.1/statuses/update.json
+    body:
+      encoding: UTF-8
+      string: status=Our+next+event%3A+Iure+sed+a+veritatis+qui+et+consequatur+sunt.%2C+http%3A%2F%2Flocalhost%3A3000%2Fevents%2F183-iure-sed-a
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - TwitterRubyGem/5.16.0
+      Authorization:
+      - OAuth oauth_consumer_key="<TWITTER_CONSUMER_KEY>", oauth_nonce="65261d6a82a999b969a8c48015273060",
+        oauth_signature="UWwsyra5ZeL4CaJxJ2jlWDXqZ3g%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1461970830", oauth_token="<TWITTER_ACCESS_TOKEN>", oauth_version="1.0"
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '973'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Fri, 29 Apr 2016 23:00:30 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Fri, 29 Apr 2016 23:00:30 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_b
+      Set-Cookie:
+      - guest_id=v1%3A146197083077891005; Domain=.twitter.com; Path=/; Expires=Sun,
+        29-Apr-2018 23:00:30 UTC
+      - lang=en; Path=/
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Access-Level:
+      - read-write
+      X-Connection-Hash:
+      - 56f55a7dce6b056324d6b8511a477f23
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Response-Time:
+      - '81'
+      X-Transaction:
+      - 830c1d2c3239dd9e
+      X-Tsa-Request-Body-Time:
+      - '0'
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"created_at":"Fri Apr 29 23:00:30 +0000 2016","id":726184413906780160,"id_str":"726184413906780160","text":"Our
+        next event: Iure sed a veritatis qui et consequatur sunt., http:\/\/localhost:3000\/events\/183-iure-sed-a","entities":{"hashtags":[],"symbols":[],"user_mentions":[],"urls":[]},"truncated":false,"source":"\u003ca
+        href=\"http:\/\/montrealrb.com\" rel=\"nofollow\"\u003eMontreal.rb Autotweeter\u003c\/a\u003e","in_reply_to_status_id":null,"in_reply_to_status_id_str":null,"in_reply_to_user_id":null,"in_reply_to_user_id_str":null,"in_reply_to_screen_name":null,"user":{"id":91219639,"id_str":"91219639","name":"montrealrb","screen_name":"montrealrb","location":"Montreal,
+        QC, Canada","description":"Montreal.rb - The Ruby and Ruby on Rails users
+        group in Montreal","url":"http:\/\/t.co\/3h1UclEgLM","entities":{"url":{"urls":[{"url":"http:\/\/t.co\/3h1UclEgLM","expanded_url":"http:\/\/www.montrealonrails.com\/","display_url":"montrealonrails.com","indices":[0,22]}]},"description":{"urls":[]}},"protected":false,"followers_count":424,"friends_count":52,"listed_count":29,"created_at":"Thu
+        Nov 19 23:28:04 +0000 2009","favourites_count":1,"utc_offset":-14400,"time_zone":"Eastern
+        Time (US & Canada)","geo_enabled":false,"verified":false,"statuses_count":351,"lang":"en","contributors_enabled":false,"is_translator":false,"is_translation_enabled":false,"profile_background_color":"C0DEED","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_tile":false,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/1124292565\/mtlrb-logo-200x200_normal.png","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/1124292565\/mtlrb-logo-200x200_normal.png","profile_link_color":"0084B4","profile_sidebar_border_color":"C0DEED","profile_sidebar_fill_color":"DDEEF6","profile_text_color":"333333","profile_use_background_image":true,"has_extended_profile":false,"default_profile":true,"default_profile_image":false,"following":false,"follow_request_sent":false,"notifications":false},"geo":null,"coordinates":null,"place":null,"contributors":null,"is_quote_status":false,"retweet_count":0,"favorite_count":0,"favorited":false,"retweeted":false,"lang":"en"}'
+    http_version: 
+  recorded_at: Fri, 29 Apr 2016 23:00:30 GMT
+recorded_with: VCR 3.0.1

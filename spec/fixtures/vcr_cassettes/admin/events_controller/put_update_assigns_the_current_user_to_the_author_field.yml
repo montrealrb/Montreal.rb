@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.twitter.com/1.1/statuses/update.json
+    body:
+      encoding: UTF-8
+      string: status=Our+next+event%3A+Suscipit+beatae+doloribus+odit.%2C+http%3A%2F%2Flocalhost%3A3000%2Fevents%2F200-suscipit-beatae
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - TwitterRubyGem/5.16.0
+      Authorization:
+      - OAuth oauth_consumer_key="<TWITTER_CONSUMER_KEY>", oauth_nonce="8aa14526f0917682f901a881507d78ae",
+        oauth_signature="st%2FN29E8Zu6pNDe2njj4pTwVT8M%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1462119240", oauth_token="<TWITTER_ACCESS_TOKEN>", oauth_version="1.0"
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Length:
+      - '87'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 01 May 2016 16:14:01 GMT
+      Server:
+      - tsa_a
+      Set-Cookie:
+      - guest_id=v1%3A146211924136047781; Domain=.twitter.com; Path=/; Expires=Tue,
+        01-May-2018 16:14:01 UTC
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Connection-Hash:
+      - 46d46935c474ce147ab84a796cac1129
+      X-Response-Time:
+      - '5'
+      X-Tsa-Request-Body-Time:
+      - '2'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"code":215,"message":"Bad Authentication data."}]}'
+    http_version: 
+  recorded_at: Sun, 01 May 2016 16:14:01 GMT
+recorded_with: VCR 3.0.1

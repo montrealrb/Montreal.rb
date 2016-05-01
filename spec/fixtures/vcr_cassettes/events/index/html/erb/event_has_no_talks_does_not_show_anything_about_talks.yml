@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.twitter.com/1.1/statuses/update.json
+    body:
+      encoding: UTF-8
+      string: status=Our+next+event%3A+Beatae+quibusdam+consequatur+qui+minima+hic.%2C+http%3A%2F%2Flocalhost%3A3000%2Fevents%2F268-beatae-quibusdam
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - TwitterRubyGem/5.16.0
+      Authorization:
+      - OAuth oauth_consumer_key="<TWITTER_CONSUMER_KEY>", oauth_nonce="2ec7949dcb16d85c751e86b075c053bf",
+        oauth_signature="3OdHvphJNU0oxA6URL9HuGTJFlg%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1462119275", oauth_token="<TWITTER_ACCESS_TOKEN>", oauth_version="1.0"
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Length:
+      - '87'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 01 May 2016 16:14:36 GMT
+      Server:
+      - tsa_b
+      Set-Cookie:
+      - guest_id=v1%3A146211927606285661; Domain=.twitter.com; Path=/; Expires=Tue,
+        01-May-2018 16:14:36 UTC
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Connection-Hash:
+      - dfc6d6b665f8d5ceeb2a81a3ae651c8b
+      X-Response-Time:
+      - '4'
+      X-Tsa-Request-Body-Time:
+      - '1'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"code":215,"message":"Bad Authentication data."}]}'
+    http_version: 
+  recorded_at: Sun, 01 May 2016 16:14:36 GMT
+- request:
+    method: post
+    uri: https://api.twitter.com/1.1/statuses/update.json
+    body:
+      encoding: UTF-8
+      string: status=Our+next+event%3A+Explicabo+debitis+atque+minima+consequatur+non+reiciendis.%2C+http%3A%2F%2Flocalhost%3A3000%2Fevents%2F269-explicabo-debitis
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - TwitterRubyGem/5.16.0
+      Authorization:
+      - OAuth oauth_consumer_key="<TWITTER_CONSUMER_KEY>", oauth_nonce="7afb5b3781e93b112a42156c6f9d643b",
+        oauth_signature="gZMWGCuvKArw%2BfXxJp13%2F7O4JiI%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1462119276", oauth_token="<TWITTER_ACCESS_TOKEN>", oauth_version="1.0"
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Length:
+      - '87'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 01 May 2016 16:14:36 GMT
+      Server:
+      - tsa_b
+      Set-Cookie:
+      - guest_id=v1%3A146211927647746976; Domain=.twitter.com; Path=/; Expires=Tue,
+        01-May-2018 16:14:36 UTC
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Connection-Hash:
+      - 6a97dae01b57fe8a3e02a79b5a23be7e
+      X-Response-Time:
+      - '4'
+      X-Tsa-Request-Body-Time:
+      - '4'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"code":215,"message":"Bad Authentication data."}]}'
+    http_version: 
+  recorded_at: Sun, 01 May 2016 16:14:36 GMT
+recorded_with: VCR 3.0.1
