@@ -69,13 +69,13 @@ RSpec.configure do |config|
     if options[:record] == :skip
       VCR.turned_off(&example)
     else
-      name = example.metadata[:full_description]
-        .split(%r(\s+), 2)
-        .join("/")
-        .underscore
-        .tr(".", "/")
-        .gsub(%r([^\w/]+), "_")
-        .gsub(%r(/$), "")
+      name = example.metadata[:full_description].
+             split(/\s+/, 2).
+             join("/").
+             underscore.
+             tr(".", "/").
+             gsub(%r([^\w/]+), "_").
+             gsub(%r(/$), "")
       VCR.use_cassette(name, options, &example)
     end
   end
