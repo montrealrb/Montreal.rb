@@ -8,12 +8,12 @@ class OrganizationDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    sponsored_events: Field::HasMany.with_options(class_name: "Event"),
     id: Field::Number,
     name: Field::String,
     address: Field::Text,
     logo: CarrierwaveField,
     description: Field::Text,
+    sponsored_events: Field::HasMany.with_options(class_name: "Event"),
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
