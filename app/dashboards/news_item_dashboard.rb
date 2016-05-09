@@ -13,6 +13,7 @@ class NewsItemDashboard < Administrate::BaseDashboard
     title: Field::String,
     body: Field::Text,
     state: EnumField,
+    author: Field::BelongsTo.with_options(class_name: "User"),
     published_at: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
