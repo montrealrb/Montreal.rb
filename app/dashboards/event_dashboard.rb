@@ -52,6 +52,6 @@ class EventDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(event)
-    event.title
+    "#{event.starts_at.strftime('%B %e, %Y')}, #{event.title}"
   end
 end
