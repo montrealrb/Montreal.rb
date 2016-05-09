@@ -3,8 +3,9 @@ module Admin
     include AdministrateCustomization
 
     def update
+      tweet = params[:event].delete(:tweet)
       super
-      requested_resource.tweet if requested_resource.errors.none? && params[:event][:tweet]
+      requested_resource.tweet if requested_resource.errors.none? && tweet
     end
   end
 end
