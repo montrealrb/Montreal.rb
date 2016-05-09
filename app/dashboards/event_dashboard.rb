@@ -10,7 +10,7 @@ class EventDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     location: Field::BelongsTo,
     sponsors: Field::HasMany.with_options(class_name: "Organization"),
-    id: Field::Number,
+    talks: Field::HasMany,
     starts_at: Field::DateTime,
     state: EnumField,
     created_at: Field::DateTime,
@@ -25,9 +25,9 @@ class EventDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :id,
     :title,
     :state,
+    :talks,
     :starts_at,
     :location
   ].freeze
