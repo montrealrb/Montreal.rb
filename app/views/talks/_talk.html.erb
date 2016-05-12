@@ -4,14 +4,14 @@
       <%= gravatar_for(talk.member, html: { class: "gravatar img-circle", width: '100%' })%>
     </div>
     <div class="col-sm-9">
-      <h4><%= talk.title %>, by <%= talk.member.name %></h4>
+      <h4><%= emojify(talk.title.titleize) %>, by <%= talk.member.name %></h4>
       <div class='meta'>
         Talk level: <%= talk.level %><br/>
         <% if talk.event.starts_at.past? && talk.slides_url? %>
           Slides: <%= link_to truncate(talk.slides_url, length: 50), talk.slides_url, target: "_blank" %>
       <% end %>
       </div>
-      <%= render_markdown_as_html talk.description %>
+      <%= render_markdown_as_html emojify(talk.description) %>
     </div>
   </div>
 </div>

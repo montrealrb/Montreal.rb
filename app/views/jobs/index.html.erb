@@ -5,12 +5,12 @@
 
 <% @jobs.each do |job| %>
   <div class="card">
-    <h2><%= link_to job.title, job_path(job) %></h2>
+    <h2><%= link_to emojify(job.title.titleize), job_path(job) %></h2>
     <p class="meta">
       Posted <%= time_ago_in_words(job.created_at) %> ago
     </p>
     <div class="markdown-body">
-      <%= render_markdown_as_html job.description %>
+      <%= render_markdown_as_html emojify(job.description) %>
     </div>
   </div>
 <% end %>

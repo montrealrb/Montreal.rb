@@ -2,4 +2,4 @@
 
 <%= image_tag(@organization.logo.standard.url, class: "logo") if @organization.logo? %>
 
-<%= render_markdown_as_html(@organization.description) %>
+<%= render_markdown_as_html emojify(@organization.description) %>

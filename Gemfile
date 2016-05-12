@@ -31,6 +31,7 @@ gem "turbolinks"
 gem "simple_form"
 gem "enumerize"
 gem "redcarpet"
+gem "gemoji"
 
 # Server
 gem "unicorn"
