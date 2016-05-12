@@ -1,11 +1,11 @@
 <div class="card">
-  <h1><%= link_to event.title.titleize, event %></h1>
+  <h1><%= link_to emojify(event.title.titleize), event %></h1>
   <div class="event-meta">
     <p><%= icon 'calendar-o', class: 'fa-fw' %><%= event.starts_at.strftime('%B %e, %Y  -  %k:%M') %></p>
     <p><%= icon 'map-marker', class: 'fa-fw' %><%= event.location.name %>, <a href="https://www.google.ca/maps/search/<%= event.location.address %>", target='_blank'><%= event.location.address %></a></p>
   </div>
   <div class="markdown-body">
-    <%= render_markdown_as_html event.body %>
+    <%= render_markdown_as_html emojify(event.body) %>
     <% if event.talks.any? %>
       <h3>Talks</h3>
       <%= render event.talks %>

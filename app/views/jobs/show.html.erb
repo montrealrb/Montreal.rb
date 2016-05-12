@@ -1,6 +1,6 @@
-<h1><%= @job.title %></h1>
+<h1><%= emojify(@job.title.titleize) %></h1>
 <div class="markdown-body">
-  <%= render_markdown_as_html @job.description %>
+  <%= render_markdown_as_html emojify(@job.description) %>
 </div>
 
 <%# TODO: render some company info here %>

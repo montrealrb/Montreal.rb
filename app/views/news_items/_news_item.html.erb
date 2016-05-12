@@ -1,9 +1,9 @@
 <div class='card'>
-  <h3><%= link_to news_item.title, news_item %></h3>
+  <h3><%= link_to emojify(news_item.title.titleize), news_item %></h3>
   <p class="meta">
     Posted <%= time_ago_in_words(news_item.published_at) %> ago
   </p>
   <div class="markdown-body">
-    <%= render_markdown_as_html truncate(news_item.body, length: 200, omission: ' ', separator: ' ') { link_to icon('long-arrow-right'), news_item } %>
+    <%= render_markdown_as_html emojify( truncate(news_item.body, length: 200, omission: ' ', separator: ' ')) { link_to icon('long-arrow-right'), news_item } %>
   </div>
 </div>
