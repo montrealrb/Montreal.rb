@@ -1,12 +1,12 @@
-<h1><%= @job.title %></h1>
+<h1><%= render_markdown_as_html @job.title %></h1>
 <div class="job-meta">
-  <p><%= icon 'building', class: 'fa-fw' %><%= @job.organization.name %></p>
+  <p><%= icon 'building', class: 'fa-fw' %><%= render_markdown_as_html @job.organization.name %></p>
   <p><%= icon 'calendar-o', class: 'fa-fw' %>Posted <%= time_ago_in_words(@job.created_at) %> ago</p>
   <% if @job.organization.logo.present? %>
-    <%= link_to image_tag(@job.organization.logo.thumbnail.url, alt: @job.organization.name), organization_path(@job.organization) %>
+    <%= link_to image_tag(@job.organization.logo.thumbnail.url, alt: render_markdown_as_html(@job.organization.name), organization_path(@job.organization) %>
   <% end %>
 </div>
 <div class="markdown-body">
-  <%= render_markdown_as_html @job.description %>
+  <%=  render_markdown_as_html @job.description  %>
 </div>
 
