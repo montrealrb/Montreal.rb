@@ -95,14 +95,18 @@ Once successfully completed, this setup script will:
 
 __Set environment variables__
 
-Omniauth is used to allow users to log in to the site using GitHub accounts. To 
-use the GitHub API, you must set environment variables for the GitHub 'key' and 
+Omniauth is used to allow users to log in to the site using GitHub accounts. To
+use the GitHub API, you must set environment variables for the GitHub 'key' and
 'secret.'
 
 You can first obtain this key/secret [through your GitHub account](https://github.com/settings/applications/new).
 
 For image hosting Cloudinary is used. This service gives us the ability to host
-images with a heroku app. Sign up for a [free coludinary account](https://cloudinary.com/).
+ images with a heroku app. Sign up for a [free coludinary account](https://cloudinary.com/).
+
+To tweet automatically when content is published, you can register an app on [Twitter](http://apps.twitter.com)
+ and set the keys to your environment variables. If you choose not to, don't set the variables and
+ the app will simply skip the tweeting feature.
 
 Now you need to set the environment variables on your server. The procedure
 will depend on your system.

@@ -16,7 +16,8 @@ class EventDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     title: Field::String,
-    body: Field::Text
+    body: Field::Text,
+    tweet: Field::Boolean
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -45,7 +46,8 @@ class EventDashboard < Administrate::BaseDashboard
     :body,
     :sponsors,
     :starts_at,
-    :location
+    :location,
+    :tweet
   ].freeze
 
   # Overwrite this method to customize how events are displayed

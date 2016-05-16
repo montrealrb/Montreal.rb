@@ -51,6 +51,9 @@ gem "bugsnag"
 
 gem "reverse_markdown"
 
+# Communication
+gem "twitter"
+
 group :development do
   gem "annotate"
   gem "quiet_assets"
@@ -78,6 +81,11 @@ group :development, :test do
   gem "rubocop", require: false
   gem "sqlite3"
   gem "timecop"
+end
+
+group :test do
+  gem "vcr"
+  gem "webmock", ">= 1.8.0"
 end
 
 gem "coveralls", require: false, group: :test

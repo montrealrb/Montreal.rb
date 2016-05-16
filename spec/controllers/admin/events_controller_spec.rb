@@ -46,5 +46,18 @@ RSpec.describe Admin::EventsController, type: :controller do
       put :update, id: event.id, event: event.attributes
       expect(event.reload.author).to eq admin
     end
+
+    context "the event has a tweet value set to true" do
+      let!(:event) { FactoryGirl.create(:event) }
+      let(:valid_attributes) do
+        attributes_for(:event).merge(tweet: true)
+      end
+
+      it "tweets" do
+        allow(controller).to receive(:requested_resource) { event }
+        expect(event).to receive(:tweet)
+        put :update, id: event.id, event: valid_attributes
+      end
+    end
   end
 end
