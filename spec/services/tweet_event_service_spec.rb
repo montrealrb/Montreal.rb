@@ -15,8 +15,7 @@ RSpec.describe TweetEventService do
 
   context "when twitter returns an error" do
     before do
-      allow_any_instance_of(Twitter::REST::Client)
-        .to receive(:update).and_raise(Twitter::Error)
+      allow_any_instance_of(Twitter::REST::Client).to receive(:update).and_raise(Twitter::Error)
     end
 
     its(:success?) { is_expected.to eq false }
