@@ -7,6 +7,19 @@ require "rspec/rails"
 require "devise"
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
+require "vcr"
+require "webmock/rspec"
+WebMock.disable_net_connect!(allow_localhost: true)
+
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.hook_into :webmock
+  config.filter_sensitive_data("<TWITTER_CONSUMER_KEY>")    { ENV["TWITTER_CONSUMER_KEY"]    }
+  config.filter_sensitive_data("<TWITTER_CONSUMER_SECRET>") { ENV["TWITTER_CONSUMER_SECRET"] }
+  config.filter_sensitive_data("<TWITTER_ACCESS_TOKEN>")    { ENV["TWITTER_ACCESS_TOKEN"]    }
+  config.filter_sensitive_data("<TWITTER_ACCESS_SECRET>")   { ENV["TWITTER_ACCESS_SECRET"]   }
+end
+
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -49,4 +62,21 @@ RSpec.configure do |config|
 
   config.include Devise::TestHelpers, type: :controller
   config.include ControllerMacros, type: :controller
+
+  # Add VCR to all tests
+  config.around(:each) do |example|
+    options = example.metadata[:vcr] || {}
+    if options[:record] == :skip
+      VCR.turned_off(&example)
+    else
+      name = example.metadata[:full_description].
+             split(/\s+/, 2).
+             join("/").
+             underscore.
+             tr(".", "/").
+             gsub(%r([^\w/]+), "_").
+             gsub(%r(/$), "")
+      VCR.use_cassette(name, options, &example)
+    end
+  end
 end

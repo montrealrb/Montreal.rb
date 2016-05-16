@@ -31,6 +31,10 @@ class Event < ActiveRecord::Base
     title_with_date
   end
 
+  def tweet
+    TweetEventService.new(self).call if persisted? && state == "scheduled"
+  end
+
   private
 
   def title_with_date

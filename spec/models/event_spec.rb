@@ -3,6 +3,11 @@ require "rails_helper"
 RSpec.describe Event, type: :model do
   let(:event) { FactoryGirl.create(:event) }
   let(:talks) { FactoryGirl.create_list(:talk, 5, event: event) }
+  let(:tweet_service) { double(:service, call: true) }
+
+  before do
+    allow(TweetEventService).to receive(:new) { tweet_service }
+  end
 
   describe "attributes" do
     it do
@@ -55,5 +60,34 @@ RSpec.describe Event, type: :model do
     subject { event.to_s }
 
     it { is_expected.to eq "#{event.title} : March 01" }
+  end
+
+  describe "#tweet" do
+    context "the event is scheduled" do
+      let(:event) { create(:event, state: "scheduled") }
+
+      it "calls the callback" do
+        expect(tweet_service).to receive(:call)
+        event.tweet
+      end
+    end
+
+    context "the event is scheduled" do
+      let(:event) { create(:event, state: "proposed") }
+
+      it "does not calls the callback" do
+        expect(tweet_service).to_not receive(:call)
+        event.tweet
+      end
+    end
+
+    context "the event is not persisted" do
+      let(:event) { build(:event, state: "scheduled") }
+
+      it "does not calls the callback" do
+        expect(tweet_service).to_not receive(:call)
+        event.tweet
+      end
+    end
   end
 end
