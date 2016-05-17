@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card events">
   <h1><%= link_to event.title.titleize, event %></h1>
   <div class="event-meta">
     <p><%= icon 'calendar-o', class: 'fa-fw' %><%= event.starts_at.strftime('%B %e, %Y  -  %k:%M') %></p>
@@ -10,7 +10,7 @@
       <h3>Talks</h3>
       <%= render event.talks %>
     <% end %>
-    <% if event.sponsors.present? %>
+    <% if event.sponsors.any? %>
       <h3>Brought to you by our sponsors: </h3>
       <%= render event.sponsorships %>
     <% end %>
