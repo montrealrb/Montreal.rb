@@ -25,9 +25,7 @@ class PageDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
-    :body,
     :state,
-    :slug
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -39,6 +37,7 @@ class PageDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :title,
+    :slug,
     :body,
     :state
   ].freeze
