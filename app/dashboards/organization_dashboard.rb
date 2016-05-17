@@ -12,7 +12,7 @@ class OrganizationDashboard < Administrate::BaseDashboard
     name: Field::String,
     address: Field::Text,
     logo: CarrierwaveField,
-    description: Field::Text,
+    description: MarkdownField,
     sponsored_events: Field::HasMany.with_options(class_name: "Event"),
     created_at: Field::DateTime,
     updated_at: Field::DateTime

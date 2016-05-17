@@ -12,7 +12,7 @@ class JobDashboard < Administrate::BaseDashboard
     title: Field::String,
     state: EnumField,
     organization: Field::BelongsTo,
-    description: Field::Text,
+    description: MarkdownField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -27,7 +27,6 @@ class JobDashboard < Administrate::BaseDashboard
     :state,
     :title,
     :organization,
-    :description
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

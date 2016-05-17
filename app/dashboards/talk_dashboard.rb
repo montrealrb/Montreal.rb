@@ -10,7 +10,7 @@ class TalkDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     title: Field::String,
-    description: Field::Text,
+    description: MarkdownField,
     event: Field::BelongsTo,
     member: Field::BelongsTo,
     state: EnumField,

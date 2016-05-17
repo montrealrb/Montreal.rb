@@ -16,7 +16,7 @@ class EventDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     title: Field::String,
-    body: Field::Text,
+    body: MarkdownField,
     tweet: Field::Boolean
   }.freeze
 
