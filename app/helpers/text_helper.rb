@@ -1,6 +1,7 @@
 module TextHelper
   def render_markdown_as_html(markup)
-    simple_format md_renderer.render(markup)
+    markup ||= ''
+    md_renderer.render(markup).html_safe
   end
 
   private
