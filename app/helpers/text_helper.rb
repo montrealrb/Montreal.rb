@@ -7,6 +7,6 @@ module TextHelper
 
   def md_renderer
     @renderer ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML,
-                                      autolink: true, tables: true)
+                                          autolink: true, tables: true)
   end
 end

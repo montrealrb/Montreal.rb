@@ -6,7 +6,7 @@ RSpec.describe EventDashboard do
 
     it "returns the event's title" do
       expect(subject.display_resource(event)).to include event.title
-      expect(subject.display_resource(event)).to include event.starts_at.strftime('%B %e, %Y')
+      expect(subject.display_resource(event)).to include event.starts_at.strftime("%B %e, %Y")
     end
   end
 end
