@@ -8,12 +8,12 @@ class OrganizationDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    sponsored_events: Field::HasMany.with_options(class_name: "Event"),
     id: Field::Number,
     name: Field::String,
     address: Field::Text,
     logo: CarrierwaveField,
-    description: Field::Text,
+    description: MarkdownField,
+    sponsored_events: Field::HasMany.with_options(class_name: "Event"),
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -39,7 +39,6 @@ class OrganizationDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :sponsored_events,
     :name,
     :address,
     :logo,
@@ -49,7 +48,7 @@ class OrganizationDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how organizations are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(organization)
-  #   "Organization ##{organization.id}"
-  # end
+  def display_resource(organization)
+    organization.name
+  end
 end

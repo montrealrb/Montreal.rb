@@ -10,7 +10,7 @@ class SponsorshipDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     event: Field::BelongsTo,
     organization: Field::BelongsTo,
-    message: Field::String,
+    message: MarkdownField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

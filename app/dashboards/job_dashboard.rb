@@ -9,10 +9,10 @@ class JobDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    organization_id: Field::Number,
     title: Field::String,
     state: EnumField,
-    description: Field::Text,
+    organization: Field::BelongsTo,
+    description: MarkdownField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -26,7 +26,7 @@ class JobDashboard < Administrate::BaseDashboard
     :id,
     :state,
     :title,
-    :description
+    :organization,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -39,6 +39,7 @@ class JobDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :state,
     :title,
+    :organization,
     :description
   ].freeze
 

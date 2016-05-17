@@ -8,10 +8,10 @@ class MemberDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    id:             Field::Number,
     events:         Field::HasMany,
     organizations:  Field::HasMany,
     user:           Field::BelongsTo,
-    id:             Field::Number,
     name:           Field::String,
     email:          Field::String,
     picture:        Field::String,
@@ -28,8 +28,9 @@ class MemberDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :user,
     :id,
+    :user,
+    :name,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

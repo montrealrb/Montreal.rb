@@ -10,13 +10,13 @@ class EventDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     location: Field::BelongsTo,
     sponsors: Field::HasMany.with_options(class_name: "Organization"),
-    id: Field::Number,
+    talks: Field::HasMany,
     starts_at: Field::DateTime,
     state: EnumField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     title: Field::String,
-    body: Field::Text,
+    body: MarkdownField,
     tweet: Field::Boolean
   }.freeze
 
@@ -26,9 +26,9 @@ class EventDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :id,
     :title,
     :state,
+    :talks,
     :starts_at,
     :location
   ].freeze
@@ -54,6 +54,6 @@ class EventDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(event)
-    event.title
+    "#{event.starts_at.strftime('%B %e, %Y')}, #{event.title}"
   end
 end

@@ -9,10 +9,11 @@ class NewsItemDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     # translations: Field::HasMany.with_options(class_name: "NewsItem::Translation"),
-    id: Field::Number,
     title: Field::String,
-    body: Field::Text,
+    slug: Field::String,
+    body: MarkdownField,
     state: EnumField,
+    author: Field::BelongsTo.with_options(class_name: "User"),
     published_at: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
@@ -24,10 +25,8 @@ class NewsItemDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :id,
     :title,
     :state,
-    :updated_at,
     :published_at
   ].freeze
 
