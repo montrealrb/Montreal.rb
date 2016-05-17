@@ -6,8 +6,11 @@
 <% @jobs.each do |job| %>
   <div class="card">
     <h2><%= link_to job.title, job_path(job) %></h2>
-    <p class="meta">
-      Posted <%= time_ago_in_words(job.created_at) %> ago
+    <p class="job-meta">
+      <% if job.organization %>
+        <%= icon 'building', class: 'fa-fw' %><%= job.organization.name  %><br/>
+      <% end %>
+      <%= icon 'calendar-o', class: 'fa-fw' %>Posted <%= time_ago_in_words(job.created_at) %> ago
     </p>
     <div class="markdown-body">
       <%= render_markdown_as_html job.description %>
