@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe TextHelper do
   let(:markdown) { "# title\n\nbody" }
@@ -9,6 +9,6 @@ RSpec.describe TextHelper do
   end
 
   it "can handle nil" do
-    expect(render_markdown_as_html(nil)).to eq ''
+    expect(render_markdown_as_html(nil)).to eq ""
   end
 end
