@@ -66,6 +66,9 @@ GEM
     buftok (0.2.0)
     bugsnag (4.1.0)
     builder (3.2.2)
+    bullet (5.0.0)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.9.0)
     capybara (2.7.1)
       addressable
       mime-types (>= 1.16)
@@ -389,6 +392,7 @@ GEM
     unicorn (5.1.0)
       kgio (~> 2.6)
       raindrops (~> 0.7)
+    uniform_notifier (1.9.0)
     vcr (3.0.1)
     warden (1.2.6)
       rack (>= 1.0)
@@ -408,6 +412,7 @@ DEPENDENCIES
   autoprefixer-rails (~> 6.3.6)
   bootstrap-sass (~> 3.3.6)
   bugsnag
+  bullet
   capybara
   carrierwave
   cloudinary
