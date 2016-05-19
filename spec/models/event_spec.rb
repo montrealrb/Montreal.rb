@@ -3,10 +3,10 @@ require "rails_helper"
 RSpec.describe Event, type: :model do
   let(:event) { FactoryGirl.create(:event) }
   let(:talks) { FactoryGirl.create_list(:talk, 5, event: event) }
-  let(:tweet_service) { double(:service, call: true) }
+  let(:tweet_service) { double(:service, tweet: true) }
 
   before do
-    allow(TweetEventService).to receive(:new) { tweet_service }
+    allow(TweetModelService).to receive(:new) { tweet_service }
   end
 
   describe "attributes" do
@@ -67,7 +67,7 @@ RSpec.describe Event, type: :model do
       let(:event) { create(:event, state: "scheduled") }
 
       it "calls the callback" do
-        expect(tweet_service).to receive(:call)
+        expect(tweet_service).to receive(:tweet)
         event.tweet
       end
     end
@@ -76,7 +76,7 @@ RSpec.describe Event, type: :model do
       let(:event) { create(:event, state: "proposed") }
 
       it "does not calls the callback" do
-        expect(tweet_service).to_not receive(:call)
+        expect(tweet_service).to_not receive(:tweet)
         event.tweet
       end
     end
@@ -85,7 +85,7 @@ RSpec.describe Event, type: :model do
       let(:event) { build(:event, state: "scheduled") }
 
       it "does not calls the callback" do
-        expect(tweet_service).to_not receive(:call)
+        expect(tweet_service).to_not receive(:tweet)
         event.tweet
       end
     end

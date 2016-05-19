@@ -1,17 +1,20 @@
-class TweetEventService
+class TweetModelService
   include Rails.application.routes.url_helpers
 
-  def initialize(event)
-    @event = event
+  attr_reader :model
+
+  def initialize(model)
+    @model = model
   end
 
   def success?
     @success
   end
 
-  def call
+  def tweet(message)
+    message = "#{message}, #{url(model)}"
     twitter_client.update(message)
-    Rails.logger.info "Sent tweet: \"#{message}\""
+    Rails.logger.info "Sent tweet: #{message}"
     @success = true
   rescue Twitter::Error
     Rails.logger.info "Tweet not sent"
@@ -20,8 +23,8 @@ class TweetEventService
 
   private
 
-  def message
-    "Our next event: #{@event.title}, #{event_url(@event)}"
+  def url(model)
+    send("#{model.model_name.name.downcase}_url", @model.id)
   end
 
   def twitter_client

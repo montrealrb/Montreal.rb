@@ -8,6 +8,8 @@ RSpec.describe NewsItem, type: :model do
     # Unpublished
     let(:archived_item) { create(:news_item, :archived) }
     let(:draft_item) { create(:news_item, :draft) }
+    # Services
+    let(:tweet_service) { double(:service, call: true) }
 
     it "returns a sorted array of most recently published items first" do
       expect(NewsItem.published).to eq [recent_item, older_item]

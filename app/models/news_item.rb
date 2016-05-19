@@ -43,4 +43,7 @@ class NewsItem < ActiveRecord::Base
   to_param :title
 
   # Instance methods
+  def tweet
+    TweetModelService.new(self).tweet("We've got some news: #{title}") if persisted? && state == "published"
+  end
 end

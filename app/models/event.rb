@@ -32,7 +32,7 @@ class Event < ActiveRecord::Base
   end
 
   def tweet
-    TweetEventService.new(self).call if persisted? && state == "scheduled"
+    TweetModelService.new(self).tweet("Our next event: #{title}") if persisted? && state == "scheduled"
   end
 
   private
