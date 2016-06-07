@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe EventsController, type: :controller do
+RSpec.describe HomeController, type: :controller do
   let!(:proposed_event)  { create :event, :proposed }
   let!(:past_event)      { create :event, :scheduled, starts_at: 1.month.ago }
   let!(:future_event)    { create :event, :scheduled, starts_at: 1.month.from_now }

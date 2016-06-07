@@ -3,7 +3,7 @@ class JobsController < ApplicationController
 
   # GET /jobs
   def index
-    @jobs = Job.published
+    @jobs = Job.published.includes(:organization)
   end
 
   # GET /jobs/1
