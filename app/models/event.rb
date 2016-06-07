@@ -26,6 +26,9 @@ class Event < ActiveRecord::Base
 
   scope :published, -> { where(state: "scheduled").order(starts_at: :desc) }
 
+  delegate :address, to: :location
+  delegate :name, to: :location, prefix: true
+
   # driven by views/fields/enum_field/_show.html.erb
   def to_s
     title_with_date
