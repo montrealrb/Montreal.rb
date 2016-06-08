@@ -7,9 +7,8 @@
           <%= icon('bars', class: 'fa-2x') %>
         </button>
 
-        <%= link_to root_path do %>
-          <h1>Montreal.rb</h1>
-          <p class="hidden-sm hidden-xs">Montreal's Ruby Community</p>
+        <%= link_to root_path, class: 'navbar-brand' do %>
+          <%= image_tag 'montreal-rb.png', alt: 'Montreal.rb' %>
         <% end %>
       </div>
 

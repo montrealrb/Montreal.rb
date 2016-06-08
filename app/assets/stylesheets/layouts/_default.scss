@@ -14,7 +14,7 @@ body {
 }
 
 section {
-  @extend .col-sm-12, .col-md-8, .col-lg-8;
+  @extend .col-sm-12, .col-md-12, .col-lg-12;
 }
 
 a,
@@ -134,4 +134,31 @@ ul {
 .gravatar {
   float: left;
   margin: 5px 20px 15px 0px;
+}
+
+.container .jumbotron, .container-fluid .jumbotron {
+  padding: 10px 30px;
+  background-color: $bg;
+  margin: 0 auto 2rem;
+
+  h1 {
+    font-weight: normal;
+    line-height: 3.4rem;
+    font-size: 3.2rem;
+    letter-spacing: -1px;
+    color: black;
+    margin-bottom: 0.5rem;
+    padding: 0.1em 0;
+  }
+
+  p, li {
+    line-height: 2.3rem;
+    font-size: 2rem;
+    color: #000;
+  }
+
+  .btn {
+    background-color: #cc0000;
+    border-color: #ff9999;
+  }
 }

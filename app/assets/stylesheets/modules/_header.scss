@@ -24,4 +24,14 @@ header {
   .navbar-toggle:hover {
     background-color: transparent;
   }
+
+  .navbar-brand {
+    padding: 0px;
+
+  }
+  .navbar-brand>img {
+    height: 100%;
+    padding: 10px;
+    width: auto;
+  }
 }

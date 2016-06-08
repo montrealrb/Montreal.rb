@@ -2,11 +2,14 @@
   background-color: $navbar-bg-color;
   color: $navbar-text-color;
   font-family: $secondary-font;
+  font-weight: bold;
   text-transform: uppercase;
+  text-decoration: underline;
   letter-spacing: 0.1em;
 
   &:hover {
-    color: $navbar-text-color;
+    color: $navbar-text-hover-color;
+    text-decoration: underline;
     background-color: $navbar-bg-highlight-color;
   }
 }
@@ -18,4 +21,11 @@
 
 .navbar {
   margin: 0 $padding;
+}
+
+.navbar-brand,
+.navbar-nav li a {
+  line-height: 130px;
+  height: 130px;
+  padding-top: 0;
 }

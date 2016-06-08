@@ -6,15 +6,16 @@ $main-secondary: lighten($main, 10%);
 $main-highlight: lighten($main, 40%);
 
 $header-title-color: #ffffff;
-$header-bg-color: #cc0100;
-$navbar-text-color: #ffffff;
-$navbar-bg-color: #95040b;
-$navbar-bg-highlight-color: #2c3230;
+$header-bg-color: #ffffff;
+$navbar-text-color: #cc0000;
+$navbar-text-hover-color: #000;
+$navbar-bg-color: #ffffff;
+$navbar-bg-highlight-color: #ffffff;
 $footer-text-color: #ffffff;
 $footer-bg-color: #2c3230;
 
-$links: $header-bg-color;
-$links-hover: $navbar-bg-color;
+$links: $navbar-text-color;
+$links-hover: $navbar-text-hover-color;
 
 // FONTS
 $main-font: 'Lora', Helvetica, serif;
