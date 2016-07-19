@@ -1,17 +1,18 @@
 <div class="card events">
-  <h1><%= link_to event.title.titleize, event %></h1>
+  <h3><%= link_to event.title.titleize, event %></h3>
   <div class="event-meta">
     <p><%= icon 'calendar-o', class: 'fa-fw' %><%= event.starts_at.strftime('%B %e, %Y  -  %k:%M') %></p>
-    <p><%= icon 'map-marker', class: 'fa-fw' %><%= event.location.name %>, <a href="https://www.google.ca/maps/search/<%= event.location.address %>", target='_blank'><%= event.location.address %></a></p>
+    <p><%= icon 'map-marker', class: 'fa-fw' %><a href="https://www.google.ca/maps/search/<%= event.address %>", target='_blank'><%= event.location_name %></a></p>
+    <%= simple_format event.address, class: 'no-icon hidden-xs' %>
   </div>
   <div class="markdown-body">
     <%= render_markdown_as_html event.body %>
     <% if event.talks.any? %>
-      <h3>Talks</h3>
+      <h4>Talks</h4>
       <%= render event.talks %>
     <% end %>
     <% if event.sponsors.any? %>
-      <h3>Brought to you by our sponsors: </h3>
+      <h4>Brought to you by our sponsors: </h4>
       <%= render event.sponsorships %>
     <% end %>
   </div>
