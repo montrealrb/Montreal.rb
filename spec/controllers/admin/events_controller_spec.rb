@@ -60,4 +60,20 @@ RSpec.describe Admin::EventsController, type: :controller do
       end
     end
   end
+
+  describe "DELETE #destroy" do
+    let!(:event) { FactoryGirl.create(:event) }
+    before do
+      login_user(admin)
+    end
+
+    context "success" do
+      it "deletes an event" do
+        expect do
+          delete :destroy, id: event.id
+        end.to change(Event, :count).by(-1)
+        expect(response).to redirect_to admin_events_path
+      end
+    end
+  end
 end

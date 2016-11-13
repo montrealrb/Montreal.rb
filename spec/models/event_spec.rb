@@ -97,12 +97,14 @@ RSpec.describe Event, type: :model do
       count = 0
       5.times do
         count += 1
-        Talk.create(member: member, event: event, title: "Title Number #{count})", state: "scheduled")
+        Talk.create(member: member,
+                    event: event,
+                    title: "Title Number #{count})",
+                    state: "scheduled")
       end
       expect(event.talks.count).to eq 5
       event.unlink_all_talks
       expect(Talk.where(event_id: event.id).count).to eq 0
     end
   end
-
 end
