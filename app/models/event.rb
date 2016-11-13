@@ -35,6 +35,15 @@ class Event < ActiveRecord::Base
     TweetEventService.new(self).call if persisted? && state == "scheduled"
   end
 
+  def unlink_all_talks
+    transaction do
+      # Remove tasks event if and set them back to proposed
+      self.talks.update_all(event_id: nil, state: 'proposed')
+      self.destroy
+    end
+    self.destroyed?
+  end
+
   private
 
   def title_with_date
@@ -44,4 +53,5 @@ class Event < ActiveRecord::Base
   def start_date_string
     starts_at.strftime("%B %d")
   end
+
 end
