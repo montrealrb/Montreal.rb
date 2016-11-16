@@ -35,6 +35,15 @@ class Event < ActiveRecord::Base
     TweetEventService.new(self).call if persisted? && state == "scheduled"
   end
 
+  def unlink_all_talks
+    transaction do
+      # Remove tasks event if and set them back to proposed
+      talks.update_all(event_id: nil, state: "proposed")
+      destroy
+    end
+    destroyed?
+  end
+
   private
 
   def title_with_date
