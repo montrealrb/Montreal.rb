@@ -7,7 +7,6 @@ class Talk < ActiveRecord::Base
   belongs_to :member
 
   validates :title,  presence: true
-  validates :event,  presence: true
   validates :member, presence: true
 
   enumerize :state, in: STATES

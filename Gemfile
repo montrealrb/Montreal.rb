@@ -60,6 +60,7 @@ group :development do
   gem "quiet_assets"
   gem "spring"
   gem "spring-commands-rspec"
+  gem "bullet"
 end
 
 group :legacy do

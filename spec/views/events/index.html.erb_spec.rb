@@ -11,13 +11,13 @@ describe "events/index.html.erb" do
 
   it "displays all the events" do
     render
-    expect(rendered).to include future_event.title.titleize
-    expect(rendered).to include past_event.title.titleize
+    expect(rendered).to include future_event.title
+    expect(rendered).to include past_event.title
   end
 
   it "links events title to corresponding show page" do
     render
-    expect(rendered).to have_link future_event.title.titleize, href: event_path(future_event)
+    expect(rendered).to have_link future_event.title, href: event_path(future_event)
   end
 
   context "there are no future events" do
