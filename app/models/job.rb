@@ -19,4 +19,8 @@ class Job < ActiveRecord::Base
             presence: true,
             inclusion: { in: STATES }
   validates :author, presence: true
+
+  def tweet
+    TweetModelService.new(self).tweet("Check out the new job posting: #{title}") if persisted? && state == "published"
+  end
 end

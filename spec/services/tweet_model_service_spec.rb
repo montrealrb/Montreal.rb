@@ -1,10 +1,10 @@
 require "rails_helper"
 
-RSpec.describe TweetEventService do
+RSpec.describe TweetModelService do
   let(:event) { create(:event) }
   let(:service) { described_class.new(event) }
 
-  subject { service.tap(&:call) }
+  subject { service.tap { |m| m.tweet("Our next event: #{event.title}") } }
 
   its(:success?) { is_expected.to eq true }
 
