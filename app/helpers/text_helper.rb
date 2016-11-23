@@ -16,7 +16,7 @@ module TextHelper
       h(content).to_str.gsub(/:(\w[\s\_\w]*?):/) do |match|
         name = $1.tr(" ", "_").downcase
         if emoji = Emoji.find_by_alias(name)
-          image_tag("emoji/#{emoji.image_filename}", alt: name, class: 'emoji')
+          image_tag("emoji/#{emoji.image_filename}", alt: name, class: "emoji")
         else
           match
         end
