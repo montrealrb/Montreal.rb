@@ -36,3 +36,6 @@ gems.tags
 
 coverage/
 vendor/bundle/
+
+# ignore byebug history
+.byebug_history

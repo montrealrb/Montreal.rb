@@ -66,9 +66,10 @@ GEM
     buftok (0.2.0)
     bugsnag (4.1.0)
     builder (3.2.2)
-    bullet (5.0.0)
+    bullet (5.4.2)
       activesupport (>= 3.0.0)
-      uniform_notifier (~> 1.9.0)
+      uniform_notifier (~> 1.10.0)
+    byebug (9.0.3)
     capybara (2.7.1)
       addressable
       mime-types (>= 1.16)
@@ -139,6 +140,7 @@ GEM
     formatador (0.2.5)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
+    gemoji (2.1.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     globalize (5.0.1)
@@ -392,7 +394,7 @@ GEM
     unicorn (5.1.0)
       kgio (~> 2.6)
       raindrops (~> 0.7)
-    uniform_notifier (1.9.0)
+    uniform_notifier (1.10.0)
     vcr (3.0.1)
     warden (1.2.6)
       rack (>= 1.0)
@@ -413,6 +415,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   bugsnag
   bullet
+  byebug
   capybara
   carrierwave
   cloudinary
@@ -425,6 +428,7 @@ DEPENDENCIES
   faker
   font-awesome-sass
   friendly_id (~> 5.1.0)
+  gemoji
   globalize
   globalize-accessors
   guard-ctags-bundler

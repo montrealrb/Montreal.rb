@@ -31,6 +31,7 @@ gem "turbolinks"
 gem "simple_form"
 gem "enumerize"
 gem "redcarpet"
+gem "gemoji"
 
 # Server
 gem "unicorn"
@@ -75,6 +76,7 @@ group :development, :test do
   gem "guard-rspec", require: false
   gem "guard-rubocop"
   gem "pry"
+  gem "byebug"
   gem "dotenv-rails"
   gem "rspec-rails"
   gem "shoulda-matchers"
