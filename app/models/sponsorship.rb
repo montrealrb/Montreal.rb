@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Sponsorship < ActiveRecord::Base
   belongs_to :event
   belongs_to :organization

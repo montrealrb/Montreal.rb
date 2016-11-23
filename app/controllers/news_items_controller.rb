@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class NewsItemsController < ApplicationController
   def index
     @on_news_index = true

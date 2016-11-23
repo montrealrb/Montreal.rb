@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Talk < ActiveRecord::Base
   extend Enumerize
   STATES = [:proposed, :scheduled, :presented].freeze

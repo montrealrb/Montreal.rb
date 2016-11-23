@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Job < ActiveRecord::Base
   extend Enumerize
   STATES = %w(draft published archived).freeze

@@ -1,7 +1,8 @@
+# frozen_string_literal: true
 require "rails_helper"
 
 RSpec.describe NewsItemsController, type: :controller do
-  describe 'GET #index' do
+  describe "GET #index" do
     # Published
     let!(:recent_item) { create(:news_item, :published) }
     let!(:older_item) { create(:news_item, :published, published_at: 1.year.ago) }
@@ -30,7 +31,7 @@ RSpec.describe NewsItemsController, type: :controller do
     end
   end
 
-  describe 'GET #show' do
+  describe "GET #show" do
     context "when accessing a published news_item" do
       let(:published_news_item) { create(:news_item, :published) }
 

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 Rails.application.routes.draw do
   namespace :admin do
     DashboardManifest::DASHBOARDS.each do |dashboard_resource|
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
              controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
 
   # NOTE: temporary page, remove when pages admin module is finished
-  get "/about", to: 'pages#about', as: :about
+  get "/about", to: "pages#about", as: :about
 
   # NewsItem compatibility with old wordpress Posts url
   get "/:year/:month/:slug",
@@ -24,5 +25,5 @@ Rails.application.routes.draw do
   resources :jobs, only: [:index, :show]
   resources :pages, only: [:show]
 
-  root 'home#index'
+  root "home#index"
 end

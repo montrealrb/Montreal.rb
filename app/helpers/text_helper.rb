@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module TextHelper
   def render_markdown_as_html(markup)
     markup ||= ""
