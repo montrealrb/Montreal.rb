@@ -18,4 +18,24 @@
 
 .navbar {
   margin: 0 $padding;
+
+  .navbar-login {
+    width: 305px;
+    padding: 10px;
+    padding-bottom: 0px;
+    p {
+      color: $main;
+      margin-bottom: 8px
+    }
+  }
+
+  .navbar-login-session {
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+
+  .icon-size {
+    font-size: 87px;
+  }
 }
