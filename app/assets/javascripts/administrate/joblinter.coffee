@@ -29,7 +29,8 @@ issueDescPopulator = (joblintObj) ->
   for issue of issuesArray
     $(".joblint-issue-desc-container").append( \
       "<div id=\"joblint-issue-desc-" + issue + "\"" + \
-      " class=\"joblint-" + issuesArray[issue].level + "\">" + \
+      " class=\"joblint-" + issuesArray[issue].level + \
+      " joblint-issue-desc" + "\">" + \
       "<h3 class=\"joblint-title\">" + issuesArray[issue].name.toUpperCase() + \
       " (" + \
       "<span class=\"joblint-level\">" + issuesArray[issue].level + \
