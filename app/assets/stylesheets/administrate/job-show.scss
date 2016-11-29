@@ -1,5 +1,5 @@
 .issue-bar {
-  background-color: grey;
+  background-color: $issue-bar-color;
   width: 3px;
 }
 
@@ -11,20 +11,20 @@
   margin-bottom: 1px;
 }
 
-#issues-container span {
+.issues-container span {
   display: inline-block;
 }
 
 .joblint-error {
-  background-color: #E8B0C4;
+  background-color: $error-background;
 }
 
 .joblint-warning {
-  background-color: #E0ED6B;
+  background-color: $warning-background;
 }
 
 .joblint-notice {
-  background-color: #A8FBFF;
+  background-color: $notice-background;
 }
 
 .joblint-reason {
@@ -32,7 +32,7 @@
 }
 
 .joblint-occurance {
-  background-color: red;
+  background-color: $occurance-color;
   padding: 5px;
 }
 
@@ -42,17 +42,17 @@
 }
 
 .joblint-issue-desc {
-  padding: 5px;
   margin-bottom: 1%;
+  padding: 5px;
 }
 
 .joblint-context {
+  background-color: $context-background;
+  color: $context-text;
   margin: 1%;
-  background-color: black;
-  color: white;
+  padding: 10px;
   text-align: center;
   width: 50%;
-  padding: 10px;
 }
 
 .joblint-explanation {
