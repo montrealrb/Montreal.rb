@@ -33,40 +33,48 @@ as well as a link to its edit page.
   </div>
 </header>
 
-<div class="joblint-issue-tally-container">
-  <div id="issues-container">
-    <div class="joblint-issue">
-      <span class="issue-title">Culture</span>
-      <span id="culture-bar" class="issue-bar">&nbsp;</span>
-      <span id="culture-issues-num">(0)</span>
-    </div>
-    <div class="joblint-issue">
-      <span class="issue-title">Realism</span>
-      <span id="realism-bar" class="issue-bar">&nbsp;</span>
-      <span id="realism-issues-num">(0)</span>
-    </div>
-    <div class="joblint-issue">
-      <span class="issue-title">Recruiter</span>
-      <span id="recruiter-bar" class="issue-bar">&nbsp;</span>
-      <span id="recruiter-issues-num">(0)</span>
-    </div>
-    <div class="joblint-issue">
-      <span class="issue-title">Sexism</span>
-      <span id="sexism-bar" class="issue-bar">&nbsp;</span>
-      <span id="sexism-issues-num">(0)</span>
-    </div>
-    <div class="joblint-issue">
-      <span class="issue-title">Tech</span>
-      <span id="tech-bar" class="issue-bar">&nbsp;</span>
-      <span id="tech-issues-num">(0)</span>
-    </div>
-  </div>
-</div>
-
-<div class="joblint-issue-desc-container">
-</div>
-
 <dl>
+  <dt class="attribute-label">
+    Joblint
+  </dt>
+
+  <dd class="attribute-data">
+    <div class="joblint-container">
+      <div class="joblint-issue-tally-container">
+        <div id="issues-container">
+          <div class="joblint-issue">
+            <span class="issue-title">Culture</span>
+            <span id="culture-bar" class="issue-bar">&nbsp;</span>
+            <span id="culture-issues-num">(0)</span>
+          </div>
+          <div class="joblint-issue">
+            <span class="issue-title">Realism</span>
+            <span id="realism-bar" class="issue-bar">&nbsp;</span>
+            <span id="realism-issues-num">(0)</span>
+          </div>
+          <div class="joblint-issue">
+            <span class="issue-title">Recruiter</span>
+            <span id="recruiter-bar" class="issue-bar">&nbsp;</span>
+            <span id="recruiter-issues-num">(0)</span>
+          </div>
+          <div class="joblint-issue">
+            <span class="issue-title">Sexism</span>
+            <span id="sexism-bar" class="issue-bar">&nbsp;</span>
+            <span id="sexism-issues-num">(0)</span>
+          </div>
+          <div class="joblint-issue">
+            <span class="issue-title">Tech</span>
+            <span id="tech-bar" class="issue-bar">&nbsp;</span>
+            <span id="tech-issues-num">(0)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="joblint-issue-desc-container">
+      </div>
+    </div>
+  </dd>
+
   <% page.attributes.each do |attribute| %>
     <dt class="attribute-label"><%= attribute.name.titleize %></dt>
 

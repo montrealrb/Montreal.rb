@@ -4,7 +4,6 @@ $(document).ready ->
     joblintObj = jobLinter(job_desc)
     countsPopulator(joblintObj)
     issueDescPopulator(joblintObj)
-
   return
 
 jobLinter = (job_desc) ->
@@ -30,8 +29,9 @@ issueDescPopulator = (joblintObj) ->
   for issue of issuesArray
     $(".joblint-issue-desc-container").append( \
       "<div id=\"joblint-issue-desc-" + issue + "\"" + \
-      " class=\"joblint-issue-desc\">" + \
-      "<h3>" + issuesArray[issue].name.toUpperCase() + " (" + \
+      " class=\"joblint-" + issuesArray[issue].level + "\">" + \
+      "<h3 class=\"joblint-title\">" + issuesArray[issue].name.toUpperCase() + \
+      " (" + \
       "<span class=\"joblint-level\">" + issuesArray[issue].level + \
       ")</h3> <p class=\"joblint-context\">" + \
       issuesArray[issue].context + "</p>" + \
