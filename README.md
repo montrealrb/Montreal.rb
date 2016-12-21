@@ -95,9 +95,9 @@ Once successfully completed, this setup script will:
 
 __Set environment variables__
 
-Omniauth is used to allow users to log in to the site using GitHub accounts. To
-use the GitHub API, you must set environment variables for the GitHub 'key' and
-'secret.'
+Omniauth is used to allow users to log in to the site using GitHub or Twitter accounts. To
+use the GitHub API or Twitter API, you must set environment variables for the GitHub 'key' and
+'secret.' For the Twitter API you will need to set up TWITTER_CONSUMER_KEY and TWITTER_CONSUMER_SECRET environment variables.
 
 You can first obtain this key/secret [through your GitHub account](https://github.com/settings/applications/new).
 
