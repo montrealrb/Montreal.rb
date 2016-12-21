@@ -1,0 +1,64 @@
+.issue-bar {
+  background-color: $issue-bar-color;
+  width: 3px;
+}
+
+.issue-title {
+  width: 70px;
+}
+
+.joblint-issue {
+  margin-bottom: 1px;
+}
+
+.issues-container span {
+  display: inline-block;
+}
+
+.joblint-error {
+  background-color: $error-background;
+}
+
+.joblint-warning {
+  background-color: $warning-background;
+}
+
+.joblint-notice {
+  background-color: $notice-background;
+}
+
+.joblint-reason {
+  font-style: italic;
+}
+
+.joblint-occurance {
+  background-color: $occurance-color;
+  padding: 5px;
+}
+
+.joblint-issue-desc-container {
+  margin-top: 1.5%;
+  width: 95%;
+}
+
+.joblint-issue-desc {
+  margin-bottom: 1%;
+  padding: 5px;
+}
+
+.joblint-context {
+  background-color: $context-background;
+  color: $context-text;
+  margin: 1%;
+  padding: 10px;
+  text-align: center;
+  width: 50%;
+}
+
+.joblint-explanation {
+  margin: 1%;
+}
+
+.joblint-title {
+  margin: 1%;
+}
