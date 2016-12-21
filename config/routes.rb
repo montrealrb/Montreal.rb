@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   get "/about", to: "pages#about", as: :about
 
   # privacy policy and terms of service - for Twitter authentication
-  get '/terms', to: redirect('/terms.html')
-  get '/privacy', to: redirect('/privacy.html')
+  get "/terms", to: redirect("/terms.html")
+  get "/privacy", to: redirect("/privacy.html")
 
   # NewsItem compatibility with old wordpress Posts url
   get "/:year/:month/:slug",
