@@ -1,10 +1,9 @@
 $(document).ready ->
-  if $(".joblint-issue-tally-container")[0]
-    job_desc = $(".attribute-data--markdown-field").text()
-    joblintObj = jobLinter(job_desc)
-    countsPopulator(joblintObj)
-    issueDescPopulator(joblintObj)
-  return
+  return unless $(".joblint-issue-tally-container")[0]
+  job_desc = $(".attribute-data--markdown-field").text()
+  joblintObj = jobLinter(job_desc)
+  countsPopulator(joblintObj)
+  issueDescPopulator(joblintObj)
 
 jobLinter = (job_desc) ->
   joblintObj = joblint(job_desc)
