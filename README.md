@@ -43,7 +43,7 @@ You should also have [bundler](http://bundler.io/) (minimum `v1.10`) to help wit
 
 ### Database
 
-Do you have Postgres installed?
+Do you have Postgres installed? For development, sqlite3 will be used.
 
 ```bash
 $ postgres --version

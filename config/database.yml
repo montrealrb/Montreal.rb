@@ -23,9 +23,15 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
+sqlite: &sqlite
+  adapter: sqlite3
+  encoding: utf8
+  timeout: 5000
+  pool: 5
+
 development:
-  <<: *default
-  database: montreal_rb_development
+  <<: *sqlite
+  database: db/montreal_rb_development.sqlite3
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
