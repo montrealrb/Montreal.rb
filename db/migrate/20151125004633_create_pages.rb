@@ -5,7 +5,9 @@ class CreatePages < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    Page.create_translation_table! body: :text, title: {type: :string, null: false}
+
+    Page.create_translation_table! body: :text, title: { type: :string }
+    change_column :page_translations, :body, :string, null: false
   end
 
   def down
