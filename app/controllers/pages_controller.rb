@@ -4,6 +4,5 @@ class PagesController < ApplicationController
     @page = Page.friendly.published.find(params[:id])
   end
 
-  def about
-  end
+  def about; end
 end
