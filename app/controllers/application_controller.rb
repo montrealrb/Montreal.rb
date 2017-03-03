@@ -6,11 +6,20 @@ class ApplicationController < ActionController::Base
   before_action :load_sidebar
 
   def after_sign_in_path_for(_resource)
+    slack_check
     return admin_root_path if current_user.admin?
     root_path
   end
 
   def load_sidebar
     @news_items = NewsItem.published
+  end
+
+  private
+
+  def slack_check
+    if env["warden"].user.sign_in_count == 1
+      email_slack_invite(env["warden"].user.email)
+    end
   end
 end
