@@ -27,12 +27,12 @@ module ApplicationHelper
     url += "&set_active=true"
     url += "&_attempts=1"
     url += "&token=#{token}"
-    url += "&email=#{URI::escape(user_email)}"
+    url += "&email=#{URI.escape(user_email)}"
 
     # Make the request and capture the response
     response = JSON.parse(open(url).read)
 
-    if response['ok']
+    if response["ok"]
       Rails.logger.info("slack invitation sent to: #{user_email}".colorize(:green))
     else
       Rails.logger.info("slack invitation failed to send to #{user_email}".colorize(:red))
