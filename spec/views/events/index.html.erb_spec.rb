@@ -32,7 +32,7 @@ describe "events/index.html.erb" do
 
   context "event has a talk" do
     let(:member) { create :member }
-    let!(:talk)  { create :talk, state: "scheduled", event_id: past_event.id, member_id: member.id }
+    let!(:talk)  { create :talk, state: "scheduled", event: past_event, member: member }
 
     it "displays the talks header" do
       render
