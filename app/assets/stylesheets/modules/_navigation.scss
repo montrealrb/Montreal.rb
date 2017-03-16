@@ -1,5 +1,6 @@
 .navbar-nav {
   margin: 0 $padding;
+
   > li {
     background-color: $navbar-bg-color;
 
@@ -19,7 +20,7 @@
   }
 
   .navbar-login {
-    padding: 10px 10px 0 10px;
+    padding: 10px 10px 0;
     width: 305px;
   }
 
@@ -35,9 +36,9 @@
     background-color: $navbar-bg-color;
     color: $navbar-text-color;
 
-    &.open a.dropdown-toggle {
-      color: $navbar-text-color;
+    &.open .dropdown-toggle {
       background-color: $navbar-bg-highlight-color;
+      color: $navbar-text-color;
     }
 
     .dropdown-menu {
@@ -46,8 +47,6 @@
       color: $navbar-text-color;
       width: 100%;
     }
-
-
   }
 
   .divider {
