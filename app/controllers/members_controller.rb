@@ -1,8 +1,8 @@
+# frozen_string_literal: true
 class MembersController < ApplicationController
   before_action :authenticate_user!
   before_action :find_member
-  def edit
-  end
+  def edit; end
 
   def update
     return redirect_to edit_member_path if @member.update_attributes(permitted_attributes)
@@ -16,6 +16,7 @@ class MembersController < ApplicationController
   end
 
   def permitted_attributes
-    params.require(:member).permit(:name, :email, :twitter_handle, :github_handle, :biography, :company, :website)
+    params.require(:member).
+      permit(:name, :email, :twitter_handle, :github_handle, :biography, :company, :website)
   end
 end
