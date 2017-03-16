@@ -16,6 +16,6 @@ class MembersController < ApplicationController
   end
 
   def permitted_attributes
-    params.require(:member).permit(:name, :email, :twitter_handle, :github_handle, :biography)
+    params.require(:member).permit(:name, :email, :twitter_handle, :github_handle, :biography, :company, :website)
   end
 end

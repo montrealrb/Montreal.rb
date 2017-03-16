@@ -12,6 +12,8 @@
       <% end %>
       </div>
       <%= render_markdown_as_html talk.description %>
+      <h4>About <%= talk.member.name %></h4>
+      <%= render talk.member %>
     </div>
   </div>
 </div>
