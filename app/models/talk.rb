@@ -4,7 +4,7 @@ class Talk < ActiveRecord::Base
   STATES = [:proposed, :scheduled, :presented].freeze
 
   translates :title, :description
-  belongs_to :event
+  belongs_to :event, counter_cache: true
   belongs_to :member
 
   validates :title,  presence: true
