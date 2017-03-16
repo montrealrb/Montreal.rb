@@ -1,13 +1,18 @@
-.navbar-right li a {
-  background-color: $navbar-bg-color;
-  color: $navbar-text-color;
-  font-family: $secondary-font;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+.navbar-right li {
+  > a {
+    background-color: $navbar-bg-color;
+  }
 
-  &:hover {
+  a {
     color: $navbar-text-color;
-    background-color: $navbar-bg-highlight-color;
+    font-family: $secondary-font;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+    &:hover , &:focus, .dropdown.open {
+      color: $navbar-text-color;
+      background-color: $navbar-bg-highlight-color;
+    }
   }
 }
 
@@ -23,10 +28,6 @@
     width: 305px;
     padding: 10px;
     padding-bottom: 0px;
-    p {
-      color: $main;
-      margin-bottom: 8px
-    }
   }
 
   .navbar-login-session {
@@ -38,4 +39,26 @@
   .icon-size {
     font-size: 87px;
   }
+
+  .dropdown {
+    background-color: $navbar-bg-color;
+    color: $navbar-text-color;
+
+    &.open a.dropdown-toggle {
+      color: $navbar-text-color;
+      background-color: $navbar-bg-highlight-color;
+    }
+
+    .dropdown-menu {
+      color: $navbar-text-color;
+      background-color: $navbar-bg-highlight-color;
+      border: none;
+      width: 100%
+    }
+
+    .divider {
+      background-color: $bg-secondary
+    }
+  }
 }
+
