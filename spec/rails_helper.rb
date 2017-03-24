@@ -15,10 +15,11 @@ WebMock.disable_net_connect!(allow_localhost: true)
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.hook_into :webmock
-  config.filter_sensitive_data("<TWITTER_CONSUMER_KEY>")    { ENV["TWITTER_CONSUMER_KEY"]    }
-  config.filter_sensitive_data("<TWITTER_CONSUMER_SECRET>") { ENV["TWITTER_CONSUMER_SECRET"] }
-  config.filter_sensitive_data("<TWITTER_ACCESS_TOKEN>")    { ENV["TWITTER_ACCESS_TOKEN"]    }
-  config.filter_sensitive_data("<TWITTER_ACCESS_SECRET>")   { ENV["TWITTER_ACCESS_SECRET"]   }
+  config.filter_sensitive_data("<SLACK_TOKEN>")             { ENV.fetch("SLACK_TOKEN",             'optional') }
+  config.filter_sensitive_data("<TWITTER_CONSUMER_KEY>")    { ENV.fetch("TWITTER_CONSUMER_KEY",    'optional') }
+  config.filter_sensitive_data("<TWITTER_CONSUMER_SECRET>") { ENV.fetch("TWITTER_CONSUMER_SECRET", 'optional') }
+  config.filter_sensitive_data("<TWITTER_ACCESS_TOKEN>")    { ENV.fetch("TWITTER_ACCESS_TOKEN",    'optional') }
+  config.filter_sensitive_data("<TWITTER_ACCESS_SECRET>")   { ENV.fetch("TWITTER_ACCESS_SECRET",   'optional') }
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

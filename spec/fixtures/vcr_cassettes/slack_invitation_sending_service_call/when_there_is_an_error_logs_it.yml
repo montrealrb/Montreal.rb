@@ -27,7 +27,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Date:
-      - Fri, 24 Mar 2017 02:47:47 GMT
+      - Fri, 24 Mar 2017 03:03:32 GMT
       Referrer-Policy:
       - no-referrer
       Server:
@@ -41,18 +41,18 @@ http_interactions:
       X-Slack-Backend:
       - h
       X-Slack-Req-Id:
-      - 65f96004-ef3f-4bba-b715-46847be163c8
+      - 0a8dcaba-6bfd-4d3a-abbe-a1e972a82644
       X-Xss-Protection:
       - '0'
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 5f967b0385caebb0d8a2a9f7b13b349c.cloudfront.net (CloudFront)
+      - 1.1 11e49b88bfbca3d700cdeaabb809fa1c.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - G2ADdYMcXZp07-1InTmB6VXjFodQF3OKD0uqsH-1AzRFwV2EH07N0w==
+      - P7sQHENv0r8gPV5DMFj0EZjpu0oP8A6u6h3ejdGWIUrJTvNs8zSG6Q==
     body:
       encoding: ASCII-8BIT
       string: '{"ok":false,"error":"invalid_auth"}'
     http_version: 
-  recorded_at: Fri, 24 Mar 2017 02:47:46 GMT
+  recorded_at: Fri, 24 Mar 2017 03:03:31 GMT
 recorded_with: VCR 3.0.3

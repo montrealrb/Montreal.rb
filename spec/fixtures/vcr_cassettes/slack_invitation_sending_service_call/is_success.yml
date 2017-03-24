@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://slack.com/api/users.admin.invite?_attempts=1&email=courrier%2Bnew@sophiedeziel.com&set_active=true&token=xoxp-4761151730-4761151748-15413548513-0c25f00ab1
+    uri: https://slack.com/api/users.admin.invite?_attempts=1&email=courrier%2Bnew@sophiedeziel.com&set_active=true&token=<SLACK_TOKEN>
     body:
       encoding: US-ASCII
       string: ''
@@ -29,7 +29,7 @@ http_interactions:
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Date:
-      - Fri, 24 Mar 2017 02:43:08 GMT
+      - Fri, 24 Mar 2017 03:04:54 GMT
       Expires:
       - Mon, 26 Jul 1997 05:00:00 GMT
       Pragma:
@@ -51,18 +51,18 @@ http_interactions:
       X-Slack-Backend:
       - h
       X-Slack-Req-Id:
-      - 75dbad80-552d-44b9-a41c-39a6ac30c942
+      - 5817ec54-177a-40c2-ab31-5b4844479e6e
       X-Xss-Protection:
       - '0'
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 4f672256eaca5524999342dc8678cdd2.cloudfront.net (CloudFront)
+      - 1.1 6faccf349978e4d0b985fbe3c0eaf5b3.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - BPS3gbqm5vlsOchCCOEUo8lTyWRAHIga1Ir56DFOfuxhKEMKQJ8KgQ==
+      - DGZRCpVS06dIiL8FC21xxbTLbfBlAB5IrTNRYPQMUCSnK3wvxwTb9g==
     body:
       encoding: ASCII-8BIT
       string: '{"ok":true}'
     http_version: 
-  recorded_at: Fri, 24 Mar 2017 02:43:08 GMT
+  recorded_at: Fri, 24 Mar 2017 03:04:54 GMT
 recorded_with: VCR 3.0.3

@@ -6,7 +6,7 @@ RSpec.describe SlackInvitationSendingService do
 
   subject { described_class.new(user) }
 
-  describe "#call", skip: ENV["SLACK_TOKEN"].nil? do
+  describe "#call" do
     it "is success", record: true do
       expect(subject.call).to be_success
     end
