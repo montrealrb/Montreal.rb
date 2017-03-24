@@ -42,8 +42,8 @@ RSpec.configure do |config|
   #   # to individual examples or groups you care about by tagging them with
   #   # `:focus` metadata. When nothing is tagged with `:focus`, all examples
   #   # get run.
-  #   config.filter_run :focus
-  #   config.run_all_when_everything_filtered = true
+  config.filter_run :focus
+  config.run_all_when_everything_filtered = true
   #
   #   # Limits the available syntax to the non-monkey patched syntax that is recommended.
   #   # For more details, see:
@@ -71,13 +71,13 @@ RSpec.configure do |config|
   #   # order dependency and want to debug it, you can fix the order by providing
   #   # the seed, which is printed after each run.
   #   #     --seed 1234
-  #   config.order = :random
+  config.order = :random
   #
   #   # Seed global randomization in this process using the `--seed` CLI option.
   #   # Setting this allows you to use `--seed` to deterministically reproduce
   #   # test failures related to randomization by passing the same `--seed` value
   #   # as the one that triggered the failure.
-  #   Kernel.srand config.seed
+  Kernel.srand config.seed
 end
 
 Shoulda::Matchers.configure do |config|
