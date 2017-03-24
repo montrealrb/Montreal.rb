@@ -1,28 +1,29 @@
-require 'rails_helper'
+# frozen_string_literal: true
+require "rails_helper"
 
 RSpec.describe SlackInvitationSendingService do
-  let(:user) { build :user, email: 'courrier+new@sophiedeziel.com' }
+  let(:user) { build :user, email: "courrier+new@sophiedeziel.com" }
 
   subject { described_class.new(user) }
 
-  describe '#call', skip: ENV['SLACK_TOKEN'].nil? do
-    it 'is success', record: true do
+  describe "#call", skip: ENV["SLACK_TOKEN"].nil? do
+    it "is success", record: true do
       expect(subject.call).to be_success
     end
 
-    it 'logs it', record: true do
+    it "logs it", record: true do
       expect(Rails.logger).to receive(:info)
       subject.call
     end
 
-    context 'when there is an error' do
-      subject { described_class.new(user, 'sadfasdfsdf') }
+    context "when there is an error" do
+      subject { described_class.new(user, "sadfasdfsdf") }
 
-      it 'is not success', record: true do
+      it "is not success", record: true do
         expect(subject.call).to_not be_success
       end
 
-      it 'logs it', record: true do
+      it "logs it", record: true do
         expect(Rails.logger).to receive(:info).twice
         subject.call
       end

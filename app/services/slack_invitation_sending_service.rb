@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 class SlackInvitationSendingService
-  def initialize(user, token = ENV['SLACK_TOKEN'])
+  def initialize(user, token = ENV["SLACK_TOKEN"])
     @user = user
     @token = token
   end
@@ -20,7 +20,7 @@ class SlackInvitationSendingService
   def send_invite
     response = JSON.parse Faraday.get(url).body
 
-    if response['ok']
+    if response["ok"]
       Rails.logger.info("slack invitation sent to: #{@user.email}".colorize(:green))
       @success = true
     else
@@ -31,15 +31,13 @@ class SlackInvitationSendingService
   end
 
   def url
-    URI::HTTPS.build({
-      host: 'slack.com',
-      path: '/api/users.admin.invite',
-      query: {
-      set_active: true,
-      _attempts: 1,
-      token: @token,
-      email: URI.escape(@user.email)
-    }.to_param
-    })
+    URI::HTTPS.build(host: "slack.com",
+                     path: "/api/users.admin.invite",
+                     query: {
+                       set_active: true,
+                       _attempts: 1,
+                       token: @token,
+                       email: URI.escape(@user.email)
+                     }.to_param)
   end
 end
