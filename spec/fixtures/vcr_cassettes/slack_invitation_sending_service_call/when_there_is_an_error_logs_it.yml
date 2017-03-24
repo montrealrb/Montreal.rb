@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://slack.com/api/users.admin.invite?_attempts=1&email=courrier%2Bnew@sophiedeziel.com&set_active=true&token=sadfasdfsdf
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '55'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Fri, 24 Mar 2017 02:47:47 GMT
+      Referrer-Policy:
+      - no-referrer
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Slack-Backend:
+      - h
+      X-Slack-Req-Id:
+      - 65f96004-ef3f-4bba-b715-46847be163c8
+      X-Xss-Protection:
+      - '0'
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 5f967b0385caebb0d8a2a9f7b13b349c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - G2ADdYMcXZp07-1InTmB6VXjFodQF3OKD0uqsH-1AzRFwV2EH07N0w==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":false,"error":"invalid_auth"}'
+    http_version: 
+  recorded_at: Fri, 24 Mar 2017 02:47:46 GMT
+recorded_with: VCR 3.0.3
