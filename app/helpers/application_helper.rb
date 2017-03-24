@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 require "open-uri"
-require "colorize"
 
 module ApplicationHelper
   def full_title(page_title = "")
