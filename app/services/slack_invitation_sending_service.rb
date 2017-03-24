@@ -10,7 +10,6 @@ class SlackInvitationSendingService
   end
 
   def call
-    return true if @token.nil?
     send_invite
     self
   end

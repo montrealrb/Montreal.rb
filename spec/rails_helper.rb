@@ -19,7 +19,7 @@ VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.hook_into :webmock
   env_vars.each do |var|
-    config.filter_sensitive_data("<#{var}>") { ENV.fetch(var, "optional") }
+    config.filter_sensitive_data("<#{var}>") { ENV[var] ||= "optional" }
   end
 end
 
