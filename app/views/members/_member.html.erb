@@ -1,0 +1,8 @@
+<%= member.company %></li>
+
+<% if member.website? %>
+  <%= link_to member.website, URI::HTTP.build(host: member.website).to_s %></li>
+<% end %>
+
+<%= render_markdown_as_html member.biography %>
+

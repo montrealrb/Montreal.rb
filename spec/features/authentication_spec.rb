@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 require "rails_helper"
 
-describe "Authentication" do
+RSpec.describe "Authentication" do
   let(:user) { create(:user) }
   let(:admin) { create(:user, :admin) }
 
   context "Guest user" do
-    scenario "Can sign up" do
+    scenario "Can sign up", vcr: { match_requests_on: [:method, VCR.request_matchers.uri_without_param(:token)] } do
       visit new_user_registration_path
       fill_in "user_email", with: "guest@example.com"
       fill_in "user_password", with: "password"

@@ -11,7 +11,7 @@ gem "cloudinary"
 
 # Assets
 gem "autoprefixer-rails", "~> 6.3.6"
-gem "bootstrap-sass", "~> 3.3.6"
+gem "bootstrap-sass"
 gem "font-awesome-sass"
 gem "coffee-rails", "~> 4.1.0"
 gem "jquery-rails"
@@ -27,6 +27,7 @@ gem "devise", "~> 3.5.2"
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem "turbolinks"
+gem "jquery-turbolinks"
 gem "bourbon"
 
 # View
@@ -56,6 +57,9 @@ gem "reverse_markdown"
 
 # Communication
 gem "twitter"
+
+# Utility
+gem 'colorize'
 
 group :development do
   gem "annotate"

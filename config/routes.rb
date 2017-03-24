@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   end
 
   devise_for :users,
-             controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+             controllers: {
+               omniauth_callbacks: "users/omniauth_callbacks",
+               registrations: "users/registrations"
+             }
 
   # NOTE: temporary page, remove when pages admin module is finished
   get "/about", to: "pages#about", as: :about
@@ -24,6 +27,7 @@ Rails.application.routes.draw do
   resources :organizations, only: [:index, :show]
   resources :jobs, only: [:index, :show]
   resources :pages, only: [:show]
+  resource :member, only: [:edit, :update], path: :profile
 
   root "home#index"
 end

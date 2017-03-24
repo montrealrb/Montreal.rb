@@ -2,7 +2,7 @@
 require "rails_helper"
 require "carrierwave/test/matchers"
 
-describe LogoUploader do
+describe LogoUploader, skip: ENV["CLOUDINARY_URL"].nil? do
   include CarrierWave::Test::Matchers
 
   let(:organization) { create :organization }
