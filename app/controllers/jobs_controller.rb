@@ -8,8 +8,7 @@ class JobsController < ApplicationController
   end
 
   # GET /jobs/1
-  def show
-  end
+  def show; end
 
   private
 
