@@ -58,6 +58,9 @@ gem "reverse_markdown"
 # Communication
 gem "twitter"
 
+# Utility
+gem 'colorize'
+
 group :development do
   gem "annotate"
   gem "quiet_assets"
