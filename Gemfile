@@ -22,6 +22,7 @@ gem "sprockets", "~> 3.0"
 # Application
 gem "rails", "~> 4.2"
 gem "omniauth-github"
+gem 'omniauth-twitter'
 gem "friendly_id", "~> 5.1.0"
 gem "devise", "~> 3.5.2"
 
