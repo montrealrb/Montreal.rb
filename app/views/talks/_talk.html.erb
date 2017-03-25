@@ -1,7 +1,7 @@
 <div class="talk markdown-body">
   <div class="row">
     <div class="col-sm-3 hidden-xs">
-      <%= gravatar_for(talk.member, html: { class: "gravatar img-circle", width: '100%' })%>
+      <%= avatar_for(talk.member, size: '100%', html: { class: "gravatar img-circle" })%>
     </div>
     <div class="col-sm-9">
       <h4><%= render_markdown_as_html "#{talk.title.titleize}, by #{talk.member.name}" %></h4>
