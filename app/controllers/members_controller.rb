@@ -9,10 +9,12 @@ class MembersController < ApplicationController
     render :edit
   end
 
+  alias :create :update
+
   private
 
   def find_member
-    @member = current_user.member
+    @member = current_user.member ||current_user.build_member
   end
 
   def permitted_attributes

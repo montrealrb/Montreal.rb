@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   resources :organizations, only: [:index, :show]
   resources :jobs, only: [:index, :show]
   resources :pages, only: [:show]
-  resource :member, only: [:edit, :update], path: :profile
+  resource :member, only: [:create, :edit, :update], path: :profile
 
   root "home#index"
 end
