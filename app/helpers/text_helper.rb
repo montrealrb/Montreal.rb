@@ -2,7 +2,7 @@
 module TextHelper
   def render_markdown_as_html(markup)
     markup ||= ""
-    md_renderer.render(emojify(markup)).html_safe
+    emojify(md_renderer.render(markup).html_safe)
   end
 
   private

@@ -1,19 +1,27 @@
-<div class="talk markdown-body">
+<div class="talk">
+
   <div class="row">
     <div class="col-sm-3 hidden-xs">
       <%= avatar_for(talk.member, size: '100%', html: { class: "gravatar img-circle" })%>
     </div>
+
     <div class="col-sm-9">
+
       <h4><%= render_markdown_as_html "#{talk.title.titleize}, by #{talk.member.name}" %></h4>
+
       <div class='meta'>
-        Talk level: <%= talk.level %><br/>
+        <p>Talk level: <%= talk.level %></p>
+
         <% if talk.event.starts_at.past? && talk.slides_url? %>
           Slides: <%= link_to truncate(talk.slides_url, length: 50), talk.slides_url, target: "_blank" %>
-      <% end %>
+        <% end %>
       </div>
-      <%= render_markdown_as_html talk.description %>
-      <h4>About <%= talk.member.name %></h4>
+      <div class='markdown-body'>
+        <%= render_markdown_as_html talk.description %>
+      </div>
+
       <%= render talk.member %>
     </div>
   </div>
 </div>
+<hr/>

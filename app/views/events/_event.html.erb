@@ -1,18 +1,25 @@
-<div class="card events">
-  <h1><%= link_to render_markdown_as_html(event.title), event %></h1>
-  <div class="event-meta">
-    <p><%= icon 'calendar-o', class: 'fa-fw' %><%= event.starts_at.strftime('%B %e, %Y  -  %k:%M') %></p>
-    <p><%= icon 'map-marker', class: 'fa-fw' %><%= event.location.name %>, <a href="https://www.google.ca/maps/search/<%= event.location.address %>", target='_blank'><%= event.location.address %></a></p>
-  </div>
+<h2><%= link_to render_markdown_as_html(event.title), event %></h2>
+
+<div class="meta">
+  <p><%= icon 'calendar-o', class: 'fa-fw' %><%= event.starts_at.strftime('%B %e, %Y  -  %k:%M') %></p>
+  <p><%= icon 'map-marker', class: 'fa-fw' %><%= event.location.name %>, <a href="https://www.google.ca/maps/search/<%= event.location.address %>", target='_blank'><%= event.location.address %></a></p>
+</div>
+
+<div>
   <div class="markdown-body">
     <%= render_markdown_as_html event.body %>
-    <% if event.talks.any? %>
-      <h3>Talks</h3>
-      <%= render event.talks %>
-    <% end %>
-    <% if event.sponsorships.any? %>
-      <h3>Brought to you by our sponsors: </h3>
-      <%= render event.sponsorships %>
-    <% end %>
   </div>
+
+  <% if event.talks.any? %>
+    <hr/>
+
+    <h3>Talks</h3>
+    <%= render event.talks %>
+  <% end %>
+
+  <% if event.sponsorships.any? %>
+    <h3>Brought to you by our sponsors: </h3>
+    <%= render event.sponsorships %>
+  <% end %>
 </div>
+<hr/>

@@ -1,8 +1,12 @@
-<%= member.company %></li>
+<% if member.company.present? || member.website.present? || member.biography.present? %>
 
-<% if member.website? %>
-  <%= link_to member.website, URI::HTTP.build(host: member.website).to_s %></li>
+  <h4>About <%= member.name %></h4>
+  <%= member.company %>
+
+  <% if member.website.present? %>
+    <%= link_to member.website, URI::HTTP.build(host: member.website).to_s %></li>
+  <% end %>
+
+  <%= render_markdown_as_html member.biography %>
 <% end %>
-
-<%= render_markdown_as_html member.biography %>
 

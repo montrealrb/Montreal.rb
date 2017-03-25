@@ -1,36 +1,43 @@
 <html lang="en">
-<head>
-  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
-  <meta charset="utf-8" />
-  <title><%= full_title yield(:title) %></title>
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport" />
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500' rel='stylesheet' type='text/css'>
-  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <%= favicon_link_tag 'favicon.ico' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-</head>
-<body>
-  <%= render 'layouts/flash' %>
-  <%= render 'layouts/header' %>
-  <div class="main container">
-    <div class="row">
-      <main class="col-md-12">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+    <meta charset="utf-8" />
+    <title><%= full_title yield(:title) %></title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport" />
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,500' rel='stylesheet' type='text/css'>
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  </head>
+  <body>
+    <%= render 'layouts/flash' %>
+    <%= render 'layouts/header' %>
+    <div class="main container">
+      <div class="row">
+        <main class="col-md-12">
 
         <section>
           <%= yield %>
         </section>
 
         <aside>
-          <%= render template: 'news_items/index' %>
+          <% link_to 'Propose a talk!!', '#', class: 'btn btn-lg btn-default btn-block' %>
+          <h2> News </h2>
+          <% @news_items.each do |news_item| %>
+            <div class='card'>
+              <%= link_to render_markdown_as_html(news_item.title.titleize), news_item %>
+              <small>Posted <%= time_ago_in_words(news_item.published_at) %> ago</small>
+            </div>
+          <% end %>
         </aside>
 
-      </main>
+        </main>
 
+      </div>
     </div>
-  </div>
-  <%= render 'layouts/footer' %>
+    <%= render 'layouts/footer' %>
 </html>

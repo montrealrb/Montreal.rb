@@ -1,11 +1,7 @@
 <% provide :title, 'Edit profile' %>
 <h1>Edit profile</h1>
 
-<div class="card">
   <%= form_for @member, url: member_path, class: 'form-horizontal' do |f| %>
-    <div class="form-group">
-      <h2>Public profile</h2>
-    </div>
 
     <div class="form-group">
       <%= f.label :name, class: "col-sm-3 control-label" %>
@@ -72,5 +68,3 @@
     <%= f.button "Save my profile", class: 'btn btn-primary' %>
 
   <% end %>
-  <div class='clearfix'></div>
-</div>

@@ -6,6 +6,6 @@ class HomeController < ApplicationController
       :location,
       :talks,
       :sponsors
-    ).partition { |e| e.starts_at < Time.now }
+    ).order(:starts_at).limit(3).partition { |e| e.starts_at < Time.now }
   end
 end
