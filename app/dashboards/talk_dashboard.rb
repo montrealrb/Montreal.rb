@@ -16,6 +16,7 @@ class TalkDashboard < Administrate::BaseDashboard
     member: Field::BelongsTo,
     state: EnumField,
     level: EnumField,
+    format: EnumField,
     slides_url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
@@ -30,7 +31,7 @@ class TalkDashboard < Administrate::BaseDashboard
     :id,
     :title,
     :state,
-    :level,
+    :format,
     :event,
     :member,
     :title
@@ -50,6 +51,7 @@ class TalkDashboard < Administrate::BaseDashboard
     :member,
     :state,
     :level,
+    :format,
     :slides_url,
   ].freeze
 
