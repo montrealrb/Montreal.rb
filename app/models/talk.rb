@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 class Talk < ActiveRecord::Base
   extend Enumerize
-  STATES = [:proposed, :scheduled, :presented].freeze
+  STATES  = [:proposed, :scheduled, :presented].freeze
+  FORMATS = [:full, :half, :lightning].freeze
+  LEVELS  = [:beginner, :intermediate, :advanced].freeze
 
   translates :title, :description
   belongs_to :event, counter_cache: true
@@ -10,6 +12,7 @@ class Talk < ActiveRecord::Base
   validates :title,  presence: true
   validates :member, presence: true
 
-  enumerize :state, in: STATES
-  enumerize :level, in: [:beginner, :intermediate, :advanced]
+  enumerize :state,  in: STATES
+  enumerize :format, in: FORMATS
+  enumerize :level,  in: LEVELS
 end
