@@ -2,7 +2,7 @@
 module UsersHelper
   def avatar_for(member, size: 200, html: {})
     return if member.nil? || member.email.blank?
-    return image_tag(member.picture, html.merge(alt: member.name, width: size)) if member.picture
+    return image_tag(member.picture, html.merge(alt: member.name, width: size)) if member.picture.present?
     gravatar_for(member, size: size, html: html)
   end
 
