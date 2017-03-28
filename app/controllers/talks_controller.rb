@@ -1,9 +1,10 @@
+# frozen_string_literal: true
 class TalksController < ApplicationController
   before_action :authenticate_user!
 
   def new
     if current_user.member.nil?
-      flash[:alert] = 'You need to create a profile first.'
+      flash[:alert] = "You need to create a profile first."
       return redirect_to edit_member_path
     end
     @talk = Talk.new
@@ -25,8 +26,8 @@ class TalksController < ApplicationController
   private
 
   def talk_attributes
-    params.require(:talk)
-      .permit(:title, :level, :format, :slides_url, :description)
-      .merge(member: current_user.member, state: :proposed)
+    params.require(:talk).
+      permit(:title, :level, :format, :slides_url, :description).
+      merge(member: current_user.member, state: :proposed)
   end
 end
