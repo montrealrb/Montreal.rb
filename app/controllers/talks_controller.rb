@@ -2,6 +2,10 @@ class TalksController < ApplicationController
   before_action :authenticate_user!
 
   def new
+    if current_user.member.nil?
+      flash[:alert] = 'You need to create a profile first.'
+      return redirect_to edit_member_path
+    end
     @talk = Talk.new
   end
 

@@ -2,12 +2,18 @@ require 'rails_helper'
 
 RSpec.describe TalksController, type: :controller do
   let(:user) { create :user }
-  before{ sign_in user }
+  before { sign_in user }
 
   describe "GET #new" do
     subject { get :new }
     it { is_expected.to have_http_status :success }
     it { is_expected.to render_template :new }
+
+    context 'when the user does not have a profile' do
+      let(:user) { create :user, member: nil }
+
+      it { is_expected.to redirect_to edit_member_path }
+    end
   end
 
   describe 'POST #create' do
@@ -40,7 +46,8 @@ RSpec.describe TalksController, type: :controller do
   end
 
   describe "GET #show" do
-    subject { get :show }
+    let(:talk) { create :talk }
+    subject { get :show, id: talk.id }
     it { is_expected.to have_http_status :success }
     it { is_expected.to render_template :show }
   end
