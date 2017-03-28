@@ -11,8 +11,8 @@ class TalksController < ApplicationController
   end
 
   def create
-    @talk = Talk.create(talk_attributes)
-    if @talk.valid?
+    @talk = Talk.new(talk_attributes)
+    if @talk.save
       redirect_to @talk
     else
       render :new
