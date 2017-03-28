@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   resources :jobs, only: [:index, :show]
   resources :pages, only: [:show]
   resource :member, only: [:create, :edit, :update], path: :profile
+  resource :talks, only: [:new, :create]
 
   root "home#index"
 end
