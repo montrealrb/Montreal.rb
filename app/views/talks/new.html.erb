@@ -33,5 +33,9 @@
     <%= f.text_area :description, class: "form-control", rows: "5" %>
     <small class='text-danger'><%= @talk.errors.full_messages_for(:description).to_sentence %></small>
   </div>
+
+  <div class="form-group">
+    <%= f.submit 'Propose the talk', class: 'btn btn-primary' %><br/>
+  </div>
 <% end %>
 

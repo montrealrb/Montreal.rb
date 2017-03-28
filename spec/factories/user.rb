@@ -6,6 +6,8 @@ FactoryGirl.define do
     password { Faker::Internet.password }
     admin false
 
+    association :member
+
     trait :admin do
       admin true
     end
