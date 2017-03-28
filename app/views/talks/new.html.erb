@@ -1,0 +1,41 @@
+<% provide :title, 'Propose a talk' %>
+<h1>Propose a talk</h1>
+
+<%= form_for @talk do |f| %>
+  <div class="form-group">
+    <%= f.label :title %><br/>
+    <%= f.text_field :title, class: "form-control" %>
+    <small class='text-danger'><%= @talk.errors.full_messages_for(:title).to_sentence %></small>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :level %><br/>
+    <%= f.select :level, f.object.class.public_send(:level).options, class: "form-control" %>
+    <small class='text-danger'><%= @talk.errors.full_messages_for(:level).to_sentence %></small>
+  </div>
+
+  <div class="form-group">
+    <% formats = { full: "Full (40 minutes)", half: "Half (20 minutes)", lightning: "Lightning (5 minutes)" } %>
+    <%= f.label :format %><br/>
+    <%= f.select :format, formats.map { |key, value| [value, key] }, class: "form-control" %>
+    <small class='text-danger'><%= @talk.errors.full_messages_for(:format).to_sentence %></small>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :slides_url %><br/>
+    <%= f.text_field :slides_url, class: "form-control" %>
+    <small class="text-muted">This won't be visible before the talk but will help us evaluate it</small>
+    <small class='text-danger'><%= @talk.errors.full_messages_for(:slides_url).to_sentence %></small>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description %><br/>
+    <%= f.text_area :description, class: "form-control", rows: "5" %>
+    <small class='text-danger'><%= @talk.errors.full_messages_for(:description).to_sentence %></small>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit 'Propose the talk', class: 'btn btn-primary' %><br/>
+  </div>
+<% end %>
+

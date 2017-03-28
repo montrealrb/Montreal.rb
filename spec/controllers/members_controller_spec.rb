@@ -3,7 +3,7 @@ require "rails_helper"
 
 RSpec.describe MembersController, type: :controller do
   let(:user) { create(:user) }
-  let!(:member) { create(:member, user: user) }
+  let(:member) { user.member }
 
   describe "#edit" do
     subject { get :edit }
