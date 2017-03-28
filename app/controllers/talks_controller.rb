@@ -8,10 +8,14 @@ class TalksController < ApplicationController
   def create
     @talk = Talk.create(talk_attributes)
     if @talk.valid?
-      redirect_to new_talks_path
+      redirect_to @talk
     else
       render :new
     end
+  end
+
+  def show
+    @talk = Talk.find(params[:id])
   end
 
   private

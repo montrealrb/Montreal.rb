@@ -14,7 +14,7 @@ RSpec.describe TalksController, type: :controller do
     let(:talk) { attributes_for :talk }
     subject { post :create, talk: talk }
 
-    it { is_expected.to redirect_to new_talks_path }
+    it { is_expected.to redirect_to Talk.last }
 
     it 'creates the talk' do
       expect { subject }.to change(Talk, :count)
@@ -37,5 +37,11 @@ RSpec.describe TalksController, type: :controller do
         expect { subject }.not_to change(Talk, :count)
       end
     end
+  end
+
+  describe "GET #show" do
+    subject { get :show }
+    it { is_expected.to have_http_status :success }
+    it { is_expected.to render_template :show }
   end
 end
