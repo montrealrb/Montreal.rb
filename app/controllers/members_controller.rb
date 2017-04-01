@@ -14,7 +14,7 @@ class MembersController < ApplicationController
   private
 
   def find_member
-    @member = current_user.member ||current_user.build_member
+    @member = current_user.member || current_user.build_member
   end
 
   def permitted_attributes
