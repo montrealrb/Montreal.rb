@@ -5,4 +5,6 @@ class PagesController < ApplicationController
   end
 
   def about; end
+
+  def code_of_conduct; end
 end
