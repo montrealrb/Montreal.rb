@@ -7,11 +7,15 @@ RSpec.describe SlackInvitationSendingService do
   subject { described_class.new(user) }
 
   describe "#call" do
-    it "is success", vcr: { match_requests_on: [:method, VCR.request_matchers.uri_without_param(:token)] } do
+    it "is success", vcr: { match_requests_on: [
+      :method, VCR.request_matchers.uri_without_param(:token)
+    ] } do
       expect(subject.call).to be_success
     end
 
-    it "logs it", vcr: { match_requests_on: [:method, VCR.request_matchers.uri_without_param(:token)] } do
+    it "logs it", vcr: { match_requests_on: [
+      :method, VCR.request_matchers.uri_without_param(:token)
+    ] } do
       expect(Rails.logger).to receive(:info)
       subject.call
     end
