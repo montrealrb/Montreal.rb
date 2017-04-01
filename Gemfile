@@ -22,7 +22,7 @@ gem "sprockets", "~> 3.0"
 # Application
 gem "rails", "~> 4.2"
 gem "omniauth-github"
-gem 'omniauth-twitter'
+gem "omniauth-twitter"
 gem "friendly_id", "~> 5.1.0"
 gem "devise", "~> 3.5.2"
 
@@ -60,7 +60,7 @@ gem "reverse_markdown"
 gem "twitter"
 
 # Utility
-gem 'colorize'
+gem "colorize"
 
 group :development do
   gem "annotate"

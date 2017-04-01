@@ -14,11 +14,12 @@ class MembersController < ApplicationController
   private
 
   def find_member
-    @member = current_user.member ||current_user.build_member
+    @member = current_user.member || current_user.build_member
   end
 
   def permitted_attributes
-    params.require(:member).
-      permit(:name, :email, :twitter_handle, :picture, :github_handle, :biography, :company, :website)
+    params.require(:member).permit(:name, :email, :twitter_handle, :picture,
+                                   :github_handle, :biography, :company,
+                                   :website)
   end
 end
