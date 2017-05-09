@@ -88,7 +88,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "shoulda-matchers"
   gem "rspec-its"
-  gem "rubocop", require: false
+  gem "rubocop", "~> 0.45.0", require: false
   gem "sqlite3"
   gem "timecop"
 end
