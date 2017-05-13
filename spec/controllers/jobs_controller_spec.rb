@@ -5,9 +5,9 @@ RSpec.describe JobsController, type: :controller do
   let(:draft_job) { create(:job, :draft) }
   let(:published_job) { create(:job, :published) }
   let(:archived_job) { create(:job, :archived) }
-  let(:matching_title_job) { create(:job, :published, title: 'FooBar') }
-  let(:matching_description_job) { create(:job, :published, description: 'FooBar') }
-  let(:not_matching_job) { create(:job, :published, title: 'Bob', description: 'Lisa') }
+  let(:matching_title_job) { create(:job, :published, title: "FooBar") }
+  let(:matching_description_job) { create(:job, :published, description: "FooBar") }
+  let(:not_matching_job) { create(:job, :published, title: "Bob", description: "Lisa") }
 
   describe "GET #index" do
     before :each do
@@ -36,7 +36,7 @@ RSpec.describe JobsController, type: :controller do
 
     context "with a search query" do
       before :each do
-        get :index, {q: "foobar"}
+        get :index, q: "foobar"
       end
 
       it "includes job when the query matches its title" do
