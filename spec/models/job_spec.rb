@@ -65,7 +65,7 @@ RSpec.describe Job, type: :model do
       matching_description_job = create(
         :job,
         :published,
-        description: "Familiarity with agile methodologies, especially Scrum or Kanban, would be cool"
+        description: "Familiarity with agile methodologies, especially Scrum or Kanban"
       )
       expect(Job.search("agile")).to include matching_description_job
     end
@@ -75,7 +75,7 @@ RSpec.describe Job, type: :model do
         :job,
         :published,
         title: "Fullstack developer",
-        description: "Familiarity with agile methodologies, especially Scrum or Kanban, would be cool"
+        description: "Familiarity with agile methodologies, especially Scrum or Kanban"
       )
       expect(Job.search("remote")).not_to include not_matching_job
     end
