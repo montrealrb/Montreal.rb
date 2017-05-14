@@ -54,4 +54,30 @@ RSpec.describe Job, type: :model do
       expect(job.author).to eq author
     end
   end
+
+  describe ".search" do
+    it "returns a job when the query matches its title" do
+      matching_title_job = create(:job, :published, title: "Fullstack developer")
+      expect(Job.search("fullstack")).to include matching_title_job
+    end
+
+    it "returns a job when the query matches its description" do
+      matching_description_job = create(
+        :job,
+        :published,
+        description: "Familiarity with agile methodologies, especially Scrum or Kanban, would be cool"
+      )
+      expect(Job.search("agile")).to include matching_description_job
+    end
+
+    it "does not return a job when the query does not match its title nor its description" do
+      not_matching_job = create(
+        :job,
+        :published,
+        title: "Fullstack developer",
+        description: "Familiarity with agile methodologies, especially Scrum or Kanban, would be cool"
+      )
+      expect(Job.search("remote")).not_to include not_matching_job
+    end
+  end
 end

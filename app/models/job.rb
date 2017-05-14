@@ -20,4 +20,10 @@ class Job < ActiveRecord::Base
             presence: true,
             inclusion: { in: STATES }
   validates :author, presence: true
+
+  def self.search(search)
+    base_relation = published.includes(:organization)
+    return base_relation unless search
+    base_relation.where("title LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%")
+  end
 end
