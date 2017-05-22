@@ -56,41 +56,13 @@ RSpec.describe Job, type: :model do
   end
 
   describe ".search" do
-    let(:matching_description_job) do
-      create(
-        :job,
-        :published,
-        description: "Familiarity with agile methodologies, especially Scrum or Kanban"
-      )
-    end
+    let(:matching_title_job) { create(:job, :published, title: "Fullstack developer") }
+    let(:matching_description_job) { create(:job, :published, description: "If you're a fullstack developer, this job is for you!") }
+    let(:not_matching_job) { create(:job, :published, title: "RoR developer", description: "Familiarity with agile methodologies, especially Scrum or Kanban") }
+    subject { described_class.search("fullstack") }
 
-    let(:matching_title_job) do
-      create(
-        :job,
-        :published,
-        title: "Fullstack developer"
-      )
-    end
-
-    let(:not_matching_job) do
-      create(
-        :job,
-        :published,
-        title: "Fullstack developer",
-        description: "Familiarity with agile methodologies, especially Scrum or Kanban"
-      )
-    end
-
-    it "returns a job when the query matches its title" do
-      expect(subject.class.search("fullstack")).to include matching_title_job
-    end
-
-    it "returns a job when the query matches its description" do
-      expect(subject.class.search("agile")).to include matching_description_job
-    end
-
-    it "does not return a job when the query does not match its title nor its description" do
-      expect(subject.class.search("remote")).not_to include not_matching_job
-    end
+    it { is_expected.to include matching_title_job }
+    it { is_expected.to include matching_description_job }
+    it { is_expected.not_to include not_matching_job }
   end
 end
