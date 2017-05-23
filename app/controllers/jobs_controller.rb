@@ -4,7 +4,7 @@ class JobsController < ApplicationController
 
   # GET /jobs
   def index
-    @jobs = Job.search(params[:search])
+    @jobs = Job.published.includes(:organization).search(params[:query])
   end
 
   # GET /jobs/1
