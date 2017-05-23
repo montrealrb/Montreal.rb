@@ -3,6 +3,7 @@ require "rails_helper"
 
 RSpec.describe Contact, type: :model do
   it { is_expected.to belong_to :organization }
+  it { is_expected.to belong_to :author }
 
   context "without a name" do
     subject { build(:contact, name: nil) }
@@ -14,6 +15,14 @@ RSpec.describe Contact, type: :model do
 
   context "without an email" do
     subject { build(:contact, email: nil) }
+
+    it "should be invalid" do
+      expect(subject).to be_invalid
+    end
+  end
+
+  context "without an author" do
+    subject { build(:contact, author: nil) }
 
     it "should be invalid" do
       expect(subject).to be_invalid

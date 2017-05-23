@@ -2,6 +2,7 @@
 FactoryGirl.define do
   factory :contact do
     association :organization
+    association :author, factory: :user
 
     name { Faker::Name.name }
     email { Faker::Internet.email }
