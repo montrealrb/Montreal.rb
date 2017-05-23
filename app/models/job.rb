@@ -8,7 +8,7 @@ class Job < ActiveRecord::Base
 
   scope :published, -> { where(state: :published).order(created_at: :desc) }
   scope :search, (lambda do |query|
-    where("title LIKE ? OR description LIKE ?", "%#{query}%", "%#{query}%")
+    published.where("title LIKE :pattern OR description LIKE :pattern", pattern: "%#{query}%")
   end)
 
   enumerize :state, in: STATES, default: :draft
