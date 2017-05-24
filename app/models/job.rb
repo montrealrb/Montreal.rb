@@ -25,6 +25,6 @@ class Job < ActiveRecord::Base
   private
 
   def set_published_at
-    self.published_at = DateTime.current
+    touch(:published_at)
   end
 end

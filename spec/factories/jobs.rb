@@ -19,5 +19,10 @@ FactoryGirl.define do
     trait :archived do
       state :archived
     end
+
+    trait :published_without_published_at do
+      state :published
+      after(:create) { |job| job.update(published_at: nil) }
+    end
   end
 end
