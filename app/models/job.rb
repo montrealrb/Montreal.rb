@@ -25,6 +25,7 @@ class Job < ActiveRecord::Base
   private
 
   def set_published_at
-    touch(:published_at)
+    # We can't use touch since it only work on persisted object
+    self.published_at = DateTime.current
   end
 end
