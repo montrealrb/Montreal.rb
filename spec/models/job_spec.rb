@@ -2,6 +2,8 @@
 require "rails_helper"
 
 RSpec.describe Job, type: :model do
+  it_behaves_like "an author"
+
   describe "validation" do
     it { is_expected.to validate_presence_of(:title) }
     it do
@@ -36,22 +38,6 @@ RSpec.describe Job, type: :model do
         expect(job).to_not be_valid
         expect(job.errors.messages[:state]).to be_present
       end
-    end
-
-    context "for author" do
-      it "does not validate when 'author' is not defined" do
-        job = Job.new(author: nil)
-        expect(job).to be_invalid
-        expect(job.errors.messages.keys).to include :author
-      end
-    end
-  end
-
-  describe "when a job is authored" do
-    it "knows about its author" do
-      author = create(:user)
-      job = create(:job, author: author)
-      expect(job.author).to eq author
     end
   end
 
