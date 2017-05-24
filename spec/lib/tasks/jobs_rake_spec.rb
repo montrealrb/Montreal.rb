@@ -22,12 +22,12 @@ describe "jobs:populate_job_field" do
 
     context "when there's a published_at date" do
       let!(:jobs) { create_list(:job, 3, :published) }
-      let!(:jobs_current_date_time) { jobs.map(&:published_at) }
+      let!(:jobs_current_date_time) { jobs.map(&:published_at).map(&:to_i) }
 
       it "doesn't change the published_at date" do
         invoke
 
-        expect(jobs.map(&:published_at)).to eq jobs_current_date_time
+        expect(jobs.map(&:published_at).map(&:to_i)).to eq jobs_current_date_time
       end
     end
   end
