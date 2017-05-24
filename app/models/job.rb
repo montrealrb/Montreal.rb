@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 class Job < ActiveRecord::Base
   extend Enumerize
+  include Authorable
   STATES = %w(draft published archived).freeze
 
   belongs_to :organization
-  belongs_to :author, foreign_key: :user_id, class_name: "User"
 
   scope :published, -> { where(state: :published).order(created_at: :desc) }
 
@@ -19,5 +19,4 @@ class Job < ActiveRecord::Base
   validates :state,
             presence: true,
             inclusion: { in: STATES }
-  validates :author, presence: true
 end

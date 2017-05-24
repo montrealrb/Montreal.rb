@@ -21,6 +21,7 @@ class DashboardManifest
     :pages,
     :members,
     :users,
+    :contacts
   ].freeze
 
   # `ROOT_DASHBOARD`
