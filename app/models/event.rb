@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 class Event < ActiveRecord::Base
   extend Enumerize
+  include Authorable
+
   STATES = %w(proposed scheduled).freeze
 
   translates :title, :body
 
   belongs_to :location
-  belongs_to :author, foreign_key: :user_id, class_name: "User"
   has_many   :talks, -> { where(state: "scheduled") }, class_name: "Talk"
   has_many   :sponsorships
   has_many   :sponsors, through: :sponsorships, source: :organization
@@ -17,7 +18,6 @@ class Event < ActiveRecord::Base
   validates :title, presence: true
   validates :starts_at, presence: true
   validates :location, presence: true
-  validates :author, presence: true
   validates :state,
             presence: true,
             inclusion: { in: STATES }
