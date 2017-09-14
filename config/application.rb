@@ -21,7 +21,6 @@ module MontrealRb
     config.i18n.default_locale = :en
     config.i18n.available_locales = %i(en fr)
     config.i18n.enforce_available_locales = true
-    config.active_record.raise_in_transactional_callbacks = true
     config.to_prepare do
       Administrate::ApplicationController.helper MontrealRb::Application.helpers
     end

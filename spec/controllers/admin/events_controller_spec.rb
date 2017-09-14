@@ -27,12 +27,12 @@ RSpec.describe Admin::EventsController, type: :controller do
 
     it "creates a new event" do
       expect do
-        post :create, event: valid_attributes
+        post :create, params: { event: valid_attributes }
       end.to change(Event, :count).by(1)
     end
 
     it "assigns the current user to the 'author' field" do
-      post :create, event: valid_attributes
+      post :create, params: { event: valid_attributes }
       expect(Event.last.author).to eq admin
     end
   end
@@ -44,7 +44,7 @@ RSpec.describe Admin::EventsController, type: :controller do
     end
 
     it "assigns the current user to the 'author' field" do
-      put :update, id: event.id, event: event.attributes
+      put :update, params: { id: event.id, event: event.attributes }
       expect(event.reload.author).to eq admin
     end
 
@@ -57,7 +57,7 @@ RSpec.describe Admin::EventsController, type: :controller do
       it "tweets" do
         allow(controller).to receive(:requested_resource) { event }
         expect(event).to receive(:tweet)
-        put :update, id: event.id, event: valid_attributes
+        put :update, params: { id: event.id, event: valid_attributes }
       end
     end
   end
@@ -71,7 +71,7 @@ RSpec.describe Admin::EventsController, type: :controller do
     context "success" do
       it "deletes an event" do
         expect do
-          delete :destroy, id: event.id
+          delete :destroy, params: { id: event.id }
         end.to change(Event, :count).by(-1)
         expect(response).to redirect_to admin_events_path
       end

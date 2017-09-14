@@ -7,14 +7,12 @@ for all resources in the admin dashboard,
 as defined by the routes in the `admin/` namespace
 %>
 
-<ul class="sidebar__list">
+<nav class="navigation" role="navigation">
   <% Administrate::Namespace.new(namespace).resources.each do |resource| %>
-    <li>
-      <%= link_to(
-        display_resource_name(resource),
-        [namespace, resource],
-        class: "sidebar__link sidebar__link--#{nav_link_state(resource)}"
-      ) %>
-    </li>
+    <%= link_to(
+      display_resource_name(resource),
+      [namespace, resource.path],
+      class: "navigation__link navigation__link--#{nav_link_state(resource)}"
+    ) %>
   <% end %>
-</ul>
+</nav>
