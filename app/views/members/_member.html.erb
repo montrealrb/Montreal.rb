@@ -4,7 +4,7 @@
   <%= member.company %>
 
   <% if member.website.present? %>
-    <%= link_to member.website, URI::HTTP.build(host: member.website).to_s %></li>
+    <%= sanitize link_to(member.website, member.website, target: :_blank), attributes: %w(href target) %></li>
   <% end %>
 
   <%= render_markdown_as_html member.biography %>
