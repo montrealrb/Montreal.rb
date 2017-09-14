@@ -12,39 +12,39 @@ gem "cloudinary"
 # Assets
 gem "autoprefixer-rails"
 gem "bootstrap-sass"
-gem "font-awesome-sass"
 gem "coffee-rails"
+gem "font-awesome-sass"
 gem "jquery-rails"
 gem "sass-rails"
 gem "uglifier"
 
 # Application
-gem "rails", "~> 5.1"
+gem "devise"
+gem "friendly_id"
 gem "omniauth-github"
 gem "omniauth-twitter"
-gem "friendly_id"
-gem "devise"
+gem "rails", "~> 5.1"
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem "turbolinks"
-gem "jquery-turbolinks"
 gem "bourbon"
+gem "jquery-turbolinks"
+gem "turbolinks"
 
 # View
-gem "simple_form"
 gem "enumerize"
-gem "redcarpet"
 gem "gemoji"
+gem "redcarpet"
+gem "simple_form"
 
 # Server
-gem "unicorn"
 gem "newrelic_rpm", group: :production
+gem "unicorn"
 
 # Heroku Assets
 gem "rails_12factor", group: :production
 
 # Globalization/Localization
-gem "globalize", '~> 5.1.0.beta2'
+gem "globalize", "~> 5.1.0.beta2"
 gem "globalize-accessors"
 
 # Administration
@@ -63,9 +63,9 @@ gem "colorize"
 
 group :development do
   gem "annotate"
+  gem "bullet"
   gem "spring"
   gem "spring-commands-rspec"
-  gem "bullet"
 end
 
 group :legacy do
@@ -74,27 +74,27 @@ group :legacy do
 end
 
 group :development, :test do
+  gem "byebug"
   gem "capybara"
+  gem "dotenv-rails"
   gem "factory_girl_rails"
   gem "faker"
   gem "guard-ctags-bundler"
   gem "guard-rspec", require: false
   gem "guard-rubocop"
   gem "pry"
-  gem "byebug"
-  gem "dotenv-rails"
-  gem "rspec-rails"
-  gem "shoulda-matchers"
   gem "rspec-its"
+  gem "rspec-rails"
   gem "rubocop", "~> 0.45.0", require: false
+  gem "shoulda-matchers"
   gem "sqlite3"
   gem "timecop"
 end
 
 group :test do
+  gem "rails-controller-testing" # this is temporary
   gem "vcr"
   gem "webmock", ">= 1.8.0"
-  gem 'rails-controller-testing' #this is temporary
 end
 
 gem "coveralls", require: false, group: :test

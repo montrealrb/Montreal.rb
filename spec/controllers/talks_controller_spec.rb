@@ -19,7 +19,7 @@ RSpec.describe TalksController, type: :controller do
 
   describe "POST #create" do
     let(:talk) { attributes_for :talk }
-    subject { post :create, params: { talk: talk  } }
+    subject { post :create, params: { talk: talk } }
 
     it { is_expected.to redirect_to Talk.last }
 
