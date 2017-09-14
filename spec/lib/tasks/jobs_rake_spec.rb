@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "rails_helper"
 
 describe "jobs:populate_job_field" do
