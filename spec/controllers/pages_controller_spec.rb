@@ -6,7 +6,7 @@ RSpec.describe PagesController, type: :controller do
     let(:published_page) { create(:page, :published) }
 
     it "returns a 200 status code" do
-      get :show, id: published_page
+      get :show, params: { id: published_page }
       expect(response).to have_http_status(200)
     end
   end
@@ -18,7 +18,7 @@ RSpec.describe PagesController, type: :controller do
     it "raises a RecordNotFound error" do
       [draft_page, archived_page].each do |page|
         expect do
-          get :show, id: page
+          get :show, params: { id: page }
         end.to raise_error ActiveRecord::RecordNotFound
       end
     end

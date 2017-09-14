@@ -34,7 +34,7 @@ RSpec.describe JobsController, type: :controller do
 
   describe "GET #show" do
     before :each do
-      get :show, id: published_job.id
+      get :show, params: { id: published_job.id }
     end
 
     it "returns a 200 status code" do
@@ -49,7 +49,7 @@ RSpec.describe JobsController, type: :controller do
       it "raises a RecordNotFound error" do
         [draft_job, archived_job].each do |job|
           expect do
-            get :show, id: job
+            get :show, params: { id: job }
           end.to raise_error ActiveRecord::RecordNotFound
         end
       end
