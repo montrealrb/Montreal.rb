@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require "administrate/base_dashboard"
 
 class MemberDashboard < Administrate::BaseDashboard
@@ -17,7 +18,9 @@ class MemberDashboard < Administrate::BaseDashboard
     picture:        Field::String,
     twitter_handle: Field::String,
     github_handle:  Field::String,
-    biography:      Field::Text,
+    website:        Field::String,
+    company:        Field::String,
+    biography:      MarkdownField,
     created_at:     Field::DateTime,
     updated_at:     Field::DateTime,
   }.freeze
@@ -43,10 +46,12 @@ class MemberDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :user,
     :name,
+    :company,
     :email,
     :picture,
     :twitter_handle,
     :github_handle,
+    :website,
     :biography,
     :organizations,
     :events,

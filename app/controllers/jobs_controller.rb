@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class JobsController < ApplicationController
   before_action :set_job, only: [:show]
 
@@ -7,8 +8,7 @@ class JobsController < ApplicationController
   end
 
   # GET /jobs/1
-  def show
-  end
+  def show; end
 
   private
 

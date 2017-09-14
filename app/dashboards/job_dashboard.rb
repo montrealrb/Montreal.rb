@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require "administrate/base_dashboard"
 
 class JobDashboard < Administrate::BaseDashboard
@@ -14,7 +15,8 @@ class JobDashboard < Administrate::BaseDashboard
     organization: Field::BelongsTo,
     description: MarkdownField,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    updated_at: Field::DateTime,
+    published_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -27,6 +29,7 @@ class JobDashboard < Administrate::BaseDashboard
     :state,
     :title,
     :organization,
+    :published_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

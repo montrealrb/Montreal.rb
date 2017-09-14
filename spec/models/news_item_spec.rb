@@ -1,6 +1,9 @@
+# frozen_string_literal: true
 require "rails_helper"
 
 RSpec.describe NewsItem, type: :model do
+  it_behaves_like "an author"
+
   describe ".published" do
     # Published
     let(:recent_item) { create(:news_item, :published) }
@@ -100,22 +103,6 @@ RSpec.describe NewsItem, type: :model do
         news_item = build(:news_item, state: nil, published_at: nil)
         expect(news_item).to_not be_valid # state is nil
         expect(news_item.errors.messages[:published_at]).to_not be_present
-      end
-
-      context "for author" do
-        it "does not validate when 'authored' is not defined" do
-          news_item = NewsItem.new(author: nil)
-          expect(news_item).to be_invalid
-          expect(news_item.errors.messages.keys).to include :author
-        end
-      end
-    end
-
-    context "when a news_item is authored" do
-      it "knows about its author" do
-        author = create(:user)
-        news_item = create(:news_item, author: author)
-        expect(news_item.author).to eq author
       end
     end
   end

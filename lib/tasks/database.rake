@@ -14,6 +14,12 @@ namespace :database do
     end
   end
 
+  desc 'Resets the counter cache of associations'
+  task reset_counter_cache: :environment do
+    Event.find_each { |event| Event.reset_counters(event.id, :talks) }
+    Event.find_each { |event| Event.reset_counters(event.id, :sponsors) }
+  end
+
   namespace :legacy do
     # NOTE to run remotely on heroku:
     # Source: https://devcenter.heroku.com/articles/rake

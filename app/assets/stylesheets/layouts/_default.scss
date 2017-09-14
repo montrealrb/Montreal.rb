@@ -54,11 +54,11 @@ h6 {
 }
 
 h1 {
-  font-size: 3em;
+  color: $main-highlight;
+  font-size: 2.2em;
 }
 
 h2 {
-  color: $main-highlight;
   padding-bottom: 0;
 }
 
@@ -66,6 +66,7 @@ h3,
 h3 a {
   color: $main-secondary;
   font-weight: bold;
+  padding: $padding 0;
 }
 
 h4 {
@@ -109,9 +110,13 @@ ul {
 }
 
 .meta {
-  font-style: italic;
-  padding-bottom: $padding;
-  color: $main-secondary;
+  font-family: $secondary-font;
+  font-size: 1.2em;
+  line-height: 1.6em;
+
+  p {
+    margin: 0;
+  }
 }
 
 .markdown-body {
@@ -127,7 +132,8 @@ ul {
 
   h3,
   h4 {
-    font-size: 1em;
+    font-size: 1.2em;
+    line-height: 1.6em;
   }
 }
 

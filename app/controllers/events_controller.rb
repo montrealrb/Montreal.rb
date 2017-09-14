@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class EventsController < ApplicationController
   def index
     @past_events, @future_events = Event.published.includes(

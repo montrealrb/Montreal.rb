@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Page < ActiveRecord::Base
   extend Enumerize
   extend FriendlyId

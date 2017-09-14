@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= "test"
 require "spec_helper"
@@ -11,13 +12,15 @@ require "vcr"
 require "webmock/rspec"
 WebMock.disable_net_connect!(allow_localhost: true)
 
+env_vars = %w(SLACK_TOKEN TWITTER_CONSUMER_KEY TWITTER_CONSUMER_SECRET
+              TWITTER_ACCESS_TOKEN TWITTER_ACCESS_SECRET)
+
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.hook_into :webmock
-  config.filter_sensitive_data("<TWITTER_CONSUMER_KEY>")    { ENV["TWITTER_CONSUMER_KEY"]    }
-  config.filter_sensitive_data("<TWITTER_CONSUMER_SECRET>") { ENV["TWITTER_CONSUMER_SECRET"] }
-  config.filter_sensitive_data("<TWITTER_ACCESS_TOKEN>")    { ENV["TWITTER_ACCESS_TOKEN"]    }
-  config.filter_sensitive_data("<TWITTER_ACCESS_SECRET>")   { ENV["TWITTER_ACCESS_SECRET"]   }
+  env_vars.each do |var|
+    config.filter_sensitive_data("<#{var}>") { ENV[var] ||= "optional" }
+  end
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -44,6 +47,7 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+  config.include(OmniauthMacros)
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
@@ -80,3 +84,5 @@ RSpec.configure do |config|
     end
   end
 end
+
+OmniAuth.config.test_mode = true

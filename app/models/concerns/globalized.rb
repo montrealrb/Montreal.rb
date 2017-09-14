@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Globalized
   def validates_translated(*fields)
     options = fields.extract_options!

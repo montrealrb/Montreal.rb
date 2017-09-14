@@ -1,9 +1,11 @@
-<div class='card'>
-  <h3><%= link_to news_item.title, news_item %></h3>
-  <p class="meta">
-    Posted <%= time_ago_in_words(news_item.published_at) %> ago
-  </p>
-  <div class="markdown-body">
-    <%= render_markdown_as_html truncate(news_item.body, length: 200, omission: ' ', separator: ' ') { link_to icon('long-arrow-right'), news_item } %>
-  </div>
+<% short ||= false %>
+<h2><%= link_to render_markdown_as_html(news_item.title.titleize), news_item %></h2>
+<div class="meta">
+  <p><%= icon 'calendar-o', class: 'fa-fw' %>Posted <%= time_ago_in_words(news_item.published_at) %> ago</p>
+</div>
+
+<div class="markdown-body">
+  <% content = short ? truncate(news_item.body, length: 200, separator: ' ') { link_to 'Continue...', news_item, class: 'btn btn-default clearfix' } : news_item.body %>
+  <%= render_markdown_as_html content %>
+  <hr/>
 </div>

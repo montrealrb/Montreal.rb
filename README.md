@@ -43,26 +43,7 @@ You should also have [bundler](http://bundler.io/) (minimum `v1.10`) to help wit
 
 ### Database
 
-Do you have Postgres installed?
-
-```bash
-$ postgres --version
-Postgresql 9.3
-```
-
-For the next parts, you need Postgresql installed, configured and running and a
-`.pgpass` file in your home directory. The content of that file should look like:
-
-```
-# hostname:port:database:username:password
-localhost:5432:*:sdeziel:myverysecurepassword
-```
-
-#### Install Postgres
-
-```bash
-$ brew install postgresql
-```
+For development, sqlite3 will be used.
 
 ### Rails
 
@@ -71,18 +52,6 @@ $ brew install postgresql
 #### Setup your Project
 
 ```bash
-$ bin/setup
-```
-
-__IMPORTANT: `pg` gem installation error__
-
-If you experience an error during the execution of that script related to the installation of the `pg` gem,
-you might want to try the following procedure:
-
-```bash
-$ sudo find / -name "pg_config"
-# Use the most appropriate path found by the command above
-$ gem install pg -- --with-pg-config=<your_pg_config_path>
 $ bin/setup
 ```
 
@@ -95,9 +64,9 @@ Once successfully completed, this setup script will:
 
 __Set environment variables__
 
-Omniauth is used to allow users to log in to the site using GitHub accounts. To
-use the GitHub API, you must set environment variables for the GitHub 'key' and
-'secret.'
+Omniauth is used to allow users to log in to the site using GitHub or Twitter accounts. To
+use the GitHub API or Twitter API, you must set environment variables for the GitHub 'key' and
+'secret.' For the Twitter API you will need to set up TWITTER_CONSUMER_KEY and TWITTER_CONSUMER_SECRET environment variables.
 
 You can first obtain this key/secret [through your GitHub account](https://github.com/settings/applications/new).
 

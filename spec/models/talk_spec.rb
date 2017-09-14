@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require "rails_helper"
 
 RSpec.describe Talk, type: :model do
@@ -6,7 +7,6 @@ RSpec.describe Talk, type: :model do
 
   describe "attributes validation" do
     it { is_expected.to validate_presence_of :title  }
-    it { is_expected.to validate_presence_of :event  }
     it { is_expected.to validate_presence_of :member }
   end
 end

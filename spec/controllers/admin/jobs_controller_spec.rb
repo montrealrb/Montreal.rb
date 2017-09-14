@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require "rails_helper"
 
 RSpec.describe Admin::JobsController, type: :controller do
@@ -11,12 +12,12 @@ RSpec.describe Admin::JobsController, type: :controller do
 
     it "creates a new job" do
       expect do
-        post :create, job: valid_attributes
+        post :create, params: { job: valid_attributes }
       end.to change(Job, :count).by(1)
     end
 
     it "assigns the current user to the 'author' field" do
-      post :create, job: valid_attributes
+      post :create, params: { job: valid_attributes }
       expect(Job.last.author).to eq admin
     end
   end
@@ -28,7 +29,7 @@ RSpec.describe Admin::JobsController, type: :controller do
     end
 
     it "assigns the current user to the 'author' field" do
-      put :update, id: job.id, job: job.attributes
+      put :update, params: { id: job.id, job: job.attributes }
       expect(job.reload.author).to eq admin
     end
   end

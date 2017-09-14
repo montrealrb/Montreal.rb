@@ -13,6 +13,61 @@
     background-color: $navbar-bg-highlight-color;
   }
 }
+.navbar-nav {
+  margin: 0 $padding;
+
+  > li {
+    background-color: $navbar-bg-color;
+
+    > a:hover,
+    > a:focus,
+    .dropdown.open {
+      background-color: $navbar-bg-highlight-color;
+      color: $navbar-text-color;
+    }
+
+    a {
+      color: $navbar-text-color;
+      font-family: $secondary-font;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+  }
+
+  .navbar-login {
+    padding: 10px 10px 0;
+    width: 305px;
+  }
+
+  .navbar-login-session {
+    padding: 0 10px;
+  }
+
+  .icon-size {
+    font-size: 87px;
+  }
+
+  .dropdown {
+    background-color: $navbar-bg-color;
+    color: $navbar-text-color;
+
+    &.open .dropdown-toggle {
+      background-color: $navbar-bg-highlight-color;
+      color: $navbar-text-color;
+    }
+
+    .dropdown-menu {
+      background-color: $navbar-bg-highlight-color;
+      border: 0;
+      color: $navbar-text-color;
+      width: 100%;
+    }
+  }
+
+  .divider {
+    background-color: $bg-secondary;
+  }
+}
 
 .navbar-toggle {
   color: $navbar-text-color;

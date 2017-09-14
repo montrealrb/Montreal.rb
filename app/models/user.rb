@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # == Schema Information
 #
 # Table name: users
@@ -11,19 +12,19 @@
 #  sign_in_count          :integer          default(0), not null
 #  current_sign_in_at     :datetime
 #  last_sign_in_at        :datetime
-#  current_sign_in_ip     :inet
-#  last_sign_in_ip        :inet
+#  current_sign_in_ip     :string
+#  last_sign_in_ip        :string
 #  created_at             :datetime
 #  updated_at             :datetime
 #
 class User < ActiveRecord::Base
-  DEFAULT_USER_EMAIL = "default.user@montrealrb.com".freeze
+  DEFAULT_USER_EMAIL = "default.user@montrealrb.com"
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, omniauth_providers: [:github]
+         :omniauthable, omniauth_providers: [:github, :twitter]
 
   has_one :member
 
@@ -59,7 +60,7 @@ class User < ActiveRecord::Base
 
     def find_existing_with_auth_email(auth)
       find_by(email: auth.info.email).tap do |user|
-        user.update_attributes(provider: auth.provider, uid: auth.uid) if user
+        user&.update_attributes(provider: auth.provider, uid: auth.uid)
       end
     end
 

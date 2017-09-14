@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require "rails_helper"
 
 describe "events/index.html.erb" do
@@ -11,13 +12,13 @@ describe "events/index.html.erb" do
 
   it "displays all the events" do
     render
-    expect(rendered).to include future_event.title.titleize
-    expect(rendered).to include past_event.title.titleize
+    expect(rendered).to include future_event.title
+    expect(rendered).to include past_event.title
   end
 
   it "links events title to corresponding show page" do
     render
-    expect(rendered).to have_link future_event.title.titleize, href: event_path(future_event)
+    expect(rendered).to have_link future_event.title, href: event_path(future_event)
   end
 
   context "there are no future events" do
@@ -31,12 +32,12 @@ describe "events/index.html.erb" do
 
   context "event has a talk" do
     let(:member) { create :member }
-    let!(:talk)  { create :talk, state: "scheduled", event_id: past_event.id, member_id: member.id }
+    let!(:talk)  { create :talk, state: "scheduled", event: past_event, member: member }
 
     it "displays the talks header" do
       render
       expect(rendered).to have_css "h3", text: "Talks"
-      expect(rendered).to have_css "h4", text: "#{talk.title}, by #{member.name}"
+      expect(rendered).to have_css "p", text: "#{talk.title.titleize}, by #{member.name}"
     end
   end
 

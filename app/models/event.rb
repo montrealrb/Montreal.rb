@@ -1,11 +1,13 @@
+# frozen_string_literal: true
 class Event < ActiveRecord::Base
   extend Enumerize
+  include Authorable
+
   STATES = %w(proposed scheduled).freeze
 
   translates :title, :body
 
   belongs_to :location
-  belongs_to :author, foreign_key: :user_id, class_name: "User"
   has_many   :talks, -> { where(state: "scheduled") }, class_name: "Talk"
   has_many   :sponsorships
   has_many   :sponsors, through: :sponsorships, source: :organization
@@ -16,7 +18,6 @@ class Event < ActiveRecord::Base
   validates :title, presence: true
   validates :starts_at, presence: true
   validates :location, presence: true
-  validates :author, presence: true
   validates :state,
             presence: true,
             inclusion: { in: STATES }
@@ -33,6 +34,15 @@ class Event < ActiveRecord::Base
 
   def tweet
     TweetEventService.new(self).call if persisted? && state == "scheduled"
+  end
+
+  def unlink_all_talks
+    transaction do
+      # Remove tasks event if and set them back to proposed
+      talks.update_all(event_id: nil, state: "proposed")
+      destroy
+    end
+    destroyed?
   end
 
   private

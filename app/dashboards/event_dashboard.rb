@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require "administrate/base_dashboard"
 
 class EventDashboard < Administrate::BaseDashboard
@@ -17,7 +18,6 @@ class EventDashboard < Administrate::BaseDashboard
     updated_at: Field::DateTime,
     title: Field::String,
     body: MarkdownField,
-    tweet: Field::Boolean
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -47,7 +47,6 @@ class EventDashboard < Administrate::BaseDashboard
     :sponsors,
     :starts_at,
     :location,
-    :tweet
   ].freeze
 
   # Overwrite this method to customize how events are displayed

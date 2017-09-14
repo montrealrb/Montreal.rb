@@ -1,4 +1,4 @@
 <% provide :title, 'News Items' %>
 
-<h2>News</h2>
-<%= render partial: "news_items/news_item", collection: @news_items %>
+<h1>News</h1>
+<%= render @news_items, short: true %>

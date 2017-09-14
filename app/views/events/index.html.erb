@@ -1,14 +1,14 @@
 <% provide :title, "Events" %>
 
 <% if @future_events.any? %>
-  <h2>Upcoming <%= 'Event'.pluralize(@future_events.count) %></h2>
+  <h1>Upcoming <%= 'Event'.pluralize(@future_events.count) %></h1>
 
   <div class='future-events'>
     <%= render @future_events %>
   </div>
 <% end %>
 
-<h2>Past Events</h2>
+<h1>Past Events</h1>
 
 <div class='past-events'>
   <%= render @past_events %>

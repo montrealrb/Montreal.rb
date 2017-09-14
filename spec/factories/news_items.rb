@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 FactoryGirl.define do
   # Default factory is a NewsItem that has just been published
   factory :news_item do

@@ -1,6 +1,9 @@
+# frozen_string_literal: true
 require "rails_helper"
 
 RSpec.describe Job, type: :model do
+  it_behaves_like "an author"
+
   describe "validation" do
     it { is_expected.to validate_presence_of(:title) }
     it do
@@ -36,21 +39,27 @@ RSpec.describe Job, type: :model do
         expect(job.errors.messages[:state]).to be_present
       end
     end
-
-    context "for author" do
-      it "does not validate when 'author' is not defined" do
-        job = Job.new(author: nil)
-        expect(job).to be_invalid
-        expect(job.errors.messages.keys).to include :author
-      end
-    end
   end
 
-  describe "when a job is authored" do
-    it "knows about its author" do
-      author = create(:user)
-      job = create(:job, author: author)
-      expect(job.author).to eq author
+  describe "#before_save" do
+    subject { create(:job, :draft) }
+
+    describe "#set_published_at" do
+      context "when the state changed to publish" do
+        it "sets the published_at date" do
+          expect do
+            subject.update(state: :published)
+          end.to change(subject, :published_at).from(nil)
+        end
+      end
+
+      context "when the state change to archived" do
+        it "doesn't change the publised_at date" do
+          expect do
+            subject.update(state: :archived)
+          end.not_to change(subject, :published_at)
+        end
+      end
     end
   end
 end
