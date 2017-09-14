@@ -41,6 +41,7 @@ RSpec.describe Job, type: :model do
     end
   end
 
+
   describe ".search" do
     let(:matching_title_job) { create(:job, :published, title: "Fullstack developer") }
     let(:matching_description_job) { create(:job, :published, description: "If you're a fullstack developer, this job is for you!") }
@@ -50,5 +51,27 @@ RSpec.describe Job, type: :model do
     it { is_expected.to include matching_title_job }
     it { is_expected.to include matching_description_job }
     it { is_expected.not_to include not_matching_job }
+  end
+  
+  describe "#before_save" do
+    subject { create(:job, :draft) }
+
+    describe "#set_published_at" do
+      context "when the state changed to publish" do
+        it "sets the published_at date" do
+          expect do
+            subject.update(state: :published)
+          end.to change(subject, :published_at).from(nil)
+        end
+      end
+
+      context "when the state change to archived" do
+        it "doesn't change the publised_at date" do
+          expect do
+            subject.update(state: :archived)
+          end.not_to change(subject, :published_at)
+        end
+      end
+    end
   end
 end
