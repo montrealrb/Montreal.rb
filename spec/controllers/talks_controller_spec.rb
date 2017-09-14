@@ -19,7 +19,7 @@ RSpec.describe TalksController, type: :controller do
 
   describe "POST #create" do
     let(:talk) { attributes_for :talk }
-    subject { post :create, talk: talk }
+    subject { post :create, params: { talk: talk  } }
 
     it { is_expected.to redirect_to Talk.last }
 
@@ -29,14 +29,14 @@ RSpec.describe TalksController, type: :controller do
 
     describe "the newly created talk" do
       subject { Talk.last }
-      before { post :create, talk: talk }
+      before { post :create, params: { talk: talk  } }
 
       its(:member) { is_expected.to eq user.member }
       its(:state)  { is_expected.to eq :proposed   }
     end
 
     describe "with invalid attributes" do
-      subject { post :create, talk: { title: nil } }
+      subject { post :create, params: { talk: { title: nil } } }
 
       it { is_expected.to render_template :new }
 
@@ -48,7 +48,7 @@ RSpec.describe TalksController, type: :controller do
 
   describe "GET #show" do
     let(:talk) { create :talk }
-    subject { get :show, id: talk.id }
+    subject { get :show, params: { id: talk.id } }
     it { is_expected.to have_http_status :success }
     it { is_expected.to render_template :show }
   end

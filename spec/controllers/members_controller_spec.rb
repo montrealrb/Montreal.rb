@@ -21,7 +21,7 @@ RSpec.describe MembersController, type: :controller do
   end
 
   describe "#update" do
-    subject { post :update, member: { twitter_handle: "RailsbridgeMTL" } }
+    subject { post :update, params: { member: { twitter_handle: "RailsbridgeMTL" } } }
 
     context "user is authenticated" do
       before { sign_in user }
@@ -33,7 +33,7 @@ RSpec.describe MembersController, type: :controller do
       end
 
       context "with invalid attributes" do
-        subject { post :update, member: { name: nil } }
+        subject { post :update, params: { member: { name: nil } } }
 
         it { is_expected.to render_template :edit }
 

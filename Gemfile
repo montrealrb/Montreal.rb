@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 source "https://rubygems.org"
-ruby "2.3.1"
+ruby "2.4.0"
 
 # Database
 gem "pg"
@@ -10,21 +10,20 @@ gem "carrierwave"
 gem "cloudinary"
 
 # Assets
-gem "autoprefixer-rails", "~> 6.3.6"
+gem "autoprefixer-rails"
 gem "bootstrap-sass"
 gem "font-awesome-sass"
-gem "coffee-rails", "~> 4.1.0"
+gem "coffee-rails"
 gem "jquery-rails"
 gem "sass-rails"
-gem "uglifier", "~> 3.0.0"
-gem "sprockets", "~> 3.0"
+gem "uglifier"
 
 # Application
-gem "rails", "~> 4.2"
+gem "rails", "~> 5.1"
 gem "omniauth-github"
 gem "omniauth-twitter"
-gem "friendly_id", "~> 5.1.0"
-gem "devise", "~> 3.5.2"
+gem "friendly_id"
+gem "devise"
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem "turbolinks"
@@ -45,11 +44,11 @@ gem "newrelic_rpm", group: :production
 gem "rails_12factor", group: :production
 
 # Globalization/Localization
-gem "globalize"
+gem "globalize", '~> 5.1.0.beta2'
 gem "globalize-accessors"
 
 # Administration
-gem "administrate", "~> 0.1.5"
+gem "administrate"
 
 # Ops
 gem "bugsnag"
@@ -64,7 +63,6 @@ gem "colorize"
 
 group :development do
   gem "annotate"
-  gem "quiet_assets"
   gem "spring"
   gem "spring-commands-rspec"
   gem "bullet"
@@ -96,6 +94,7 @@ end
 group :test do
   gem "vcr"
   gem "webmock", ">= 1.8.0"
+  gem 'rails-controller-testing' #this is temporary
 end
 
 gem "coveralls", require: false, group: :test
