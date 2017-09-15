@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
   translates :title, :body
 
   belongs_to :location
-  has_many   :talks, -> { where(state: "scheduled") }, class_name: "Talk"
+  has_many   :talks, -> { where(state: "scheduled") }, class_name: "Talk", inverse_of: :event
   has_many   :sponsorships
   has_many   :sponsors, through: :sponsorships, source: :organization
   has_and_belongs_to_many :members

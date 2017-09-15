@@ -4,6 +4,7 @@ ruby "2.4.0"
 
 # Database
 gem "pg"
+gem 'seed_dump'
 
 # Uploads
 gem "carrierwave"

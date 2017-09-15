@@ -6,7 +6,7 @@ class Talk < ActiveRecord::Base
   LEVELS  = [:beginner, :intermediate, :advanced].freeze
 
   translates :title, :description
-  belongs_to :event, counter_cache: true
+  belongs_to :event, counter_cache: true, inverse_of: :talks
   belongs_to :member
 
   validates :title,  presence: true
