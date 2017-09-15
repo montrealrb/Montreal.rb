@@ -29,7 +29,7 @@ RSpec.describe MembersController, type: :controller do
       it { is_expected.to redirect_to edit_member_path }
 
       it "updates the member" do
-        expect { subject }.to change { member.reload.twitter_handle }
+        expect { subject }.to(change { member.reload.twitter_handle })
       end
 
       context "with invalid attributes" do
@@ -38,7 +38,7 @@ RSpec.describe MembersController, type: :controller do
         it { is_expected.to render_template :edit }
 
         it "updates the member" do
-          expect { subject }.to_not change { member.reload.twitter_handle }
+          expect { subject }.to_not(change { member.reload.twitter_handle })
         end
       end
     end
