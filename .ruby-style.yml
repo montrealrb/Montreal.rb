@@ -233,9 +233,6 @@ Style/SpecialGlobalVars:
   Description: Avoid Perl-style global variables.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-cryptic-perlisms
   Enabled: false
-Style/SymbolArray:
-  Description: Check for array literals made up of symbols that are not using the %i() syntax
-  Enabled: false
 Style/VariableInterpolation:
   Description: Don't interpolate global, instance and class variables directly in
     strings.
@@ -244,9 +241,6 @@ Style/VariableInterpolation:
 Style/WhenThen:
   Description: Use when x then ... for one-line cases.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#one-line-cases
-  Enabled: false
-Layout/EmptyLineAfterMagicComment:
-  Description: Checks for a newline after the final magic comment.
   Enabled: false
 Lint/EachWithObjectArgument:
   Description: Check for immutable argument given to each_with_object.

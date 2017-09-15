@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "administrate/base_dashboard"
 
 class VoteDashboard < Administrate::BaseDashboard
@@ -21,12 +22,12 @@ class VoteDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :votable,
-    :user,
-    :id,
-    :created_at
-  ].freeze
+  COLLECTION_ATTRIBUTES = %i(
+    votable
+    user
+    id
+    created_at
+  ).freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -35,10 +36,10 @@ class VoteDashboard < Administrate::BaseDashboard
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    :votable,
-    :user
-  ].freeze
+  FORM_ATTRIBUTES = %i(
+    votable
+    user
+  ).freeze
 
   # Overwrite this method to customize how votes are displayed
   # across all pages of the admin dashboard.

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "administrate/base_dashboard"
 
 class LocationDashboard < Administrate::BaseDashboard
@@ -22,11 +23,11 @@ class LocationDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :id,
-    :name,
-    :address
-  ].freeze
+  COLLECTION_ATTRIBUTES = %i(
+    id
+    name
+    address
+  ).freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -35,11 +36,11 @@ class LocationDashboard < Administrate::BaseDashboard
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    :name,
-    :address,
-    :url
-  ].freeze
+  FORM_ATTRIBUTES = %i(
+    name
+    address
+    url
+  ).freeze
 
   # Overwrite this method to customize how locations are displayed
   # across all pages of the admin dashboard.

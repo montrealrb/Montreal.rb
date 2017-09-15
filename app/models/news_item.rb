@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # a NewsItem represents any announcement that we want to communicate to our
 # web audience.
 #

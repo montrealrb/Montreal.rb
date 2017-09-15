@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # in spec/support/omniauth_macros.rb
 module OmniauthMacros
   def mock_auth_hash(provider)

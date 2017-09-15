@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "factory_girl_rails"
 
 FactoryGirl.create(:user, email: "user@example.com", password: "password")

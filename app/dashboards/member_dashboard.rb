@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "administrate/base_dashboard"
 
 class MemberDashboard < Administrate::BaseDashboard
@@ -30,11 +31,11 @@ class MemberDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :id,
-    :user,
-    :name,
-  ].freeze
+  COLLECTION_ATTRIBUTES = %i(
+    id
+    user
+    name
+  ).freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -43,19 +44,19 @@ class MemberDashboard < Administrate::BaseDashboard
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    :user,
-    :name,
-    :company,
-    :email,
-    :picture,
-    :twitter_handle,
-    :github_handle,
-    :website,
-    :biography,
-    :organizations,
-    :events,
-  ].freeze
+  FORM_ATTRIBUTES = %i(
+    user
+    name
+    company
+    email
+    picture
+    twitter_handle
+    github_handle
+    website
+    biography
+    organizations
+    events
+  ).freeze
 
   # Overwrite this method to customize how members are displayed
   # across all pages of the admin dashboard.
