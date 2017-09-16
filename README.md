@@ -101,6 +101,17 @@ $ bin/rails server
 
 By default, your application is accessible at [http://localhost:3000](http://localhost:3000) in your browser.
 
+#### Code Style
+
+Rubocop is used to anaylize and enforce the code style accross all the codebase.
+Before opening a new pull request run:
+
+```bash
+$ rubocop -a
+```
+
+This command will automatically fix the majority of the code style issues and you'll make code-climate happy.
+
 ## Testing
 
 RSpec is used to test the application. You can run all the tests using
