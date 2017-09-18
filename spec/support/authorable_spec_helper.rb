@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 shared_examples "an author" do
   let(:author) { build(:user) }
   subject { build(described_class.name.underscore, author: author) }

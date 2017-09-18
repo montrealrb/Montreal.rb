@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users
@@ -24,7 +25,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, omniauth_providers: [:github, :twitter]
+         :omniauthable, omniauth_providers: %i(github twitter)
 
   has_one :member
 
@@ -37,8 +38,7 @@ class User < ActiveRecord::Base
 
     def new_with_session(params, session)
       super.tap do |user|
-        if data = session["devise.github_data"] &&
-                  session["devise.github_data"]["extra"]["raw_info"]
+        if data = session["devise.github_data"]&.dig("extra", "raw_info")
           user.email = data["email"] if user.email.blank?
         end
       end

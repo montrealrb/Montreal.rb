@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 source "https://rubygems.org"
 ruby "2.4.0"
 
@@ -86,7 +87,7 @@ group :development, :test do
   gem "pry"
   gem "rspec-its"
   gem "rspec-rails"
-  gem "rubocop", "~> 0.45.0", require: false
+  gem "rubocop", "~> 0.50.0", require: false
   gem "shoulda-matchers"
   gem "sqlite3"
   gem "timecop"

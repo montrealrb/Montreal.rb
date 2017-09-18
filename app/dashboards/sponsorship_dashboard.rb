@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "administrate/base_dashboard"
 
 class SponsorshipDashboard < Administrate::BaseDashboard
@@ -21,28 +22,28 @@ class SponsorshipDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :event,
-    :organization,
-    :message,
-  ].freeze
+  COLLECTION_ATTRIBUTES = %i(
+    event
+    organization
+    message
+  ).freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = [
-    :event,
-    :organization,
-    :message,
-  ].freeze
+  SHOW_PAGE_ATTRIBUTES = %i(
+    event
+    organization
+    message
+  ).freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    :event,
-    :organization,
-    :message,
-  ].freeze
+  FORM_ATTRIBUTES = %i(
+    event
+    organization
+    message
+  ).freeze
 
   # Overwrite this method to customize how sponsorships are displayed
   # across all pages of the admin dashboard.

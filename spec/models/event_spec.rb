@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "rails_helper"
 
 RSpec.describe Event, type: :model do
@@ -29,8 +30,8 @@ RSpec.describe Event, type: :model do
     end
 
     it "includes only scheduled talks" do
-      expect(event.talks).to     match talks.select { |t| t.state == "scheduled" }
-      expect(event.talks).to_not match talks.select { |t| t.state == "proposed"  }
+      expect(event.talks).to match(talks.select { |t| t.state == "scheduled" })
+      expect(event.talks).to_not match(talks.select { |t| t.state == "proposed" })
     end
   end
 

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class SlackInvitationSendingService
   def initialize(user, token = ENV["SLACK_TOKEN"])
     @user = user
