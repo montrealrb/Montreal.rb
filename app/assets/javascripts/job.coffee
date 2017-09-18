@@ -1,13 +1,14 @@
 $(document).ready ->
   jobWordsCount = 0
 
-  $(document).on 'keyup', '#job_description', (e)->
-    wordsCount = $(this).val().split(' ').length;
+  $(document).on "keyup", "#job_description", (e)->
+    jobDescription = $(this).val()
+    wordsCount = jobDescription.split(" ").length
     
     if wordsCount != jobWordsCount
       jobWordsCount = wordsCount
 
-      joblintObject = joblint($('#job_description').val())
+      joblintObject = joblint(jobDescription)
       countsPopulator(joblintObject)
       issuesDescPopulator(joblintObject)
 
@@ -15,12 +16,12 @@ countsPopulator = (joblintObj) ->
   basicCounts = ["sexism", "culture", "realism", "recruiter", "tech"]
 
   for key in basicCounts
-    job_lint_count = joblintObj.counts[key] || 0
-    $("##{key}-issues-num").text(job_lint_count)
+    jobLintCount = joblintObj.counts[key] || 0
+    $("##{key}-issues-num").text(jobLintCount)
 
 issuesDescPopulator = (joblintObj) ->
   issues = joblintObj.issues
-  $(".joblint-issue-desc-container").html('') # Reset joblint descriptions
+  $(".joblint-issue-desc-container").html("") # Reset joblint descriptions
 
   for issue in issues
     $(".joblint-issue-desc-container").append(singleIssueDesc(issue))
@@ -40,7 +41,7 @@ singleIssueDesc = (issue) ->
     </div>"
 
 occuranceReplacer = (issue) ->
-  $("#joblint-issue-position-" + issue.position + " .joblint-occurance").each ->
+  $("#joblint-issue-position-#{issue.position} .joblint-occurance").each ->
     original_html = $(this).html()
     occurance = "<strong class='joblint-word-occurance'>#{issue.occurance}</strong>"
     
