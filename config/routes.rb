@@ -31,7 +31,12 @@ Rails.application.routes.draw do
 
   resources :events, only: %i(index show)
   resources :organizations, only: %i(index show)
-  resources :jobs, only: %i(index show)
+  resources :jobs, only: %i(index show new create) do
+    member do
+      get :confirmation
+    end
+  end
+
   resources :pages, only: [:show]
   resource :member, only: %i(create edit update), path: :profile
   resources :talks, only: %i(new create show)

@@ -10,6 +10,7 @@ class Job < ActiveRecord::Base
   belongs_to :organization
 
   scope :published, -> { where(state: :published).order(created_at: :desc) }
+  scope :draft, -> { where(state: :draft) }
 
   enumerize :state, in: STATES, default: :draft
 
@@ -22,6 +23,8 @@ class Job < ActiveRecord::Base
   validates :state,
             presence: true,
             inclusion: { in: STATES }
+
+  accepts_nested_attributes_for :organization
 
   private
 

@@ -25,6 +25,7 @@
         </section>
 
         <aside>
+          <%= link_to 'Submit a job posting', new_job_path, class: 'btn btn-lg btn-default btn-block' %>
           <%= link_to 'Propose a talk!!', new_talk_path, class: 'btn btn-lg btn-default btn-block' %>
           <h2> News </h2>
           <% @news_items.each do |news_item| %>
