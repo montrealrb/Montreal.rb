@@ -7,9 +7,3 @@ addons:
 before_script:
 - bundle exec rake db:create
 - bundle exec rake db:schema:load
-after_success:
-  - eval "$(ssh-agent -s)" #start the ssh agent
-  - chmod 600 deploy_rsa.enc # this key should have push access
-  - ssh-add ddeploy_rsa.enc
-  - git remote add deploy dokku@qjxx3oen639ydr.speedy.cloud:montrealrb
-  - git push deploy
