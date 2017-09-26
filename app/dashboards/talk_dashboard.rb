@@ -35,7 +35,6 @@ class TalkDashboard < Administrate::BaseDashboard
     format
     event
     member
-    title
   ).freeze
 
   # SHOW_PAGE_ATTRIBUTES
