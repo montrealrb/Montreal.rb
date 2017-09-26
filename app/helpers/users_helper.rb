@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module UsersHelper
   def avatar_for(member, size: 200, html: {})
     return if member.nil? || member.email.blank?
