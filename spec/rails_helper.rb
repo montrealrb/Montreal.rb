@@ -14,7 +14,7 @@ require "webmock/rspec"
 WebMock.disable_net_connect!(allow_localhost: true)
 
 env_vars = %w(SLACK_TOKEN TWITTER_CONSUMER_KEY TWITTER_CONSUMER_SECRET
-              TWITTER_ACCESS_TOKEN TWITTER_ACCESS_SECRET)
+              TWITTER_ACCESS_TOKEN TWITTER_ACCESS_SECRET CLOUDINARY_URL)
 
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
