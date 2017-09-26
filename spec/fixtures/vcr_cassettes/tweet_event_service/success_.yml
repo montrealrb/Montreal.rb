@@ -5,16 +5,16 @@ http_interactions:
     uri: https://api.twitter.com/1.1/statuses/update.json
     body:
       encoding: UTF-8
-      string: status=Testing+the+twitter+feature+for+montrealrb.com
+      string: status=Our+next+event%3A+Ab+dicta+ipsam+ipsum+eius.%2C+http%3A%2F%2Flocalhost%3A3000%2Fevents%2F1-ab-dicta-ipsam-ipsum
     headers:
       Accept:
       - application/json
       User-Agent:
-      - TwitterRubyGem/5.16.0
+      - TwitterRubyGem/6.1.0
       Authorization:
-      - OAuth oauth_consumer_key="<TWITTER_CONSUMER_KEY>", oauth_nonce="c6c84b883de5cb7dca3b6b845ae29837",
-        oauth_signature="8eWk5%2BZhsqMr3mbrrVPfL3CpGHo%3D", oauth_signature_method="HMAC-SHA1",
-        oauth_timestamp="1463440500", oauth_token="<TWITTER_ACCESS_TOKEN>", oauth_version="1.0"
+      - OAuth oauth_consumer_key="<TWITTER_CONSUMER_KEY>", oauth_nonce="d30dc26f6e4b0b3ac4dd702f53c04daf",
+        oauth_signature="ju6gfNLr6YaYJp%2BTbGVxNQ2ecqo%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1506398794", oauth_token="<TWITTER_ACCESS_TOKEN>", oauth_version="1.0"
       Content-Type:
       - application/x-www-form-urlencoded
       Accept-Encoding:
@@ -29,23 +29,25 @@ http_interactions:
       Content-Disposition:
       - attachment; filename=json.json
       Content-Length:
-      - '915'
+      - '1091'
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Mon, 16 May 2016 23:15:01 GMT
+      - Tue, 26 Sep 2017 04:06:35 GMT
       Expires:
       - Tue, 31 Mar 1981 05:00:00 GMT
       Last-Modified:
-      - Mon, 16 May 2016 23:15:01 GMT
+      - Tue, 26 Sep 2017 04:06:35 GMT
       Pragma:
       - no-cache
       Server:
-      - tsa_a
+      - tsa_b
       Set-Cookie:
-      - guest_id=v1%3A146344050109639181; Domain=.twitter.com; Path=/; Expires=Wed,
-        16-May-2018 23:15:01 UTC
-      - lang=fr; Path=/
+      - guest_id=v1%3A150639879563995856; Expires=Thu, 26 Sep 2019 04:06:35 UTC; Path=/;
+        Domain=.twitter.com
+      - lang=en; Path=/
+      - personalization_id="v1_+SB80Hcwi4no9Bi87YeIDg=="; Expires=Thu, 26 Sep 2019
+        04:06:35 UTC; Path=/; Domain=.twitter.com
       Status:
       - 200 OK
       Strict-Transport-Security:
@@ -53,29 +55,32 @@ http_interactions:
       X-Access-Level:
       - read-write
       X-Connection-Hash:
-      - d9a5e7b182904e8e4760441612ebe2c7
+      - 78c525b467a37212c9bee88322ed9006
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
       X-Response-Time:
-      - '188'
+      - '128'
       X-Transaction:
-      - 6291363af555162b
+      - 006a9336001c3166
       X-Tsa-Request-Body-Time:
-      - '1'
+      - '26'
       X-Twitter-Response-Tags:
       - BouncerCompliant
       X-Xss-Protection:
       - 1; mode=block
     body:
       encoding: ASCII-8BIT
-      string: '{"created_at":"Mon May 16 23:15:01 +0000 2016","id":732348658058846208,"id_str":"732348658058846208","text":"Testing
-        the twitter feature for https:\/\/t.co\/J8XGah0uVe","truncated":false,"entities":{"hashtags":[],"symbols":[],"user_mentions":[],"urls":[{"url":"https:\/\/t.co\/J8XGah0uVe","expanded_url":"http:\/\/montrealrb.com","display_url":"montrealrb.com","indices":[32,55]}]},"source":"\u003ca
-        href=\"http:\/\/montrealrb.com\" rel=\"nofollow\"\u003emontreal.rb test\u003c\/a\u003e","in_reply_to_status_id":null,"in_reply_to_status_id_str":null,"in_reply_to_user_id":null,"in_reply_to_user_id_str":null,"in_reply_to_screen_name":null,"user":{"id":1306342303,"id_str":"1306342303","name":"Wired
-        Monkeys","screen_name":"wiredmonkeys","location":"Montreal","description":"","url":null,"entities":{"description":{"urls":[]}},"protected":false,"followers_count":4,"friends_count":7,"listed_count":0,"created_at":"Wed
-        Mar 27 02:59:48 +0000 2013","favourites_count":0,"utc_offset":-10800,"time_zone":"Atlantic
-        Time (Canada)","geo_enabled":false,"verified":false,"statuses_count":8,"lang":"fr","contributors_enabled":false,"is_translator":false,"is_translation_enabled":false,"profile_background_color":"C0DEED","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_tile":false,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/486738106293313537\/91k3rTEx_normal.jpeg","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/486738106293313537\/91k3rTEx_normal.jpeg","profile_banner_url":"https:\/\/pbs.twimg.com\/profile_banners\/1306342303\/1404882388","profile_link_color":"0084B4","profile_sidebar_border_color":"C0DEED","profile_sidebar_fill_color":"DDEEF6","profile_text_color":"333333","profile_use_background_image":true,"has_extended_profile":false,"default_profile":true,"default_profile_image":false,"following":false,"follow_request_sent":false,"notifications":false},"geo":null,"coordinates":null,"place":null,"contributors":null,"is_quote_status":false,"retweet_count":0,"favorite_count":0,"favorited":false,"retweeted":false,"possibly_sensitive":false,"lang":"en"}'
+      string: '{"created_at":"Tue Sep 26 04:06:35 +0000 2017","id":912528804672888832,"id_str":"912528804672888832","text":"Our
+        next event: Ab dicta ipsam ipsum eius., http:\/\/localhost:3000\/events\/1-ab-dicta-ipsam-ipsum","truncated":false,"entities":{"hashtags":[],"symbols":[],"user_mentions":[],"urls":[]},"source":"\u003ca
+        href=\"http:\/\/montrealrb.com\" rel=\"nofollow\"\u003etest montreal.rb\u003c\/a\u003e","in_reply_to_status_id":null,"in_reply_to_status_id_str":null,"in_reply_to_user_id":null,"in_reply_to_user_id_str":null,"in_reply_to_screen_name":null,"user":{"id":70496165,"id_str":"70496165","name":"Sophie
+        D\u00e9ziel (\u1d54\u1d25\u1d54)","screen_name":"sophiedeziel","location":"Montr\u00e9al,
+        QC, Canada","description":"Ruby on Rails developer \/ @montrealrb organizer
+        \/ trying to write relevant things \/ eating flying spaghetti monsters \/
+        It''s pronounced Daisy-Elle","url":"https:\/\/t.co\/RFXopT4WzR","entities":{"url":{"urls":[{"url":"https:\/\/t.co\/RFXopT4WzR","expanded_url":"http:\/\/sophiedeziel.com","display_url":"sophiedeziel.com","indices":[0,23]}]},"description":{"urls":[]}},"protected":false,"followers_count":433,"friends_count":455,"listed_count":24,"created_at":"Mon
+        Aug 31 20:47:50 +0000 2009","favourites_count":820,"utc_offset":-14400,"time_zone":"Eastern
+        Time (US & Canada)","geo_enabled":true,"verified":false,"statuses_count":1996,"lang":"en","contributors_enabled":false,"is_translator":false,"is_translation_enabled":true,"profile_background_color":"131516","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme14\/bg.gif","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme14\/bg.gif","profile_background_tile":true,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/724741540720066562\/DW-X98-W_normal.jpg","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/724741540720066562\/DW-X98-W_normal.jpg","profile_banner_url":"https:\/\/pbs.twimg.com\/profile_banners\/70496165\/1404883019","profile_link_color":"009999","profile_sidebar_border_color":"EEEEEE","profile_sidebar_fill_color":"EFEFEF","profile_text_color":"333333","profile_use_background_image":true,"has_extended_profile":true,"default_profile":false,"default_profile_image":false,"following":false,"follow_request_sent":false,"notifications":false,"translator_type":"none"},"geo":null,"coordinates":null,"place":null,"contributors":null,"is_quote_status":false,"retweet_count":0,"favorite_count":0,"favorited":false,"retweeted":false,"lang":"en"}'
     http_version: 
-  recorded_at: Mon, 16 May 2016 23:15:01 GMT
-recorded_with: VCR 3.0.1
+  recorded_at: Tue, 26 Sep 2017 04:06:35 GMT
+recorded_with: VCR 3.0.3
