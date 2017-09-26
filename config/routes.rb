@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 Rails.application.routes.draw do
   namespace :admin do
     DashboardManifest::DASHBOARDS.each do |dashboard_resource|
@@ -26,14 +27,14 @@ Rails.application.routes.draw do
   get "/:year/:month/:slug",
       to: "news_items#show",
       constraints: { year: /\d{4}/, month: /\d{2}/ }
-  resources :news_items, only: [:index, :show]
+  resources :news_items, only: %i(index show)
 
-  resources :events, only: [:index, :show]
-  resources :organizations, only: [:index, :show]
-  resources :jobs, only: [:index, :show]
+  resources :events, only: %i(index show)
+  resources :organizations, only: %i(index show)
+  resources :jobs, only: %i(index show)
   resources :pages, only: [:show]
-  resource :member, only: [:create, :edit, :update], path: :profile
-  resources :talks, only: [:new, :create, :show]
+  resource :member, only: %i(create edit update), path: :profile
+  resources :talks, only: %i(new create show)
 
   root "home#index"
 end
