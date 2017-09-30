@@ -13,7 +13,7 @@ RSpec.describe Admin::JobsController, type: :controller do
       get :index, params: { order: :created_at, direction: :asc }
 
       expect(assigns(:_order).as_json).to(
-        eq({"attribute" => "created_at", "direction" => "asc"})
+        eq("attribute" => "created_at", "direction" => "asc")
       )
     end
   end

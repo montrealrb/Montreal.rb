@@ -55,12 +55,28 @@ class JobsController < ApplicationController
   end
 
   def permitted_attributes
-    params.require(:job).permit(:title,
-                                :description,
-                                organization_attributes: %i(name address))
+    attributes = params.require(:job).permit(:title,
+                                             :description,
+                                             organization_attributes: %i(name address))
+
+    attributes_with_organization(attributes)
   end
 
   def cant_access_confirmation
     redirect_to(jobs_url) && return
+  end
+
+  def attributes_with_organization(attributes)
+    # Memorize organization in case this method is called more than once
+    @organization ||= Organization.find_by_name(attributes.dig(:organization_attributes, :name))
+
+    if @organization.present?
+      # In the case the organization already exist, we don't want to create a new one
+      # Remove the attributes and assign the organization id
+      attributes.delete(:organization_attributes)
+      attributes[:organization_id] = @organization.id
+    end
+
+    attributes
   end
 end

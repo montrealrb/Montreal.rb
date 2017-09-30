@@ -102,12 +102,44 @@ RSpec.describe JobsController, type: :controller do
           expect { subject }.to change(Job, :count)
         end
 
+        it "creates an organization" do
+          expect { subject }.to change(Organization, :count)
+        end
+
         describe "the newly created job" do
           subject { Job.last }
           before { post_request }
 
           its(:title) { is_expected.to eq "123" }
           its(:state) { is_expected.to eq :draft }
+        end
+
+        context "when the organization already exist" do
+          let!(:organization) { create :organization, name: "Existing Company" }
+          let(:jobs_params) do
+            {
+              job: {
+                title: "123",
+                description: "456",
+                organization_attributes: { name: "Existing Company", address: "abc" }
+              }
+            }
+          end
+
+          it "creates the job" do
+            expect { subject }.to change(Job, :count)
+          end
+
+          it "does not creates a new organization" do
+            expect { subject }.not_to change(Organization, :count)
+          end
+
+          describe "the newly created job" do
+            subject { Job.last }
+            before { post_request }
+
+            its(:organization_id) { is_expected.to eq organization.id }
+          end
         end
       end
 
@@ -128,7 +160,7 @@ RSpec.describe JobsController, type: :controller do
       end
     end
 
-    context "whent the user is logged out" do
+    context "when the user is logged out" do
       let(:jobs_params) { {} }
       it { is_expected.to redirect_to new_user_session_url }
     end
