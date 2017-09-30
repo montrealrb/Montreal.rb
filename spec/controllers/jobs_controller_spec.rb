@@ -161,6 +161,12 @@ RSpec.describe JobsController, type: :controller do
 
         it { is_expected.to redirect_to jobs_url }
       end
+
+      context "when no job found" do
+        subject { get :confirmation, params: { id: 42 } }
+
+        it { is_expected.to redirect_to jobs_url }
+      end
     end
 
     context "when user is logged out" do

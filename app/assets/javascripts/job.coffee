@@ -1,4 +1,4 @@
-$(document).ready ->
+$(document).on 'turbolinks:load', ->
   jobWordsCount = 0
 
   $(document).on "keyup", "#job_description", (e)->
