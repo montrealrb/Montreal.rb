@@ -6,6 +6,7 @@ require "rspec/rails"
 require "capybara/rspec"
 require "simplecov"
 require "coveralls"
+require "pundit/rspec"
 
 SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 SimpleCov.start do

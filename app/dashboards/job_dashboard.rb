@@ -14,6 +14,7 @@ class JobDashboard < Administrate::BaseDashboard
     title: Field::String,
     state: EnumField,
     organization: Field::BelongsTo,
+    author: Field::BelongsTo.with_options(class_name: "User"),
     description: MarkdownField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,

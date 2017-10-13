@@ -6,7 +6,7 @@ class HomeController < ApplicationController
       :translations,
       :location,
       :sponsors,
-      talks: [:member, :translations]
+      talks: %i(member translations)
     ).order(:starts_at).limit(5).partition { |e| e.starts_at < Time.now }
   end
 end

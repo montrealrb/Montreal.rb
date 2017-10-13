@@ -3,8 +3,20 @@
 require "rails_helper"
 
 RSpec.describe Admin::JobsController, type: :controller do
-  let(:admin) { FactoryGirl.create(:user, :admin) }
+  let(:admin) { create(:user, :admin) }
   let(:valid_attributes) { attributes_for(:job).merge(author: nil) }
+
+  describe "GET #index" do
+    before { login_user(admin) }
+
+    it "orders by specific field and direction" do
+      get :index, params: { order: :created_at, direction: :asc }
+
+      expect(assigns(:_order).as_json).to(
+        eq("attribute" => "created_at", "direction" => "asc")
+      )
+    end
+  end
 
   describe "POST #create" do
     before do
