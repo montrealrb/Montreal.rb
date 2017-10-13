@@ -32,9 +32,7 @@ class JobsController < ApplicationController
 
   # GET /jobs/1/confirmation
   def confirmation
-    # Pundit need a validate Job object
-    # if find_by_id return nil, we set an empty Job
-    @job = Job.find_by_id(params[:id]) || Job.new
+    @job = Job.find params[:id]
     authorize @job
 
     render :show

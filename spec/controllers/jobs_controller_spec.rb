@@ -195,9 +195,11 @@ RSpec.describe JobsController, type: :controller do
       end
 
       context "when no job found" do
-        subject { get :confirmation, params: { id: 42 } }
-
-        it { is_expected.to redirect_to jobs_url }
+        it "raises a RecordNotFound error" do
+          expect do
+            get :confirmation, params: { id: 42 }
+          end.to raise_error(ActiveRecord::RecordNotFound)
+        end
       end
     end
 
