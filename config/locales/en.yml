@@ -22,3 +22,7 @@
 en:
   errors:
     vote_once: "You can only vote one time"
+  helpers:
+    label:
+      talk:
+        youtube_id: YouTube ID
