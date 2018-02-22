@@ -7,3 +7,10 @@ addons:
 before_script:
 - bundle exec rake db:create
 - bundle exec rake db:schema:load
+
+after_success:
+  - eval "$(ssh-agent -s)"
+  - chmod 600 .travis/deploy_key.pem
+  - ssh-add .travis/deploy_key.pem
+  - git remote add deploy dokku@qjxx3oen639ydr.speedy.cloud:montrealrb
+  - git push deploy
