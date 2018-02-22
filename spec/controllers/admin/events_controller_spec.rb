@@ -77,5 +77,16 @@ RSpec.describe Admin::EventsController, type: :controller do
         expect(response).to redirect_to admin_events_path
       end
     end
+
+    context "when cannot unlink all the talks" do
+      it "displays a flag message" do
+        allow(Event).to receive(:find).and_return(event)
+        expect(event).to receive(:unlink_all_talks).and_return(false)
+
+        delete :destroy, params: { id: event.id }
+
+        expect(flash[:error]).to eq("Could not delete event ##{event.id}")
+      end
+    end
   end
 end

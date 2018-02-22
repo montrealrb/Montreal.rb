@@ -62,6 +62,9 @@ gem "twitter"
 # Utility
 gem "colorize"
 
+# Authorization system
+gem "pundit"
+
 group :development do
   gem "annotate"
   gem "bullet"

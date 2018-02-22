@@ -35,6 +35,7 @@
         </section>
 
         <aside>
+          <%= link_to 'Submit a job posting', new_job_path, class: 'btn btn-lg btn-default btn-block' %>
           <%= link_to 'Propose a talk!!', new_talk_path, class: 'btn btn-lg btn-default btn-block' %>
           <div class='card hosting-sponsor'>
             Hosting generously provided by: <%= link_to image_tag('speedyrails.png', width: '100%'), 'http://speedyrails.com', target: :_blank %>
