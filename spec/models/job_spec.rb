@@ -42,6 +42,18 @@ RSpec.describe Job, type: :model do
     end
   end
 
+
+  describe ".search" do
+    let(:matching_title_job) { create(:job, :published, title: "Fullstack developer") }
+    let(:matching_description_job) { create(:job, :published, description: "If you're a fullstack developer, this job is for you!") }
+    let(:not_matching_job) { create(:job, :published, title: "RoR developer", description: "Familiarity with agile methodologies, especially Scrum or Kanban") }
+    subject { described_class.search("fullstack") }
+
+    it { is_expected.to include matching_title_job }
+    it { is_expected.to include matching_description_job }
+    it { is_expected.not_to include not_matching_job }
+  end
+  
   describe "#before_save" do
     subject { create(:job, :draft) }
 
