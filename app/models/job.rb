@@ -10,6 +10,7 @@ class Job < ActiveRecord::Base
   belongs_to :organization
 
   scope :published, -> { where(state: :published).order(created_at: :desc) }
+  scope :search, -> (query = nil) { where("title LIKE ? OR description LIKE ?", "%#{query}%", "%#{query}%") if query }
   scope :draft, -> { where(state: :draft) }
 
   enumerize :state, in: STATES, default: :draft
