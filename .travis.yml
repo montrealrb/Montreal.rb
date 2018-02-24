@@ -10,7 +10,5 @@ before_script:
 
 after_success:
   - eval "$(ssh-agent -s)"
-  - chmod 600 .travis/deploy_key.pem
-  - ssh-add .travis/deploy_key.pem
   - git remote add deploy dokku@qjxx3oen639ydr.speedy.cloud:montrealrb
   - git push deploy master
