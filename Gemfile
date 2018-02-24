@@ -72,11 +72,6 @@ group :development do
   gem "spring-commands-rspec"
 end
 
-group :legacy do
-  gem "mysql2"
-  gem "nokogiri"
-end
-
 group :development, :test do
   gem "byebug"
   gem "capybara"
