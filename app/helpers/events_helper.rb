@@ -5,9 +5,9 @@ module EventsHelper
     if event.starts_at.future?
       text
     else
-      truncate(text, length: 300,
-                     omission: " ",
-                     separator: " ") { link_to icon("long-arrow-right"), event }
+      truncate(text, length: 300, omission: " ", separator: " ") do
+        link_to icon("far", "long-arrow-right"), event
+      end
     end
   end
 end
