@@ -19,8 +19,6 @@ env_vars = %w(SLACK_TOKEN TWITTER_CONSUMER_KEY TWITTER_CONSUMER_SECRET
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.hook_into :webmock
-  cloudinary_url = ENV['CLOUDINARY_URL'].match(/@(.+)/)
-  config.filter_sensitive_data("<#{cloudinary_url&.last || 'name'}>")
   env_vars.each do |var|
     config.filter_sensitive_data("<#{var}>") { ENV[var] ||= "optional" }
   end
