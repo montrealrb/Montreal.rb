@@ -38,11 +38,7 @@ gem "redcarpet"
 gem "simple_form"
 
 # Server
-gem "newrelic_rpm", group: :production
 gem "unicorn"
-
-# Heroku Assets
-gem "rails_12factor", group: :production
 
 # Globalization/Localization
 gem "globalize", "~> 5.1.0.beta2"
@@ -84,7 +80,7 @@ group :development, :test do
   gem "pry"
   gem "rspec-its"
   gem "rspec-rails"
-  gem "rubocop", "~> 0.50.0", require: false
+  gem "rubocop", require: false
   gem "shoulda-matchers"
   gem "sqlite3"
   gem "timecop"
@@ -93,7 +89,8 @@ end
 group :test do
   gem "rails-controller-testing" # this is temporary
   gem "vcr"
-  gem "webmock", ">= 1.8.0"
+  gem "webmock"
+  gem 'database_cleaner'
 end
 
 gem "coveralls", require: false, group: :test
