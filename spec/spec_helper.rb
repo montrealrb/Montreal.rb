@@ -8,7 +8,11 @@ require "simplecov"
 require "coveralls"
 require "pundit/rspec"
 
-SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([
+  Coveralls::SimpleCov::Formatter,
+  SimpleCov::Formatter::SimpleFormatter,
+  SimpleCov::Formatter::HTMLFormatter
+])
 SimpleCov.start do
   add_filter "/spec\/support/"
 end
