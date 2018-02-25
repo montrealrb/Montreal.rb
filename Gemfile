@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source "https://rubygems.org"
-ruby "2.4.0"
+ruby "2.5.0"
 
 # Database
 gem "pg"
@@ -70,11 +70,6 @@ group :development do
   gem "bullet"
   gem "spring"
   gem "spring-commands-rspec"
-end
-
-group :legacy do
-  gem "mysql2"
-  gem "nokogiri"
 end
 
 group :development, :test do
