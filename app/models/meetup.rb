@@ -29,6 +29,10 @@ class Meetup < Event
   end
 
   translates :title, :body
+  # Someday, we should be able to remove those lines
+  attribute :title
+  attribute :body
+
   globalize_accessors locales: I18n.available_locales, attributes: %i(title introduction conclusion)
   # validates_translated :title, :introduction, :conclusion, presence: true
 

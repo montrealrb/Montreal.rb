@@ -5,6 +5,10 @@ class Page < ActiveRecord::Base
   extend FriendlyId
 
   translates :title, :body
+  # Someday, we should be able to remove those lines
+  attribute :title
+  attribute :body
+
   friendly_id :title, use: %i(slugged history)
 
   # Static Class Variables

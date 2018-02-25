@@ -41,7 +41,7 @@ gem "simple_form"
 gem "unicorn"
 
 # Globalization/Localization
-gem "globalize", "~> 5.1.0.beta2"
+gem "globalize", "~> 5.1"
 gem "globalize-accessors"
 
 # Administration

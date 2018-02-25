@@ -466,7 +466,7 @@ DEPENDENCIES
   font-awesome-sass
   friendly_id
   gemoji
-  globalize (~> 5.1.0.beta2)
+  globalize (~> 5.1)
   globalize-accessors
   guard-ctags-bundler
   guard-rspec

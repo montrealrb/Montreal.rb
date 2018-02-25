@@ -5,6 +5,9 @@ class Organization < ActiveRecord::Base
   has_and_belongs_to_many :jobs
 
   translates :description
+  # Someday, we should be able to remove those lines
+  attribute :description
+
   mount_uploader :logo, LogoUploader
 
   has_many :sponsorships
