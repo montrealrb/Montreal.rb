@@ -4,12 +4,6 @@ cache: bundler
 sudo: false
 addons:
   postgresql: '9.3'
-  ssh_known_hosts:
-  - qjxx3oen639ydr.speedy.cloud
 before_script:
 - bundle exec rake db:create
 - bundle exec rake db:schema:load
-
-deploy:
-  - eval "$(ssh-agent -s)"
-  - git remote add deploy dokku@qjxx3oen639ydr.speedy.cloud:montrealrb
