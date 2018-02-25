@@ -5,14 +5,8 @@ require File.expand_path("../../config/environment", __FILE__)
 require "rspec/rails"
 require "capybara/rspec"
 require "simplecov"
-require "coveralls"
 require "pundit/rspec"
 
-SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([
-  Coveralls::SimpleCov::Formatter,
-  SimpleCov::Formatter::SimpleFormatter,
-  SimpleCov::Formatter::HTMLFormatter
-])
 SimpleCov.start do
   add_filter "/spec\/support/"
 end
