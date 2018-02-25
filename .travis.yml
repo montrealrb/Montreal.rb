@@ -4,6 +4,14 @@ cache: bundler
 sudo: false
 addons:
   postgresql: '9.3'
+env:
+  global:
+    - CC_TEST_REPORTER_ID=d05f235d89f9ff5f56c0de10d4c0abf62ae81349a6c950608358c1b9f21db3c5
 before_script:
-- bundle exec rake db:create
-- bundle exec rake db:schema:load
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+  - bundle exec rake db:create
+  - bundle exec rake db:schema:load
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
