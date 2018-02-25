@@ -10,6 +10,6 @@ before_script:
 - bundle exec rake db:create
 - bundle exec rake db:schema:load
 
-after_success:
+deploy:
   - eval "$(ssh-agent -s)"
   - git remote add deploy dokku@qjxx3oen639ydr.speedy.cloud:montrealrb
