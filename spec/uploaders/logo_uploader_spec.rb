@@ -3,7 +3,7 @@
 require "rails_helper"
 require "carrierwave/test/matchers"
 
-describe LogoUploader, skip: ENV["CLOUDINARY_URL"].nil? do
+describe LogoUploader do
   include CarrierWave::Test::Matchers
 
   let(:organization) { create :organization }
@@ -13,7 +13,6 @@ describe LogoUploader, skip: ENV["CLOUDINARY_URL"].nil? do
     LogoUploader.enable_processing = true
     test_image_file = "spec/fixtures/rainbow_unicorn.jpg"
 
-    uploader.store!(File.open(test_image_file))
   end
 
   after do

@@ -91,6 +91,7 @@ group :test do
   gem "vcr"
   gem "webmock"
   gem 'database_cleaner'
+  gem 'simplecov', require: false
 end
 
 gem "coveralls", require: false, group: :test
