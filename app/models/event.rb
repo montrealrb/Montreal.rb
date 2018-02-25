@@ -7,6 +7,9 @@ class Event < ActiveRecord::Base
   STATES = %w(proposed scheduled).freeze
 
   translates :title, :body
+  # Someday, we should be able to remove those lines
+  attribute :title
+  attribute :body
 
   belongs_to :location
   has_many   :talks, -> { where(state: "scheduled") }, class_name: "Talk", inverse_of: :event

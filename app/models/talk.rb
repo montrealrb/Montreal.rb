@@ -7,6 +7,10 @@ class Talk < ActiveRecord::Base
   LEVELS  = %i(beginner intermediate advanced).freeze
 
   translates :title, :description
+  # Someday, we should be able to remove those lines
+  attribute :title
+  attribute :description
+
   belongs_to :event, counter_cache: true, inverse_of: :talks
   belongs_to :member
 
