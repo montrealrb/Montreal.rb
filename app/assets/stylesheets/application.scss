@@ -1,20 +1,10 @@
 @import "bootstrap-sprockets";
+$brand-success:       #cc0100;
+@import "bootswatch/Flatly/variables";
 @import "bootstrap";
-@import "layouts/variables";
+@import "bootswatch/Flatly/bootswatch";
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-@import "layouts/default";
-
-@import "components/event";
-@import "components/job";
-@import "components/organization";
-@import "components/sponsorship";
-@import "components/emoji";
-
-@import "modules/header";
 @import "modules/navigation";
-@import "modules/footer";
-@import "modules/sidebar";
-@import "modules/alert";

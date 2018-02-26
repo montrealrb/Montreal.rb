@@ -63,6 +63,8 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootswatch-rails (3.3.5)
+      railties (>= 3.1)
     bourbon (5.0.0)
       sass (~> 3.4)
       thor (~> 0.19)
@@ -132,7 +134,7 @@ GEM
       i18n (>= 0.7)
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
-    ffi (1.9.22)
+    ffi (1.9.23)
     font-awesome-sass (5.0.6.2)
       sass (>= 3.2)
     formatador (0.2.5)
@@ -438,6 +440,7 @@ DEPENDENCIES
   annotate
   autoprefixer-rails
   bootstrap-sass
+  bootswatch-rails
   bourbon
   bugsnag
   bullet

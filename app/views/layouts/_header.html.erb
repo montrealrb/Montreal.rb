@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar">
+  <nav class="navbar navbar-inverse">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false">
@@ -7,13 +7,12 @@
           <%= icon('bars', class: 'fa-2x') %>
         </button>
 
-        <%= link_to root_path do %>
-          <h1>Montreal.rb</h1>
-          <p class="hidden-sm hidden-xs">Montreal's Ruby Community</p>
+        <%= link_to root_path, class: 'navbar-brand' do %>
+          Montreal.rb
         <% end %>
       </div>
 
-      <div class="collapse navbar-collapse" id="main-navbar">
+      <div class="collapse navbar-collapse " id="main-navbar">
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to 'Home', root_path %></li>
           <% if Job.published.any? %>

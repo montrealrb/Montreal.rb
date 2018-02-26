@@ -1,61 +1,30 @@
-.navbar-nav {
-  margin: 0 $padding;
+.navbar-login {
+  padding: 10px 10px 0;
+  width: 305px;
+}
 
-  > li {
-    background-color: $navbar-bg-color;
+.navbar-login-session {
+  padding: 0 10px;
+}
 
-    > a:hover,
-    > a:focus,
-    .dropdown.open {
-      background-color: $navbar-bg-highlight-color;
-      color: $navbar-text-color;
-    }
+.icon-size {
+  font-size: 87px;
+}
 
-    a {
-      color: $navbar-text-color;
-      font-family: $secondary-font;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
+.dropdown {
+
+  &.open .dropdown-toggle {
   }
 
-  .navbar-login {
-    padding: 10px 10px 0;
-    width: 305px;
-  }
-
-  .navbar-login-session {
-    padding: 0 10px;
-  }
-
-  .icon-size {
-    font-size: 87px;
-  }
-
-  .dropdown {
-    background-color: $navbar-bg-color;
-    color: $navbar-text-color;
-
-    &.open .dropdown-toggle {
-      background-color: $navbar-bg-highlight-color;
-      color: $navbar-text-color;
-    }
-
-    .dropdown-menu {
-      background-color: $navbar-bg-highlight-color;
-      border: 0;
-      color: $navbar-text-color;
-      width: 100%;
-    }
-  }
-
-  .divider {
-    background-color: $bg-secondary;
+  .dropdown-menu {
+    border: 0;
+    width: 100%;
   }
 }
 
+.divider {
+}
+
 .navbar-toggle {
-  color: $navbar-text-color;
-  margin-top: $padding;
 }
 

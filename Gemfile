@@ -13,6 +13,7 @@ gem "cloudinary"
 # Assets
 gem "autoprefixer-rails"
 gem "bootstrap-sass"
+gem 'bootswatch-rails'
 gem "coffee-rails"
 gem "font-awesome-sass"
 gem "jquery-rails"
