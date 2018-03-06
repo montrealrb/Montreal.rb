@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170930033724) do
+ActiveRecord::Schema.define(version: 20180208051724) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "name"
@@ -202,6 +202,7 @@ ActiveRecord::Schema.define(version: 20170930033724) do
     t.datetime "updated_at", null: false
     t.integer "member_id"
     t.string "format"
+    t.string "youtube_id"
     t.index ["event_id"], name: "index_talks_on_event_id"
     t.index ["member_id"], name: "index_talks_on_member_id"
   end

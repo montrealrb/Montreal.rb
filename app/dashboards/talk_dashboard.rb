@@ -19,6 +19,7 @@ class TalkDashboard < Administrate::BaseDashboard
     level: EnumField,
     format: EnumField,
     slides_url: Field::String,
+    youtube_id: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -53,6 +54,7 @@ class TalkDashboard < Administrate::BaseDashboard
     level
     format
     slides_url
+    youtube_id
   ).freeze
 
   # Overwrite this method to customize how talks are displayed

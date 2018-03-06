@@ -9,5 +9,6 @@ FactoryGirl.define do
     slides_url { Faker::Internet.url }
     event
     member
+    youtube_id "s0gKePTF31U"
   end
 end
