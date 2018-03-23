@@ -3,7 +3,7 @@
 require "rails_helper"
 
 RSpec.describe Admin::EventsController, type: :controller do
-  let(:admin) { FactoryGirl.create(:user, :admin) }
+  let(:admin) { create(:user, :admin) }
   let(:valid_attributes) do
     attributes_for(:event).merge(author: nil,
                                  location_id: create(:location).id)
@@ -39,7 +39,7 @@ RSpec.describe Admin::EventsController, type: :controller do
   end
 
   describe "PUT #update" do
-    let!(:event) { FactoryGirl.create(:event) }
+    let!(:event) { create(:event) }
     before do
       login_user(admin)
     end
@@ -50,7 +50,7 @@ RSpec.describe Admin::EventsController, type: :controller do
     end
 
     context "the event has a tweet value set to true" do
-      let!(:event) { FactoryGirl.create(:event) }
+      let!(:event) { create(:event) }
       let(:valid_attributes) do
         attributes_for(:event).merge(tweet: true)
       end
@@ -64,7 +64,7 @@ RSpec.describe Admin::EventsController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    let!(:event) { FactoryGirl.create(:event) }
+    let!(:event) { create(:event) }
     before do
       login_user(admin)
     end

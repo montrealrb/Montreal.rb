@@ -27,11 +27,11 @@ RSpec.describe NewsItem, type: :model do
   end
 
   describe "validation" do
-    subject { FactoryGirl.create(:news_item) }
+    subject { create(:news_item) }
     it { is_expected.to validate_presence_of(:state) }
 
     context "when published" do
-      subject { FactoryGirl.create(:news_item, :published) }
+      subject { create(:news_item, :published) }
 
       it { is_expected.to validate_presence_of(:published_at) }
       it { is_expected.to validate_presence_of(:title) }
@@ -47,7 +47,7 @@ RSpec.describe NewsItem, type: :model do
     end
 
     context "when draft" do
-      subject { FactoryGirl.create(:news_item, :draft) }
+      subject { create(:news_item, :draft) }
 
       it { is_expected.to_not validate_presence_of(:published_at) }
       it { is_expected.to_not validate_presence_of(:title) }
