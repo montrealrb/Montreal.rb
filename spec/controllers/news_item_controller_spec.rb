@@ -30,6 +30,10 @@ RSpec.describe NewsItemsController, type: :controller do
     it "renders the :index template" do
       expect(response).to render_template :index
     end
+
+    it "renders gravatar images" do
+      expect(response.body).to include('secure.gravatar.com/avatar/')
+    end
   end
 
   describe "GET #show" do

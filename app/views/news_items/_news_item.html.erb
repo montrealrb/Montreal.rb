@@ -4,6 +4,10 @@
   <p><%= icon 'calendar-o', class: 'fa-fw' %>Posted <%= time_ago_in_words(news_item.published_at) %> ago</p>
 </div>
 
+<div class="col-sm-3 hidden-xs">
+  <%= avatar_for(news_item.author.member, size: '100%', html: { class: "gravatar img-circle" })%>
+</div>
+
 <div class="markdown-body">
   <% content = short ? truncate(news_item.body, length: 200, separator: ' ') { link_to 'Continue...', news_item, class: 'btn btn-default clearfix' } : news_item.body %>
   <%= render_markdown_as_html content %>

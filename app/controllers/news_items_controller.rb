@@ -29,6 +29,6 @@ class NewsItemsController < ApplicationController
   end
 
   def news_item_scope
-    NewsItem.published
+    NewsItem.includes(author: [:member]).published
   end
 end
