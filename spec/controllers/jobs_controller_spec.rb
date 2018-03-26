@@ -4,7 +4,7 @@ require "rails_helper"
 
 RSpec.describe JobsController, type: :controller do
   let(:draft_job) { create(:job, :draft) }
-  let(:published_job) { create(:job, :published) }
+  let!(:published_job) { create(:job, :published) }
   let(:archived_job) { create(:job, :archived) }
 
   describe "GET #index" do
