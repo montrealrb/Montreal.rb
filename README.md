@@ -18,7 +18,7 @@ Want to contribute? First thing to look at are the Issues with the [priority](ht
 
 ### Runtime
 
-- ruby 2.4.0
+- ruby 2.5.0
 - Postgresql 9.3+
 
 ## Development Setup
@@ -31,7 +31,7 @@ $ git clone <your_fork> && cd Montreal.rb
 
 ### Ruby & Bundler
 
-You should have Ruby version `2.4.0` installed using your prefered Ruby version management tool (or by globally updating your system Ruby)
+You should have Ruby version `2.5.0` installed using your prefered Ruby version management tool (or by globally updating your system Ruby)
 
 __Most Popular Ruby Version Managers__
 
