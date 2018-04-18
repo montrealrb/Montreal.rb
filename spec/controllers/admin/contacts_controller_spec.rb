@@ -3,7 +3,7 @@
 require "rails_helper"
 
 RSpec.describe Admin::ContactsController, type: :controller do
-  let(:admin) { FactoryGirl.create(:user, :admin) }
+  let(:admin) { create(:user, :admin) }
   let(:valid_attributes) { attributes_for(:contact).merge(author: nil) }
 
   before do
