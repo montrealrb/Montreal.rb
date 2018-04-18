@@ -3,9 +3,9 @@
 require "rails_helper"
 
 RSpec.describe Event, type: :model do
-  let(:event) { FactoryGirl.create(:event) }
-  let(:member) { FactoryGirl.create(:member) }
-  let(:talks) { FactoryGirl.create_list(:talk, 5, event: event) }
+  let(:event) { create(:event) }
+  let(:member) { create(:member) }
+  let(:talks) { create_list(:talk, 5, event: event) }
   let(:tweet_service) { double(:service, call: true) }
 
   before do

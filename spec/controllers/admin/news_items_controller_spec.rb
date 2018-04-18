@@ -3,7 +3,7 @@
 require "rails_helper"
 
 RSpec.describe Admin::NewsItemsController, type: :controller do
-  let(:admin) { FactoryGirl.create(:user, :admin) }
+  let(:admin) { create(:user, :admin) }
   let(:valid_attributes) do
     attributes_for(:news_item).merge(author: nil)
   end
