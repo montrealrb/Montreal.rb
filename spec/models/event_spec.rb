@@ -1,25 +1,27 @@
 # frozen_string_literal: true
+
 require "rails_helper"
 
 RSpec.describe Event, type: :model do
-  let(:event) { FactoryGirl.create(:event) }
-  let(:member) { FactoryGirl.create(:member) }
-  let(:talks) { FactoryGirl.create_list(:talk, 5, event: event) }
+  let(:event) { create(:event) }
+  let(:member) { create(:member) }
+  let(:talks) { create_list(:talk, 5, event: event) }
   let(:tweet_service) { double(:service, call: true) }
 
   before do
     allow(TweetEventService).to receive(:new) { tweet_service }
   end
 
+  it_behaves_like "an author"
+
   describe "attributes" do
     it do
       is_expected.
-        to respond_to :starts_at, :location, :title, :author, :body, :state
+        to respond_to :starts_at, :location, :title, :body, :state
     end
 
     it { is_expected.to have_many :talks          }
     it { is_expected.to belong_to :location       }
-    it { is_expected.to belong_to :author         }
     it { is_expected.to have_many :sponsorships }
     it do
       is_expected.to have_many(:sponsors).
@@ -28,8 +30,8 @@ RSpec.describe Event, type: :model do
     end
 
     it "includes only scheduled talks" do
-      expect(event.talks).to     match talks.select { |t| t.state == "scheduled" }
-      expect(event.talks).to_not match talks.select { |t| t.state == "proposed"  }
+      expect(event.talks).to match(talks.select { |t| t.state == "scheduled" })
+      expect(event.talks).to_not match(talks.select { |t| t.state == "proposed" })
     end
   end
 
@@ -37,19 +39,12 @@ RSpec.describe Event, type: :model do
     it { is_expected.to validate_presence_of :starts_at }
     it { is_expected.to validate_presence_of :location  }
     it { is_expected.to validate_presence_of :title     }
-    it { is_expected.to validate_presence_of :author    }
     it { is_expected.to validate_presence_of :state     }
 
     it { is_expected.to validate_inclusion_of(:state).in_array Event::STATES }
   end
 
   context "when an event is authored" do
-    it "knows about its author" do
-      author = create(:user)
-      event = create(:event, author: author)
-      expect(event.author).to eq author
-    end
-
     it "does not validate when 'body' is blank" do
       event = Event.new(title: nil)
       expect(event).to be_invalid

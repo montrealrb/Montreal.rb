@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "administrate/base_dashboard"
 
 class PageDashboard < Administrate::BaseDashboard
@@ -23,11 +24,11 @@ class PageDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :id,
-    :title,
-    :state,
-  ].freeze
+  COLLECTION_ATTRIBUTES = %i(
+    id
+    title
+    state
+  ).freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -36,12 +37,12 @@ class PageDashboard < Administrate::BaseDashboard
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    :title,
-    :slug,
-    :body,
-    :state
-  ].freeze
+  FORM_ATTRIBUTES = %i(
+    title
+    slug
+    body
+    state
+  ).freeze
 
   # Overwrite this method to customize how Pages are displayed
   # across all pages of the admin dashboard.

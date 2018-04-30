@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Admin
   class EventsController < Admin::ApplicationController
     include AdministrateCustomization
@@ -15,6 +16,13 @@ module Admin
       tweet = params[:event].delete(:tweet)
       super
       requested_resource.tweet if requested_resource.errors.none? && tweet
+    end
+
+    private
+
+    def order
+      @_order ||= Administrate::Order.new(params.fetch(:order, :starts_at),
+                                          params.fetch(:direction, :desc))
     end
   end
 end

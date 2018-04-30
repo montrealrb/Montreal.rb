@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "administrate/base_dashboard"
 
 class EventDashboard < Administrate::BaseDashboard
@@ -25,13 +26,13 @@ class EventDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :title,
-    :state,
-    :talks,
-    :starts_at,
-    :location
-  ].freeze
+  COLLECTION_ATTRIBUTES = %i(
+    title
+    state
+    talks
+    starts_at
+    location
+  ).freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -40,14 +41,14 @@ class EventDashboard < Administrate::BaseDashboard
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    :title,
-    :state,
-    :body,
-    :sponsors,
-    :starts_at,
-    :location,
-  ].freeze
+  FORM_ATTRIBUTES = %i(
+    title
+    state
+    body
+    sponsors
+    starts_at
+    location
+  ).freeze
 
   # Overwrite this method to customize how events are displayed
   # across all pages of the admin dashboard.

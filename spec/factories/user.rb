@@ -1,6 +1,7 @@
 # frozen_string_literal: true
+
 # This will guess the User class
-FactoryGirl.define do
+FactoryBot.define do
   factory :user do
     email { Faker::Internet.email }
     password { Faker::Internet.password }

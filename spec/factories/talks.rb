@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-FactoryGirl.define do
+
+FactoryBot.define do
   factory :talk do
     title { Faker::Book.title }
     description { Faker::Lorem.sentence }
@@ -8,5 +9,6 @@ FactoryGirl.define do
     slides_url { Faker::Internet.url }
     event
     member
+    youtube_id "s0gKePTF31U"
   end
 end

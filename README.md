@@ -3,7 +3,6 @@
 [![Build Status](https://travis-ci.org/montrealrb/Montreal.rb.svg)](https://travis-ci.org/montrealrb/Montreal.rb)
 [![Dependency Status](https://gemnasium.com/montrealrb/Montreal.rb.svg)](https://gemnasium.com/montrealrb/Montreal.rb)
 [![Code Climate](https://codeclimate.com/github/montrealrb/Montreal.rb/badges/gpa.svg)](https://codeclimate.com/github/montrealrb/Montreal.rb)
-[![Coverage Status](https://coveralls.io/repos/montrealrb/Montreal.rb/badge.svg?branch=master&service=github)](https://coveralls.io/github/montrealrb/Montreal.rb?branch=master)
 [![Stories in Priority](https://badge.waffle.io/montrealrb/Montreal.rb.svg?label=priority&title=Priority)](http://waffle.io/montrealrb/Montreal.rb)
 
 ## Description
@@ -19,7 +18,7 @@ Want to contribute? First thing to look at are the Issues with the [priority](ht
 
 ### Runtime
 
-- ruby 2.3.1
+- ruby 2.5.0
 - Postgresql 9.3+
 
 ## Development Setup
@@ -32,7 +31,7 @@ $ git clone <your_fork> && cd Montreal.rb
 
 ### Ruby & Bundler
 
-You should have Ruby version `2.3.1` installed using your prefered Ruby version management tool (or by globally updating your system Ruby)
+You should have Ruby version `2.5.0` installed using your prefered Ruby version management tool (or by globally updating your system Ruby)
 
 __Most Popular Ruby Version Managers__
 
@@ -100,6 +99,17 @@ $ bin/rails server
 ```
 
 By default, your application is accessible at [http://localhost:3000](http://localhost:3000) in your browser.
+
+#### Code Style
+
+Rubocop is used to anaylize and enforce the code style accross all the codebase.
+Before opening a new pull request run:
+
+```bash
+$ rubocop -a
+```
+
+This command will automatically fix the majority of the code style issues and you'll make code-climate happy.
 
 ## Testing
 

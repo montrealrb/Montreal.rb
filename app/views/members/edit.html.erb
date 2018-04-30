@@ -31,7 +31,7 @@
     <div class="form-group">
       <%= f.label :picture, class: "col-sm-3 control-label" %>
       <div class="col-sm-9">
-        <%= f.text_field :picture, class: "form-control", placeholder: 'http://' %>
+        <%= f.url_field :picture, class: "form-control", placeholder: 'http://' %>
         <p class="help-block"><span class='text-danger'><%= @member.errors.full_messages_for(:picture).to_sentence %></span></p>
         <p class="help-block">It's better to chose a square picture or crop it. Leave this blank to use Gravatar, with your public email.</p>
       </div>
@@ -54,7 +54,7 @@
     <div class="form-group">
       <%= f.label :website, class: "col-sm-3 control-label" %>
       <div class="col-sm-9">
-        <%= f.text_field :website, class: "form-control" %>
+        <%= f.url_field :website, class: "form-control" %>
       </div>
     </div>
 

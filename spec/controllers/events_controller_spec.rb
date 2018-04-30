@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "rails_helper"
 
 RSpec.describe EventsController, type: :controller do
@@ -42,7 +43,7 @@ RSpec.describe EventsController, type: :controller do
 
   describe "GET #show" do
     before :each do
-      get :show, id: scheduled_event.id
+      get :show, params: { id: scheduled_event.id }
     end
 
     it "returns a 200 status code" do

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "rails_helper"
 
 RSpec.describe "Authentication" do
@@ -50,7 +51,7 @@ RSpec.describe "Authentication" do
       sign_in(admin)
 
       expect(current_path).to eq(admin_root_path)
-      expect(page).to have_css(".flash--notice", text: "success")
+      expect(page).to have_css(".flash-notice", text: "success")
     end
   end
 
