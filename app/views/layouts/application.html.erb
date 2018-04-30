@@ -29,7 +29,7 @@
           <h2> News </h2>
           <% @news_items.each do |news_item| %>
             <div class='card'>
-              <%= link_to render_markdown_as_html(news_item.title.titleize), news_item %>
+              <%= link_to render_markdown_as_html(news_item.title), news_item %>
               <small>Posted <%= time_ago_in_words(news_item.published_at) %> ago</small>
             </div>
           <% end %>

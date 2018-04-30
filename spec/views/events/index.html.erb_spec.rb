@@ -37,7 +37,7 @@ describe "events/index.html.erb" do
     it "displays the talks header" do
       render
       expect(rendered).to have_css "h3", text: "Talks"
-      expect(rendered).to have_css "p", text: "#{talk.title.titleize}, by #{member.name}"
+      expect(rendered).to have_css "p", text: "#{talk.title}, by #{member.name}"
     end
   end
 
