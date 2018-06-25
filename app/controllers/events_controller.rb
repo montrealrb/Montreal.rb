@@ -2,12 +2,25 @@
 
 class EventsController < ApplicationController
   def index
-    @past_events, @future_events = Event.published.includes(
+    grouped_events = Event.published.includes(
       :translations,
       :location,
       :talks,
       :sponsors
-    ).partition { |e| e.starts_at < Time.now }
+    ).order(:starts_at).group_by do |event|
+      if event.starts_at < Date.today
+        :past
+      elsif event.starts_at.to_date == Date.today
+        :today
+      else
+        :future
+      end
+    end
+    
+    @past_events, @todays_event, @future_events = grouped_events.values_at(
+      :past, :today, :future
+    )
+
   end
 
   def show

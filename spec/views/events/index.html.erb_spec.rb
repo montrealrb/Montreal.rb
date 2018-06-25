@@ -5,10 +5,13 @@ require "rails_helper"
 describe "events/index.html.erb" do
   let!(:future_event) { create :event, :scheduled, starts_at: 1.month.from_now }
   let!(:past_event)   { create :event, :scheduled, starts_at: 1.month.ago }
+  let!(:todays_event)  { create :event, :scheduled, starts_at: DateTime.now}
+
 
   before do
     assign :future_events, [future_event]
     assign :past_events, [past_event]
+    assign :todays_event, [todays_event]
   end
 
   it "displays all the events" do
