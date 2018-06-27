@@ -5,9 +5,7 @@ require "rails_helper"
 RSpec.describe "Authentication" do
   let(:user) { create(:user) }
   let(:admin) { create(:user, :admin) }
-  let!(:future_event) { create :event, :scheduled, starts_at: 1.month.from_now }
   let!(:past_event)   { create :event, :scheduled, starts_at: 1.month.ago }
-  let!(:todays_event)  { create :event, :scheduled, starts_at: DateTime.now}
 
   context "Guest user" do
     scenario "Can sign up", vcr: { match_requests_on: [
