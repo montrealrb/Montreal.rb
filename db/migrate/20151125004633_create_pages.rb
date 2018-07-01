@@ -1,4 +1,4 @@
-class CreatePages < ActiveRecord::Migration
+class CreatePages < ActiveRecord::Migration[5.1]
   def up
     create_table :pages do |t|
       t.string :state, null: false

@@ -1,4 +1,4 @@
-class CreateEvents < ActiveRecord::Migration
+class CreateEvents < ActiveRecord::Migration[5.1]
   class Event < ActiveRecord::Base
     translates :title, :introduction, :conclusion
   end

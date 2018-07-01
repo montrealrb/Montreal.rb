@@ -1,4 +1,4 @@
-class MakeEventsLocationIdRequired < ActiveRecord::Migration
+class MakeEventsLocationIdRequired < ActiveRecord::Migration[5.1]
   def up
     change_column :events, :location_id, :integer, null: false
   end

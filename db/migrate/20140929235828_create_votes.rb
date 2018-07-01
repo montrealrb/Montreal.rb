@@ -1,4 +1,4 @@
-class CreateVotes < ActiveRecord::Migration
+class CreateVotes < ActiveRecord::Migration[5.1]
   def change
     create_table :votes do |t|
       t.references :votable, polymorphic: true, index: true

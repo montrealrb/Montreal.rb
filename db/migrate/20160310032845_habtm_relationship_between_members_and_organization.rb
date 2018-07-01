@@ -1,4 +1,4 @@
-class HabtmRelationshipBetweenMembersAndOrganization < ActiveRecord::Migration
+class HabtmRelationshipBetweenMembersAndOrganization < ActiveRecord::Migration[5.1]
   def change
     create_table :members_organizations do |t|
       t.belongs_to :organization,  index: true
