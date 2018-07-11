@@ -2,8 +2,11 @@
   <div class="left">
     <ul>
       <li>Follow us:</li>
-      <li><%= link_to icon("twitter", "@montrealrb"), "https://twitter.com/montrealrb", target: "_blank" %></li>
-      <li><%= link_to icon("google", "Google group"), "https://groups.google.com/forum/?fromgroups#!forum/montrealrb", target: "_blank" %></li>
+      <li><%= social_media_link_for(:twitter, with_icon: true) %></li>
+      <li><%= social_media_link_for(:facebook, with_icon: true) %></li>
+      <li><%= social_media_link_for(:meetup, with_icon: true) %></li>
+      <li><%= social_media_link_for(:youtube, with_icon: true) %></li>
+      <li><%= link_to "Sign up", new_user_registration_path %></li>
     </ul>
   </div>
   <div class="right">
