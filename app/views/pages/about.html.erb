@@ -4,11 +4,14 @@
 <p>Montreal.rb is a community group of Montreal-based <a href="http://www.ruby-lang.org/" target="_blank">Ruby</a> and <a href="http://rubyonrails.org" target="_blank">Ruby on Rails</a> developers.
 It's aim is to help support local developers by creating a thriving forum for learning and discussion, and also just spread the RoR good word. We've drank the RoR Kool-Aid, and quite like it thank-you-very-much.
 We meet every 3rd Tuesday of each month at 18h30, most of the time at the <a href="http://notman.org/en/contact/" target="_blank">Notman House</a>.</p>
-<p>Even though this website is written in English, most of us speak French. Presentations are usually bilingual. Bienvenue à vous chers amis francophones!</p>
+<p>Even though this website is written in English, most of us speak French. Presentations are usually bilingual. Bienvenue à vous chers amis francophones !</p>
 <p>Ruby on Rails is an open-source web development framework that makes deploying modern web applications fun and easy. It was originally developed by the folks over at <a href="http://37signals.com" target="_blank">37Signals</a>. To them as well, our gratitude.</p>
 <p>If you want to connect with us, you can:</p>
 <ul>
   <li>email the organizer <a href="mailto:courrier@sophiedeziel.com">Sophie Déziel</a></li>
-  <li>follow us on twitter <a href="https://twitter.com/montrealrb" target="_blank">@montrealrb</a></li>
-  <li>join our Slack community by signing up to this website</li>
+  <li>follow us on twitter <%= social_media_link_for(:twitter) %></li>
+  <li>follow us on facebook <%= social_media_link_for(:facebook) %></li>
+  <li>join our meetup group <%= social_media_link_for(:meetup) %></li>
+  <li>check our youtube channel <%= social_media_link_for(:youtube) %></li>
+  <li>join our Slack community by <%= link_to "signing up", new_user_registration_path %> to this website</li>
 </ul>
