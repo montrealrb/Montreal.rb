@@ -7,7 +7,7 @@
 
     <div class="col-sm-9">
 
-      <h4><%= render_markdown_as_html "#{talk.title.titleize}, by #{talk.member.name}" %></h4>
+      <h4><%= render_markdown_as_html "#{talk.title}, by #{talk.member.name}" %></h4>
 
       <% if talk.event&.starts_at&.past? && talk.youtube_id.present? %>
         <iframe src="https://www.youtube.com/embed/<%= talk.youtube_id %>?rel=0&autoplay=0" frameborder="0" allowfullscreen width="640" height="360"></iframe>
