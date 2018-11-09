@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "factory_girl_rails"
+require "factory_bot_rails"
 
 FactoryBot.create(:user, email: "user@example.com", password: "password")
 FactoryBot.create(:user, :admin, email: "admin@example.com", password: "password")
