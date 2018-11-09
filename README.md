@@ -1,7 +1,6 @@
 # Montreal.rb website
 
 [![Build Status](https://travis-ci.org/montrealrb/Montreal.rb.svg)](https://travis-ci.org/montrealrb/Montreal.rb)
-[![Dependency Status](https://gemnasium.com/montrealrb/Montreal.rb.svg)](https://gemnasium.com/montrealrb/Montreal.rb)
 [![Code Climate](https://codeclimate.com/github/montrealrb/Montreal.rb/badges/gpa.svg)](https://codeclimate.com/github/montrealrb/Montreal.rb)
 [![Stories in Priority](https://badge.waffle.io/montrealrb/Montreal.rb.svg?label=priority&title=Priority)](http://waffle.io/montrealrb/Montreal.rb)
 
