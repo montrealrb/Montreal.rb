@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= "test"
 require "spec_helper"
@@ -13,7 +14,7 @@ require "webmock/rspec"
 WebMock.disable_net_connect!(allow_localhost: true)
 
 env_vars = %w(SLACK_TOKEN TWITTER_CONSUMER_KEY TWITTER_CONSUMER_SECRET
-              TWITTER_ACCESS_TOKEN TWITTER_ACCESS_SECRET)
+              TWITTER_ACCESS_TOKEN TWITTER_ACCESS_SECRET CLOUDINARY_URL)
 
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
@@ -64,7 +65,7 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
 
-  config.include Devise::TestHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :controller
   config.include ControllerMacros, type: :controller
 
   # Add VCR to all tests

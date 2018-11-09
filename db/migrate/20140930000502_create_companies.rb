@@ -1,4 +1,4 @@
-class CreateCompanies < ActiveRecord::Migration
+class CreateCompanies < ActiveRecord::Migration[5.1]
   class Company < ActiveRecord::Base
     translates :description
   end

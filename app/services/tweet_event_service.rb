@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class TweetEventService
   include Rails.application.routes.url_helpers
 

@@ -1,0 +1,61 @@
+<%= form_for @job do |f| %>
+  <div class="form-group">
+    <%= f.label :title %><br/>
+    <%= f.text_field :title, class: "form-control" %>
+    <small class='text-danger'>
+      <%= @job.errors.full_messages_for(:title).to_sentence %>
+    </small>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description %><br/>
+    <%= f.text_area :description, class: "form-control", rows: "5" %>
+    <small class='text-danger'>
+      <%= @job.errors.full_messages_for(:description).to_sentence %>
+    </small>
+    <div class="joblint-issues">
+      <a class="btn btn-primary joblint-issue" type="button">
+        Culture <span id="culture-issues-num" class="badge">0</span>
+      </a>
+      <a class="btn btn-primary joblint-issue" type="button">
+        Realism <span id="realism-issues-num" class="badge">0</span>
+      </a>
+      <a class="btn btn-primary joblint-issue" type="button">
+        Recruiter <span id="recruiter-issues-num" class="badge">0</span>
+      </a>
+
+      <a class="btn btn-primary joblint-issue" type="button">
+        Sexism <span id="sexism-issues-num" class="badge">0</span>
+      </a>
+
+      <a class="btn btn-primary joblint-issue" type="button">
+        Tech <span id="tech-issues-num" class="badge">0</span>
+      </a>
+    </div>
+    <div class='joblint-issue-desc-container list-group'></div>
+  </div>
+
+  <hr/>
+
+  <%= f.fields_for :organization do |o| %>
+    <div class="form-group">
+      <%= o.label :name, 'Organization Name' %><br/>
+      <%= o.text_field :name, class: "form-control" %>
+      <small class='text-danger'>
+        <%= @job.organization.errors.full_messages_for(:name).to_sentence %>
+      </small>
+    </div>
+
+    <div class="form-group">
+      <%= o.label :address, 'Organization Address' %><br/>
+      <%= o.text_field :address, class: "form-control" %>
+      <small class='text-danger'>
+        <%= @job.organization.errors.full_messages_for(:address).to_sentence %>
+      </small>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.submit 'Submit a job posting', class: 'btn btn-primary' %><br/>
+  </div>
+<% end %>

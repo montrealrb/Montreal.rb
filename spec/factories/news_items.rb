@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-FactoryGirl.define do
+
+FactoryBot.define do
   # Default factory is a NewsItem that has just been published
   factory :news_item do
     association :author, factory: :user

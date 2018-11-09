@@ -1,10 +1,15 @@
 # frozen_string_literal: true
+
 class Page < ActiveRecord::Base
   extend Enumerize
   extend FriendlyId
 
   translates :title, :body
-  friendly_id :title, use: [:slugged, :history]
+  # Someday, we should be able to remove those lines
+  attribute :title
+  attribute :body
+
+  friendly_id :title, use: %i(slugged history)
 
   # Static Class Variables
   STATES = %i(draft published archived).freeze

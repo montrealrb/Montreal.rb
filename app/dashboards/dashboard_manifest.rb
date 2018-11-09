@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # DashboardManifest tells Administrate which dashboards to display
 class DashboardManifest
   # `DASHBOARDS`
@@ -10,18 +11,19 @@ class DashboardManifest
   # To show or hide dashboards, add or remove the model name from this list.
   # Dashboards returned from this method must be Rails models for Administrate
   # to work correctly.
-  DASHBOARDS = [
-    :news_items,
-    :events,
-    :talks,
-    :locations,
-    :jobs,
-    :organizations,
-    :sponsorships,
-    :pages,
-    :members,
-    :users,
-  ].freeze
+  DASHBOARDS = %i(
+    news_items
+    events
+    talks
+    locations
+    jobs
+    organizations
+    sponsorships
+    pages
+    members
+    users
+    contacts
+  ).freeze
 
   # `ROOT_DASHBOARD`
   # the name of the dashboard that will be displayed

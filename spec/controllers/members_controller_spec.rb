@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "rails_helper"
 
 RSpec.describe MembersController, type: :controller do
@@ -21,7 +22,7 @@ RSpec.describe MembersController, type: :controller do
   end
 
   describe "#update" do
-    subject { post :update, member: { twitter_handle: "RailsbridgeMTL" } }
+    subject { post :update, params: { member: { twitter_handle: "RailsbridgeMTL" } } }
 
     context "user is authenticated" do
       before { sign_in user }
@@ -29,16 +30,16 @@ RSpec.describe MembersController, type: :controller do
       it { is_expected.to redirect_to edit_member_path }
 
       it "updates the member" do
-        expect { subject }.to change { member.reload.twitter_handle }
+        expect { subject }.to(change { member.reload.twitter_handle })
       end
 
       context "with invalid attributes" do
-        subject { post :update, member: { name: nil } }
+        subject { post :update, params: { member: { name: nil } } }
 
         it { is_expected.to render_template :edit }
 
         it "updates the member" do
-          expect { subject }.to_not change { member.reload.twitter_handle }
+          expect { subject }.to_not(change { member.reload.twitter_handle })
         end
       end
     end

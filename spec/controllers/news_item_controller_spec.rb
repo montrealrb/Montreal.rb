@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "rails_helper"
 
 RSpec.describe NewsItemsController, type: :controller do
@@ -36,7 +37,7 @@ RSpec.describe NewsItemsController, type: :controller do
       let(:published_news_item) { create(:news_item, :published) }
 
       before :each do
-        get :show, id: published_news_item
+        get :show, params: { id: published_news_item }
       end
 
       it "returns a 200 status code" do
@@ -56,7 +57,7 @@ RSpec.describe NewsItemsController, type: :controller do
       let(:slugged_news_item) { create(:news_item, :slugged, :published) }
 
       it "finds that legacy post" do
-        get :show, year: 2014, month: 10, slug: slugged_news_item.slug
+        get :show, params: { year: 2014, month: 10, slug: slugged_news_item.slug }
         expect(response).to have_http_status(200)
       end
     end
@@ -68,7 +69,7 @@ RSpec.describe NewsItemsController, type: :controller do
       it "raises a RecordNotFound error" do
         [draft_news_item, archived_news_item].each do |news_item|
           expect do
-            get :show, id: news_item
+            get :show, params: { id: news_item }
           end.to raise_error ActiveRecord::RecordNotFound
         end
       end

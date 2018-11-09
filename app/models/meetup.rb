@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: events
@@ -11,8 +12,6 @@
 #
 
 class Meetup < Event
-  extend Globalized
-
   class NotScheduledYet
     def starts_at
       date = third_tuesday_of(Time.current)
@@ -30,8 +29,12 @@ class Meetup < Event
   end
 
   translates :title, :body
+  # Someday, we should be able to remove those lines
+  attribute :title
+  attribute :body
+
   globalize_accessors locales: I18n.available_locales, attributes: %i(title introduction conclusion)
-  validates_translated :title, :introduction, :conclusion, presence: true
+  # validates_translated :title, :introduction, :conclusion, presence: true
 
   def self.next
     order(starts_at: :asc).find_by("starts_at > ?", Time.now) || NotScheduledYet.new

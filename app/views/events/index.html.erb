@@ -4,7 +4,7 @@
   <h1>Upcoming <%= 'Event'.pluralize(@future_events.count) %></h1>
 
   <div class='future-events'>
-    <%= render @future_events %>
+    <%= render @future_events.reverse %>
   </div>
 <% end %>
 

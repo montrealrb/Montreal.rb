@@ -1,20 +1,17 @@
 rvm:
-- 2.3.1
+- 2.5.0
 cache: bundler
 sudo: false
 addons:
   postgresql: '9.3'
+env:
+  global:
+    - CC_TEST_REPORTER_ID=d05f235d89f9ff5f56c0de10d4c0abf62ae81349a6c950608358c1b9f21db3c5
 before_script:
-- bundle exec rake db:create
-- bundle exec rake db:schema:load
-deploy:
-  provider: heroku
-  api_key:
-    secure: a/vnDaQNpByGGhGx+DZu4EbhZj5wdRhPEZdFCY5bCt8pJiK+v3uIXEhVI6dmBv3aLPEe4OhGYn8aSHIUbfvoIh3aAXKQwnrL5KIBtX6/cSeEJXmGD6OQbIN5o7M6kqA79wJrfofX4qlUTVszhOEKj0iLAM2XoxMALYJk98Vxz1A=
-  app: montreal-rb
-  on:
-    repo: montrealrb/Montreal.rb
-    branch: master
-  run:
-    - "rake db:migrate"
-    - restart
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+  - bundle exec rake db:create
+  - bundle exec rake db:schema:load
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
