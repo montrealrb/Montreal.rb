@@ -1,4 +1,4 @@
-class AddBodyToEvent < ActiveRecord::Migration
+class AddBodyToEvent < ActiveRecord::Migration[5.1]
   def up
     Event.add_translation_fields! body: :text
   end

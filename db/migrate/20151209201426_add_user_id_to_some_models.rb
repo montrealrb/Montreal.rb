@@ -1,4 +1,4 @@
-class AddUserIdToSomeModels < ActiveRecord::Migration
+class AddUserIdToSomeModels < ActiveRecord::Migration[5.1]
   def up
 
     User.create_default_user! if User.default_user.blank?

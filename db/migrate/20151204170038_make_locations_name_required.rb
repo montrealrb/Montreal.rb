@@ -1,4 +1,4 @@
-class MakeLocationsNameRequired < ActiveRecord::Migration
+class MakeLocationsNameRequired < ActiveRecord::Migration[5.1]
   def up
     change_column :locations, :name, :string, null: false
   end
