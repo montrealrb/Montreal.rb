@@ -10,6 +10,7 @@ feature "User signs in with twitter account", '
 ' do
 
   describe "access to questions index" do
+     let!(:past_event)   { create :event, :scheduled, starts_at: 1.month.ago }
     background do
       visit root_path
       click_on "Log in"

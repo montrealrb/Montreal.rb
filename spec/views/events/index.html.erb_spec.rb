@@ -6,6 +6,7 @@ describe "events/index.html.erb" do
   let!(:future_event) { create :event, :scheduled, starts_at: 1.month.from_now }
   let!(:past_event)   { create :event, :scheduled, starts_at: 1.month.ago }
 
+
   before do
     assign :future_events, [future_event]
     assign :past_events, [past_event]
@@ -28,6 +29,15 @@ describe "events/index.html.erb" do
     it "does not display anything about upcoming events" do
       render
       expect(rendered).not_to have_css "h2", text: "Upcoming Event"
+    end
+  end
+
+  context "there are no events today" do
+    before { assign :today_event, [] }
+
+    it "does not display anything about today's events" do
+      render
+      expect(rendered).not_to have_css "h1", text: "Today's Event"
     end
   end
 
