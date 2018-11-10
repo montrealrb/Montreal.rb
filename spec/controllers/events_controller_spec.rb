@@ -7,6 +7,7 @@ RSpec.describe EventsController, type: :controller do
   let!(:scheduled_event) { create(:event, :scheduled, starts_at: Date.tomorrow) }
   let!(:past_event)      { create(:event, :scheduled, starts_at: 1.month.ago) }
   let!(:future_event)    { create(:event, :scheduled, starts_at: 1.month.from_now) }
+  let!(:today_event)  { create :event, :scheduled, starts_at: DateTime.now}
 
   describe "GET #index" do
     before :each do
@@ -24,6 +25,7 @@ RSpec.describe EventsController, type: :controller do
     it "does not include proposed events" do
       expect(assigns(:past_events)).not_to   include proposed_event
       expect(assigns(:future_events)).not_to include proposed_event
+      expect(assigns(:todays_event)).not_to include proposed_event
     end
 
     it "renders the :index template" do
@@ -33,11 +35,21 @@ RSpec.describe EventsController, type: :controller do
     it "gets past events" do
       expect(assigns(:past_events)).to     include past_event
       expect(assigns(:past_events)).not_to include future_event
+      expect(assigns(:past_events)).not_to include today_event
+
     end
 
     it "gets future events" do
       expect(assigns(:future_events)).to     include future_event
       expect(assigns(:future_events)).not_to include past_event
+      expect(assigns(:future_events)).not_to include today_event
+    end
+
+    it "gets todays event" do
+      expect(assigns(:todays_event)).to     include today_event
+      expect(assigns(:todays_event)).not_to include past_event
+      expect(assigns(:todays_event)).not_to include future_event
+
     end
   end
 
