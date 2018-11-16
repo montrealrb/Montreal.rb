@@ -18,8 +18,11 @@
   </div>
 <% end %>
 
-<h1>Past Events</h1>
+<% if @past_events %>
+  <h1>Past Events</h1>
 
-<div class='past-events'>
-  <%= render @past_events %>
-</div>
+  <div class='past-events'>
+    <%= render @past_events %>
+  </div>
+<% end %>
+
