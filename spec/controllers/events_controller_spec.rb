@@ -7,7 +7,13 @@ RSpec.describe EventsController, type: :controller do
   let!(:scheduled_event) { create(:event, :scheduled, starts_at: Date.tomorrow) }
   let!(:past_event)      { create(:event, :scheduled, starts_at: 1.month.ago) }
   let!(:future_event)    { create(:event, :scheduled, starts_at: 1.month.from_now) }
-  let!(:today_event)  { create :event, :scheduled, starts_at: DateTime.now}
+  let!(:today_event)     { create :event, :scheduled, starts_at: Date.current }
+
+  around do |example|
+    travel_to Time.zone.local(2018, 07, 20, 15, 0, 0)
+    example.run
+    travel_back
+  end
 
   describe "GET #index" do
     before :each do
