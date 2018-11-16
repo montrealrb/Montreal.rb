@@ -19,7 +19,7 @@
           <% if Job.published.any? %>
             <li><%= link_to 'Jobs', jobs_path %></li>
           <% end %>
-          <li><%= link_to 'About', about_path %></li>
+          <li><%= link_to 'About', page_path('about') %></li>
           <% if Event.published.any? %>
             <li><%= link_to 'Events', events_path %></li>
           <% end %>
