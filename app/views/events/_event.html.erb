@@ -1,8 +1,8 @@
 <h2><%= link_to render_markdown_as_html(event.title), event %></h2>
 
 <div class="meta">
-  <p><%= icon 'calendar-o', class: 'fa-fw' %><%= event.starts_at.strftime('%B %e, %Y  -  %k:%M') %></p>
-  <p><%= icon 'map-marker', class: 'fa-fw' %><%= event.location.name %>, <a href="https://www.google.ca/maps/search/<%= event.location.address %>", target='_blank'><%= event.location.address %></a></p>
+  <p><%= icon 'far', 'calendar-check', class: 'fa-fw' %> <%= event.starts_at.strftime('%B %e, %Y  -  %k:%M') %></p>
+  <p><%= icon 'fas', 'map-marker-alt', class: 'fa-fw' %> <%= event.location.name %>, <a href="https://www.google.ca/maps/search/<%= event.location.address %>", target='_blank'><%= event.location.address %></a></p>
 </div>
 
 <div>
@@ -20,6 +20,11 @@
   <% if event.sponsorships.any? %>
     <h3>Brought to you by our sponsors: </h3>
     <%= render event.sponsorships %>
+  <% end %>
+
+  <% if event.organizer.present? %>
+    <h3>Organized by: </h3>
+    <%= render event.organizer %>
   <% end %>
 </div>
 <hr/>

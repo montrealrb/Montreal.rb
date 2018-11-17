@@ -6,6 +6,7 @@ class HomeController < ApplicationController
       :translations,
       :location,
       :sponsors,
+      :organizer,
       talks: %i(member translations)
     ).order(:starts_at).limit(5).group_by do |event|
       if event.starts_at < Date.today
@@ -19,7 +20,7 @@ class HomeController < ApplicationController
     @past_events, @todays_event, @future_events = grouped_events.values_at(
       :past, :today, :future
     )
-    
+
   end
 
 end
