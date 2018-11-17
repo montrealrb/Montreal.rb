@@ -11,7 +11,6 @@ class MemberDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id:             Field::Number,
-    events:         Field::HasMany,
     organizations:  Field::HasMany,
     user:           Field::BelongsTo,
     name:           Field::String,
@@ -55,7 +54,6 @@ class MemberDashboard < Administrate::BaseDashboard
     website
     biography
     organizations
-    events
   ).freeze
 
   # Overwrite this method to customize how members are displayed

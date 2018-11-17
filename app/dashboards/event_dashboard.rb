@@ -11,6 +11,7 @@ class EventDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     location: Field::BelongsTo,
+    organizer: Field::BelongsTo.with_options(class_name: "Member", scope: -> { Member.includes(:user).where(users: { admin: true } ) }),
     sponsors: Field::HasMany.with_options(class_name: "Organization"),
     talks: Field::HasMany,
     starts_at: Field::DateTime,
@@ -29,6 +30,7 @@ class EventDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i(
     title
     state
+    organizer
     talks
     starts_at
     location
@@ -44,6 +46,7 @@ class EventDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i(
     title
     state
+    organizer
     body
     sponsors
     starts_at
