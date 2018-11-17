@@ -5,7 +5,7 @@
         Community
       </h1>
       <ul>
-      <li> <%= link_to 'Subscribe to have access to our Slack team, and more!', new_user_registration_path %> </li>
+      <li><%= link_to 'Subscribe to have access to our Slack team, and more!', new_user_registration_path %></li>
       <li><%= link_to "Code of Conduct", page_path('code-of-conduct') %></li>
       </ul>
     </div>
@@ -16,10 +16,10 @@
       </h1>
 
       <ul>
-        <li><%= link_to icon('fab', "facebook", "Facebook"), "https://www.facebook.com/montrealrb", target: "_blank" %></li>
-        <li><%= link_to icon("fab", "twitter", '@montrealrb'), "https://twitter.com/montrealrb", target: "_blank" %></li>
-        <li><%= link_to icon('fab', "meetup", "meetup.com"), "https://www.meetup.com/mtl-rb/", target: "_blank" %></li>
-        <li><%= link_to icon('fab', "youtube", "YouTube"), "https://www.youtube.com/channel/UCmq5nOaMp18rcljeFocUUqw", target: "_blank"%></li>
+        <li><%= social_media_link_for(:twitter, with_icon: true) %></li>
+        <li><%= social_media_link_for(:facebook, with_icon: true) %></li>
+        <li><%= social_media_link_for(:meetup, with_icon: true) %></li>
+        <li><%= social_media_link_for(:youtube, with_icon: true) %></li>
       </ul>
     </div>
   </section>
