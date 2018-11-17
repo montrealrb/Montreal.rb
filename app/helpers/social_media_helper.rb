@@ -24,7 +24,7 @@ module SocialMediaHelper
 
     if with_icon
       link_to(
-        icon('fa', type.to_s, SOCIAL_MEDIA_DATA[type][:mention]),
+        icon('fab', type.to_s, SOCIAL_MEDIA_DATA[type][:mention]),
         SOCIAL_MEDIA_DATA[type][:url], target: "_blank"
       )
     else

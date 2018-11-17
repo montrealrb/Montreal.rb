@@ -15,7 +15,7 @@ RSpec.describe SocialMediaHelper do
       subject(:built_link) { social_media_link_for(:facebook, with_icon: true) }
 
       it "returns a link with an icon" do
-        expect(built_link).to include('<i class="fa fa-facebook"></i>')
+        expect(built_link).to include('<i class="fab fa-facebook"></i>')
       end
     end
 
