@@ -30,9 +30,10 @@ class EventDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i(
     title
     state
+    starts_at
     organizer
     talks
-    starts_at
+    sponsors
     location
   ).freeze
 

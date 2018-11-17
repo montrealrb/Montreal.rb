@@ -12,6 +12,7 @@ class DashboardManifest
   # Dashboards returned from this method must be Rails models for Administrate
   # to work correctly.
   DASHBOARDS = %i(
+    my_events
     news_items
     events
     talks
