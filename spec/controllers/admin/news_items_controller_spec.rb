@@ -7,12 +7,19 @@ RSpec.describe Admin::NewsItemsController, type: :controller do
   let(:valid_attributes) do
     attributes_for(:news_item).merge(author: nil)
   end
+  before do
+    login_user(admin)
+  end
+
+
+  describe "GET #index" do
+    it "status is ok" do
+      get :index
+      expect(response.status).to eq 200
+    end
+  end
 
   describe "POST #create" do
-    before do
-      login_user(admin)
-    end
-
     it "creates a new news_item" do
       expect do
         post :create, params: { news_item: valid_attributes }
@@ -27,9 +34,6 @@ RSpec.describe Admin::NewsItemsController, type: :controller do
 
   describe "PUT #update" do
     let(:news_item) { create :news_item }
-    before do
-      login_user(admin)
-    end
 
     it "assigns the current user to the 'author' field" do
       put :update, params: { id: news_item.id, news_item: news_item.attributes }

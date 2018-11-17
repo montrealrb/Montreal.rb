@@ -8,15 +8,15 @@ class EventsController < ApplicationController
       :talks,
       :sponsors
     ).order(:starts_at).group_by do |event|
-      if event.starts_at < Date.today
+      if event.starts_at < Time.zone.today
         :past
-      elsif event.starts_at.to_date == Date.today
+      elsif event.starts_at.to_date == Time.zone.today
         :today
       else
         :future
       end
     end
-    
+
     @past_events, @todays_event, @future_events = grouped_events.values_at(
       :past, :today, :future
     )
