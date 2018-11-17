@@ -1,15 +1,30 @@
 <footer>
-  <div class="left">
-    <ul>
-      <li>Follow us:</li>
-      <li><%= link_to icon('fab', "facebook", "Facebook"), "https://www.facebook.com/montrealrb", target: "_blank" %></li>
-      <li><%= link_to icon("fab", "twitter", '@montrealrb'), "https://twitter.com/montrealrb", target: "_blank" %></li>
-      <li><%= link_to icon('fab', "meetup", "meetup.com"), "https://www.meetup.com/mtl-rb/", target: "_blank" %></li>
-      <li><%= link_to icon('fab', "youtube", "YouTube"), "https://www.youtube.com/channel/UCmq5nOaMp18rcljeFocUUqw", target: "_blank"%></li>
-    </ul>
-  </div>
-  <div class="right">
+  <section class="links">
+    <div class="left">
+      <h1>
+        Community
+      </h1>
+      <ul>
+      <li> <%= link_to 'Subscribe to have access to our Slack team, and more!', new_user_registration_path %> </li>
+      <li><%= link_to "Code of Conduct", page_path('code-of-conduct') %></li>
+      </ul>
+    </div>
+
+    <div class="left">
+      <h1>
+        Follow us:
+      </h1>
+
+      <ul>
+        <li><%= link_to icon('fab', "facebook", "Facebook"), "https://www.facebook.com/montrealrb", target: "_blank" %></li>
+        <li><%= link_to icon("fab", "twitter", '@montrealrb'), "https://twitter.com/montrealrb", target: "_blank" %></li>
+        <li><%= link_to icon('fab', "meetup", "meetup.com"), "https://www.meetup.com/mtl-rb/", target: "_blank" %></li>
+        <li><%= link_to icon('fab', "youtube", "YouTube"), "https://www.youtube.com/channel/UCmq5nOaMp18rcljeFocUUqw", target: "_blank"%></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
     <p>Montreal.rb &copy; <%= Time.current.year %></p>
-    <p><%= link_to "Code of Conduct", page_path('code-of-conduct') %></p>
-  </div>
+  </section>
 </footer>
