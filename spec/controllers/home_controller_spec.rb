@@ -6,6 +6,7 @@ RSpec.describe HomeController, type: :controller do
   let!(:proposed_event)  { create :event, :proposed }
   let!(:past_event)      { create :event, :scheduled, starts_at: 1.month.ago }
   let!(:future_event)    { create :event, :scheduled, starts_at: 1.month.from_now }
+  let!(:todays_event)    { create :event, :scheduled, starts_at: Time.zone.today }
 
   describe "#index" do
     before do
@@ -22,11 +23,19 @@ RSpec.describe HomeController, type: :controller do
     it "gets past events" do
       expect(assigns(:past_events)).to     include past_event
       expect(assigns(:past_events)).not_to include future_event
+      expect(assigns(:past_events)).not_to include todays_event
     end
 
     it "gets future events" do
       expect(assigns(:future_events)).to     include future_event
       expect(assigns(:future_events)).not_to include past_event
+      expect(assigns(:future_events)).not_to include todays_event
+    end
+
+    it "gets today's events" do
+      expect(assigns(:todays_event)).not_to include future_event
+      expect(assigns(:todays_event)).not_to include past_event
+      expect(assigns(:todays_event)).to     include todays_event
     end
   end
 end

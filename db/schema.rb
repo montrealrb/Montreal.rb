@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180208051724) do
+ActiveRecord::Schema.define(version: 20181117014059) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "name"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20180208051724) do
     t.string "state", default: "proposed"
     t.integer "talks_count", default: 0
     t.integer "sponsorships_count", default: 0
+    t.integer "organizer_id"
     t.index ["location_id"], name: "index_events_on_location_id"
     t.index ["starts_at"], name: "index_events_on_starts_at"
     t.index ["user_id"], name: "index_events_on_user_id"

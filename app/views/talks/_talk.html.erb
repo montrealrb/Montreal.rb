@@ -25,7 +25,14 @@
         <%= render_markdown_as_html talk.description %>
       </div>
 
-      <%= render talk.member %>
+      <%- about_speaker = capture do %>
+        <%= render talk.member %>
+      <% end %>
+
+      <%- if about_speaker %>
+        <h3>About the speaker </h4>
+        <%= about_speaker %>
+      <% end %>
     </div>
   </div>
 </div>
