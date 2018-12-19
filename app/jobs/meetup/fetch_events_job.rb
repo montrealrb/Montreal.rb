@@ -16,7 +16,7 @@ module Meetup
     private
       def fetch_events
         @events ||= begin
-          timestamp_range = [(@from_time.to_i * 1000), (@to_time ? @to_time.to_i * 1000 : nil)].join(',')
+          timestamp_range = [(@from_time.to_i * 1000), (@to_time ? @to_time.to_i * 1000 : nil)].compact.join(',')
           data = meetup_client.events({ group_urlname: ENV['MEETUP_URLNAME'], status: 'upcoming,past', time: timestamp_range })
           data['results']
         end
