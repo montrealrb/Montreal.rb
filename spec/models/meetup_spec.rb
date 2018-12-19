@@ -2,14 +2,14 @@
 
 require "rails_helper"
 
-RSpec.describe Meetup, type: :model do
+RSpec.describe Event::Meetup, type: :model do
   describe ".next" do
     it "returns a Meetup::NotScheduledYet if there is upcomming meetups" do
-      expect(Meetup.next).to be_a Meetup::NotScheduledYet
+      expect(Event::Meetup.next).to be_a Event::Meetup::NotScheduledYet
     end
   end
 
-  describe Meetup::NotScheduledYet do
+  describe Event::Meetup::NotScheduledYet do
     describe "#starts_at" do
       let(:next_meetup) { described_class.new }
 
