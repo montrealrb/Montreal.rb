@@ -5,7 +5,7 @@ module Meetup
       @from_time = from_time
       @to_time = to_time
 
-      fetch_events['results'].each do |meetup_event|
+      fetch_events.each do |meetup_event|
         time = DateTime.strptime(meetup_event['time'].to_s, '%Q').in_time_zone
         if event = Event.where(starts_at: (time - 1.day)..(time + 1.day)).sort_by{|e| (e.starts_at - time).abs}.first
           event.update rsvp_count: meetup_event['yes_rsvp_count']
@@ -15,8 +15,11 @@ module Meetup
 
     private
       def fetch_events
-        timestamp_range = [(@from_time.to_i * 1000), (@to_time ? @to_time.to_i * 1000 : nil)].join(',')
-        @events ||= meetup_client.events({ group_urlname: ENV['MEETUP_URLNAME'], status: 'upcoming,past', time: timestamp_range })
+        @events ||= begin
+          timestamp_range = [(@from_time.to_i * 1000), (@to_time ? @to_time.to_i * 1000 : nil)].join(',')
+          data = meetup_client.events({ group_urlname: ENV['MEETUP_URLNAME'], status: 'upcoming,past', time: timestamp_range })
+          data['results']
+        end
       end
 
   end
