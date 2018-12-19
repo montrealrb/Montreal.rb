@@ -61,6 +61,9 @@ gem "colorize"
 # Authorization system
 gem "pundit"
 
+# Meetup API
+gem 'meetup_client'
+
 group :development do
   gem "annotate"
   gem "bullet"
