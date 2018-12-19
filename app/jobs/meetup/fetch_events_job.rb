@@ -1,17 +1,22 @@
 module Meetup
   class FetchEventsJob < BaseJob
 
-    def perform()
-      fetch_events['results'].each do |event|
-        # TODO: find the closest event (event['time'])
-        #       update events rsvp count count (event['yes_rsvp_count']);
-        #       possibly store the Meetup ID? (event['id'])
+    def perform(from_time=Time.now.beginning_of_day, to_time=nil)
+      @from_time = from_time
+      @to_time = to_time
+
+      fetch_events['results'].each do |meetup_event|
+        time = DateTime.strptime(meetup_event['time'].to_s, '%Q').in_time_zone
+        if event = Event.where(starts_at: (time - 1.day)..(time + 1.day)).sort_by{|e| (e.starts_at - time).abs}.first
+          event.update rsvp_count: meetup_event['yes_rsvp_count']
+        end
       end
     end
 
     private
       def fetch_events
-        @events ||= meetup_client.events({ group_urlname: ENV['MEETUP_URLNAME'], status: 'upcoming,past', time: "#{Time.now.beginning_of_month.to_i * 1000},#{Time.now.end_of_month.to_i * 1000}" })
+        timestamp_range = [(@from_time.to_i * 1000), (@to_time ? @to_time.to_i * 1000 : nil)].join(',')
+        @events ||= meetup_client.events({ group_urlname: ENV['MEETUP_URLNAME'], status: 'upcoming,past', time: timestamp_range })
       end
 
   end
