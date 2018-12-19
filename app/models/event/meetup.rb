@@ -11,7 +11,7 @@
 #  updated_at :datetime
 #
 
-module Event
+class Event
   class Meetup < ::Event
     class NotScheduledYet
       def starts_at
