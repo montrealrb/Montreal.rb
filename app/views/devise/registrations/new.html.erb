@@ -13,6 +13,11 @@
 
   <p>By signing up, you agree to follow our <%= link_to "code of conduct", page_path('code-of-conduct') %>.</a></p>
 
+  <div class='form-group' >
+    <%= flash[:recaptcha_error] %>
+    <%= recaptcha_tags %>
+  </div>
+
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div>

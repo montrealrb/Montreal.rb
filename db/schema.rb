@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 20181117014059) do
 
   create_table "events", force: :cascade do |t|
     t.datetime "starts_at", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "location_id", null: false
     t.integer "user_id", null: false
     t.string "state", default: "proposed"
@@ -97,8 +97,8 @@ ActiveRecord::Schema.define(version: 20181117014059) do
     t.string "name", null: false
     t.text "address"
     t.string "url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "members", force: :cascade do |t|
@@ -149,8 +149,8 @@ ActiveRecord::Schema.define(version: 20181117014059) do
     t.string "name", null: false
     t.string "address"
     t.string "logo"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["name"], name: "index_organizations_on_name"
   end
 
@@ -159,8 +159,8 @@ ActiveRecord::Schema.define(version: 20181117014059) do
     t.string "locale", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "body"
-    t.string "title", null: false
+    t.string "body", null: false
+    t.string "title"
     t.index ["locale"], name: "index_page_translations_on_locale"
     t.index ["page_id"], name: "index_page_translations_on_page_id"
   end
@@ -219,8 +219,8 @@ ActiveRecord::Schema.define(version: 20181117014059) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "provider"
     t.string "uid"
     t.boolean "admin", default: false, null: false

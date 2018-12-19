@@ -21,6 +21,7 @@ gem "uglifier"
 
 # Application
 gem "devise"
+gem "recaptcha"
 gem "friendly_id"
 gem "omniauth-github"
 gem "omniauth-twitter"
