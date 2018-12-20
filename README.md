@@ -75,6 +75,8 @@ To tweet automatically when content is published, you can register an app on [Tw
  and set the keys to your environment variables. If you choose not to, don't set the variables and
  the app will simply skip the tweeting feature.
 
+reCAPTCHA is used for preventing bots from signing up fake accounts. You will need to get a secret key and and site key from [Google](https://www.google.com/recaptcha/admin#list). Then set the RECAPTCHA_SITE_KEY and RECAPTCHA_SECRET_KEY environment variables.
+
 Now you need to set the environment variables on your server. The procedure
 will depend on your system.
 
