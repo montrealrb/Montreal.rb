@@ -15,10 +15,6 @@ Rails.application.routes.draw do
                registrations: "users/registrations"
              }
 
-  # NOTE: temporary pages, remove when pages admin module is finished
-  get "/about", to: "pages#about", as: :about
-  get "/code-of-conduct", to: "pages#code_of_conduct", as: :code_of_conduct
-
   # privacy policy and terms of service - for Twitter authentication
   get "/terms", to: redirect("/terms.html")
   get "/privacy", to: redirect("/privacy.html")

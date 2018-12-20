@@ -1,6 +1,6 @@
 <% if member.company.present? || member.website.present? || member.biography.present? %>
 
-  <h4>About <%= member.name %></h4>
+  <h4><%= member.name %></h4>
   <%= member.company %>
 
   <% if member.website.present? %>

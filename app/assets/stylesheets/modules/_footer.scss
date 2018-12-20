@@ -4,12 +4,15 @@ footer {
   font-family: $secondary-font;
   padding: $gutter $padding;
   margin-top: $gutter;
-  display: flex;
   align-items: center;
 
-  .right {
-    flex: 1;
-    text-align: right;
+  .links{
+    display: flex;
+  }
+
+  h1 {
+    padding-bottom: 0;
+    font-size: 1.5em;
   }
 
   .left {
@@ -22,9 +25,8 @@ footer {
 
   li,
   p {
-    display: inline;
     list-style: none;
-    padding: 0 $padding;
+    padding: 0 $padding 0 0;
   }
 
   a {

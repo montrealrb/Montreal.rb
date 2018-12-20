@@ -12,6 +12,8 @@ class Event < ActiveRecord::Base
   attribute :body
 
   belongs_to :location
+  belongs_to :organizer, -> { includes(:user).where(users: { admin: true }) }, class_name: 'Member', optional: true
+
   has_many   :talks, -> { where(state: "scheduled") }, class_name: "Talk", inverse_of: :event
   has_many   :sponsorships
   has_many   :sponsors, through: :sponsorships, source: :organization

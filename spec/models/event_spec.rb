@@ -20,9 +20,11 @@ RSpec.describe Event, type: :model do
         to respond_to :starts_at, :location, :title, :body, :state
     end
 
-    it { is_expected.to have_many :talks          }
-    it { is_expected.to belong_to :location       }
+    it { is_expected.to belong_to :location     }
+    it { is_expected.to belong_to :organizer    }
     it { is_expected.to have_many :sponsorships }
+    it { is_expected.to have_many :talks        }
+
     it do
       is_expected.to have_many(:sponsors).
         through(:sponsorships).
