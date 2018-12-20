@@ -4,6 +4,7 @@ module Users
   class RegistrationsController < Devise::RegistrationsController
     # before_filter :configure_sign_up_params, only: [:create]
     # before_filter :configure_account_update_params, only: [:update]
+    prepend_before_action :check_captcha, only: [:create] # Change this to be any actions you want to protect.
 
     # GET /resource/sign_up
     # def new
@@ -40,7 +41,19 @@ module Users
     #   super
     # end
 
-    # protected
+    protected
+    
+      def check_captcha
+        unless verify_recaptcha
+          self.resource = resource_class.new sign_up_params
+          resource.validate
+          set_minimum_password_length
+          @news_items = NewsItem.published
+          respond_with_navigational(resource) { render :new }
+        end 
+      end
+
+    # 
 
     # If you have extra params to permit, append them to the sanitizer.
     # def configure_sign_up_params
